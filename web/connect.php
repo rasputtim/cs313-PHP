@@ -22,10 +22,12 @@ try
 }
 catch (PDOException $ex)
 {
-  echo 'Error!: ' . $ex->getMessage();
+	echo '<p> Error!: ' . $ex->getMessage();
+       echo "</p>";
   die();
 }
 echo "<p> SUCCESS </p>";
 ?>
- </body>
+<?php echo $dbUrl; ?>  
+</body>
 </html>
