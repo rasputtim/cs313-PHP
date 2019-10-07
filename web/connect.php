@@ -1,3 +1,4 @@
+<? php 
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -20,3 +21,4 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+?>
