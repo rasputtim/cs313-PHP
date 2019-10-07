@@ -4,9 +4,9 @@
  </head>
  <body>
  <?php
+try
+{
 $dbUrl = getenv('DATABASE_URL');
-?>
- <?php echo '<p>Hello World</p>'; 
 echo "$dbUrl";
 $dbOpts = parse_url($dbUrl);
 $dbHost = $dbOpts["host"];
@@ -22,6 +22,13 @@ $dbHost = $dbOpts["host"];
    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
+
 ?> 
  
  </body>
