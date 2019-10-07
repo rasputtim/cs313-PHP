@@ -28,7 +28,7 @@ catch (PDOException $ex)
   echo "<p> Password: $dbPassword";
   echo "<p> Port: $dbPort";
   echo "<p> Database Name: $dbName";
-
+  echo "<p> DB: $db";
 ?> 
  
  </body>
