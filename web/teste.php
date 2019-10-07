@@ -14,11 +14,11 @@ $dbHost = $dbOpts["host"];
   $dbUser = $dbOpts["user"];
   $dbPassword = $dbOpts["pass"];
   $dbName = ltrim($dbOpts["path"],'/');
-  echo "Host: $dbHost";
-  echo "User: $dbUser";
-  echo "Password: $dbPassword";
-  echo "Port: $dbPort";
-  echo "Database Name: $dbName";
+  echo "<p> Host: $dbHost";
+  echo "<p> User: $dbUser";
+  echo "<p> Password: $dbPassword";
+  echo "<p> Port: $dbPort";
+  echo "<p> Database Name: $dbName";
 ?> 
  
  </body>
