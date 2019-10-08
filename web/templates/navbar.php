@@ -1,9 +1,9 @@
 
 
 <?php
-$index3=$argument2 = $_GET['index3'];
 
-if ($index3==true){
+
+if ($index3=="true"){
     $index3_active = 'class="active"';
 }else{
     $index3_active = "";
