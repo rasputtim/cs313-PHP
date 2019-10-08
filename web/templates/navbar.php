@@ -9,9 +9,9 @@ if ($index3=="true"){
     $index3_active = "";
 }
 if ($index2=="true"){
-    $index3_active = 'active';
+    $index2_active = 'active';
 }else{
-    $index3_active = "";
+    $index2_active = "";
 }
 ?>
 
