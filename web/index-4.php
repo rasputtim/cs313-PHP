@@ -11,7 +11,12 @@
 <div class="top1_inner_bg"></div>
 <header><div class="logo_wrapper"><a href="index.html" class="logo"><img class="llogo" src="images/logo.png" alt=""></a></div></header>
 <?php 
+$index1="false";
+$index2="false";
+$index3="false";
 $index4="true";
+$index5="false";
+
 include('templates/navbar.php'); ?>
 
 </div>	

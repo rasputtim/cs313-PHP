@@ -13,6 +13,10 @@
 
 <?php 
 $index1="true";
+$index2="false";
+$index3="false";
+$index4="false";
+$index5="false";
 include('templates/navbar.php'); ?>
 
 </div>	
