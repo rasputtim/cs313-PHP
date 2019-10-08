@@ -2,7 +2,11 @@
 
 <?php
 
-
+if ($index1=="true"){
+    $index1_active = 'class="active"';
+}else{
+    $index1_active = "";
+}
 if ($index3=="true"){
     $index3_active = 'class="active"';
 }else{
@@ -25,7 +29,7 @@ if ($index2=="true"){
 		<div class="nav-collapse nav-collapse_ collapse">
 			<ul class="nav sf-menu clearfix">
       <li><a href="index.php">Home</a></li>
-      <li><a href="index-1.php">About Us</a></li>
+      <li <?php echo $index1_active; ?> ><a href="index-1.php">About Us</a></li>
 				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="index-2.php">Products</a>
 					<ul>
 						<li><a href="index-2.php">what we offer</a></li>
@@ -49,8 +53,8 @@ if ($index2=="true"){
 					</ul>						
 				</li>
 				<li <?php echo $index3_active; ?> ><a href="index-3.php">Services</a></li>
-				<li><a href="index-4.php">Projects</a></li>
-				<li><a href="index-5.php">Contacts</a></li>											
+				<li <?php echo $index4_active; ?> ><a href="index-4.php">Projects</a></li>
+				<li <?php echo $index5_active; ?> ><a href="index-5.php">Contacts</a></li>											
     </ul>
 		</div>
 	</div>
