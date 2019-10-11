@@ -80,8 +80,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 
              // Bind variables to the prepared statement as parameters
-             $stmt->bindValue(':un', $param_username, PDO::PARAM_INT);
-             $stmt->bindValue(':up', $param_password, PDO::PARAM_INT);
+             $stmt->bindValue(':un', $param_username, PDO::PARAM_STR);
+             $stmt->bindValue(':up', $param_password, PDO::PARAM_STR);
             echo '<p>'.$sql.'</p>';
             echo '<p> hash: '.$param_password.'</p>';
              // Attempt to execute the prepared statement
