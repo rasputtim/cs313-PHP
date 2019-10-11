@@ -10,15 +10,19 @@ function check_login () {
 	if (isset ($_SESSION["id_usuario"])) {
 		$id = $_SESSION["id_usuario"];
 		$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
-		
+		echo '<p>INSIDE</p>';
+		echo '<p>usuario da sessão: '.$id.'</p>';
+		echo '<p>isiario do banco: '.$id_user.'</p>';
 		
 		if ($id == $id_user) {
 			return false;
 		}
 	}
+	echo '<p>usuario da sessão: '.$id.'</p>';
+	echo '<p>isiario do banco: '.$id_user.'</p>';
 	//global $config;
 	//require ($config["homedir"]."/inc/noaccess.php");
-	require ("inc/noaccess.php");
+	//require ("inc/noaccess.php");
 	exit;
 }
 
