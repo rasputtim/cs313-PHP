@@ -155,10 +155,10 @@ foreach ($rows as $row)
 				echo '<strong>Operation:'.$myOperation.'</strong>';
 				echo '</p>';
 				echo '<a href="#" class="button2">buy </a>';
-		</div>		
-	</div>
-</div>
-</div>
+				echo '</div>';		
+				echo '</div>';
+				echo '</div>';
+				echo '</div>';
 ?>	
 </div>
 
