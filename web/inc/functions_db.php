@@ -1,6 +1,6 @@
 <?php
 require_once ("connect.php");
-require_once ("functions.pg.php");
+//require_once ("functions.pg.php");
 
 // ---------------------------------------------------------------
 // Gives error message and stops execution if user
@@ -18,6 +18,7 @@ function check_login () {
 			echo '<p>ID USUARIO  IN SETTED</p>';
 			$sql = 'SELECT id_usuario FROM public.ezfin_tusuario WHERE id_usuario=:op';
 			//$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
+			echo '<p>SQL: '.$sql.'</p>';
 			$stmt = $db->prepare($sql);
 
 			$stmt->bindValue(':op', $id, PDO::PARAM_STR);
