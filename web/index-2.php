@@ -134,23 +134,32 @@ include('templates/navbar.php'); ?>
 	</div>
 </div>	
 </div>
-<div class="span3">
-<div class="thumb3">
-	<div class="thumbnail clearfix">		
-		<figure class=""><img src="images/products06.jpg" alt=""></figure>
-		<div class="caption">
-			<h3>Lorem ipsum dolor sit </h3>
-			<p>
-				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
-			</p>
-			<p>
-				<strong>Price:</strong> $55
-			</p>
-			<a href="#" class="button2">buy </a>
+<?php
+$myOperation=1;
+$stmt = $db->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
+$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach ($rows as $row)
+{
+	echo '<div class="span3">';
+	echo '<div class="thumb3">';
+	echo '<div class="thumbnail clearfix">';		
+	echo '<figure class=""><img src="'. $row['icon'] . '.png " alt=""></figure>';
+	echo '<div class="caption">';
+	echo '<h3>' . $row['catname'] . '</h3>';
+	echo '<p>';
+				echo $row['catdescription'];
+				echo '</p>';
+				echo '<p>';
+				echo '<strong>Operation:'.$myOperation.'</strong>';
+				echo '</p>';
+				echo '<a href="#" class="button2">buy </a>';
 		</div>		
 	</div>
-</div>	
-</div>	
+</div>
+</div>
+?>	
 </div>
 
 
@@ -181,16 +190,7 @@ include('templates/navbar.php'); ?>
 	echo '</a></li>';
 	}
 ?>
-	  <li><a href="#">Quisque nullatibulum libero</a></li>
-	  <li><a href="#">Scelerisque eget, malesuada at</a></li>
-	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>
-	  <li><a href="#">Nulla facilisinean nec eros</a></li>
-	  <li><a href="#">Vestibulum ante ipsum</a></li>	
-	  <li><a href="#">Quisque nullatibulum libero</a></li>
-	  <li><a href="#">Scelerisque eget, malesuada at</a></li>
-	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>
-	  <li><a href="#">Nulla facilisinean nec eros</a></li>
-	  <li><a href="#">Vestibulum ante ipsum</a></li>	  	            		      	      			      
+	  	            		      	      			      
 	</ul>	
 
 	
