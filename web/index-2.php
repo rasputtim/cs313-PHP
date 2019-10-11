@@ -177,7 +177,7 @@ include('templates/navbar.php'); ?>
 	foreach ($db->query('SELECT catname FROM public.ezfin_category') as $row)
 	{
 	echo '<li><a href="#">';
-	echo $row['name'];
+	echo $row['catname'];
 	echo '</a></li>';
 	}
 ?>
