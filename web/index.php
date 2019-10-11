@@ -1,14 +1,14 @@
 
 <?php 
-require ('inc/functions_db.php');
+//require ('inc/functions_db.php');
 session_start();
 //check_login ();
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location:inc/noaccess.php");
     exit;
-}else{
-	header("location:inc/noaccess.php");
 }
+	
+
 include('templates/header.php'); ?>
 <body class="main">
 <div id="main">
