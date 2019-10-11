@@ -1,4 +1,7 @@
-<?php include('templates/header.php'); ?>
+<?php 
+session_start();
+require_once ("inc/connct.php");
+include('templates/header.php'); ?>
 
 <body class="subpage">
 <div id="main">
@@ -167,7 +170,7 @@ include('templates/navbar.php'); ?>
 </div>
 <div class="span3">
 
-<h2>category</h2>
+<h2>category List</h2>
 
 	<ul class="ul1">
 	  <li><a href="#">Quisque nullatibulum libero</a></li>
