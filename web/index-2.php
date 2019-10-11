@@ -140,33 +140,27 @@ $stmt = $db->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
 $stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$count =0;
 foreach ($rows as $row)
 {
-	if ($count % 3 == 0 ) echo '<div class="row">';
-		echo '<div class="span3">';
-			echo '<div class="thumb3">';
-				echo '<div class="thumbnail clearfix">';		
-					echo '<figure class=""><img src= "images/products02.jpg" alt=""></figure>';
-					echo '<div class="caption">';
-						echo '<h3>' . $row['catname'] . '</h3>';
-						echo '<p>';
-						echo $row['catdescription'];
-						echo '</p>';
-						echo '<p>';
-						echo '<strong>Operation:'.$myOperation.'</strong>';
-						echo '</p>';
-						echo '<a href="#" class="button2">buy </a>';
-					echo '</div>';
+	echo '<div class="span3">';
+	echo '<div class="thumb3">';
+	echo '<div class="thumbnail clearfix">';		
+	echo '<figure class=""><img src="'. $row['icon'] . '.png " alt=""></figure>';
+	echo '<div class="caption">';
+	echo '<h3>' . $row['catname'] . '</h3>';
+	echo '<p>';
+				echo $row['catdescription'];
+				echo '</p>';
+				echo '<p>';
+				echo '<strong>Operation:'.$myOperation.'</strong>';
+				echo '</p>';
+				echo '<a href="#" class="button2">buy </a>';
+				echo '</div>';		
 				echo '</div>';
-			echo '</div>';
-		echo '</div>';
-	if ($count == 2 ) {
-		echo '</div>';
-		$count = 0;
-	}else $count++;
+				echo '</div>';
+				echo '</div>';
 }
-?>
+?>	
 </div>
 
 
