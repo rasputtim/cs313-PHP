@@ -69,7 +69,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $result = $sth->fetchAll(PDO::FETCH_CLASS, "CUser");
                 //var_dump($result);
                 
-                
+                echo '<p>'.$result->id_usuario.'</p>';
+                echo '<p>'.$result->real_name.'</p>';
+                echo '<p>'.$result->password.'</p>';
                 
                 // Check if username exists, if yes then verify password
                 if($result->id_usuario){                    
@@ -86,7 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            //header("location: index.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
