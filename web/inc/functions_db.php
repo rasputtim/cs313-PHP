@@ -16,19 +16,27 @@ function check_login () {
 			$id = $_SESSION["id_usuario"];
 			echo '<p>ID USUARIO  IN SETTED</p>';
 			//$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
-			echo '<p>usuario da sessão: '.$id.'</p>';
-			echo '<p>isiario do banco: '.$id_user.'</p>';
-			
-			if ($id == $id_user) {
-				return false;
+			$stmt = $db->prepare('SELECT id_usuario FROM public.ezfin_tusuario WHERE id_usuario=:op');
+
+			$stmt->bindValue(':op', $id, PDO::PARAM_STR);
+			$stmt->execute();
+			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			$count_Rows = count($rows);
+            // Check if username exists, if yes then verify password
+			if( $count_Rows ==1 ){ 
+				$id_user = $rows[0]['id_usuario'];
+				echo '<p>usuario da sessão: '.$id.'</p>';
+				echo '<p>isiario do banco: '.$id_user.'</p>';
+				
+				if ($id == $id_user) {
+					return false;
+				}
 			}
 		}
 	}
-	echo '<p>usuario da sessão: '.$id.'</p>';
-	echo '<p>isiario do banco: '.$id_user.'</p>';
 	//global $config;
 	//require ($config["homedir"]."/inc/noaccess.php");
-	//require ("inc/noaccess.php");
+	require ("inc/noaccess.php");
 	exit;
 }
 
