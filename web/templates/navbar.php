@@ -40,10 +40,10 @@ if ($index5=="true"){
 			<ul class="nav sf-menu clearfix">
       <li><a href="index.php">Home</a></li>
       <li class="<?php echo $index1_active; ?> "><a href="index-1.php">About Us</a></li>
-				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="index-2.php">Products</a>
+				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="index-2.php">Administration</a>
 					<ul>
-						<li><a href="index-2.php">what we offer</a></li>
-						<li class="sub-menu sub-menu-2"><a href="index-2.php">specials</a>
+						<li><a href="index-2.php">Options</a></li>
+						<li class="sub-menu sub-menu-2"><a href="index-2.php">Categories</a>
 							<ul>
 								<li><a href="index-2.php">lorem ipsum dolor</a></li>
 								<li><a href="index-2.php">sit amet</a></li>
@@ -52,7 +52,7 @@ if ($index5=="true"){
 								<li><a href="404.php">404 page not found</a></li>
 							</ul>
 						</li>
-						<li class="sub-menu sub-menu-2"><a href="index-2.php">price list</a>
+						<li class="sub-menu sub-menu-2"><a href="index-2.php">Balance Views</a>
 							<ul>
 								<li><a href="index-2.php">lorem ipsum dolor</a></li>
 								<li><a href="index-2.php">sit amet</a></li>
