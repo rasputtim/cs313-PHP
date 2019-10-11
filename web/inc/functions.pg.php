@@ -11,7 +11,7 @@ require ("connect.php");
  */
 function get_db_all_rows_sql ($sql) {
 
-	$stmt = $db->prepare(sql);
+	$stmt = $db->prepare($sql);
 	//$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 	$stmt->execute();
 	$return = $stmt->fetchAll(PDO::FETCH_ASSOC);
