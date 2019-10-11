@@ -3,8 +3,8 @@
 require_once "inc/connect.php";
  
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
+$username = $password = $confirm_password = $realname = "";
+$username_err = $password_err = $confirm_password_err = $realname_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -53,7 +53,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $password_err = "Password must have atleast 6 characters.";
     } else{
         $password = trim($_POST["password"]);
-        echo '<p>'.$password.'</p>';
+       
+    }
+
+    // Validate real name
+    if(empty(trim($_POST["realname"]))){
+        $realname_err = "Please enter you Complete Name.";     
+    } elseif(strlen(trim($_POST["realname"])) < 6){
+        $realname_err = "Please enter your Complete username.";
+    } else{
+        $realname = trim($_POST["realname"]);
+       
     }
     
     // Validate confirm password
@@ -67,20 +77,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
+    if(empty($username_err) && empty($realname_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO public.ezfin_tusuario (id_usuario, password) VALUES (:un, :up)";
+        $sql = "INSERT INTO public.ezfin_tusuario (id_usuario, real_name, password) VALUES (:un, :ur, :up)";
          
         if($stmt = $db->prepare($sql)){
            
             
             // Set parameters
             $param_username = $username;
+            $param_realname = $realname;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 
              // Bind variables to the prepared statement as parameters
              $stmt->bindValue(':un', $param_username, PDO::PARAM_STR);
+             $stmt->bindValue(':ur', $param_realname, PDO::PARAM_STR);
              $stmt->bindValue(':up', $param_password, PDO::PARAM_STR);
             echo '<p>'.$sql.'</p>';
             echo '<p> hash: '.$param_password.'</p>';
@@ -122,6 +134,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Username</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
+            </div>  
+            <div class="form-group <?php echo (!empty($realname_err)) ? 'has-error' : ''; ?>">
+                <label>Complete Name</label>
+                <input type="text" name="realname" class="form-control" value="<?php echo $realname; ?>">
+                <span class="help-block"><?php echo $realname_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
