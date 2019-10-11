@@ -1,13 +1,13 @@
 <?php
 require_once ("functions.pg.php");
-session_start();
+
 // ---------------------------------------------------------------
 // Gives error message and stops execution if user
 //doesn't have an open session and this session is from an valid user
 // ---------------------------------------------------------------
 
 function check_login () {
-
+	
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		echo '<p>LOGGED IN SETTED</p>';
 	
