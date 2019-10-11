@@ -159,6 +159,7 @@ foreach ($rows as $row)
 				echo '</div>';
 				echo '</div>';
 				echo '</div>';
+}
 ?>	
 </div>
 
