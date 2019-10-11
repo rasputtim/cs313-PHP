@@ -18,7 +18,7 @@ function check_login () {
 	}
 	//global $config;
 	//require ($config["homedir"]."/inc/noaccess.php");
-	require ("/inc/noaccess.php");
+	require ("inc/noaccess.php");
 	exit;
 }
 
