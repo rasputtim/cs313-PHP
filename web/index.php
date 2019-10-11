@@ -1,7 +1,7 @@
 
 <?php 
 session_start();
-require('inc/functions_db.php');
+require_once('inc/functions_db.php');
 
 
 //if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
