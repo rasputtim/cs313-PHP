@@ -53,6 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $password_err = "Password must have atleast 6 characters.";
     } else{
         $password = trim($_POST["password"]);
+        echo '<p>'.$password.'</p>';
     }
     
     // Validate confirm password
@@ -72,18 +73,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql = "INSERT INTO public.ezfin_tusuario (id_usuario, password) VALUES (:un, :up)";
          
         if($stmt = $db->prepare($sql)){
-            // Bind variables to the prepared statement as parameters
-            $stmt->bindValue(':un', $param_username, PDO::PARAM_INT);
-            $stmt->bindValue(':up', $param_password, PDO::PARAM_INT);
+           
             
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            
-            // Attempt to execute the prepared statement
+
+             // Bind variables to the prepared statement as parameters
+             $stmt->bindValue(':un', $param_username, PDO::PARAM_INT);
+             $stmt->bindValue(':up', $param_password, PDO::PARAM_INT);
+            echo '<p>'.$sql.'</p>';
+             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location: login.php");
+                //header("location: login.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
