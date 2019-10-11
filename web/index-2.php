@@ -41,64 +41,7 @@ include('templates/navbar.php'); ?>
 <div class="row">
 <div class="span9">
 	
-<h1>products  overview</h1>
-
-
-
-<div class="row">
-<div class="span3">
-<div class="thumb3">
-	<div class="thumbnail clearfix">		
-		<figure class=""><img src="images/products01.jpg" alt=""></figure>
-		<div class="caption">
-			<h3>Lorem ipsum dolor sit </h3>
-			<p>
-				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
-			</p>
-			<p>
-				<strong>Price:</strong> $55
-			</p>
-			<a href="#" class="button2">buy </a>
-		</div>		
-	</div>
-</div>	
-</div>
-<div class="span3">
-<div class="thumb3">
-	<div class="thumbnail clearfix">		
-		<figure class=""><img src="images/products02.jpg" alt=""></figure>
-		<div class="caption">
-			<h3>Lorem ipsum dolor sit </h3>
-			<p>
-				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
-			</p>
-			<p>
-				<strong>Price:</strong> $55
-			</p>
-			<a href="#" class="button2">buy </a>
-		</div>		
-	</div>
-</div>	
-</div>
-<div class="span3">
-<div class="thumb3">
-	<div class="thumbnail clearfix">		
-		<figure class=""><img src="images/products03.jpg" alt=""></figure>
-		<div class="caption">
-			<h3>Lorem ipsum dolor sit </h3>
-			<p>
-				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
-			</p>
-			<p>
-				<strong>Price:</strong> $55
-			</p>
-			<a href="#" class="button2">buy </a>
-		</div>		
-	</div>
-</div>	
-</div>	
-</div>
-
+<h1>categories  overview</h1>
 
 
 
