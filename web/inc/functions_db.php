@@ -11,7 +11,7 @@ function check_login () {
 	$db = $GLOBALS['db'];
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		echo '<p>LOGGED IN SETTED</p>';
-	
+		echo '<p>DB: '.$GLOBALS['db'].'</p>';
 	
 		if (isset ($_SESSION["id_usuario"])) {
 			$id = $_SESSION["id_usuario"];
