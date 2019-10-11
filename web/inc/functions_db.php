@@ -9,7 +9,9 @@ require_once ("functions.pg.php");
 function check_login () {
 	if (isset ($_SESSION["id_usuario"])) {
 		$id = $_SESSION["id_usuario"];
-		$id_user = get_db_value ('id_usuario', 'tusuario', 'id_usuario', $id);
+		$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
+		
+		
 		if ($id == $id_user) {
 			return false;
 		}
