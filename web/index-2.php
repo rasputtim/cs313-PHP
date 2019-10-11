@@ -173,6 +173,14 @@ include('templates/navbar.php'); ?>
 <h2>category List</h2>
 
 	<ul class="ul1">
+	<?php 
+	foreach ($db->query('SELECT catname FROM public.ezfin_category') as $row)
+	{
+	echo '<li><a href="#">';
+	echo $row['name'];
+	echo '</a></li>';
+	}
+?>
 	  <li><a href="#">Quisque nullatibulum libero</a></li>
 	  <li><a href="#">Scelerisque eget, malesuada at</a></li>
 	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>
