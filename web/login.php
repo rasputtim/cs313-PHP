@@ -54,6 +54,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Attempt to execute the prepared statement
             if($stmt->execute()){
+
+                echo '<p> EXECUTED </p>';
                 // Store result
                 // Bind result variables
                 
