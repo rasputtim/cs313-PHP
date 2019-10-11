@@ -1,6 +1,6 @@
 
 <?php 
-//require ('inc/functions_db.php');
+require ('inc/functions_db.php');
 //check_login ();
 include('templates/header.php'); ?>
 <body class="main">
