@@ -19,6 +19,7 @@ function check_login () {
 			$sql = 'SELECT id_usuario FROM public.ezfin_tusuario WHERE id_usuario=:op';
 			//$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
 			echo '<p>SQL: '.$sql.'</p>';
+			echo '<p>SQL: '.$db.'</p>';
 			$stmt = $db->prepare($sql);
 
 			$stmt->bindValue(':op', $id, PDO::PARAM_STR);
