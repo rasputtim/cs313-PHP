@@ -16,8 +16,9 @@ function check_login () {
 		if (isset ($_SESSION["id_usuario"])) {
 			$id = $_SESSION["id_usuario"];
 			echo '<p>ID USUARIO  IN SETTED</p>';
+			$sql = 'SELECT id_usuario FROM public.ezfin_tusuario WHERE id_usuario=:op';
 			//$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
-			$stmt = $db->prepare('SELECT id_usuario FROM public.ezfin_tusuario WHERE id_usuario=:op');
+			$stmt = $db->prepare($sql);
 
 			$stmt->bindValue(':op', $id, PDO::PARAM_STR);
 			echo '<p>SQL: '.$sql.'</p>';
