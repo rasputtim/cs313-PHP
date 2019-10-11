@@ -20,6 +20,7 @@ function check_login () {
 			$stmt = $db->prepare('SELECT id_usuario FROM public.ezfin_tusuario WHERE id_usuario=:op');
 
 			$stmt->bindValue(':op', $id, PDO::PARAM_STR);
+			echo '<p>SQL: '.$sql.'</p>';
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			$count_Rows = count($rows);
