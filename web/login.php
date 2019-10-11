@@ -1,6 +1,6 @@
 <?php
 // Initialize the session
-// https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
+
 session_start();
  
 

@@ -1,5 +1,5 @@
 <?php
-require_once ("inc/connect.php");
+require_once ("connect.php");
 //require_once ("functions.pg.php");
 
 // ---------------------------------------------------------------
@@ -8,7 +8,7 @@ require_once ("inc/connect.php");
 // ---------------------------------------------------------------
 
 function check_login () {
-	
+	$db = $GLOBALS['db'];
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		echo '<p>LOGGED IN SETTED</p>';
 	
