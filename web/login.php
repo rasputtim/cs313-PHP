@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement
         $sql = "SELECT id_usuario, real_name, password FROM public.ezfin_tusuario WHERE id_usuario = :un";
         
-        echo '<p>CREDENTIAL VALIDATED</p>';
+        //echo '<p>CREDENTIAL VALIDATED</p>';
         
 
         if($stmt = $db->prepare($sql)){
@@ -49,13 +49,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Bind variables to the prepared statement as parameters
             $stmt->bindValue(':un', $param_username, PDO::PARAM_STR);
-            echo '<p>'.$param_username.'</p>';
+            //echo '<p>'.$param_username.'</p>';
           
 
             // Attempt to execute the prepared statement
             if($stmt->execute()){
 
-                echo '<p>SQL EXECUTED</p>';
+                //echo '<p>SQL EXECUTED</p>';
                 /* store result */
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $count_Rows = count($rows);
