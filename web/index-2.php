@@ -109,9 +109,10 @@ $stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $count =0;
-
+$added = false;
 foreach ($rows as $row)
 {
+	$added = false;
 	if ($count % 3 == 0 ) echo '<div class="row">';
 	echo '<div class="span3">';
 	echo '<div class="thumb3">';
@@ -133,11 +134,13 @@ foreach ($rows as $row)
 				if ($count == 2 ) {
 					echo '</div>';
 					$count = 0;
+					$added = true;
 				}else $count++;
 			
 }
-echo "COUNT: $count";
-echo '</div>';
+
+if ($added == false) echo '</div>';
+
 ?>	
 
 
