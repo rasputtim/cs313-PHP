@@ -94,12 +94,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              $stmt->bindValue(':un', $param_username, PDO::PARAM_STR);
              $stmt->bindValue(':ur', $param_realname, PDO::PARAM_STR);
              $stmt->bindValue(':up', $param_password, PDO::PARAM_STR);
-            echo '<p>'.$sql.'</p>';
-            echo '<p> hash: '.$param_password.'</p>';
+            //echo '<p>'.$sql.'</p>';
+            //echo '<p> hash: '.$param_password.'</p>';
              // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                //header("location: login.php");
+                header("location: login.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
