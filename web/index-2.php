@@ -99,8 +99,41 @@ include('templates/navbar.php'); ?>
 </div>	
 </div>
 
-
-
+<div class="row">
+<div class="span3">
+<div class="thumb3">
+	<div class="thumbnail clearfix">		
+		<figure class=""><img src="images/products04.jpg" alt=""></figure>
+		<div class="caption">
+			<h3>Lorem ipsum dolor sit </h3>
+			<p>
+				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
+			</p>
+			<p>
+				<strong>Price:</strong> $55
+			</p>
+			<a href="#" class="button2">buy </a>
+		</div>		
+	</div>
+</div>	
+</div>
+<div class="span3">
+<div class="thumb3">
+	<div class="thumbnail clearfix">		
+		<figure class=""><img src="images/products05.jpg" alt=""></figure>
+		<div class="caption">
+			<h3>Lorem ipsum dolor sit </h3>
+			<p>
+				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
+			</p>
+			<p>
+				<strong>Price:</strong> $55
+			</p>
+			<a href="#" class="button2">buy </a>
+		</div>		
+	</div>
+</div>	
+</div>
 <?php
 $myOperation=1;
 $stmt = $db->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
@@ -134,8 +167,8 @@ foreach ($rows as $row)
 		$count = 0;
 	}else $count++;
 }
-?>	
-
+?>
+</div>
 
 
 
