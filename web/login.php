@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_username = $username;
 
             // Bind variables to the prepared statement as parameters
-            $stmt->bindValue(':un', $param_username, PDO::PARAM_INT);
+            $stmt->bindValue(':un', $param_username, PDO::PARAM_STR);
 
           
 
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // Store result
                 // Bind result variables
-                
+                echo '<p>SQL EXECUTED</p>';
                 $result = $sth->fetchAll(PDO::FETCH_CLASS, "CUser");
                 //var_dump($result);
                 
