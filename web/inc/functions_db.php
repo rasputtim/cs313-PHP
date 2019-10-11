@@ -7,6 +7,11 @@ session_start();
 // ---------------------------------------------------------------
 
 function check_login () {
+
+	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+		echo '<p>LOGGED IN SETTED</p>';
+	
+	}
 	if (isset ($_SESSION["id_usuario"])) {
 		$id = $_SESSION["id_usuario"];
 		$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
