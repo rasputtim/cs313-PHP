@@ -83,6 +83,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              $stmt->bindValue(':un', $param_username, PDO::PARAM_INT);
              $stmt->bindValue(':up', $param_password, PDO::PARAM_INT);
             echo '<p>'.$sql.'</p>';
+            echo '<p> hash: '.$param_password.'</p>';
              // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
