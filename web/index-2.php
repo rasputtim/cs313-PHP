@@ -136,6 +136,7 @@ foreach ($rows as $row)
 				}else $count++;
 			
 }
+if ($count < 2) echo '</div>';
 ?>	
 
 
