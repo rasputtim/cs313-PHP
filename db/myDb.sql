@@ -17,6 +17,7 @@ CREATE TABLE ezfin_category(
 CREATE TABLE ezfin_tusuario(
             id_usuario varchar(50) NOT NULL,
             real_name text,
+            password text,
             PRIMARY KEY (id_usuario)
             );
             

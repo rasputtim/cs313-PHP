@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare an insert statement
         $sql = "INSERT INTO public.ezfin_tusuario (id_usuario, password) VALUES (:un, :up)";
          
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = $db->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bindValue(':un', $param_username, PDO::PARAM_INT);
             $stmt->bindValue(':up', $param_password, PDO::PARAM_INT);
