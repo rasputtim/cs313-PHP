@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id_usuario, real_name, password FROM tusuario WHERE id_usuario = :un";
+        $sql = "SELECT id_usuario, real_name, password FROM public.ezfin_tusuario WHERE id_usuario = :un";
         
         echo '<p>CREDENTIAL VALIDATED</p>';
         
