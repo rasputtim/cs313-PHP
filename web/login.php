@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Bind result variables
                 
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "<p> Oops! Something went wrong. Please try again later.";
             }
         }
         
