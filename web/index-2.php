@@ -55,7 +55,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $count = 0;
 foreach ($rows as $row)
 {
-	$count++;
+	
 	if ($count % 3 == 0 ) echo '<div class="row">';
 	echo '<div class="span3">';
 	echo '<div class="thumb3">';
@@ -75,6 +75,7 @@ foreach ($rows as $row)
 				echo '</div>';
 				echo '</div>';
 	if ($count % 3 == 0 ) echo '</div>';
+	$count++;
 }
 ?>	
 
