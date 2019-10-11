@@ -114,7 +114,7 @@ foreach ($rows as $row)
 	echo '<div class="span3">';
 	echo '<div class="thumb3">';
 	echo '<div class="thumbnail clearfix">';		
-	echo '<figure class=""><img src="'. $row['icon'] . '.png " alt=""></figure>';
+	echo '<figure class=""><img src= "images/products02.jpg" alt=""></figure>';
 	echo '<div class="caption">';
 	echo '<h3>' . $row['catname'] . '</h3>';
 	echo '<p>';
