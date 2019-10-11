@@ -56,37 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // Store result
                 // Bind result variables
-                echo '<p>SQL EXECUTED</p>';
-                /* store result */
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                $count_Rows = count($rows);
-                //var_dump($result);
-                          
                 
-                // Check if username exists, if yes then verify password
-                if( $count_Rows ==1 ){                    
-                    
-                                      
-                        if(password_verify($password, $rows[0]['password'])){
-                            // Password is correct, so start a new session
-                            session_start();
-                            
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
-                            
-                            // Redirect user to welcome page
-                            //header("location: index.php");
-                        } else{
-                            // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
-                        }
-                  
-                } else{
-                    // Display an error message if username doesn't exist
-                    $username_err = "No account found with that username.";
-                }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
