@@ -8,7 +8,7 @@ require_once ("connect.php");
 // ---------------------------------------------------------------
 
 function check_login () {
-	$db = $GLOBALS['db'];
+	global $db;
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		echo '<p>LOGGED IN SETTED</p>';
 		echo '<p>DB: '.$GLOBALS['db'].'</p>';
