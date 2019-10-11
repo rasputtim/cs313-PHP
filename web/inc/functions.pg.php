@@ -46,7 +46,7 @@ function get_db_value ($field, $table, $field_search = 1, $condition = 1) {
 		$sql = sprintf ("SELECT %s FROM %s WHERE %s = '%s' LIMIT 1",
 				$field, $table, $field_search, $condition);
 	}
-	$result = get_db_all_rows_sql ($sql);
+	$result = false; //get_db_all_rows_sql ($sql);
 
 	if ($result === false)
 		return false;
