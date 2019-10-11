@@ -1,5 +1,5 @@
 <?php
-require_once ("functions.pg.php");
+//require_once ("functions.pg.php");
 
 // ---------------------------------------------------------------
 // Gives error message and stops execution if user
@@ -18,7 +18,7 @@ function check_login () {
 	}
 	//global $config;
 	//require ($config["homedir"]."/inc/noaccess.php");
-	require ($config["homedir"]."/inc/noaccess.php");
+	require ("/inc/noaccess.php");
 	exit;
 }
 
