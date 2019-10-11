@@ -1,7 +1,7 @@
 
 <?php 
 require ('inc/functions_db.php');
-//session_start();
+session_start();
 //check_login ();
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: index.php");
