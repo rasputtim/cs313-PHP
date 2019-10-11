@@ -1,6 +1,6 @@
 <?php
 require_once ("functions.pg.php");
-
+session_start();
 // ---------------------------------------------------------------
 // Gives error message and stops execution if user
 //doesn't have an open session and this session is from an valid user
