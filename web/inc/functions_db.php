@@ -15,8 +15,7 @@ function check_login () {
 		if (isset ($_SESSION["id_usuario"])) {
 			$id = $_SESSION["id_usuario"];
 			echo '<p>ID USUARIO  IN SETTED</p>';
-			$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
-			echo '<p>INSIDE</p>';
+			//$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
 			echo '<p>usuario da sessão: '.$id.'</p>';
 			echo '<p>isiario do banco: '.$id_user.'</p>';
 			
