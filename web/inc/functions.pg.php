@@ -34,7 +34,7 @@ function get_db_all_rows_sql ($sql) {
  * @return mixed Value of first column of the first row. False if there were no row.
  */
 function get_db_value ($field, $table, $field_search = 1, $condition = 1) {
-	/*
+	
 	if (is_int ($condition)) {
 		$sql = sprintf ("SELECT %s FROM %s WHERE %s = %d LIMIT 1",
 				$field, $table, $field_search, $condition);
@@ -54,8 +54,7 @@ function get_db_value ($field, $table, $field_search = 1, $condition = 1) {
 	if ($field[0] == '`')
 		$field = str_replace ('`', '', $field);
 	return $result[0][$field];
-	*/
-	return true;
+	
 }
 
 ?>
