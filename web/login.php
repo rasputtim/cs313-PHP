@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement
         $sql = "SELECT id_usuario, real_name, password FROM tusuario WHERE id_usuario = :un";
         
-        
+        echo '<p>CREDENTIAL VALIDATED</p>';
         
 
         if($stmt = $db->prepare($sql)){
