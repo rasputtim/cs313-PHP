@@ -26,7 +26,7 @@ function check_login () {
 			if( $count_Rows ==1 ){ 
 				$id_user = $rows[0]['id_usuario'];
 				echo '<p>usuario da sessão: '.$id.'</p>';
-				echo '<p>isiario do banco: '.$id_user.'</p>';
+				echo '<p>usiario do banco: '.$id_user.'</p>';
 				
 				if ($id == $id_user) {
 					return false;
