@@ -136,7 +136,7 @@ foreach ($rows as $row)
 				}else $count++;
 			
 }
-if ($count % 2 != 0 ) echo '</div>';
+if ($count ==0  || $count== 1 ) echo '</div>';
 ?>	
 
 
