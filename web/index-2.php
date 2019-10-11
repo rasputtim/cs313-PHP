@@ -45,6 +45,61 @@ include('templates/navbar.php'); ?>
 
 
 
+<div class="row">
+<div class="span3">
+<div class="thumb3">
+	<div class="thumbnail clearfix">		
+		<figure class=""><img src="images/products01.jpg" alt=""></figure>
+		<div class="caption">
+			<h3>Lorem ipsum dolor sit </h3>
+			<p>
+				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
+			</p>
+			<p>
+				<strong>Price:</strong> $55
+			</p>
+			<a href="#" class="button2">buy </a>
+		</div>		
+	</div>
+</div>	
+</div>
+<div class="span3">
+<div class="thumb3">
+	<div class="thumbnail clearfix">		
+		<figure class=""><img src="images/products02.jpg" alt=""></figure>
+		<div class="caption">
+			<h3>Lorem ipsum dolor sit </h3>
+			<p>
+				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
+			</p>
+			<p>
+				<strong>Price:</strong> $55
+			</p>
+			<a href="#" class="button2">buy </a>
+		</div>		
+	</div>
+</div>	
+</div>
+<div class="span3">
+<div class="thumb3">
+	<div class="thumbnail clearfix">		
+		<figure class=""><img src="images/products03.jpg" alt=""></figure>
+		<div class="caption">
+			<h3>Lorem ipsum dolor sit </h3>
+			<p>
+				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse 
+			</p>
+			<p>
+				<strong>Price:</strong> $55
+			</p>
+			<a href="#" class="button2">buy </a>
+		</div>		
+	</div>
+</div>	
+</div>	
+</div>
+
+<div class="row">
 
 <?php
 $myOperation=1;
@@ -52,11 +107,10 @@ $stmt = $db->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
 $stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$count = 0;
+$count =0;
 foreach ($rows as $row)
 {
-	
-	if ($count % 3 == 0 ) echo '<div class="row">';
+	//if ($count % 3 == 0 ) echo '<div class="row">';
 	echo '<div class="span3">';
 	echo '<div class="thumb3">';
 	echo '<div class="thumbnail clearfix">';		
@@ -74,11 +128,9 @@ foreach ($rows as $row)
 				echo '</div>';
 				echo '</div>';
 				echo '</div>';
-	if ($count % 3 == 0 ) echo '</div>';
-	$count++;
 }
 ?>	
-
+</div>
 
 
 
