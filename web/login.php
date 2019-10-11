@@ -3,15 +3,6 @@
 // https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
 session_start();
  
-class CUser {
-    public $id_usuario = "";
-    public $real_name = "";
-    public $password = "";
-}
-
-
-
-
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -66,19 +57,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Store result
                 // Bind result variables
                 echo '<p>SQL EXECUTED</p>';
-                $result = $sth->fetchAll(PDO::FETCH_CLASS, "CUser");
+                /* store result */
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $count_Rows = count($rows);
                 //var_dump($result);
-                
-                echo '<p>'.$result->id_usuario.'</p>';
-                echo '<p>'.$result->real_name.'</p>';
-                echo '<p>'.$result->password.'</p>';
+                          
                 
                 // Check if username exists, if yes then verify password
-                if($result->id_usuario){                    
+                if( $count_Rows ==1 ){                    
                     
-                    
-                    
-                        if(password_verify($password, $result->paswword)){
+                                      
+                        if(password_verify($password, $rows[0]['password'])){
                             // Password is correct, so start a new session
                             session_start();
                             
