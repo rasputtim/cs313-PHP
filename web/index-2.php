@@ -122,6 +122,7 @@ foreach ($rows as $row)
 						echo '</p>';
 						echo '<p>';
 						echo '<strong>Operation:'.$myOperation.'</strong>';
+						echo '<strong>Count:'.$count.'</strong>';
 						echo '</p>';
 						echo '<a href="#" class="button2">buy </a>';
 					echo '</div>';
