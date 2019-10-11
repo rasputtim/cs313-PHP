@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Bind variables to the prepared statement as parameters
             $stmt->bindValue(':un', $param_username, PDO::PARAM_STR);
-
+            echo '<p>'.$param_username.'</p>';
           
 
             // Attempt to execute the prepared statement
