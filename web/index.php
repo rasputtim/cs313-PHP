@@ -1,7 +1,7 @@
 
 <?php 
 require ('inc/functions_db.php');
-check_login ();
+//check_login ();
 include('templates/header.php'); ?>
 <body class="main">
 <div id="main">
