@@ -129,8 +129,10 @@ foreach ($rows as $row)
 				echo '</div>';
 			echo '</div>';
 		echo '</div>';
-	if ($count+1 % 3 == 0 ) echo '</div>';
-	$count++;
+	if ($count == 2 ) {
+		echo '</div>';
+		$count = 0;
+	}else $count++;
 }
 ?>	
 
