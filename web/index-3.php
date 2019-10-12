@@ -74,75 +74,21 @@ if ($added = false) echo '</ul>';
 				
 
 
-<ul class="thumbnails thumbnails1">
-	<li>
-		<div class="thumbnail clearfix">
-			<figure class=""><img src="images/services03.jpg" alt=""></figure>
-			<div class="caption">											
-				<h3>Lorem ipsum dones consectetur </h3>
-				<p>
-					Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit <a href="#"><strong>read more</strong></a>
-				</p>
-			</div>			
-		</div>
-	</li>
-	<li>
-		<div class="thumbnail clearfix">
-			<figure class=""><img src="images/services04.jpg" alt=""></figure>
-			<div class="caption">											
-				<h3>Lorem ipsum dones consectetur </h3>
-				<p>
-					Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit <a href="#"><strong>read more</strong></a>
-				</p>
-			</div>			
-		</div>
-	</li>				
-</ul>
-<ul class="thumbnails thumbnails1">
-	<li>
-		<div class="thumbnail clearfix">
-			<figure class=""><img src="images/services05.jpg" alt=""></figure>
-			<div class="caption">											
-				<h3>Lorem ipsum dones consectetur </h3>
-				<p>
-					Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit <a href="#"><strong>read more</strong></a>
-				</p>
-			</div>			
-		</div>
-	</li>
-	<li>
-		<div class="thumbnail clearfix">
-			<figure class=""><img src="images/services06.jpg" alt=""></figure>
-			<div class="caption">											
-				<h3>Lorem ipsum dones consectetur </h3>
-				<p>
-					Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit <a href="#"><strong>read more</strong></a>
-				</p>
-			</div>			
-		</div>
-	</li>				
-</ul>
-
-
-
-
-
 </div>
 <div class="span3">
 
 <h2>services List</h2>
 
 	<ul class="ul1">
-	  <li><a href="#">Quisque nullatibulum libero</a></li>
-	  <li><a href="#">Scelerisque eget, malesuada at</a></li>
-	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>
-	  <li><a href="#">Nulla facilisinean nec eros</a></li>
-	  <li><a href="#">Vestibulum ante ipsum</a></li>	
-	  <li><a href="#">Quisque nullatibulum libero</a></li>
-	  <li><a href="#">Scelerisque eget, malesuada at</a></li>
-	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>
-	  <li><a href="#">Nulla facilisinean nec eros</a></li>
-	  <li><a href="#">Vestibulum ante ipsum</a></li>	  	            		      	      			      
+<?php 
+	foreach ($db->query('SELECT * FROM public.ezfin_transactions') as $row)
+	{
+	echo '<li><a href="#">';
+	echo $row['idcategory']." - ".$row['duedate']." - ".$row['amount'];
+	echo '</a></li>';
+	}
+?>
+	    	            		      	      			      
 	</ul>	
 
 	

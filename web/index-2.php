@@ -108,7 +108,7 @@ if ($added == false) echo '</div>';
 <div class="row">
 <div class="span12">
 <div id="slider4">
-<div class="slider4-title">CATEGORIES MORE USED</div>
+<div class="slider4-title">CATEGORIES MOST USED</div>
 <div class="slider4_wrapper2">
 <a class="prev4" href="#"></a>
 <a class="next4" href="#"></a>
