@@ -11,7 +11,7 @@ $index2="false";
 $index3="false";
 $index4="false";
 $index5="false";
-include('templates/navbar.php'); ?>
+include('templates/menubar.php'); ?>
 
 	
 </div>
