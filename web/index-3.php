@@ -1,4 +1,8 @@
-<?php include('templates/header.php'); ?>
+<?php 
+session_start();
+require_once ("inc/connect.php");
+include('templates/header.php'); 
+?>
 
 <body class="subpage">
 <div id="main">
