@@ -1,5 +1,10 @@
 <?php 
 session_start();
+
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location:inc/noaccess.php");
+    exit;
+}
 require_once ("inc/connect.php");
 include('templates/header.php'); 
 $money_format = '%(#10n';

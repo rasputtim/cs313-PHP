@@ -4,10 +4,7 @@ session_start();
 //require_once('inc/functions_db.php');
 
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location:inc/noaccess.php");
-    exit;
-}
+
 //check_login ();
 
 include('templates/header.php'); ?>
