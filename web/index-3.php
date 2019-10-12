@@ -3,7 +3,7 @@ session_start();
 require_once ("inc/connect.php");
 include('templates/header.php'); 
 $money_format = '%(#10n';
-$date_format = "D, M d, Y/";
+$date_format = "D, M d, Y ";
 ?>
 
 <body class="subpage">
