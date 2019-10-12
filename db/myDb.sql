@@ -24,11 +24,11 @@ CREATE TABLE ezfin_tusuario(
 CREATE TABLE ezfin_transactions (
             idTransaction SERIAL NOT NULL,
             idUser varchar(50) NOT NULL,
-            dueDate TEXT,
+            dueDate DATE,
             description TEXT,
             idCategory INTEGER NOT NULL,
             amount REAL,
-            paymentDate TEXT,
+            paymentDate DATE,
             status INTEGER,
             modificationDateTime timestamp without time zone DEFAULT CURRENT_TIMESTAMP(0),
             PRIMARY KEY (idTransaction, idUser),
@@ -50,6 +50,11 @@ CREATE TABLE ezfin_balanceView (
             FOREIGN KEY (idUser) REFERENCES ezfin_tusuario (id_usuario)
             );
             
+
+
+
+			
+			
 INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
 	VALUES (1, 'admin', '2019/10/01', '2019/10/31', '2019/10/25', 'October', 'Balance for October', 1);	
 INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
@@ -144,3 +149,60 @@ insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,oper
 insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,operation) values(27,'admin','END_CASHFLOW','cat_end_cashflow','amount of cash available at the end of a period (closing balance)',1);
 insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,operation) values(28,'admin','ACCOUNT_BALANCE','cat_account_balance',' amount of cash available at asome moment',1);
 insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,operation) values(29,'admin','EXPENSE_LEFT','cat_expense_left','amount of expenses left to be paid (unpaid)',4);
+
+
+##################
+##  TRANSACTIONS
+##################
+
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (1,'admin', '2019/10/25', 'Salary',20 , 9000.00, '2019/10/25', 0);
+
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (2,'admin', '2019/10/15', 'House Rent',13 , 900.00, '2019/10/12', 1);
+	
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (3,'admin', '2019/10/12', 'Medicine for flu',9, 45.67, '2019/10/12', 1);	
+
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (4,'admin', '2019/10/05', 'Uber to Supermarket',5, 12.50, '2019/10/05', 1);
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (5,'admin', '2019/10/03', 'Uber to Gym',5, 15.00, '2019/10/03', 1);
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (6,'admin', '2019/10/04', 'Uber to Date',5, 12.50, '2019/10/04', 1);	
+	
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (7,'admin', '2019/10/02', 'Groceries',15, 8.80, '2019/10/02', 1);		
+	
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (8,'admin', '2019/10/03', 'Groceries',15, 8.80, '2019/10/03', 1);	
+
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (9,'admin', '2019/10/07', 'Groceries',15, 8.80, '2019/10/07', 1);
+	
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount,  status)
+	VALUES (10,'admin', '2019/10/30', 'savings for retirement',12, 200.00,  0);	
+
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (11,'admin', '2019/10/04', 'pet food',14, 12.00, '2019/10/04', 1);	
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount, paymentdate, status)
+	VALUES (12,'admin', '2019/10/11', 'pet food',14, 12.00, '2019/10/11', 1);
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount,  status)
+	VALUES (13,'admin', '2019/10/18', 'pet food',14, 12.00,  0);
+INSERT INTO public.ezfin_transactions(
+	idtransaction, iduser, duedate, description, idcategory, amount,  status)
+	VALUES (14,'admin', '2019/10/25', 'pet food',14, 12.00,  0);	
+	
