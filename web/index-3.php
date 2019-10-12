@@ -46,7 +46,11 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $count =0;
 $added = false;
-
+foreach ($rows as $row)
+{
+	
+}
+if ($added = false) echo '</ul>';
 ?>
 				
 
