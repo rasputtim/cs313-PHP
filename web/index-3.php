@@ -38,7 +38,16 @@ include('templates/menubar.php');
 
 
 
+<?php
 
+$stmt = $db->prepare('SELECT * FROM public.ezfin_transactions');
+//$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$count =0;
+$added = false;
+
+?>
 				
 
 
