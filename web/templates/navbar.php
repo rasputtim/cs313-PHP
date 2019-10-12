@@ -77,6 +77,8 @@ if ($index5=="true"){
 							<input type="password" name="password" class="form-control form-control-sm" placeholder = "password = 123456" required>
 							<span class="help-block"><?php echo $password_err; ?></span>
 						</div>
+				</li>
+				<li class="<?php echo $index5_active; ?>" >	
 						<div class="form-group">
 							<input type="submit" class="btn btn-primary" value="Login">
 						</div>
