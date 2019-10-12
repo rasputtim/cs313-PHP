@@ -101,10 +101,6 @@ if ($added = false) echo '</ul>';
 <div class="row">
 <div class="span12">
 
-<div class="line1"></div>
-
-<h2>Special offers</h2>
-
 
 <div class="line1"></div>
 
