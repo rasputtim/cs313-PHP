@@ -69,12 +69,12 @@ if ($index5=="true"){
 					<form class="form-inline" action="login.php" method="post">
 						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 							<label >Username</label>
-							<input type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
+							<input size="50" type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
 							<span class="help-block"><?php echo $username_err; ?></span>
 						</div>    
 						<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
 							<label>Password</label>
-							<input type="password" name="password" class="form-control form-control-sm" placeholder = "password = 123456" required>
+							<input  size="50" type="password" name="password" class="form-control form-control-sm" placeholder = "password = 123456" required>
 							<span class="help-block"><?php echo $password_err; ?></span>
 						</div>
 				</li>
