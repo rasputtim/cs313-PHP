@@ -549,5 +549,5 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 #username
 {
    float: left;
-   width: 34px;
+   width: 100px;
 }
