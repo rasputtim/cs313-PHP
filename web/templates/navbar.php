@@ -67,26 +67,22 @@ if ($index5=="true"){
 				<li class="<?php echo $index5_active; ?>" ><a href="index-5.php">Contacts</a></li>	
 				<li class="<?php echo $index5_active; ?>" >
 					<form class="form-inline" action="login.php" method="post">
-					<div class="form-group row">
-						<div class="col-xs-2">
-							<div class="form-group  <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-								<label class="col-form-label col-form-label-sm">Username</label>
-								<input type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
-								<span class="help-block"><?php echo $username_err; ?></span>
-							</div>    
-							<div class="form-group  <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-								<label class="col-form-label col-form-label-sm" >Password</label>
-								<input type="password" name="password" class="form-control form-control-sm" placeholder = "password = 123456" required>
-								<span class="help-block"><?php echo $password_err; ?></span>
-							</div>
+						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+							<label class="col-form-label col-form-label-sm">Username</label>
+							<input type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
+							<span class="help-block"><?php echo $username_err; ?></span>
+						</div>    
+						<div id="passwrd" class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+							<label class="col-form-label col-form-label-sm" >Password</label>
+							<input type="password" name="password" class="form-control form-control-sm" placeholder = "password = 123456" required>
+							<span class="help-block"><?php echo $password_err; ?></span>
 						</div>
-						<div class="col-xs-2">
-							<div class="form-group">
-								<input type="submit" class="btn btn-primary" value="Login">
-							</div>
-							<p><a href="register.php">Sign up now</a>.</p>
+				</li>
+				<li class="<?php echo $index5_active; ?>" >	
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Login">
 						</div>
-					<div class="form-group row">
+						<p><a href="register.php">Sign up now</a>.</p>
 					</form>
 				</li>
 
