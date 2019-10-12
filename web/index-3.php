@@ -56,7 +56,7 @@ foreach ($rows as $row)
 		    // todo: add category icon here
 			echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
 			echo '<div class="caption">';											
-				echo '<h3>'.$row['duedate']." - ". money_format($money_format, $row['amount']);
+				echo '<h3>'.date_format(date_create($row['duedate']),"DD, YYYY/MM/d")." - ". money_format($money_format, $row['amount']);
 				echo '</h3>';
 				echo '<p>';
 						echo $row['description']. '<a href="#"><strong>read more</strong></a>';
