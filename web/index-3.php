@@ -60,7 +60,7 @@ foreach ($rows as $row)
 				echo '<h3>'.date_format(date_create($row['duedate']),$date_format)." - ". money_format($money_format, $row['amount']);
 				echo '</h3>';
 				echo '<p>';
-						echo $row['description']. '<a href="#"><strong>read more</strong></a>';
+						echo $row['description']. '<a href=" edittransacton.php?idtrans='.$row['idtransaction'].'"><strong>  edit</strong></a>';
 				echo '</p>';
 			echo '</div>';			
 		echo '</div>';
