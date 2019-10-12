@@ -12,4 +12,3 @@ include('templates/navbar.php'); ?>
 </div>	
 </div>	
 </div>	
-</div>
