@@ -545,3 +545,8 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 	.navbar-form input{width: 240px;}
 	
 }
+
+#username
+{
+      width: 100px;
+}
