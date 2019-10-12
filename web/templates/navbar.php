@@ -67,7 +67,7 @@ if ($index5=="true"){
 				<li class="<?php echo $index5_active; ?>" ><a href="index-5.php">Contacts</a></li>	
 				<li class="<?php echo $index5_active; ?>" >
 					<form class="form-inline" action="login.php" method="post">
-						<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 							<label >Username</label>
 							<input type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
 							<span class="help-block"><?php echo $username_err; ?></span>
