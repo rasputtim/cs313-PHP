@@ -38,39 +38,7 @@ include('templates/menubar.php');
 
 
 
-<?php
 
-$stmt = $db->prepare('SELECT * FROM public.ezfin_transactions');
-//$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$count =0;
-$added = false;
-foreach ($rows as $row)
-{
-	$added = false;
-	if ($count  == 0 ) echo '<ul class="thumbnails thumbnails1">';
-	echo '<li>';
-		echo '<div class="thumbnail clearfix">';
-		    // todo: add category icon here
-			echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
-			echo '<div class="caption">';											
-				echo '<h3>'.$row['duedate']." - ". $row['amount'];
-				echo '</h3>';
-				echo '<p>'.
-					echo $row['description']. '<a href="#"><strong>read more</strong></a>';
-				echo '</p>';
-			echo '</div>';			
-		echo '</div>';
-	echo '<li>';
-	if ($count  == 1 ) {
-		echo '</ul>';
-		$count =0;
-		$added = true;
-	}else $count ++;
-}
-if ($added = false) echo '</ul>';
-?>
 				
 
 
