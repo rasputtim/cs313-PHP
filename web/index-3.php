@@ -84,7 +84,7 @@ if ($added = false) echo '</ul>';
 	foreach ($db->query('SELECT * FROM public.ezfin_transactions') as $row)
 	{
 	echo '<li><a href="#">';
-	echo $row['idcategory']." - ".$row['duedate']." - ".$row['amount'];
+	echo $row['idcategory']." - ".$row['duedate']." - ". money_format('%i', $row['amount']);
 	echo '</a></li>';
 	}
 ?>
