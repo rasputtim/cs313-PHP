@@ -50,6 +50,31 @@ CREATE TABLE ezfin_balanceView (
             FOREIGN KEY (idUser) REFERENCES ezfin_tusuario (id_usuario)
             );
             
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (1, 'admin', '2019/10/01', '2019/10/31', '2019/10/25', 'October', 'Balance for October', 1);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (2, 'admin', '2019/11/01', '2019/11/30', '2019/11/25', 'November', 'Balance for November', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (3, 'admin', '2019/12/01', '2019/12/31', '2019/12/25', 'December', 'Balance for December', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (4, 'admin', '2019/01/01', '2019/01/31', '2019/01/25', 'January', 'Balance for January', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (5, 'admin', '2019/02/01', '2019/02/28', '2019/02/25', 'February', 'Balance for February', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (6, 'admin', '2019/03/01', '2019/03/31', '2019/03/25', 'March', 'Balance for March', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (7, 'admin', '2019/04/01', '2019/04/30', '2019/04/25', 'April', 'Balance for April', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (8, 'admin', '2019/05/01', '2019/05/31', '2019/05/25', 'May', 'Balance for May', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (9, 'admin', '2019/06/01', '2019/06/30', '2019/06/25', 'June', 'Balance for June', 0);		
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (10, 'admin', '2019/07/01', '2019/07/31', '2019/07/25', 'July', 'Balance for July', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (11, 'admin', '2019/08/01', '2019/08/31', '2019/08/25', 'August', 'Balance for August', 0);	
+INSERT INTO public.ezfin_balanceview(idbalview, iduser, initialdate, finaldate, keydate, description, title, iscurrent)
+	VALUES (12, 'admin', '2019/09/01', '2019/09/30', '2019/09/25', 'September', 'Balance for September', 0);	
+	
 create table ezfin_sessions(
             idSession TEXT NOT NULL,
             idUser varchar(50) NOT NULL,

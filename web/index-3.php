@@ -19,7 +19,7 @@ include('templates/menubar.php');
 <div class="container">
 <div class="row">
 <div class="span12">
-<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;services</div>	
+<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;transactions</div>	
 </div>	
 </div>	
 </div>	
@@ -30,32 +30,45 @@ include('templates/menubar.php');
 <div class="row">
 <div class="span9">
 	
-<h1>Services  overview</h1>
+<h1>Transactions for the current period</h1>
 
-<ul class="thumbnails thumbnails1">
-	<li>
-		<div class="thumbnail clearfix">
-			<figure class=""><img src="images/services01.jpg" alt=""></figure>
-			<div class="caption">											
-				<h3>Lorem ipsum dones consectetur </h3>
-				<p>
-					Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit <a href="#"><strong>read more</strong></a>
-				</p>
-			</div>			
-		</div>
-	</li>
-	<li>
-		<div class="thumbnail clearfix">
-			<figure class=""><img src="images/services02.jpg" alt=""></figure>
-			<div class="caption">											
-				<h3>Lorem ipsum dones consectetur </h3>
-				<p>
-					Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit <a href="#"><strong>read more</strong></a>
-				</p>
-			</div>			
-		</div>
-	</li>				
-</ul>
+
+
+<?php
+
+$stmt = $db->prepare('SELECT * FROM public.ezfin_transactions');
+//$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$count =0;
+$added = false;
+foreach ($rows as $row)
+{
+	$added = false;
+	if ($count  == 0 ) echo '<ul class="thumbnails thumbnails1">';
+	echo '<li>';
+		echo '<div class="thumbnail clearfix">';
+		    // todo: add category icon here
+			echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
+			echo '<div class="caption">';											
+				echo '<h3>'.$row['duedate']." - ". $row['amount'];
+				echo '</h3>';
+				echo '<p>'.
+					echo $row['description']. '<a href="#"><strong>read more</strong></a>';
+				echo '</p>';
+			echo '</div>';			
+		echo '</div>';
+	echo '<li>';
+	if ($count  == 1 ) {
+		echo '</ul>';
+		$count =0;
+		$added = true;
+	}else $count ++;
+}
+if ($added = false) echo '</ul>';
+?>
+				
+
 
 <ul class="thumbnails thumbnails1">
 	<li>
