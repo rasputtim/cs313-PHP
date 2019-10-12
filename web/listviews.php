@@ -36,7 +36,7 @@ include('templates/menubar.php');
 <div class="row">
 <div class="span9">
 	
-<h1>Transactions for the current period</h1>
+<h1>Periods</h1>
 
 
 
@@ -105,39 +105,8 @@ if ($added = false) echo '</ul>';
 
 <h2>Special offers</h2>
 
-<div class="row">
-<div class="span6">
-<div class="thumb4">
-	<div class="thumbnail clearfix">
-		<figure class=""><img src="images/services07.jpg" alt=""></figure>
-		<div class="caption">
-			<h3>Lorem ipsum dones consectetur vorte gurti fablo dolore </h3>
-			<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini  <a href="#"><strong>read more</strong></a></p>
-		</div>
-	</div>
-</div>	
-</div>
-<div class="span6">
-<div class="thumb4">
-	<div class="thumbnail clearfix">
-		<figure class=""><img src="images/services08.jpg" alt=""></figure>
-		<div class="caption">
-			<h3>Lorem ipsum dones consectetur vorte gurti fablo dolore </h3>
-			<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini  <a href="#"><strong>read more</strong></a></p>
-		</div>
-	</div>
-</div>	
-</div>	
-</div>
-
-
 
 <div class="line1"></div>
-
-
-
-
-
 
 
 </div>	
