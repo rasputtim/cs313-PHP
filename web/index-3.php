@@ -2,6 +2,7 @@
 session_start();
 require_once ("inc/connect.php");
 include('templates/header.php'); 
+$money_format = '%(#10n';
 ?>
 
 <body class="subpage">
@@ -55,7 +56,7 @@ foreach ($rows as $row)
 		    // todo: add category icon here
 			echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
 			echo '<div class="caption">';											
-				echo '<h3>'.$row['duedate']." - ". $row['amount'];
+				echo '<h3>'.$row['duedate']." - ". money_format($money_format, $row['amount']);
 				echo '</h3>';
 				echo '<p>';
 						echo $row['description']. '<a href="#"><strong>read more</strong></a>';
@@ -84,7 +85,7 @@ if ($added = false) echo '</ul>';
 	foreach ($db->query('SELECT * FROM public.ezfin_transactions') as $row)
 	{
 	echo '<li><a href="#">';
-	echo $row['idcategory']." - ".$row['duedate']." - ". money_format('%(#10n.2n', $row['amount']);
+	echo $row['idcategory']." - ".$row['duedate']." - ". money_format($money_format, $row['amount']);
 	echo '</a></li>';
 	}
 ?>
