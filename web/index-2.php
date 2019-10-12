@@ -60,7 +60,7 @@ foreach ($rows as $row)
 	echo '<div class="span3">';
 	echo '<div class="thumb3">';
 	echo '<div class="thumbnail clearfix">';		
-	echo '<figure class=""><img src="'. $row['icon'] . '.png " alt=""></figure>';
+	echo '<figure class=""><img src="images/'. $row['icon'] . '.png " alt=""></figure>';
 	echo '<div class="caption">';
 	echo '<h3>' . $row['catname'] . '</h3>';
 	echo '<p>';
@@ -69,7 +69,7 @@ foreach ($rows as $row)
 				echo '<p>';
 				echo '<strong>Operation:'.$myOperation.'</strong>';
 				echo '</p>';
-				echo '<a href="#" class="button2">buy </a>';
+				echo '<a href="editcat.php?cat='.$row['idcat'].'" class="button2">edit </a>';
 				echo '</div>';		
 				echo '</div>';
 				echo '</div>';
