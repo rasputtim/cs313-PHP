@@ -66,7 +66,7 @@ if ($index5=="true"){
 				<li class="<?php echo $index4_active; ?>" ><a href="listviews.php">Views</a></li>
 				<li class="<?php echo $index5_active; ?>" ><a href="index-5.php">Contacts</a></li>	
 				<li class="<?php echo $index5_active; ?>" >
-					<form class="form-inline" action="login.php" method="post">
+					<form  action="login.php" method="post">
 						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 							<label class="col-form-label col-form-label-sm">Username</label>
 							<input type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
