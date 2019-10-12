@@ -64,7 +64,27 @@ if ($index5=="true"){
 				</li>
 				<li class="<?php echo $index3_active; ?>" ><a href="index-3.php">Transactions</a></li>
 				<li class="<?php echo $index4_active; ?>" ><a href="listviews.php">Views</a></li>
-				<li class="<?php echo $index5_active; ?>" ><a href="index-5.php">Contacts</a></li>											
+				<li class="<?php echo $index5_active; ?>" ><a href="index-5.php">Contacts</a></li>	
+				<li class="<?php echo $index5_active; ?>" >
+					<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+						<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+							<label>Username</label>
+							<input type="text" name="username" class="form-control" value="<?php echo $username; ?>" placeholder = "username = admin">
+							<span class="help-block"><?php echo $username_err; ?></span>
+						</div>    
+						<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+							<label>Password</label>
+							<input type="password" name="password" class="form-control" placeholder = "password = 123456" required>
+							<span class="help-block"><?php echo $password_err; ?></span>
+						</div>
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Login">
+						</div>
+						<p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+					</form>
+				</li>
+
+
     </ul>
 		</div>
 	</div>
