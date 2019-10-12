@@ -10,8 +10,10 @@ $index2="false";
 $index3="true";
 $index4="false";
 $index5="false";
-include('templates/menubar.php'); ?>
+include('templates/menubar.php'); 
+?>
 
+</div>
 
 <div class="breadcrumbs1">
 <div class="container">

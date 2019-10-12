@@ -12,7 +12,7 @@ $index4="true";
 $index5="false";
 include('templates/menubar.php'); 
 ?>
-
+</div>
 
 <div class="breadcrumbs1">
 <div class="container">
