@@ -47,7 +47,7 @@ include('templates/menubar.php');
 			<div class="thumbnail clearfix">
 				<a href="images/blank.png">
 					<figure>
-						<img src="images/gallery01.jpg" alt=""><em></em>
+						<img src="images/products01.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">							
 						lorem ipsun dolore sorte	
@@ -61,7 +61,7 @@ include('templates/menubar.php');
 			<div class="thumbnail clearfix">
 				<a href="images/blank.png">
 					<figure>
-						<img src="images/gallery02.jpg" alt=""><em></em>
+						<img src="images/products02.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">							
 						lorem ipsun dolore sorte		
@@ -75,7 +75,7 @@ include('templates/menubar.php');
 			<div class="thumbnail clearfix">
 				<a href="images/blank.png">
 					<figure>
-						<img src="images/gallery03.jpg" alt=""><em></em>
+						<img src="images/products03.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">							
 						lorem ipsun dolore sorte	
@@ -89,7 +89,7 @@ include('templates/menubar.php');
 			<div class="thumbnail clearfix">
 				<a href="images/blank.png">
 					<figure>
-						<img src="images/gallery04.jpg" alt=""><em></em>
+						<img src="images/products04.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">							
 						lorem ipsun dolore sorte
@@ -103,7 +103,7 @@ include('templates/menubar.php');
 			<div class="thumbnail clearfix">
 				<a href="images/blank.png">
 					<figure>
-						<img src="images/gallery05.jpg" alt=""><em></em>
+						<img src="images/products05.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">							
 						lorem ipsun dolore sorte	
