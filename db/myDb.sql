@@ -1,4 +1,4 @@
-heroku config -s
+﻿heroku config -s
 heroku pg:info
 heroku pg:psql
 
@@ -65,7 +65,7 @@ insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,oper
 insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,operation) values(2,'admin','BILL','cat_bill','whatever bill it is',1);
 insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,operation) values(3,'admin','HOUSING','cat_housing','The sum of the monthly mortgage payment, hazard insurance,property taxes, and homeowner association fees.\nHousing expense is sometimes referred to as PITI, standing for principal, interest, taxes, and insurance.',1);
 insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,operation) values(4,'admin','FOOD','cat_food','What do you spend on food',1);
-insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,operation) values(5,'admin','TRANSPORTATION','cat_trasnportation','"    Fuel\n" +
+insert into public.ezfin_category (idCat,idUser,catname,icon,catdescription,operation) values(5,'admin','TRANSPORTATION','cat_transportation','"    Fuel\n" +
             "     Tires\n" +
             "     Oil Changes\n" +
             "     Maintenance\n" +
