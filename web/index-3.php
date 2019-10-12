@@ -57,9 +57,9 @@ foreach ($rows as $row)
 			//echo '<div class="caption">';											
 				echo '<h3>'.$row['duedate']." - ". $row['amount'];
 				echo '</h3>';
-				//echo '<p>'.
-					//echo $row['description']. '<a href="#"><strong>read more</strong></a>';
-				//echo '</p>';
+				echo '<p>'.
+					echo $row['description']. '<a href="#"><strong>read more</strong></a>';
+				echo '</p>';
 			//echo '</div>';			
 		//echo '</div>';
 	echo '</li>';
