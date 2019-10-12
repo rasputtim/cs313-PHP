@@ -57,14 +57,14 @@ if ($index5=="true"){
 								<li><a href="index-2.php">lorem ipsum dolor</a></li>
 								<li><a href="index-2.php">sit amet</a></li>
 								<li><a href="index-2.php">adipiscing elit</a></li>
-								<li><a href="index-.php">projects</a></li>									
+								<li><a href="index-4.php">projects</a></li>									
 							</ul>
 						</li>						
 					</ul>						
 				</li>
 				<li class="<?php echo $index3_active; ?>" ><a href="index-3.php">Transactions</a></li>
-				<li class="<?php echo $index4_active; ?>" ><a href="index-4.php">Views</a></li>
-				<li class="<?php echo $index5_active; ?>" ><a href="listviews.php">Contacts</a></li>											
+				<li class="<?php echo $index4_active; ?>" ><a href="listviews.php">Views</a></li>
+				<li class="<?php echo $index5_active; ?>" ><a href="index-5.php">Contacts</a></li>											
     </ul>
 		</div>
 	</div>
