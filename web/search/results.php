@@ -4,7 +4,7 @@ if(!isset($_GET['s'])) {
 	die('You must define a search term!');
 	
 }
-
+/*
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm');//allowable filetypes to search in
 $search_dir = '../';//starting directory
@@ -52,6 +52,7 @@ foreach($files as $file){
 	}
 	$file_count++;
 }
+*/
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US" class="iframe">
