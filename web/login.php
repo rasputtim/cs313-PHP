@@ -80,18 +80,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
+                            $_SESSION["loggedin"] = false;
                             header("location: inc/noaccess.php");
                         }
                   
                 } else{
                     // Display an error message if username doesn't exist
                     $username_err = "No account found with that username.";
+                    $_SESSION["loggedin"] = false;
+                            header("location: inc/noaccess.php");
                 }
                 // Store result
                 // Bind result variables
                 
             } else{
                 echo "<p> Oops! Something went wrong. Please try again later.";
+                $_SESSION["loggedin"] = false;
+                header("location: inc/noaccess.php");
             }
         }
         
