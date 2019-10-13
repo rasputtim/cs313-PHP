@@ -10,8 +10,8 @@ $search_term = $_GET['s'];
 $search_term_length = strlen($search_term);
 $final_result = array();
 
-$final_result[1]['teste'][] = "TESTE 0";
-$final_result[1]['teste1'][] = "TESTE 1";
+$final_result[1]['search_result'][0] = "TESTE 0";
+$final_result[1]['search_result'][0] = "TESTE 1";
 
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm');//allowable filetypes to search in
