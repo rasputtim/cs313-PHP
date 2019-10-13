@@ -62,7 +62,7 @@ if ($index5=="true"){
 						</li>						
 					</ul>						
 				</li>
-				<li class="<?php echo $index3_active; ?>" ><a href="index-3.php">Transactions</a></li>
+				<li class="<?php echo $index3_active; ?>" ><a href="listtrans.php">Transactions</a></li>
 				<li class="<?php echo $index4_active; ?>" ><a href="listviews.php">Views</a></li>
 				<li class="<?php echo $index5_active; ?>" ><a href="index-5.php">Contacts</a></li>	
 				<li class="<?php echo $index5_active; ?>" >

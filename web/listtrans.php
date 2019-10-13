@@ -30,7 +30,7 @@ include('templates/menubar.php');
 <div class="container">
 <div class="row">
 <div class="span12">
-<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;views</div>	
+<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;transactions</div>	
 </div>	
 </div>	
 </div>	
@@ -39,22 +39,24 @@ include('templates/menubar.php');
 <div id="content">
 <div class="container">
 <div class="row">
+
 		<div class="search-form-wrapper clearfix">
 			<form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form clearfix" >
-				<input type="hidden" id="seach_what" name="t" value="balanceview">
+				<input type="hidden" id="seach_what" name="t" value="transactions">
 				<input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
 				<a href="#" onClick="document.getElementById('search-form').submit()"></a>
 			</form>
 		</div>
+
 <div class="span9">
 	
-<h1>Periods</h1>
+<h1>Transactions for the current period</h1>
 
 
 
 <?php
 
-$stmt = $db->prepare('SELECT * FROM public.ezfin_balanceview');
+$stmt = $db->prepare('SELECT * FROM public.ezfin_transactions');
 //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -69,10 +71,10 @@ foreach ($rows as $row)
 		    // todo: add category icon here
 			echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
 			echo '<div class="caption">';											
-				echo '<h3>'.date_format(date_create($row['initialdate']),$date_format)." - ". date_format(date_create($row['finaldate']),$date_format);
+				echo '<h3>'.date_format(date_create($row['duedate']),$date_format)." - ". money_format($money_format, $row['amount']);
 				echo '</h3>';
 				echo '<p>';
-						echo $row['title']. '<a href=" edittransacton.php?idtrans='.$row['idbalview'].'"><strong>  edit</strong></a>';
+						echo $row['description']. '<a href=" edittransacton.php?idtrans='.$row['idtransaction'].'"><strong>  edit</strong></a>';
 				echo '</p>';
 			echo '</div>';			
 		echo '</div>';
@@ -95,10 +97,10 @@ if ($added = false) echo '</ul>';
 
 	<ul class="ul1">
 <?php 
-	foreach ($db->query('SELECT * FROM public.ezfin_balanceview') as $row)
+	foreach ($db->query('SELECT * FROM public.ezfin_transactions') as $row)
 	{
 	echo '<li><a href="#">';
-	echo $row['title']." - ".$row['initialdate']." - ". $row['finaldate'];
+	echo $row['idcategory']." - ".$row['duedate']." - ". money_format($money_format, $row['amount']);
 	echo '</a></li>';
 	}
 ?>
@@ -113,8 +115,43 @@ if ($added = false) echo '</ul>';
 <div class="row">
 <div class="span12">
 
+<div class="line1"></div>
+
+<h2>Special offers</h2>
+
+<div class="row">
+<div class="span6">
+<div class="thumb4">
+	<div class="thumbnail clearfix">
+		<figure class=""><img src="images/services07.jpg" alt=""></figure>
+		<div class="caption">
+			<h3>Lorem ipsum dones consectetur vorte gurti fablo dolore </h3>
+			<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini  <a href="#"><strong>read more</strong></a></p>
+		</div>
+	</div>
+</div>	
+</div>
+<div class="span6">
+<div class="thumb4">
+	<div class="thumbnail clearfix">
+		<figure class=""><img src="images/services08.jpg" alt=""></figure>
+		<div class="caption">
+			<h3>Lorem ipsum dones consectetur vorte gurti fablo dolore </h3>
+			<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini  <a href="#"><strong>read more</strong></a></p>
+		</div>
+	</div>
+</div>	
+</div>	
+</div>
+
+
 
 <div class="line1"></div>
+
+
+
+
+
 
 
 </div>	
