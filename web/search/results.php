@@ -10,7 +10,7 @@ $search_term = $_GET['s'];
 $search_term_length = strlen($search_term);
 $final_result = array();
 
-$final_result[1]['search_result'][0] = "TESTE 0";
+$final_result[0]['search_result'][0] = "TESTE 0";
 $final_result[1]['search_result'][1] = "TESTE 1";
 
 $highlight = true;//highlight results or not
