@@ -14,8 +14,25 @@ $search_term = $_GET['s'];
 $search_term_length = strlen($search_term);
 $final_result = array();
 $search_term = '%'.$search_term.'%';
+$sql_count="";
+$sql_search="";
+switch ($table) {
+    case "category":
+		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op";
+        break;
+    case "balanceview":
+		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op";
+        break;
+    case "transaction":
+		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op";
+        break;
+}
+
 $count = 0;
-$stmt = $db->prepare("SELECT count(*) FROM $search_table WHERE catname LIKE :op");
+$stmt = $db->prepare($sql_count);
 //$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
 $stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 $stmt->execute();
@@ -23,7 +40,7 @@ $count = $stmt->fetchColumn();
 $final_result[2]['search_result'][0] = "Count: $count";
 if($count > 0){
 	$line_count =0;
-	$stmt = $db->prepare("SELECT * FROM public.ezfin_category WHERE catname LIKE :op" );
+	$stmt = $db->prepare($sql_search);
 	$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 	$stmt->execute();
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
