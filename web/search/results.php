@@ -15,7 +15,7 @@ $search_term_length = strlen($search_term);
 $final_result = array();
 
 $count = 0;
-$stmt = $db->prepare("SELECT count(*) FROM $search_table WHERE catname = :op");
+$stmt = $db->prepare("SELECT count(*) FROM $search_table WHERE catname LIKE %:op%");
 //$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
 $stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 $stmt->execute();
