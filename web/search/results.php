@@ -5,7 +5,7 @@ if(!isset($_GET['s'])) {
 }
 
 if(!isset($_GET['t'])) {
-	die('You must define a search what!');
+//	die('You must define a search what!');
 }
 
 //$search_term = mb_strtolower($_GET['s'], 'UTF-8');
