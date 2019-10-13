@@ -10,7 +10,7 @@ $(function(){
 	if(results.length)		
 		ifr		
 			.attr({
-				src:src+'?s='+s
+				src:src+'?t='+t
 			})
 			.appendTo(results)
 		,input
