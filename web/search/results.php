@@ -5,13 +5,13 @@ if(!isset($_GET['s'])) {
 }
 
 
-$search_term = mb_strtolower($_GET['s'], 'UTF-8');
+//$search_term = mb_strtolower($_GET['s'], 'UTF-8');
 $search_term = $_GET['s'];
 $search_term_length = strlen($search_term);
 $final_result = array();
 
 
-/*
+
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm');//allowable filetypes to search in
 $search_dir = '../';//starting directory
@@ -28,7 +28,7 @@ foreach($files as $file){
 		$clean_content = preg_replace( '/\s+/', ' ', $clean_content ); //remove duplicate whitespaces, carriage returns, tabs, etc
 	
 	//$found = strpos_recursive($clean_content, $search_term);
-	$found = strpos_recursive(mb_strtolower($clean_content, 'UTF-8'), $search_term);
+	$found = strpos_recursive(strtolower($clean_content, 'UTF-8'), $search_term);
 	$final_result[$file_count]['page_title'][] = $page_title[1];
 	$final_result[$file_count]['file_name'][] = $file;
 }
@@ -54,7 +54,7 @@ foreach($files as $file){
 	}
 	$file_count++;
 }
-*/
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US" class="iframe">
