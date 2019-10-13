@@ -112,11 +112,11 @@ Telephone: +1 800 123 1234<br>
 <h2>Why choose us</h2>
 
 	<ul class="ul1">
-	  <li><a href="#">Quisque nullatibulum libero</a></li>
-	  <li><a href="#">Scelerisque eget, malesuada at</a></li>
-	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>
-	  <li><a href="#">Nulla facilisinean nec eros</a></li>
-	  <li><a href="#">Vestibulum ante ipsum</a></li>	  	            		      	      			      
+	  <li><a href="#">Our software systems integrate with back-end financials and use the latest digital technologies</a></li>
+	  <li><a href="#">We Transform financial management to become intelligent</a></li>
+	  <li><a href="#">Fuel the economy by turning bad debt into profit</a></li>
+	  <li><a href="#">Our professional staff is available when you call</a></li>
+	  <li><a href="#">Simply put, We Make it Easy. </a></li>	  	            		      	      			      
 	</ul>	
 
 	<br>
@@ -129,21 +129,21 @@ Telephone: +1 800 123 1234<br>
 	<ul id="caroufredsel" class="clearfix">
 		<li>
 			<div class="testimonial1">
-				<div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-				<div class="txt2">- Mike Smith, <span>CEO Company</span></div>
+				<div class="txt1">Efficiently manage a complex portfolio and keep up with digital trends. This cloud-based  management software delivers a modern user experience with a clear view of space utilization, facility costs, global portfolio compositions, and financial performance – all in real time. </div>
+				<div class="txt2">- Salvatore, <span>CEO Company</span></div>
 			</div>
 			
 		</li>
 		<li>
 			<div class="testimonial1">
-				<div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+				<div class="txt1">EzFin innovations help 437,000 customers worldwide control finences more efficiently and use budget insight more effectively. Explore our leadership, history, sustainability, diversity. </div>
 				<div class="txt2">- Olga Guz, <span>CEO Company</span></div>
 			</div>
 			
 		</li>
 		<li>
 			<div class="testimonial1">
-				<div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+				<div class="txt1">EzFin helps the world run better and improves peoples’ lives through our integrated strategy. Our Integrated Reports details customer performance and what is material for our sustainable financial success.</div>
 				<div class="txt2">- Ann Parker, <span>CEO Company</span></div>
 			</div>
 			
@@ -152,16 +152,7 @@ Telephone: +1 800 123 1234<br>
 </div>
 </div>
 
-<h2>special offer <span>save %50</span></h2>
 
-<p>
-	<strong>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</strong>
-</p>
-<p>
-	Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-</p>
-
-<a href="#" class="button2">read more</a>
 
 
 	
