@@ -28,7 +28,7 @@ if($count > 0){
 	
 	foreach ($rows as $row)
 	{
-		$final_result[$line_count]['search_result'][0] = $row["catname"]." - ". $row["catdescription"]." - ".$t;
+		$final_result[$line_count]['search_result'][0] = $t." - " .$row["catname"]." - ". $row["catdescription"];
 		$line_count++;
 	}
 
