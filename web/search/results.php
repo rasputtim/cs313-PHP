@@ -2,9 +2,8 @@
 
 if(!isset($_GET['s'])) {
 	die('You must define a search term!');
-	
 }
-
+/*
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm');//allowable filetypes to search in
 $search_dir = '../';//starting directory
@@ -16,9 +15,6 @@ $search_term = mb_strtolower($_GET['s'], 'UTF-8');
 $search_term_length = strlen($search_term);
 $final_result = array();
 
-// verify if there are any register to add
-
-/*
 $files = list_files($search_dir);
 
 foreach($files as $file){
@@ -72,7 +68,7 @@ foreach($files as $file){
 ;(function(){	
 	document.body.onload=resize
 	window.onresize=resize
-	window.alert("TESTE");
+	
 	function resize(){
 		parent._resize(document.getElementById('search-results').offsetHeight)
 	}
@@ -97,7 +93,6 @@ foreach($files as $file){
 		}
 		if ($match_count == 0) {
 			echo '<h6>No results found for <span class="search">'.$search_term.'</span></h6>';
-			
 		}
 	?>
 		</ol>
