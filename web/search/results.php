@@ -26,7 +26,7 @@ if ($count >0) {
 $stmt = $db->prepare('SELECT * FROM public.ezfin_category WHERE catname LIKE %:op% OR catdescription LIKE %:op%' );
 $stmt->bindValue(':op', $search_term, PDO::PARAM_INT);
 $stmt->execute();
-$final_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//$final_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $count =0;
 $added = false;
 }else{
