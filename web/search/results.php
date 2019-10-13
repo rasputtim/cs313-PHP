@@ -11,7 +11,7 @@ $search_term_length = strlen($search_term);
 $final_result = array();
 
 $final_result[0]['teste'][] = "TESTE 0";
-$final_result[1]['teste1'][] = "TESTE 1";
+$final_result[0]['teste1'][] = "TESTE 1";
 
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm');//allowable filetypes to search in
