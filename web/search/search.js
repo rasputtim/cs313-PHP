@@ -6,7 +6,7 @@ $(function(){
 		,results=$('#search-results').height(0)
 		,src='search/results.php'
 		,ifr=$('<iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" allowTransparency="true"></iframe>')
-		window.alert(t);
+		//window.alert(t);
 	if(results.length)		
 		ifr		
 			.attr({
