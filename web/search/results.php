@@ -8,7 +8,7 @@ if(!isset($_GET['s'])) {
 $search_term = mb_strtolower($_GET['s'], 'UTF-8');
 //$search_term = $_GET['s'];
 $search_term_length = strlen($search_term);
-$final_result = array();
+//$final_result = array();
 
 
 /*
