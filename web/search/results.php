@@ -13,6 +13,12 @@ $final_result = array();
 $final_result[0]['search_result'][0] = "TESTE 0";
 $final_result[1]['search_result'][0] = "TESTE 1";
 
+$stmt = $pdo->prepare("SELECT count(*) FROM public.ezfin_category WHERE catname = ?");
+$stmt->execute([$category_id]);
+$count = $stmt->fetchColumn();
+$final_result[2]['search_result'][0] = "Count: $count";
+
+
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm', 'php');//allowable filetypes to search in
 $search_dir = '../';//starting directory
