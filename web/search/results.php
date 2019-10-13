@@ -14,7 +14,7 @@ $final_result[0]['search_result'][0] = "TESTE 0";
 $final_result[1]['search_result'][0] = "TESTE 1";
 
 $stmt = $db->prepare("SELECT count(*) FROM public.ezfin_category WHERE catname = ?");
-$stmt->execute([$category_id]);
+$stmt->execute($search_term);
 $count = $stmt->fetchColumn();
 $final_result[2]['search_result'][0] = "Count: $count";
 
