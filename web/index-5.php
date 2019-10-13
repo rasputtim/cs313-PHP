@@ -40,16 +40,16 @@ include('templates/menubar.php');
 <h1>contact address</h1>
 
 <figure class="google_map">
-    <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Glasgow,&amp;aq=&amp;sll=46.975033,31.994583&amp;sspn=0.368248,0.617294&amp;vpsrc=6&amp;ie=UTF8&amp;hq=&amp;hnear=Glasgow,+Glasgow+City,+United+Kingdom&amp;t=m&amp;ll=55.866932,-4.256344&amp;spn=0.020324,0.070896&amp;z=13&amp;output=embed"></iframe>
+    <iframe src="https://www.google.com/maps/place/525+S+Center+St,+Rexburg,+ID+83460,+EUA/@43.814189,-111.7852708,17z/data=!3m1!4b1!4m5!3m4!1s0x53540b03c3c8b0cd:0xfd28a97e4cccebc!8m2!3d43.814189!4d-111.7830821"></iframe>
 </figure>
 
 <h3>mobile</h3>
 
 <p>
-	8901 Marmora Road,<br>
+
+8901 Marmora Road,<br>
 Glasgow, D04 89GR.<br>
 Telephone: +1 800 123 1234<br>
-E-mail: <a href="#">mail@bteamny.com</a>
 </p>
 
 <div class="line1"></div>
