@@ -10,7 +10,8 @@ $search_term = $_GET['s'];
 $search_term_length = strlen($search_term);
 $final_result = array();
 
-
+$final_result[0]['teste'][] = "TESTE 0";
+$final_result[1]['teste1'][] = "TESTE 1";
 
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm');//allowable filetypes to search in
@@ -31,7 +32,7 @@ foreach($files as $file){
 	$found = strpos_recursive(strtolower($clean_content, 'UTF-8'), $search_term);
 	$final_result[$file_count]['page_title'][] = $page_title[1];
 	$final_result[$file_count]['file_name'][] = $file;
-}
+	}
 	if($found && !empty($found)) {
 		for ($z = 0; $z < count($found[0]); $z++){
 			$pos = $found[0][$z][1];
