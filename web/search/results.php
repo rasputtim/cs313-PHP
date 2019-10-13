@@ -13,8 +13,9 @@ $final_result = array();
 $final_result[0]['search_result'][0] = "TESTE 0";
 $final_result[1]['search_result'][0] = "TESTE 1";
 
-$stmt = $db->prepare("SELECT count(*) FROM public.ezfin_category WHERE catname = ?");
-$stmt->execute($search_term);
+$stmt = $db->prepare("SELECT count(*) FROM public.ezfin_category WHERE catname = :op");
+$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
+$stmt->execute();
 $count = $stmt->fetchColumn();
 $final_result[2]['search_result'][0] = "Count: $count";
 
