@@ -7,14 +7,16 @@ if(!isset($_GET['s'])) {
 if(!isset($_GET['t'])) {
 //	die('You must define a search what!');
 }
-$t=$_GET['t'];
+$table=$_GET['t'];
+$search_table = 'public.ezfin_'.$table;
 //$search_term = mb_strtolower($_GET['s'], 'UTF-8');
 $search_term = $_GET['s'];
 $search_term_length = strlen($search_term);
 $final_result = array();
 
 $count = 0;
-$stmt = $db->prepare("SELECT count(*) FROM public.ezfin_category WHERE catname = :op");
+$stmt = $db->prepare("SELECT count(*) FROM :tb WHERE catname = :op");
+$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
 $stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 $stmt->execute();
 $count = $stmt->fetchColumn();
