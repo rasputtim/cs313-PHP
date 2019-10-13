@@ -2,6 +2,7 @@
 
 if(!isset($_GET['s'])) {
 	die('You must define a search term!');
+	 header("location: inc/noaccess.php");
 }
 
 $highlight = true;//highlight results or not
@@ -92,7 +93,7 @@ foreach($files as $file){
 		}
 		if ($match_count == 0) {
 			echo '<h6>No results found for <span class="search">'.$search_term.'</span></h6>';
-			echo '<script> window.alert("ENTROU");</script>';
+			
 		}
 	?>
 		</ol>
