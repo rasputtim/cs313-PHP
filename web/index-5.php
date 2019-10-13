@@ -40,7 +40,7 @@ include('templates/menubar.php');
 <h1>contact address</h1>
 
 <figure class="google_map">
-    <iframe src="https://www.google.com/maps/place/525+S+Center+St,+Rexburg,+ID+83460,+EUA/@43.814189,-111.7852708,17z/data=!3m1!4b1!4m5!3m4!1s0x53540b03c3c8b0cd:0xfd28a97e4cccebc!8m2!3d43.814189!4d-111.7830821"></iframe>
+    <iframe src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=43.814214,-111783096&amp;q=525%20S%20Center%20St%2C%20Rexburg%2C%20ID%2083460+(My%20Businetestess%20Name)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed"></iframe>
 </figure>
 
 <h3>mobile</h3>
