@@ -4,17 +4,20 @@ if(!isset($_GET['s'])) {
 	die('You must define a search term!');
 }
 
+
+$search_term = mb_strtolower($_GET['s'], 'UTF-8');
+//$search_term = $_GET['s'];
+$search_term_length = strlen($search_term);
+$final_result = array();
+
+
+/*
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm');//allowable filetypes to search in
 $search_dir = '../';//starting directory
 $recursive = true;//should it search recursively or not
 define('SIDE_CHARS', 80);
 $file_count = 0;
-$search_term = mb_strtolower($_GET['s'], 'UTF-8');
-//$search_term = $_GET['s'];
-$search_term_length = strlen($search_term);
-$final_result = array();
-/*
 $files = list_files($search_dir);
 
 foreach($files as $file){
