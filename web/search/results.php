@@ -25,7 +25,7 @@ switch ($table) {
 		$sql_count="SELECT count(*) FROM $search_table WHERE description LIKE :op";
 		$sql_search="SELECT * FROM $search_table WHERE description LIKE :op";
         break;
-    case "transaction":
+    case "transactions":
 		$sql_count="SELECT count(*) FROM $search_table WHERE description LIKE :op";
 		$sql_search="SELECT * FROM $search_table WHERE description LIKE :op";
         break;
