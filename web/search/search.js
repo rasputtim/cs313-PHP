@@ -1,6 +1,6 @@
 $(function(){
 	var s=location.search.replace(/^\?.*s=([^&]+)/,'$1')
-	    ,t=location.search.replace(/^\?.*t=([^&]+)/,'$2')
+	    ,t=location.search.replace(/^\?.*t=([^&]+)/,'$1')
 		,form=$('#search-form')
 		,input=$('input[type=text]',form)
 		,results=$('#search-results').height(0)
