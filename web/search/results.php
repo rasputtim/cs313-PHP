@@ -12,13 +12,26 @@ $final_result = array();
 
 $final_result[0]['search_result'][0] = "TESTE 0";
 $final_result[1]['search_result'][0] = "TESTE 1";
-
+$count = 0;
 $stmt = $db->prepare("SELECT count(*) FROM public.ezfin_category WHERE catname = :op");
 $stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 $stmt->execute();
 $count = $stmt->fetchColumn();
 $final_result[2]['search_result'][0] = "Count: $count";
+if($count > 0){
+	$line_count =2;
+	$stmt = $db->prepare("SELECT * FROM public.ezfin_category WHERE catname = :op" );
+	$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
+	$stmt->execute();
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	
+	foreach ($rows as $row)
+	{
+		$final_result[$line_count]['search_result'][0] = $row["catname"]." - ". $row["catdescription"];
+		$line_count++;
+	}
 
+}
 
 $highlight = true;//highlight results or not
 $search_in = array('html', 'htm', 'php');//allowable filetypes to search in
