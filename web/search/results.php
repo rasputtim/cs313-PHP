@@ -2,7 +2,7 @@
 
 if(!isset($_GET['s'])) {
 	die('You must define a search term!');
-	 header("location: inc/noaccess.php");
+	
 }
 
 $highlight = true;//highlight results or not
@@ -68,7 +68,7 @@ foreach($files as $file){
 ;(function(){	
 	document.body.onload=resize
 	window.onresize=resize
-	
+	window.alert("TESTE");
 	function resize(){
 		parent._resize(document.getElementById('search-results').offsetHeight)
 	}
