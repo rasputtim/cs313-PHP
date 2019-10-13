@@ -92,6 +92,7 @@ foreach($files as $file){
 		}
 		if ($match_count == 0) {
 			echo '<h6>No results found for <span class="search">'.$search_term.'</span></h6>';
+			echo '<script> window.alert("ENTROU");</script>';
 		}
 	?>
 		</ol>
