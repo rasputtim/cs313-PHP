@@ -1,5 +1,5 @@
 <?php
-
+require_once ("../inc/connect.php");
 if(!isset($_GET['s'])) {
 	die('You must define a search term!');
 }
@@ -13,7 +13,7 @@ $final_result = array();
 $final_result[0]['search_result'][0] = "TESTE 0";
 $final_result[1]['search_result'][0] = "TESTE 1";
 
-$stmt = $pdo->prepare("SELECT count(*) FROM public.ezfin_category WHERE catname = ?");
+$stmt = $db->prepare("SELECT count(*) FROM public.ezfin_category WHERE catname = ?");
 $stmt->execute([$category_id]);
 $count = $stmt->fetchColumn();
 $final_result[2]['search_result'][0] = "Count: $count";
