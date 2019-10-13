@@ -40,24 +40,31 @@ if ($index5=="true"){
 			<ul class="nav sf-menu clearfix">
       <li><a href="index.php">Home</a></li>
       <li class="<?php echo $index1_active; ?> "><a href="index-1.php">About Us</a></li>
-				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="index-2.php">Administration</a>
+				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="#">Administration</a>
 					<ul>
-						<li><a href="index-2.php">Options</a></li>
-						<li class="sub-menu sub-menu-2"><a href="index-2.php">Categories</a>
+						<li><a href="options.php">Options</a></li>
+						<li class="sub-menu sub-menu-2"><a href="listcats.php">Categories</a>
 							<ul>
-								<li><a href="index-2.php">lorem ipsum dolor</a></li>
-								<li><a href="index-2.php">sit amet</a></li>
-								<li><a href="index-2.php">adipiscing elit</a></li>
-								<li><a href="index-2.php">nunc suscipit</a></li>
-								<li><a href="404.php">404 page not found</a></li>
+								<li><a href="inccats.php">Include</a></li>
+								<li><a href="editcats.php">Edit</a></li>
+								<li><a href="listcats.php">Search</a></li>
+								
 							</ul>
 						</li>
-						<li class="sub-menu sub-menu-2"><a href="index-2.php">Balance Views</a>
+						<li class="sub-menu sub-menu-2"><a href="listviews.php">Periods</a>
 							<ul>
-								<li><a href="index-2.php">lorem ipsum dolor</a></li>
-								<li><a href="index-2.php">sit amet</a></li>
-								<li><a href="index-2.php">adipiscing elit</a></li>
-								<li><a href="index-4.php">projects</a></li>									
+								<li><a href="incviews.php">Include</a></li>
+								<li><a href="editviews.php">Edit</a></li>
+								<li><a href="listviews.php">Search</a></li>
+																
+							</ul>
+						</li>
+						<li class="sub-menu sub-menu-2"><a href="listviews.php">Transactions</a>
+							<ul>
+								<li><a href="inctrans.php">Include</a></li>
+								<li><a href="edittrans.php">Edit</a></li>
+								<li><a href="listtrans.php">Search</a></li>
+																
 							</ul>
 						</li>						
 					</ul>						
