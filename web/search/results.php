@@ -30,7 +30,7 @@ if($count > 0){
 	
 	foreach ($rows as $row)
 	{
-		$final_result[$line_count]['search_result'][0] = $t." - " .$row["catname"]." - ". $row["catdescription"];
+		$final_result[$line_count]['search_result'][0] = $table." - " .$row["catname"]." - ". $row["catdescription"];
 		$line_count++;
 	}
 
@@ -68,7 +68,7 @@ if($count > 0){
 				$match_count++;
 	?>
 			<li>
-				<h6 class="search_title"><a target="_top" href="<?php echo $final_result[$i]['file_name'][0]; ?>" class="search_link"> <?php echo $final_result[$i]['page_title'][0]; ?> </a></h6>
+				<h6 class="search_title"><a target="_top" href="<?php echo $final_result[$i]['file_name'][0]; ?>" class="search_link"> <?php echo $table; ?> </a></h6>
 				...<?php echo $final_result[$i]['search_result'][0]; ?>...
 				<span class="match">Terms matched: <?php echo count($final_result[$i]['search_result']); ?> - URL: <?php echo $final_result[$i]['file_name'][0]; ?></span>
 			</li>
