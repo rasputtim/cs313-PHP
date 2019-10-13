@@ -4,6 +4,9 @@ if(!isset($_GET['s'])) {
 	die('You must define a search term!');
 }
 
+if(!isset($_GET['t'])) {
+	die('You must define a search what!');
+}
 
 //$search_term = mb_strtolower($_GET['s'], 'UTF-8');
 $search_term = $_GET['s'];
@@ -25,53 +28,10 @@ if($count > 0){
 	
 	foreach ($rows as $row)
 	{
-		$final_result[$line_count]['search_result'][0] = $row["catname"]." - ". $row["catdescription"];
+		$final_result[$line_count]['search_result'][0] = $row["catname"]." - ". $row["catdescription"]." - ".$t;
 		$line_count++;
 	}
 
-}
-
-$highlight = true;//highlight results or not
-$search_in = array('html', 'htm', 'php');//allowable filetypes to search in
-$search_dir = '../';//starting directory
-$recursive = true;//should it search recursively or not
-define('SIDE_CHARS', 80);
-$file_count = 0;
-$files = list_files($search_dir);
-
-foreach($files as $file){
-	$contents = file_get_contents($file);
-	preg_match("/\<title\>(.*)\<\/title\>/", $contents, $page_title); //getting page title
-	if (preg_match("#\<body.*\>(.*)\<\/body\>#si", $contents, $body_content)){ //getting content only between <body></body> tags
-		$clean_content = strip_tags($body_content[0]); //remove html tags
-		$clean_content = preg_replace( '/\s+/', ' ', $clean_content ); //remove duplicate whitespaces, carriage returns, tabs, etc
-	
-	//$found = strpos_recursive($clean_content, $search_term);
-	$found = strpos_recursive(strtolower($clean_content, 'UTF-8'), $search_term);
-	$final_result[$file_count]['page_title'][] = $page_title[1];
-	$final_result[$file_count]['file_name'][] = $file;
-	}
-	if($found && !empty($found)) {
-		for ($z = 0; $z < count($found[0]); $z++){
-			$pos = $found[0][$z][1];
-			$side_chars = SIDE_CHARS;
-			if ($pos < SIDE_CHARS){
-				$side_chars = $pos;
-				$pos_end = SIDE_CHARS + $search_term_length;
-			}else{
-				$pos_end = SIDE_CHARS*2 + $search_term_length;
-			}
-
-			$pos_start = $pos - $side_chars;
-			$str = substr($clean_content, $pos_start, $pos_end);
-			$result = preg_replace('#'.$search_term.'#ui', '<span class="search">\0</span>', $str);
-			//$result = preg_replace('#'.$search_term.'#ui', '<span class="search">'.$search_term.'</span>', $str);
-			$final_result[$file_count]['search_result'][] = $result;
-		}
-	} else {
-		$final_result[$file_count]['search_result'][] = '';
-	}
-	$file_count++;
 }
 
 ?>
