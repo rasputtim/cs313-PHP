@@ -1,11 +1,12 @@
 $(function(){
 	var s=location.search.replace(/^\?.*s=([^&]+)/,'$1')
+	    ,t=location.search.replace(/^\?.*s=([^&]+)/,'$1')
 		,form=$('#search-form')
 		,input=$('input[type=text]',form)
 		,results=$('#search-results').height(0)
 		,src='search/results.php'
 		,ifr=$('<iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" allowTransparency="true"></iframe>')
-		window.alert(document.getElementById('seach_what').value);
+		window.alert(s);
 	if(results.length)		
 		ifr		
 			.attr({
