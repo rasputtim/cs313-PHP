@@ -18,16 +18,16 @@ $sql_count="";
 $sql_search="";
 switch ($table) {
     case "category":
-		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op";
-		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op";
+		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op OR catdescription  LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op OR catdescription  LIKE :op";
         break;
     case "balanceview":
-		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op";
-		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op";
+		$sql_count="SELECT count(*) FROM $search_table WHERE description LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE description LIKE :op";
         break;
     case "transaction":
-		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op";
-		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op";
+		$sql_count="SELECT count(*) FROM $search_table WHERE description LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE description LIKE :op";
         break;
 }
 
