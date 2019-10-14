@@ -66,7 +66,21 @@ foreach ($rows as $row)
 {
 	//get category
 	$oper_image ="";
-	
+	$stmt = $db->prepare('SELECT operation FROM public.ezfin_category WHERE idcat =  :op');
+	$stmt->bindValue(':op', $row['idcategory'], PDO::PARAM_INT);
+	$stmt->execute();
+	$operation = $stmt->fetchColumn();
+	switch($operation){
+	   case 0:
+	   $operation ="cat_income_green.png";
+	   break;
+	   case 1:
+	   $operation ="cat_bill_red.png";
+	   break;
+	   case 2:
+	   $operation = "cat_informative.png";
+	   break;
+	}
 	$added = false;
 	if ($count  == 0 ) echo '<ul class="thumbnails thumbnails1">';
 	echo '<li>';
