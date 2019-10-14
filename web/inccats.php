@@ -38,10 +38,10 @@ include('templates/menubar.php');
 		
 <div class="span9">
 	
-<h1>categories  overview</h1>
+<h1>Add category</h1>
 
 
-<div class="container">
+
 
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
 <fieldset>
@@ -169,7 +169,7 @@ include('templates/menubar.php');
 
 </fieldset>
 </form>
-</div>
+
 <!-- /.container -->
 
 
