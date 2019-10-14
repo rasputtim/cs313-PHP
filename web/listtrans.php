@@ -64,12 +64,29 @@ $count =0;
 $added = false;
 foreach ($rows as $row)
 {
+	//get category
+	$oper_image ="";
+	$stmt = $db->prepare('SELECT operation FROM public.ezfin_category WHERE idCat =  :op');
+	$stmt->bindValue(':op', $row['idCat'], PDO::PARAM_INT);
+	$stmt->execute();
+	$operation = $stmt->fetchColumn();
+	switch($operation){
+	   case 0:
+	   $operation ="cat_income_green.png"
+	   break;
+	   case 1:
+	   $operation ="cat_bill_red.png";
+	   break;
+	   case 2:
+	   $operation = "cat_informative.png";
+	   break;
+	}
 	$added = false;
 	if ($count  == 0 ) echo '<ul class="thumbnails thumbnails1">';
 	echo '<li>';
 		echo '<div class="thumbnail clearfix">';
 		    // todo: add category icon here
-			echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
+			echo '<figure class=""><img src="images/'.$oper_image.'" alt=""></figure>';
 			echo '<div class="caption">';											
 				echo '<h3>'.date_format(date_create($row['duedate']),$date_format)." - ". money_format($money_format, $row['amount']);
 				echo '</h3>';
