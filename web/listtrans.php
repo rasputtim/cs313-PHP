@@ -82,9 +82,9 @@ foreach ($rows as $row)
 	   break;
 	}
 	$added = false;
-	if ($count  == 0 ) echo '<ul class="thumbnails thumbnails1">';
+	if ($count  == 0 ) echo '<ul class="">';
 	echo '<li>';
-		echo '<div class="thumbnail clearfix">';
+		echo '<div class=" clearfix">';
 		    // todo: add category icon here
 			echo '<img class="oper_icon"><img src="images/'.$oper_image.'" alt=""></img>';
 			echo '<div class="caption">';											
