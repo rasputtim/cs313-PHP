@@ -56,7 +56,7 @@ switch ($table) {
 
 $stmt->execute();
 $count = $stmt->fetchColumn();
-$final_result[2]['search_result'][0] = "Count: $count";
+//$final_result[2]['search_result'][0] = "Count: $count";
 if($count > 0){
 	$line_count =0;
 	$stmt = $db->prepare($sql_search);

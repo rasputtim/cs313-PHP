@@ -1,0 +1,55 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+https://cryptic-beyond-10470.herokuapp.com//index.php
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rasputtim/cs313-ezfin.git
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+Title: EzFin - Finance Control
+
+The login control was disabled to allow grading without being logged in to the system.
+
+1. Category List. Provides a list of all categories of finance transactions (income, outcome, fuel, rent, etc..)
+    Link: https://cryptic-beyond-10470.herokuapp.com/listcats.php
+2. Category Search. Allows to search the database for specific categories.
+    Link: https://cryptic-beyond-10470.herokuapp.com/listcats.php
+	  try to search the following terms: re, spend, house, rent 
+3. Periods (Views) List. Provides a list of all the periods that the user can show transactions.
+    Link:   https://cryptic-beyond-10470.herokuapp.com/listviews.php
+4. Periods Search. Search for some specific períod
+    Link:   https://cryptic-beyond-10470.herokuapp.com/listviews.php
+5. Transactions List. Shows the list of financial transactions stored in the database.
+    Link:   https://cryptic-beyond-10470.herokuapp.com/listtrans.php
+
+6. Transactions Search. Some for some specific transaction.
+    Link:   https://cryptic-beyond-10470.herokuapp.com/listtrans.php
+	  try to search for the following terms:  food , rent , payment
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+      
+	  Everything is working fine.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    I have learned how to use javascript and php together in order to search the database and show the results in other php page.
+	
+
+6. Why should you create a separate user account for your application to access the database?
+
+For security reasons. The database has several other schems and we have to restrict acess only to the application scheme. so it is not possible to use the credentials to chnge data from other schemes.
+
+7. Please select the category you feel best describes your assignment: 5
+1 - Some attempt was made
+2 - Developing, but significantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+
+I have applied the database search and list within the good looking bootstrap system with menus and using templates so the same code can be used in different php pages.
+
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
