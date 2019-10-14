@@ -138,25 +138,11 @@ if ($added = false) echo '</ul>';
 
 <div class="row">
 <div class="span6">
-<div class="thumb4">
-	<div class="thumbnail clearfix">
-		<figure class=""><img src="images/services07.jpg" alt=""></figure>
-		<div class="caption">
-			<h3>Lorem ipsum dones consectetur vorte gurti fablo dolore </h3>
-			<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini  <a href="#"><strong>read more</strong></a></p>
-		</div>
-	</div>
-</div>	
+	
 </div>
 <div class="span6">
 <div class="thumb4">
-	<div class="thumbnail clearfix">
-		<figure class=""><img src="images/services08.jpg" alt=""></figure>
-		<div class="caption">
-			<h3>Lorem ipsum dones consectetur vorte gurti fablo dolore </h3>
-			<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt  dolore magna. Ipsum dolor sit ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini  <a href="#"><strong>read more</strong></a></p>
-		</div>
-	</div>
+	
 </div>	
 </div>	
 </div>
