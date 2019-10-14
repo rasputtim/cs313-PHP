@@ -43,8 +43,7 @@ include('templates/menubar.php');
 
 
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-<fieldset>
+
 
 <!-- Form Name 
 CREATE TABLE ezfin_category(
@@ -58,99 +57,63 @@ CREATE TABLE ezfin_category(
             PRIMARY KEY ( idCat, idUser)
             );
 -->
-<legend><center><h2><b>Category Form</b></h2></center></legend><br>
+<form class="" method="post" action="#">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
 
-<!-- Text input-->
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Name</label>  
-  <div class="col-md-4 inputGroupContainer">
-	<div class="input-group">
-		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		<input  name="first_name" placeholder="Category Name" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+								</div>
+							</div>
+						</div>
 
-<!-- Text input-->
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" >Alias</label> 
-    <div class="col-md-4 inputGroupContainer">
-		<div class="input-group">
-			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-			<input name="last_name" placeholder="Category Alias" class="form-control"  type="text">
-		</div>
-	</div>
-</div>
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+								</div>
+							</div>
+						</div>
 
-<div class="form-group"> 
-	<label class="col-md-4 control-label">Icon</label>
-    <div class="col-md-4 selectContainer">
-		<div class="input-group">
-			<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-			<select name="department" class="form-control selectpicker">
-			  <option value="">Select your Icon</option>
-			  <option>Department of Engineering</option>
-			  <option>Department of Agriculture</option>
-			  <option >Accounting Office</option>
-			  <option >Tresurer's Office</option>
-			  <option >MPDC</option>
-			  <option >MCTC</option>
-			  <option >MCR</option>
-			  <option >Mayor's Office</option>
-			  <option >Tourism Office</option>
-			</select>
-		</div>
-	</div>
-</div>
-  
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Description</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="user_name" placeholder="Description" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group"> 
-	<label class="col-md-4 control-label">Operation</label>
-    <div class="col-md-4 selectContainer">
-		<div class="input-group">
-			<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-			<select name="department" class="form-control selectpicker">
-			  <option value="">Select Operation</option>
-			  <option>Income</option>
-			  <option>Outcome</option>
-			  <option>Informative</option>
-			</select>
-		</div>
-	</div>
-</div>
-
-
-
-<!-- Select Basic -->
-
-<!-- Success message -->
-<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label"></label>
-  <div class="col-md-4"><br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
+						<div class="form-group ">
+							<a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+						</div>
+						
+					</form>
 
 
 
