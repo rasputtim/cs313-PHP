@@ -11,9 +11,12 @@ $table=$_GET['t'];
 $search_table = 'public.ezfin_'.$table;
 //$search_term = mb_strtolower($_GET['s'], 'UTF-8');
 $search_term = $_GET['s'];
+$search_term_up = $_GET['s'];
+
 $search_term_length = strlen($search_term);
 $final_result = array();
 $search_term = '%'.$search_term.'%';
+$search_term_up = '%'.$search_term_up.'%';
 $sql_count="";
 $sql_search="";
 switch ($table) {
@@ -58,7 +61,7 @@ if($count > 0){
 	switch ($table) {
 		case "category":
 			//$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
-			$stmt->bindValue(':nome', $search_term, PDO::PARAM_STR);
+			$stmt->bindValue(':nome', $search_term_up, PDO::PARAM_STR);
 			$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 			break;
 		case "balanceview":
