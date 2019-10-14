@@ -11,7 +11,7 @@ $table=$_GET['t'];
 $search_table = 'public.ezfin_'.$table;
 //$search_term = mb_strtolower($_GET['s'], 'UTF-8');
 $search_term = $_GET['s'];
-$search_term_up = $_GET['s'];
+$search_term_up = strtoupper ( $_GET['s'] );
 
 $search_term_length = strlen($search_term);
 $final_result = array();
