@@ -13,6 +13,8 @@ Title: EzFin - Finance Control
 
 The login control was disabled to allow grading without being logged in to the system.
 
+The search is case sensitive. so "salary" is different from "Salary" and "salary".
+
 1. Category List. Provides a list of all categories of finance transactions (income, outcome, fuel, rent, etc..)
     Link: https://cryptic-beyond-10470.herokuapp.com/listcats.php
 2. Category Search. Allows to search the database for specific categories.
@@ -22,12 +24,13 @@ The login control was disabled to allow grading without being logged in to the s
     Link:   https://cryptic-beyond-10470.herokuapp.com/listviews.php
 4. Periods Search. Search for some specific períod
     Link:   https://cryptic-beyond-10470.herokuapp.com/listviews.php
+	try to search for the following terms: October, octobber, May, may
 5. Transactions List. Shows the list of financial transactions stored in the database.
     Link:   https://cryptic-beyond-10470.herokuapp.com/listtrans.php
 
 6. Transactions Search. Some for some specific transaction.
     Link:   https://cryptic-beyond-10470.herokuapp.com/listtrans.php
-	  try to search for the following terms:  food , rent , payment
+	  try to search for the following terms:  food , Uber, Salary, salary, rent 
 
 4. Briefly describe any pieces of the assignment that are not yet working correctly.
       
