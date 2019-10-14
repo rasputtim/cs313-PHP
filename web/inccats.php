@@ -57,70 +57,68 @@ CREATE TABLE ezfin_category(
             PRIMARY KEY ( idCat, idUser)
             );
 -->
-<div style="width:20rem">
-    <div class="form-group">
-        <label for="fga-1">Images</label>
-        <textarea id="input-images" class="formgallery-model">
-            [
-                "img/annie-spratt.jpg",
-                "img/jason-strull.jpg",
-                "img/luca-bravo.jpg",
-                "img/muneeb-syed.jpg",
-                "img/timj.jpg",
-                "img/vladimir-kudinov.jpg"
-            ]
-        </textarea>
-        <div class="formgallery" id="fg-1" data-model="#input-images">
-            <div class="formgallery-list formgallery-list-three">
-                <div class="formgallery-item">
-                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <a href="#" class="formgallery-image" style="background-image: url(img/annie-spratt.jpg)">
-                    </a>
-                </div>
-                <div class="formgallery-item">
-                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <a href="#" class="formgallery-image" style="background-image: url(img/jason-strull.jpg)">
-                    </a>
-                </div>
-                <div class="formgallery-item">
-                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <a href="#" class="formgallery-image" style="background-image: url(img/luca-bravo.jpg)">
-                    </a>
-                </div>
-                <div class="formgallery-item">
-                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <a href="#" class="formgallery-image" style="background-image: url(img/muneeb-syed.jpg)">
-                    </a>
-                </div>
-                <div class="formgallery-item">
-                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <a href="#" class="formgallery-image" style="background-image: url(img/timj.jpg)">
-                    </a>
-                </div>
-                <div class="formgallery-item">
-                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <a href="#" class="formgallery-image" style="background-image: url(img/vladimir-kudinov.jpg)">
-                    </a>
-                </div>
-            </div>
-            <button class="btn btn-light formgallery-action">
-                Add Image
-            </button>
-        </div>
+<form class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3 md-form">
+      <label for="validationCustom012">First name</label>
+      <input type="text" class="form-control" id="validationCustom012" placeholder="First name" value="Mark"
+        required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
     </div>
-</div>
+    <div class="col-md-4 mb-3 md-form">
+      <label for="validationCustom022">Last name</label>
+      <input type="text" class="form-control" id="validationCustom022" value="Otto" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3 md-form">
+      <label for="validationCustomUsername2">Username</label>
+      <input type="text" class="form-control" id="validationCustomUsername2" aria-describedby="inputGroupPrepend2"
+        required>
+      <div class="invalid-feedback">
+        Please choose a username.
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3 md-form">
+      <label for="validationCustom032">City</label>
+      <input type="text" class="form-control" id="validationCustom032" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3 md-form">
+      <label for="validationCustom042">State</label>
+      <input type="text" class="form-control" id="validationCustom042" required>
+      <div class="invalid-feedback">
+        Please provide a valid state.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3 md-form">
+      <label for="validationCustom052">Zip</label>
+      <input type="text" class="form-control" id="validationCustom052" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check pl-0">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="form-check-label" for="invalidCheck2">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-sm btn-rounded" type="submit">Submit form</button>
+</form>
 
 
 
