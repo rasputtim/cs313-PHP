@@ -12,16 +12,14 @@ $search_table = 'public.ezfin_'.$table;
 //$search_term = mb_strtolower($_GET['s'], 'UTF-8');
 $search_term = $_GET['s'];
 $search_term_length = strlen($search_term);
-$search_term_up = strtoupper ( $search_term ); 
 $final_result = array();
-$search_term_sql = '%'.$search_term.'%';
-$search_term_sql_up = '%'.$search_term_up.'%';
+$search_term = '%'.$search_term.'%';
 $sql_count="";
 $sql_search="";
 switch ($table) {
     case "category":
-		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :up OR catdescription  LIKE :op";
-		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :up OR catdescription  LIKE :op";
+		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op OR catdescription  LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op OR catdescription  LIKE :op";
         break;
     case "balanceview":
 		$sql_count="SELECT count(*) FROM $search_table WHERE description LIKE :op";
@@ -36,26 +34,14 @@ switch ($table) {
 $count = 0;
 $stmt = $db->prepare($sql_count);
 //$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
-switch ($table) {
-    case "category":
-		$stmt->bindValue(':up', $search_term_sql, PDO::PARAM_STR);
-		$stmt->bindValue(':op', $search_term_sql, PDO::PARAM_STR);
-        break;
-    case "balanceview":
-		$stmt->bindValue(':op', $search_term_sql, PDO::PARAM_STR);
-        break;
-    case "transactions":
-		$stmt->bindValue(':op', $search_term_sql, PDO::PARAM_STR);
-        break;
-}
-
+$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 $stmt->execute();
 $count = $stmt->fetchColumn();
 $final_result[2]['search_result'][0] = "Count: $count";
 if($count > 0){
 	$line_count =0;
 	$stmt = $db->prepare($sql_search);
-	$stmt->bindValue(':op', $search_term_sql, PDO::PARAM_STR);
+	$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 	$stmt->execute();
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	
