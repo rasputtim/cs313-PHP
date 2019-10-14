@@ -231,18 +231,18 @@ include('templates/menubar.php');
 <div class="span4 banner banner1">
 <div class="banner_inner">
 	<a href="#">
-		<div class="txt1">powerful mobile solutions</div>
+		<div class="txt1">Our Mission </div>
 		<img src="images/banner01.jpg" alt="" class="img">
-		<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </div>
+		<div class="txt2">Our mission is to help accelerate wealth and financial well-being by adopting control of transactions, receivables and payments. </div>
 	</a>
 </div>	
 </div>
 <div class="span4 banner banner2">
 <div class="banner_inner">
 	<a href="#">
-		<div class="txt1">premium office equipment</div>
+		<div class="txt1">Our Vision</div>
 		<img src="images/banner02.jpg" alt="" class="img">
-		<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </div>
+		<div class="txt2">Our vision is to innovate  to maximize customer success. </div>
 	</a>
 </div>	
 </div>
