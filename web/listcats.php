@@ -100,7 +100,7 @@ if ($added == false) echo '</div>';
 	foreach ($db->query('SELECT name FROM public.ezfin_category') as $row)
 	{
 	echo '<li><a href="#">';
-	echo $row['catname'];
+	echo $row['name'];
 	echo '</a></li>';
 	}
 ?>
