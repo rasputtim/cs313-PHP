@@ -65,7 +65,7 @@ $added = false;
 foreach ($rows as $row)
 {
 	//get category
-	$oper_image ="";
+	$oper_image ="cat_income_green.png";
 	$stmt = $db->prepare('SELECT operation FROM public.ezfin_category WHERE idcat =  :op');
 	$stmt->bindValue(':op', $row['idcategory'], PDO::PARAM_INT);
 	$stmt->execute();
