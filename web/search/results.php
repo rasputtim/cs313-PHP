@@ -100,7 +100,7 @@ if($count > 0){
 				$final_result[$line_count]['search_result'][0] = $operation." - " .$row["name"]." - ". $row["description"];
 				break;
 			case "balanceview":
-				$final_result[$line_count]['search_result'][0] = $row["title"]." - " .$row["initialdate"]." - ". $row["finaldate"];
+				$final_result[$line_count]['search_result'][0] = $row["title"]." - " .$row["initialdate"]." - ". $row["finaldate"]." - ". $row["description"];
 				break;
 			case "transactions":
 				$final_result[$line_count]['search_result'][0] = "$ ".money_format($money_format, $row['amount'])." - " .$row["duedate"]." - ". $row["description"];

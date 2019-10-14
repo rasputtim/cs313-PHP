@@ -97,7 +97,7 @@ if ($added == false) echo '</div>';
 
 	<ul class="ul1">
 	<?php 
-	foreach ($db->query('SELECT catname FROM public.ezfin_category') as $row)
+	foreach ($db->query('SELECT name FROM public.ezfin_category') as $row)
 	{
 	echo '<li><a href="#">';
 	echo $row['catname'];
