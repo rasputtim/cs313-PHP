@@ -67,7 +67,7 @@ foreach ($rows as $row)
 	echo '<li>';
 		echo '<div class="thumbnail clearfix">';
 		    // todo: add category icon here
-			echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
+			//echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
 			echo '<div class="caption">';											
 				echo '<h3>'.date_format(date_create($row['initialdate']),$date_format)." - ". date_format(date_create($row['finaldate']),$date_format);
 				echo '</h3>';
