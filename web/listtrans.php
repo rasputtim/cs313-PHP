@@ -88,7 +88,7 @@ foreach ($rows as $row)
 		    // todo: add category icon here
 			echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
 			echo '<div class="caption">';											
-				echo '<h3>'$operation."-".date_format(date_create($row['duedate']),$date_format)." - ". money_format($money_format, $row['amount']);
+				echo '<h3>'.$operation."-".date_format(date_create($row['duedate']),$date_format)." - ". money_format($money_format, $row['amount']);
 				echo '</h3>';
 				echo '<p>';
 						echo $row['description']. '<a href=" edittransacton.php?idtrans='.$row['idtransaction'].'"><strong>  edit</strong></a>';
