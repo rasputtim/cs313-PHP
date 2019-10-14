@@ -38,7 +38,7 @@ $stmt = $db->prepare($sql_count);
 //$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
 switch ($table) {
     case "category":
-		$stmt->bindValue(':opup', $search_term_sql_up, PDO::PARAM_STR);
+		$stmt->bindValue(':opup', $search_term_sql, PDO::PARAM_STR);
 		$stmt->bindValue(':op', $search_term_sql, PDO::PARAM_STR);
         break;
     case "balanceview":
