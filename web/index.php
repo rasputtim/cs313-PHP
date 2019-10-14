@@ -83,26 +83,7 @@ include('templates/menubar.php');
 	<div class="inner">			
 		<div class="carousel main">
 			<ul>				
-				<li>
-					<div class="thumb-carousel">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/banner1.png" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">
-										Communication
-									</div>
-									<div class="txt2">
-										Proin pede eros, pharetra ut, viverra sed, egestas nec, mauris. Nulla tempor fermentum orci.
-									</div>
-									<div class="txt3">read more</div>
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
+				
 				<li>
 					<div class="thumb-carousel">
 						<div class="thumbnail clearfix">
@@ -123,26 +104,7 @@ include('templates/menubar.php');
 						</div>
 					</div>
 				</li>
-				<li>
-					<div class="thumb-carousel">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/banner3.png" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">
-										storage
-									</div>
-									<div class="txt2">
-										Proin pede eros, pharetra ut, viverra sed, egestas nec, mauris. Nulla tempor fermentum orci.
-									</div>
-									<div class="txt3">read more</div>
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
+				
 				<li>
 					<div class="thumb-carousel">
 						<div class="thumbnail clearfix">
@@ -155,7 +117,7 @@ include('templates/menubar.php');
 										Communication
 									</div>
 									<div class="txt2">
-										Proin pede eros, pharetra ut, viverra sed, egestas nec, mauris. Nulla tempor fermentum orci.
+									Ezfin facilitates communication between the family. With it everyone has access to financial data and can properly plan family finances.
 									</div>
 									<div class="txt3">read more</div>
 								</div>								
@@ -175,7 +137,7 @@ include('templates/menubar.php');
 										network
 									</div>
 									<div class="txt2">
-										Proin pede eros, pharetra ut, viverra sed, egestas nec, mauris. Nulla tempor fermentum orci.
+									The system allows the use of any data transmission technology over the network, wired or wireless.
 									</div>
 									<div class="txt3">read more</div>
 								</div>								
@@ -195,7 +157,7 @@ include('templates/menubar.php');
 										storage
 									</div>
 									<div class="txt2">
-										Proin pede eros, pharetra ut, viverra sed, egestas nec, mauris. Nulla tempor fermentum orci.
+									all data is safely stored in the cloud.
 									</div>
 									<div class="txt3">read more</div>
 								</div>								
@@ -211,8 +173,8 @@ include('templates/menubar.php');
 </div>
 <div class="slider2_block2">
 <div class="slider2_block2_description">
-	<div class="txt1">We provide the best service</div>
-	<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</div>
+	<div class="txt1">We provide the best software to control your finances</div>
+	<div class="txt2">EzFin makes it easy to control your financial transactions.</div>
 </div>
 <div class="slider2_block2_pag clearfix">
 	<a class="prev3" href="#"></a>
