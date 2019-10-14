@@ -1,26 +1,26 @@
-<?php
+
+<?php 
 session_start();
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location:inc/noaccess.php");
     exit;
 }
-include('templates/header.php'); ?>
+include('templates/header.php'); 
+?>
 
 <body class="subpage">
 <div id="main">
 
 <div class="top1">
-
 <?php 
-$index1="true";
-$index2="false";
+$index1="false";
+$index2="true";
 $index3="false";
 $index4="false";
 $index5="false";
-include('templates/menubar.php'); ?>
-
-	
+include('templates/menubar.php'); 
+?>
 </div>
 
 <div class="breadcrumbs1">
@@ -166,20 +166,15 @@ include('templates/menubar.php'); ?>
 
 <h2>Why choose us</h2>
 
-	
-	<ul class="ul1">
+<ul class="ul1">
 	  <li><a href="#">Our software systems integrate with back-end financials and use the latest digital technologies</a></li>
 	  <li><a href="#">We Transform financial management to become intelligent</a></li>
 	  <li><a href="#">Fuel the economy by turning bad debt into profit</a></li>
 	  <li><a href="#">Our professional staff is available when you call</a></li>
 	  <li><a href="#">Simply put, We Make it Easy. </a></li>	  	            		      	      			      
-	</ul>	  	            		      	      			      
-	
+	</ul>	
 
 	<br>
-	
-	</div>
-<div class="span4">
 	
 <div class="box1">
 <div class="caroufredsel_slider">
@@ -207,10 +202,22 @@ include('templates/menubar.php'); ?>
 				<div class="txt2">- Ann Parker, <span>CEO Company</span></div>
 			</div>
 			
-		</li>									
+		</li>								
 	</ul>
 </div>
 </div>
+
+<h2>special offer <span>save %50</span></h2>
+
+<p>
+	<strong>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</strong>
+</p>
+<p>
+	Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+</p>
+
+<a href="#" class="button2">read more</a>
+
 
 	
 </div>	
@@ -220,19 +227,79 @@ include('templates/menubar.php'); ?>
 
 
 
-
-
 <div class="bot1">
 <div class="container">
 <div class="row">
 <div class="span12">
 <div class="bot1_inner">
+<div class="row">
+<div class="span3">
 
+	<div class="block_title">information</div>
 
+	<ul class="ul0">
+	  <li><a href="#">Quisque nullatibulum libero</a></li>
+	  <li><a href="#">Scelerisque eget, malesuada at</a></li>
+	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>
+	  <li><a href="#">Nulla facilisinean nec eros</a></li>
+	  <li><a href="#">Vestibulum ante ipsum</a></li>	                                                                                
+	  <li><a href="#">Primis in faucib</a></li>	                                                                                
+	</ul>
+
+</div>
+<div class="span3">
+
+	<div class="block_title">support</div>
+
+	<ul class="ul0">
+	  <li><a href="#">Lorem ipsum dolor</a></li>
+	  <li><a href="#">Sit amet consectetue</a></li>
+	  <li><a href="#">Adipiscing elit</a></li>
+	  <li><a href="#">Nunc suscipit</a></li>
+	  <li><a href="#">Suspendisse enim arcu</a></li>	                                                                                	  
+	</ul>
+
+</div>
+<div class="span3">
+
+	<div class="block_title">downloads</div>
+
+	<ul class="ul0">
+	  <li><a href="#">Convallis non cursus sed</a></li>
+	  <li><a href="#">Dignissim et est</a></li>
+	  <li><a href="#">Aenean semper</a></li>
+	  <li><a href="#">Aliquet libero</a></li>
+	  <li><a href="#">Lorem</a></li>	
+	</ul>
+
+</div>
+<div class="span3">
+
+	<div class="block_title">getting started</div>
+
+	<div class="phone1">
+		<div class="txt1">Have Questions? Call Us:</div>
+		<div class="txt2">1 800 123 456</div>
+	</div>
+
+	<ul class="ul0">
+	  <li><a href="#">Our Location</a></li>
+	  <li><a href="#">Find an Agent</a></li>	                                                                                  
+	</ul>
+
+</div>	
+</div>
 	<?php include('templates/footer.php'); ?>
 </div>	
 </div>	
 </div>	
+</div>	
+</div>
+
+
+
+
+
 
 
 
