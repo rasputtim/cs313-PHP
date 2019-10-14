@@ -57,63 +57,70 @@ CREATE TABLE ezfin_category(
             PRIMARY KEY ( idCat, idUser)
             );
 -->
-<form class="" method="post" action="#">
-						
-						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group ">
-							<a href="https://deepak646.blogspot.com/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
-						</div>
-						
-					</form>
+<div style="width:20rem">
+    <div class="form-group">
+        <label for="fga-1">Images</label>
+        <textarea id="input-images" class="formgallery-model">
+            [
+                "img/annie-spratt.jpg",
+                "img/jason-strull.jpg",
+                "img/luca-bravo.jpg",
+                "img/muneeb-syed.jpg",
+                "img/timj.jpg",
+                "img/vladimir-kudinov.jpg"
+            ]
+        </textarea>
+        <div class="formgallery" id="fg-1" data-model="#input-images">
+            <div class="formgallery-list formgallery-list-three">
+                <div class="formgallery-item">
+                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <a href="#" class="formgallery-image" style="background-image: url(img/annie-spratt.jpg)">
+                    </a>
+                </div>
+                <div class="formgallery-item">
+                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <a href="#" class="formgallery-image" style="background-image: url(img/jason-strull.jpg)">
+                    </a>
+                </div>
+                <div class="formgallery-item">
+                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <a href="#" class="formgallery-image" style="background-image: url(img/luca-bravo.jpg)">
+                    </a>
+                </div>
+                <div class="formgallery-item">
+                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <a href="#" class="formgallery-image" style="background-image: url(img/muneeb-syed.jpg)">
+                    </a>
+                </div>
+                <div class="formgallery-item">
+                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <a href="#" class="formgallery-image" style="background-image: url(img/timj.jpg)">
+                    </a>
+                </div>
+                <div class="formgallery-item">
+                    <button type="button" class="close formgallery-remove" aria-label="Close" title="Remove">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <a href="#" class="formgallery-image" style="background-image: url(img/vladimir-kudinov.jpg)">
+                    </a>
+                </div>
+            </div>
+            <button class="btn btn-light formgallery-action">
+                Add Image
+            </button>
+        </div>
+    </div>
+</div>
 
 
 
