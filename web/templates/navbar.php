@@ -59,7 +59,7 @@ if ($index5=="true"){
 																
 							</ul>
 						</li>
-						<li class="sub-menu sub-menu-2"><a href="listviews.php">Transactions</a>
+						<li class="sub-menu sub-menu-2"><a href="listtrans.php">Transactions</a>
 							<ul>
 								<li><a href="inctrans.php">Include</a></li>
 								<li><a href="edittrans.php">Edit</a></li>
