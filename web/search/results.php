@@ -3,6 +3,8 @@ require_once ("../inc/connect.php");
 if(!isset($_GET['s'])) {
 	die('You must define a search term!');
 }
+$money_format = '%(#10n';
+$date_format = "D, M d, Y ";
 
 if(!isset($_GET['t'])) {
 //	die('You must define a search what!');
@@ -101,7 +103,7 @@ if($count > 0){
 				$final_result[$line_count]['search_result'][0] = $row["title"]." - " .$row["initialdate"]." - ". $row["finaldate"];
 				break;
 			case "transactions":
-				$final_result[$line_count]['search_result'][0] = $row["amount"]." - " .$row["duedate"]." - ". $row["description"];
+				$final_result[$line_count]['search_result'][0] = "$ ".money_format($money_format, $row['amount'])." - " .$row["duedate"]." - ". $row["description"];
 				break;
 		}
 		$line_count++;
