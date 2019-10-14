@@ -39,9 +39,9 @@ CREATE TABLE ezfin_transactions (
 CREATE TABLE ezfin_balanceView (
             idBalView  SERIAL NOT NULL,
             idUser varchar(50) NOT NULL,
-            initialDate TEXT,
-            finalDate TEXT,
-            keyDate TEXT,
+            initialDate DATE,
+            finalDate DATE,
+            keyDate DATE,
             description TEXT,
             title TEXT,
             finalBalance REAL,
