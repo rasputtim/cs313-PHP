@@ -4,12 +4,10 @@
 		<div class="block_title">information</div>
 
 		<ul class="ul0">
-		<li><a href="#">Quisque nullatibulum libero</a></li>
-		<li><a href="#">Scelerisque eget, malesuada at</a></li>
-		<li><a href="#">Vivamus eget niiam cursus leo</a></li>
-		<li><a href="#">Nulla facilisinean nec eros</a></li>
-		<li><a href="#">Vestibulum ante ipsum</a></li>	                                                                                
-		<li><a href="#">Primis in faucib</a></li>	                                                                                
+		<li><a href="https://content.byui.edu/file/14882098-ce1f-44ba-a196-a7aebcb3d5ce/1/week04/prove.html">Prove 04</a></li>
+		<li><a href="https://content.byui.edu/file/14882098-ce1f-44ba-a196-a7aebcb3d5ce/1/week05/prove.html">Prove 05</a></li>
+		<li><a href="https://content.byui.edu/file/14882098-ce1f-44ba-a196-a7aebcb3d5ce/1/week06/prove.html">Prove 06</a></li>
+			                                                                                
 		</ul>
 
 	</div>
@@ -18,11 +16,9 @@
 		<div class="block_title">support</div>
 
 		<ul class="ul0">
-		<li><a href="#">Lorem ipsum dolor</a></li>
-		<li><a href="#">Sit amet consectetue</a></li>
-		<li><a href="#">Adipiscing elit</a></li>
-		<li><a href="#">Nunc suscipit</a></li>
-		<li><a href="#">Suspendisse enim arcu</a></li>	                                                                                	  
+		<li><a href="index-5.php">Contact EzFin Support</a></li>
+		<li><a href="https://byui.instructure.com/courses/66276">Web Engineering II</a></li>
+			                                                                                	  
 		</ul>
 
 	</div>
@@ -31,11 +27,9 @@
 		<div class="block_title">downloads</div>
 
 		<ul class="ul0">
-		<li><a href="#">Convallis non cursus sed</a></li>
-		<li><a href="#">Dignissim et est</a></li>
-		<li><a href="#">Aenean semper</a></li>
-		<li><a href="#">Aliquet libero</a></li>
-		<li><a href="#">Lorem</a></li>	
+		<li><a href="https://github.com/rasputtim/cs313-ezfin">From GitHub</a></li>
+		<li><a href="https://sleepy-fortress-71203.herokuapp.com/">From Personal Web Page</a></li>
+			
 		</ul>
 
 	</div>
