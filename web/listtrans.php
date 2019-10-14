@@ -72,13 +72,13 @@ foreach ($rows as $row)
 	$operation = $stmt->fetchColumn();
 	switch($operation){
 	   case 0:
-	   $operation ="cat_income_green_peq.png";
+	   $oper_image ="cat_income_green_peq.png";
 	   break;
 	   case 1:
-	   $operation ="cat_bill_red_peq.png";
+	   $oper_image ="cat_bill_red_peq.png";
 	   break;
 	   case 2:
-	   $operation = "cat_informative_peq.png";
+	   $oper_image = "cat_informative_peq.png";
 	   break;
 	}
 	$added = false;
@@ -88,7 +88,7 @@ foreach ($rows as $row)
 		    // todo: add category icon here
 			echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
 			echo '<div class="caption">';											
-				echo '<h3>'.$operation."-".date_format(date_create($row['duedate']),$date_format)." - ". money_format($money_format, $row['amount']);
+				echo '<h3>'.date_format(date_create($row['duedate']),$date_format)." - ". money_format($money_format, $row['amount']);
 				echo '</h3>';
 				echo '<p>';
 						echo $row['description']. '<a href=" edittransacton.php?idtrans='.$row['idtransaction'].'"><strong>  edit</strong></a>';
