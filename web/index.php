@@ -249,9 +249,9 @@ include('templates/menubar.php');
 <div class="span4 banner banner3">
 <div class="banner_inner">
 	<a href="#">
-		<div class="txt1">mobile services</div>
+		<div class="txt1">mobile App</div>
 		<img src="images/banner03.jpg" alt="" class="img">
-		<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </div>
+		<div class="txt2">EzFin Mobile App Adds Mobility to Your Financial Control. </div>
 	</a>
 </div>	
 </div>	
@@ -270,11 +270,11 @@ include('templates/menubar.php');
 
 	<p>
 		<strong>
-			Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag
+			EzFin Mobile App Adds Mobility to Your Financial Control
 		</strong>
 	</p>
 	<p>
-		Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+	With the Android and IOS app EzFin becomes the best financial control system available on the market.
 	</p>
 	<a href="#" class="button2">read more</a>
 
