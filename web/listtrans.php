@@ -134,27 +134,6 @@ if ($added = false) echo '</ul>';
 
 <div class="line1"></div>
 
-<h2>Special offers</h2>
-
-<div class="row">
-<div class="span6">
-	
-</div>
-<div class="span6">
-<div class="thumb4">
-	
-</div>	
-</div>	
-</div>
-
-
-
-<div class="line1"></div>
-
-
-
-
-
 
 
 </div>	
