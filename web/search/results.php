@@ -18,8 +18,8 @@ $sql_count="";
 $sql_search="";
 switch ($table) {
     case "category":
-		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :up OR catdescription  LIKE :op";
-		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :up OR catdescription  LIKE :op";
+		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :op OR catdescription  LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :op OR catdescription  LIKE :op";
         break;
     case "balanceview":
 		$sql_count="SELECT count(*) FROM $search_table WHERE description LIKE :op";
@@ -36,7 +36,7 @@ $stmt = $db->prepare($sql_count);
 switch ($table) {
     case "category":
 		//$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
-		$stmt->bindValue(':up', $search_term, PDO::PARAM_STR);
+		//$stmt->bindValue(':up', $search_term, PDO::PARAM_STR);
 		$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
         break;
     case "balanceview":
@@ -58,7 +58,7 @@ if($count > 0){
 	switch ($table) {
 		case "category":
 			//$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
-			$stmt->bindValue(':up', $search_term, PDO::PARAM_STR);
+			//$stmt->bindValue(':up', $search_term, PDO::PARAM_STR);
 			$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
 			break;
 		case "balanceview":
