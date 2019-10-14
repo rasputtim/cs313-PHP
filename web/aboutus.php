@@ -190,16 +190,7 @@ include('templates/menubar.php');
 </div>
 </div>
 
-<h2>special offer <span>save %50</span></h2>
 
-<p>
-	<strong>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</strong>
-</p>
-<p>
-	Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-</p>
-
-<a href="#" class="button2">read more</a>
 
 
 	
