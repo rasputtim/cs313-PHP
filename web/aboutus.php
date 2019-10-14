@@ -44,9 +44,7 @@ include('templates/menubar.php');
 <p>
 	Originally known for leadership in enterprise resource planning (ERP) software, EzFin has evolved to become a market leader in end-to-end personal finance application software. Supported by a top cloud company with 2 million users worldwide, EzFin helps families of all sizes  to operate profitably, adapt continuously, and achieve their financial purpose. 
 </p>
-<p>
-	Suspendisse enim arcu, convallis non, cursus sed, dignissim et, est. Aenean semper aliquet libero. In ante velit, cursus ut, ultrices vitae, tempor ut, risus. Duis pulvinar. Vestibulum vel pede at sapien sodales mattis. Quisque pretium, lacus nec iaculis vehicula, arcu libero consectetuer massa, auctor aliquet mauris ligula id ipsum. Vestibulum pede. Maecenas sit amet augue. Sed blandit lect
-</p>
+
 
 <h2>Our team</h2>
 

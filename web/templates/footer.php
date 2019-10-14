@@ -44,13 +44,13 @@
 		<div class="block_title">getting started</div>
 
 		<div class="phone1">
-			<div class="txt1">Have Questions? Call Us:</div>
-			<div class="txt2">1 800 123 456</div>
+			<div class="txt1">Have Questions? </div>
+			<div class="txt2"><a href="index-5.php">contact us</a></div>
 		</div>
 
 		<ul class="ul0">
-		<li><a href="#">Our Location</a></li>
-		<li><a href="#">Find an Agent</a></li>	                                                                                  
+		<li><a href="index-5.php">Our Location</a></li>
+			                                                                                  
 		</ul>
 
 	</div>	
