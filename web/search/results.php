@@ -78,7 +78,32 @@ if($count > 0){
 	
 	foreach ($rows as $row)
 	{
-		$final_result[$line_count]['search_result'][0] = $table." - " .$row["name"]." - ". $row["description"];
+		
+		switch ($table) {
+			case "category":
+			$operation ="0";
+				switch ($row["operation"]) {
+
+					case 0:
+					$operation = "CREDIT";
+					break;
+					case 1:
+					$operation = "DEBIT";
+					break;
+					case 2:
+					$operation = "INFORMATIVE";
+					break;
+
+				}
+				$final_result[$line_count]['search_result'][0] = $operation." - " .$row["name"]." - ". $row["description"];
+				break;
+			case "balanceview":
+				$final_result[$line_count]['search_result'][0] = $row["title"]." - " .$row["initialdate"]." - ". $row["finaldate"];
+				break;
+			case "transactions":
+				$final_result[$line_count]['search_result'][0] = $row["amount"]." - " .$row["duedate"]." - ". $row["description"];
+				break;
+		}
 		$line_count++;
 	}
 
