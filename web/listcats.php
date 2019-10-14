@@ -65,9 +65,9 @@ foreach ($rows as $row)
 	echo '<div class="thumbnail clearfix">';		
 	echo '<figure class=""><img src="images/'. $row['icon'] . '.png " alt=""></figure>';
 	echo '<div class="caption">';
-	echo '<h3>' . $row['catname'] . '</h3>';
+	echo '<h3>' . $row['name'] . '</h3>';
 	echo '<p>';
-				echo $row['catdescription'];
+				echo $row['description'];
 				echo '</p>';
 				echo '<p>';
 				echo '<strong>Operation:'.$myOperation.'</strong>';

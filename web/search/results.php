@@ -21,8 +21,8 @@ $sql_count="";
 $sql_search="";
 switch ($table) {
     case "category":
-		$sql_count="SELECT count(*) FROM $search_table WHERE catname LIKE :nome OR catdescription  LIKE :op";
-		$sql_search="SELECT * FROM $search_table WHERE catname LIKE :nome OR catdescription  LIKE :op";
+		$sql_count="SELECT count(*) FROM $search_table WHERE name LIKE :nome OR description  LIKE :op";
+		$sql_search="SELECT * FROM $search_table WHERE name LIKE :nome OR description  LIKE :op";
         break;
     case "balanceview":
 		$sql_count="SELECT count(*) FROM $search_table WHERE description LIKE :op";
@@ -78,7 +78,7 @@ if($count > 0){
 	
 	foreach ($rows as $row)
 	{
-		$final_result[$line_count]['search_result'][0] = $table." - " .$row["catname"]." - ". $row["catdescription"];
+		$final_result[$line_count]['search_result'][0] = $table." - " .$row["name"]." - ". $row["description"];
 		$line_count++;
 	}
 
