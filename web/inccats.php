@@ -63,7 +63,7 @@ CREATE TABLE ezfin_category(
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">First Name</label>  
+  <label class="col-md-4 control-label">Name</label>  
   <div class="col-md-4 inputGroupContainer">
 	<div class="input-group">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -75,7 +75,7 @@ CREATE TABLE ezfin_category(
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Last Name</label> 
+  <label class="col-md-4 control-label" >Alias</label> 
     <div class="col-md-4 inputGroupContainer">
 		<div class="input-group">
 			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -125,7 +125,8 @@ CREATE TABLE ezfin_category(
 		<div class="input-group">
 			<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
 			<select name="department" class="form-control selectpicker">
-			  <option value="">Income</option>
+			  <option value="">Select Operation</option>
+			  <option>Income</option>
 			  <option>Outcome</option>
 			  <option>Informative</option>
 			</select>
