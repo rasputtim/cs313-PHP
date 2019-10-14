@@ -295,39 +295,9 @@ include('templates/menubar.php');
 
 
 	
-</div>
-<div class="span4">
-	
-<div class="box1">
-<div class="caroufredsel_slider">
-	<div class="txt1">Testimonials</div>
-	<a class="prev_testimonial" href="#"></a>
-	<a class="next_testimonial" href="#"></a>	
-	<ul id="caroufredsel" class="clearfix">
-		<li>
-			<div class="testimonial1">
-				<div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-				<div class="txt2">- Mike Smith, <span>CEO Company</span></div>
-			</div>
-			
-		</li>
-		<li>
-			<div class="testimonial1">
-				<div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-				<div class="txt2">- Olga Guz, <span>CEO Company</span></div>
-			</div>
-			
-		</li>
-		<li>
-			<div class="testimonial1">
-				<div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-				<div class="txt2">- Ann Parker, <span>CEO Company</span></div>
-			</div>
-			
-		</li>								
-	</ul>
-</div>
-</div>
+<?php
+include('templates/testimonials.php');
+?>
 
 
 	
