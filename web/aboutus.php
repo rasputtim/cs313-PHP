@@ -37,27 +37,12 @@ include('templates/menubar.php');
 <div class="container">
 <div class="row">
 <div class="span9">
-	
-<h1>Welcome to mobile<br><span>Lorem ipsum dolor sit amet conse ctetur adipisicing elit</span></h1>
 
-<div class="thumb1">
-	<div class="thumbnail clearfix">
-		<figure class=""><img src="images/about01.jpg" alt=""></figure>
-		<div class="caption">
-			<p>
-				Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing elit. Nunc suscipit. 
-			</p>
-			<a href="#" class="button2">read more</a>
-		</div>
-	</div>
-</div>
-
-<div class="line1"></div>
 
 <h2>Who we are</h2>
 
 <p>
-	Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing elit. Nunc suscipit. 
+	Originally known for leadership in enterprise resource planning (ERP) software, EzFin has evolved to become a market leader in end-to-end personal finance application software. Supported by a top cloud company with 2 million users worldwide, EzFin helps families of all sizes  to operate profitably, adapt continuously, and achieve their financial purpose. 
 </p>
 <p>
 	Suspendisse enim arcu, convallis non, cursus sed, dignissim et, est. Aenean semper aliquet libero. In ante velit, cursus ut, ultrices vitae, tempor ut, risus. Duis pulvinar. Vestibulum vel pede at sapien sodales mattis. Quisque pretium, lacus nec iaculis vehicula, arcu libero consectetuer massa, auctor aliquet mauris ligula id ipsum. Vestibulum pede. Maecenas sit amet augue. Sed blandit lect
@@ -232,63 +217,7 @@ include('templates/menubar.php');
 <div class="row">
 <div class="span12">
 <div class="bot1_inner">
-<div class="row">
-<div class="span3">
 
-	<div class="block_title">information</div>
-
-	<ul class="ul0">
-	  <li><a href="#">Quisque nullatibulum libero</a></li>
-	  <li><a href="#">Scelerisque eget, malesuada at</a></li>
-	  <li><a href="#">Vivamus eget niiam cursus leo</a></li>
-	  <li><a href="#">Nulla facilisinean nec eros</a></li>
-	  <li><a href="#">Vestibulum ante ipsum</a></li>	                                                                                
-	  <li><a href="#">Primis in faucib</a></li>	                                                                                
-	</ul>
-
-</div>
-<div class="span3">
-
-	<div class="block_title">support</div>
-
-	<ul class="ul0">
-	  <li><a href="#">Lorem ipsum dolor</a></li>
-	  <li><a href="#">Sit amet consectetue</a></li>
-	  <li><a href="#">Adipiscing elit</a></li>
-	  <li><a href="#">Nunc suscipit</a></li>
-	  <li><a href="#">Suspendisse enim arcu</a></li>	                                                                                	  
-	</ul>
-
-</div>
-<div class="span3">
-
-	<div class="block_title">downloads</div>
-
-	<ul class="ul0">
-	  <li><a href="#">Convallis non cursus sed</a></li>
-	  <li><a href="#">Dignissim et est</a></li>
-	  <li><a href="#">Aenean semper</a></li>
-	  <li><a href="#">Aliquet libero</a></li>
-	  <li><a href="#">Lorem</a></li>	
-	</ul>
-
-</div>
-<div class="span3">
-
-	<div class="block_title">getting started</div>
-
-	<div class="phone1">
-		<div class="txt1">Have Questions? Call Us:</div>
-		<div class="txt2">1 800 123 456</div>
-	</div>
-
-	<ul class="ul0">
-	  <li><a href="#">Our Location</a></li>
-	  <li><a href="#">Find an Agent</a></li>	                                                                                  
-	</ul>
-
-</div>	
-</div>
 	<?php include('templates/footer.php'); ?>
 </div>	
 </div>	
