@@ -295,7 +295,10 @@ include('templates/menubar.php');
 
 
 	
-	<?php
+</div>
+<div class="span4">
+	
+<?php
 include('templates/testimonials.php');
 ?>
 
