@@ -39,7 +39,7 @@ if ($index5=="true"){
 		<div class="nav-collapse nav-collapse_ collapse">
 			<ul class="nav sf-menu clearfix">
       <li><a href="index.php">Home</a></li>
-      <li class="<?php echo $index1_active; ?> "><a href="index-1.php">About Us</a></li>
+      <li class="<?php echo $index1_active; ?> "><a href="aboutus.php">About Us</a></li>
 				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="#">Administration</a>
 					<ul>
 						<li><a href="options.php">Options</a></li>

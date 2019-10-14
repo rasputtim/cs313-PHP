@@ -1,10 +1,7 @@
 <?php
-/*
-Credits: Bit Repository
-URL: http://www.bitrepository.com/
-*/
 
-include 'contact_config.php';
+
+include 'inc/contact_config.php';
 session_start();
 error_reporting (E_ALL ^ E_NOTICE);
 
