@@ -55,7 +55,21 @@ $final_result[2]['search_result'][0] = "Count: $count";
 if($count > 0){
 	$line_count =0;
 	$stmt = $db->prepare($sql_search);
-	$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
+	switch ($table) {
+		case "category":
+			//$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
+			$stmt->bindValue(':up', $search_term, PDO::PARAM_STR);
+			$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
+			break;
+		case "balanceview":
+			//$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
+			$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
+			break;
+		case "transactions":
+			//$stmt->bindValue(':tb', $search_table, PDO::PARAM_STR);
+			$stmt->bindValue(':op', $search_term, PDO::PARAM_STR);
+			break;
+	}
 	$stmt->execute();
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	
