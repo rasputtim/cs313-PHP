@@ -48,11 +48,11 @@ function safe_input($value) {
 
 	// First attempt to avoid SQL Injection based on SQL comments
 	// Specific for MySQL.
-	$valueHtmlEncode = str_replace('/*', "&#47;&#42;", $valueHtmlEncode);
-	$valueHtmlEncode = str_replace('*/', "&#42;&#47;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace('/*', "&#47;&#42;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace('*/', "&#42;&#47;", $valueHtmlEncode);
 
 	//Replace ( for the html entitie
-	$valueHtmlEncode = str_replace('(', "&#40;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace('(', "&#40;", $valueHtmlEncode);
 
 	//Replace ( for the html entitie
 	//$valueHtmlEncode = str_replace(')', "&#41;", $valueHtmlEncode);
