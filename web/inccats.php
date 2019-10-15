@@ -48,8 +48,8 @@ include('templates/menubar.php');
 
 
 <div class="col-md-6 col-md-offset-3" id="form_container">
-                    <h2>Contact Us</h2> 
-                    <p> Please send your message below. We will get back to you at the earliest! </p>
+                    <h2>CATEGORY FORM</h2> 
+                    <p> Please fill the information required below. Click Send </p>
                     <form role="form" method="post" id="reused_form">
                         
                         <div class="row">
