@@ -23,15 +23,15 @@ require_once ("inc/connect.php");
  */
 function safe_input($value) {
 	//Stop!! Are you sure to modify this critical code? Because the older
-	//versions are serius headache in many places of Pandora.
+	//versions are serius headache in many places.
 
 	if (is_numeric($value))
 		return $value;
 
-	if (is_array($value)) {
-		array_walk($value, "safe_input_array");
-		return $value;
-	}
+	//if (is_array($value)) {
+	//	array_walk($value, "safe_input_array");
+	//	return $value;
+	//}
 
 	//Clean the trash mix into string because of magic quotes.
 	//if (get_magic_quotes_gpc() == 1) {
@@ -44,23 +44,23 @@ function safe_input($value) {
 	$valueHtmlEncode =  htmlentities ($value, ENT_QUOTES, "UTF-8");
 
 	//Replace the character '\' for the equivalent html entitie
-	$valueHtmlEncode = str_replace('\\', "&#92;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace('\\', "&#92;", $valueHtmlEncode);
 
 	// First attempt to avoid SQL Injection based on SQL comments
 	// Specific for MySQL.
-	$valueHtmlEncode = str_replace('/*', "&#47;&#42;", $valueHtmlEncode);
-	$valueHtmlEncode = str_replace('*/', "&#42;&#47;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace('/*', "&#47;&#42;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace('*/', "&#42;&#47;", $valueHtmlEncode);
 
 	//Replace ( for the html entitie
-	$valueHtmlEncode = str_replace('(', "&#40;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace('(', "&#40;", $valueHtmlEncode);
 
 	//Replace ( for the html entitie
-	$valueHtmlEncode = str_replace(')', "&#41;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace(')', "&#41;", $valueHtmlEncode);
 
 	//Replace some characteres for html entities
-	for ($i=0;$i<33;$i++) {
-		$valueHtmlEncode = str_ireplace(chr($i),ascii_to_html($i), $valueHtmlEncode);
-	}
+	//for ($i=0;$i<33;$i++) {
+	//	$valueHtmlEncode = str_ireplace(chr($i),ascii_to_html($i), $valueHtmlEncode);
+	//}
 
 	return $valueHtmlEncode;
 }
