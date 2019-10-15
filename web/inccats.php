@@ -11,6 +11,51 @@ require_once ("inc/connect.php");
 
 
 /**
+ * Convert the $value encode in html entity to clear char string. This function
+ * should be called always to "clean" HTML encoded data; to render to a text
+ * plain ascii file, to render to console, or to put in any kind of data field
+ * who doesn't make the HTML render by itself.
+ *
+ * @param mixed String or array of strings to be cleaned.
+ * @param boolean $utf8 Flag, set the output encoding in utf8, by default true.
+ *
+ * @return unknown_type
+ */
+function safe_output($value, $utf8 = true)
+{
+	if (is_numeric($value))
+		return $value;
+
+	if (is_array($value)) {
+		array_walk($value, "safe_output");
+		return $value;
+	}
+
+	//if (! mb_check_encoding ($value, 'UTF-8'))
+	//	$value = utf8_encode ($value);
+
+	if ($utf8) {
+		$valueHtmlEncode =  html_entity_decode ($value, ENT_QUOTES, "UTF-8");
+	}
+	else {
+		$valueHtmlEncode =  html_entity_decode ($value, ENT_QUOTES);
+	}
+
+	//Replace the html entitie of ( for the char
+	$valueHtmlEncode = str_replace("&#40;", '(', $valueHtmlEncode);
+
+	//Replace the html entitie of ) for the char
+	$valueHtmlEncode = str_replace("&#41;", ')', $valueHtmlEncode);
+
+	//Revert html entities to chars
+	//for ($i=0;$i<33;$i++) {
+	//	$valueHtmlEncode = str_ireplace("&#x".dechex($i).";",html_to_ascii(dechex($i)), $valueHtmlEncode);
+	//}
+    $valueHtmlEncode = htmlspecialchars($valueHtmlEncode);//
+	return $valueHtmlEncode;
+}
+
+/**
  * Get a parameter from get request array.
  *
  * @param name Name of the parameter
@@ -20,7 +65,7 @@ require_once ("inc/connect.php");
  */
 function get_parameter_get ($name, $default = "") {
 	if ((isset ($_GET[$name])) && ($_GET[$name] != ""))
-		return $_GET[$name];
+		return safe_input($_GET[$name]);
 
 	return $default;
 }
@@ -35,7 +80,7 @@ function get_parameter_get ($name, $default = "") {
  */
 function get_parameter_post ($name, $default = "") {
 	if ((isset ($_POST[$name])) && ($_POST[$name] != ""))
-		return $_POST[$name];
+		return safe_input($_POST[$name]);
 
 	return $default;
 }
@@ -77,7 +122,7 @@ if ($is_insert){ // Create group
 	$my_name = get_parameter("name");
 	$my_alias = get_parameter("alias");
 	$my_icon = get_parameter("icon");
-    $my_description = htmlspecialchars($_POST["descript"]);//get_paramenter("descript");
+    $my_description = get_paramenter("descript");
 
 }
 ///////END INSERT DATA ///////////////
