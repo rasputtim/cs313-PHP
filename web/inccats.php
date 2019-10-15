@@ -84,8 +84,8 @@ if ($is_insert){ // Create group
 
 }
 ?>
-
-<div class="col-md-6 col-md-offset-3 container" id="form_container">
+<div class="container">
+<div class="col-md-6 col-md-offset-3 " id="form_container">
                     <h2>CATEGORY FORM</h2> 
                     <p> Please fill the information required below. Click Send </p>
                     <form role="form" method="post" id="reused_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >
@@ -138,7 +138,7 @@ if ($is_insert){ // Create group
                     <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
 </div>
 
-
+</div>
 
 
 
