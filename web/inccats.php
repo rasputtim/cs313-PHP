@@ -103,20 +103,23 @@ if ($is_insert){ // Create group
 						</div>
 						<div class="row">
                             <div class="col-sm-6 form-group">
-							<label for="icon"> Icon:</label>
-							<select class="form-control" id="icon" name="icon" required >
-							<option selected>Open this select menu</option>
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
-							</select>
+								<label for="icon"> Icon:</label>
+								<select class="form-control" id="icon" name="icon" required >
+								<option selected>Open this select menu</option>
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+								</select>
                                 
                                 
                             </div>
                             <div class="col-sm-6 form-group">
 
                                 <label for="operation"> Operation:</label>
-                                <input type="text" class="form-control" id="operation" name="operation" required>
+								<input type="text" class="form-control" id="operation" name="operation" required>
+									<label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
+									<label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
+									<label class="checkbox-inline"><input type="checkbox" value="">Option 3</label> 
                             </div>
 						</div>
 						<div class="row">
