@@ -42,7 +42,7 @@ function safe_input($value) {
 	//	$value = utf8_encode ($value);
 
 	$valueHtmlEncode =  htmlentities ($value);
-
+	//$valueHtmlEncode =  htmlspecialchars($_POST['descript']); //
 	//Replace the character '\' for the equivalent html entitie
 	//$valueHtmlEncode = str_replace('\\', "&#92;", $valueHtmlEncode);
 
@@ -133,7 +133,7 @@ if ($is_insert){ // Create group
 	$my_name = get_parameter("name");
 	$my_alias = get_parameter("alias");
 	$my_icon = get_parameter("icon");
-    $my_description = htmlspecialchars($_POST['descript']); //get_paramenter("descript");
+    $my_description = get_paramenter("descript");
 
 }
 ///////END INSERT DATA ///////////////
