@@ -30,16 +30,16 @@ function safe_output($value, $utf8 = true)
 		array_walk($value, "safe_output");
 		return $value;
 	}
-
+    $valueHtmlEncode = htmlspecialchars($value);
 	//if (! mb_check_encoding ($value, 'UTF-8'))
 	//	$value = utf8_encode ($value);
 
-	if ($utf8) {
-		$valueHtmlEncode =  html_entity_decode ($value, ENT_QUOTES, "UTF-8");
-	}
-	else {
-		$valueHtmlEncode =  html_entity_decode ($value, ENT_QUOTES);
-	}
+	//if ($utf8) {
+	//	$valueHtmlEncode =  html_entity_decode ($value, ENT_QUOTES, "UTF-8");
+	//}
+	//else {
+	//	$valueHtmlEncode =  html_entity_decode ($value, ENT_QUOTES);
+	//}
 
 	//Replace the html entitie of ( for the char
 	$valueHtmlEncode = str_replace("&#40;", '(', $valueHtmlEncode);
@@ -51,7 +51,7 @@ function safe_output($value, $utf8 = true)
 	//for ($i=0;$i<33;$i++) {
 	//	$valueHtmlEncode = str_ireplace("&#x".dechex($i).";",html_to_ascii(dechex($i)), $valueHtmlEncode);
 	//}
-    $valueHtmlEncode = htmlspecialchars($valueHtmlEncode);//
+    //
 	return $valueHtmlEncode;
 }
 
