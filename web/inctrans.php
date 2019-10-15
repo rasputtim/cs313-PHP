@@ -111,6 +111,7 @@ CREATE TABLE ezfin_transactions (
 									<label for="date_to">To</label>
 									<input type="text" id="date_to" class="date_to" placeholder="Pick a date" />
 									<!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+								
 								</div>
                             </div>
 						</div>
