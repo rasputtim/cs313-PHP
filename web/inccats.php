@@ -25,21 +25,21 @@ function safe_input($value) {
 	//Stop!! Are you sure to modify this critical code? Because the older
 	//versions are serius headache in many places.
 
-	//if (is_numeric($value))
-	//	return $value;
+	if (is_numeric($value))
+		return $value;
 
-	//if (is_array($value)) {
-	//	array_walk($value, "safe_input_array");
-	//	return $value;
-	//}
+	if (is_array($value)) {
+		array_walk($value, "safe_input_array");
+		return $value;
+	}
 
 	//Clean the trash mix into string because of magic quotes.
 	//if (get_magic_quotes_gpc() == 1) {
 	//	$value = stripslashes($value);
 	//}
 
-	//if (! mb_check_encoding ($value, 'UTF-8'))
-	//	$value = utf8_encode ($value);
+	if (! mb_check_encoding ($value, 'UTF-8'))
+		$value = utf8_encode ($value);
 
 	//$valueHtmlEncode =  htmlentities ($value);
 	$valueHtmlEncode =  htmlspecialchars($value); //
