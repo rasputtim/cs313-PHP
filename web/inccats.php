@@ -74,7 +74,7 @@ $is_insert = get_parameter("create2","false");
 if ($is_insert){ // Create group
 
 	$my_user = "admin";
-	//$my_name = get_parameter("name");
+	$my_name = get_parameter("name", "JUCA JUCA");
 	//$my_alias = get_parameter("alias");
 	//$my_icon = get_parameter("icon");
     //$my_description = get_paramenter("description");
@@ -147,7 +147,7 @@ if ($is_insert){ // Create group
                             <div class="col-sm-6 form-group">
 
                                 <label for="alias"> Category Alias:</label>
-                                <input type="text" class="form-control" id="name" name="alias" required>
+                                <input type="text" class="form-control" id="alias" name="alias" required>
                             </div>
 						</div>
 						<div class="row">
@@ -164,8 +164,8 @@ if ($is_insert){ // Create group
 						</div>
 						<div class="row">
                             <div class="col-sm-12 form-group">
-                                <label for="message"> Description:</label>
-                                <textarea class="form-control" type="textarea" name="message" id="message" maxlength="6000" rows="3"></textarea>
+                                <label for="description"> Description:</label>
+                                <textarea class="form-control" type="textarea" name="description" id="description" maxlength="6000" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="row">
