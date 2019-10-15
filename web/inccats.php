@@ -121,17 +121,17 @@ if ($is_insert){ // Create group
 						</div>
 						<div class="row">
 						<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-  <label class="form-check-label" for="inlineRadio1">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-  <label class="form-check-label" for="inlineRadio2">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
-  <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
-</div>
+							<input class="form-check-input" type="radio" name="opertion" id="inlineRadio1" value="0">
+							<label class="form-check-label" for="inlineRadio1">INCOME</label>
+							</div>
+							<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="opertion" id="inlineRadio2" value="1">
+							<label class="form-check-label" for="inlineRadio2">OUTCOME</label>
+							</div>
+							<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="opertion" id="inlineRadio3" value="2" >
+							<label class="form-check-label" for="inlineRadio3">INFORMATIVE</label>
+							</div>
 						</div>	
 						<div class="row">
                             <div class="col-sm-12 form-group">
