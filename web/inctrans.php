@@ -101,7 +101,17 @@ CREATE TABLE ezfin_transactions (
                             <div class="col-sm-6 form-group">
 
                                 <label for="paymentdate"> Payment Date:</label>
-                                <input type="text" class="form-control" id="operation" name="paymentdate" required>
+								<input type="text" class="form-control" id="operation" name="paymentdate" required>
+								<div class="form-date-from form-icon">
+									<label for="date_from">From</label>
+									<input type="text" id="date_from" class="date_from" placeholder="Pick a date" />
+									<!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+								</div>
+								<div class="form-date-to form-icon">
+									<label for="date_to">To</label>
+									<input type="text" id="date_to" class="date_to" placeholder="Pick a date" />
+									<!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+								</div>
                             </div>
 						</div>
 						<div class="row">
