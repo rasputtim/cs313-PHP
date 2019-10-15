@@ -72,10 +72,12 @@ $is_insert = get_parameter("create2","false");
 // Database Insert data
 // ==================
 if ($is_insert){ // Create group
-	//echo "<script type='javascript'>alert('Is Insert');</script>";
-	
-	//echo "<h3 class='suc'>".__('Successfully deleted')."</h3>";
 
+	$my_user = "admin";
+	$my_name = get_parameter("name");
+	$my_alias = get_parameter("alias");
+	$my_icon = get_parameter("icon");
+    $my_description = get_paramenter("description");
 
 }
 ///////END INSERT DATA ///////////////
@@ -123,6 +125,11 @@ if ($is_insert){ // Create group
 	
 	//echo "<h3 class='suc'>".__('is insert')."</h3>";
 	echo "<h3 >Is Insert</h3>";
+	echo "<h3 >$my_user</h3>";
+	echo "<h3 >$my_name</h3>";
+	echo "<h3 >$my_alias</h3>";
+	echo "<h3 >$my_icon</h3>";
+    echo "<h3 >$my_description</h3>";
 
 }
 ?>
