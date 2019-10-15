@@ -39,7 +39,7 @@ function safe_input($value) {
 	//}
 
 	//if (! mb_check_encoding ($value, 'UTF-8'))
-	//	$value = utf8_encode ($value);
+		$value = utf8_encode ($value);
 
 	$valueHtmlEncode =  htmlentities ($value);
 	//$valueHtmlEncode =  htmlspecialchars($value); //
