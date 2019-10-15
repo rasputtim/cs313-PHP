@@ -118,7 +118,7 @@ include('templates/menubar.php');
 	//echo "<script type='javascript'>alert('Is Insert');</script>";
 	
 	//echo "<h3 class='suc'>".__('is insert')."</h3>";
-
+echo "<h3>add new category</h3>";
 
 //}
 ?>
