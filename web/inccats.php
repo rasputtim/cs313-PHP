@@ -84,7 +84,8 @@ if ($is_insert){ // Create group
 
 }
 ?>
-<div class="col-md-6 col-md-offset-3" id="form_container">
+
+<div class="col-md-6 col-md-offset-3 container" id="form_container">
                     <h2>CATEGORY FORM</h2> 
                     <p> Please fill the information required below. Click Send </p>
                     <form role="form" method="post" id="reused_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >
