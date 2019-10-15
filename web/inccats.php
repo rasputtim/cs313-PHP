@@ -6,6 +6,179 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //exit;
 }
 require_once ("inc/connect.php");
+
+
+///////     INSERT DAA INTO DATABASE /////////
+// Database Insert data
+// ==================
+if ($is_insert){ // Create group
+
+	$timestamp = date('Y-m-d H:i:s');
+	$description = get_parameter ("description","");
+	$id_product = get_parameter ("product",0);
+	$id_category = get_parameter ("category",0);
+	$date = get_parameter ("date", "");
+    $date_sql = date('Y-m-d', strtotime($date));
+    $ammount = get_parameter ("ammount", 0.00);
+    $ammount_sql = str_replace(',', '.',$ammount);
+	
+	$detail_id_method =   get_parameter ("detail_id_method" , 0);
+	$detail_number =  get_parameter ("detail_number" , "");
+	$detail_bank =  get_parameter ("detail_bank" , "");
+	$detail_agency =  get_parameter ("detail_agency" , "");
+	$detail_account =  get_parameter ("detail_account" , "");
+	/*
+	echo "<h3 class='suc'>".__('Payment details Data');
+	echo  "<p>".$detail_id_method;
+	echo  "<p>".$detail_number;
+	echo  "<p>".$detail_bank;
+	echo  "<p>".$detail_agency;
+	echo  "<p>".$detail_account;
+	
+	echo "</h3>";
+	*/
+	
+    $set_todos = 0;
+    $remissive_users = array();
+    $positive_users = array();
+    $ha_remissive = 0;
+    $ha_positive = 0;
+	foreach ($_POST['id_user'] as $selectedOption) {
+	 if($selectedOption == -1) $set_todos = 1;
+	}
+
+    if( !$set_todos) {
+
+	foreach ($_POST['id_user'] as $selectedOption) {
+
+   	 if(!is_remido($selectedOption, $id_category,$date_sql) && is_pagante($selectedOption)) {
+		 
+		$my_cat = $id_category;
+		$my_user = $selectedOption;
+				
+		$id_data = tes_insert_data_user ($ammount_sql,$date_sql,$description ,$id_product, $my_cat , $my_user);
+	
+		if ($id_data > 0){
+			 //======Insere regitro de pagamento=======
+			$id_payment = tes_insert_user_data_payment($id_data,$detail_id_method,$detail_number,$detail_bank,$detail_agency,$detail_account,$description);
+	       
+						
+			if ($id_payment > 0){
+				$new_payment = $id_payment;
+				echo "<h3 class='suc'>".__('Payment details')."  ".__('Successfully created')." ".$new_payment."</h3>";
+			} else {
+				echo "<h3 class='error'>".__('Payment details')."  ".__('Could not be created')."</h3>";
+			
+			}
+			echo "<h3 class='suc'>".__('Successfully created')." "._('for')." ".dame_nombre_real($my_user)."</h3>";
+		}else{
+			echo "<h3 class='error'>".__('Could not be created')." "._('for')." ".dame_nombre_real($my_user)."</h3>";
+		}
+			
+			
+	 }else{
+		 array_push($remissive_users,$selectedOption);
+		 $ha_remissive = 1;
+		 //echo "<h3 class='error'>".__('Could not be created').__('Remissive User')."</h3>";
+	 }
+    } //end foreach
+
+
+    //check only the last record
+	/*
+	if (! $result)
+		echo "<h3 class='error'>".__('Could not be created')."</h3>";
+	else {
+		echo "<h3 class='suc'>".__('Successfully created')."</h3>";
+		$id_data = mysql_insert_id();
+		//insert_event ("USER TREASURY ITEM CREATED", $id_data, 0, $title);
+		audit_db ($config["id_user"], $config["REMOTE_ADDR"], "TES", "Created user tes item $ammount - $description");
+	}
+	*/
+	
+    }else {  // TODOS Selected
+
+
+    
+    $sql_teste = "SELECT id_usuario FROM tusuario  where id_company=1 ORDER BY nombre_real";
+			//echo $sql_teste;
+
+    $users_list =  get_db_all_rows_sql ($sql_teste);
+    
+    if ($users_list !== false) {
+    
+	foreach ($users_list as $selected) {
+	$selectedOption = $selected[0];
+     
+    if(!is_remido($selectedOption, $id_category,$date_sql) && is_pagante($selectedOption)) {
+		
+		$my_cat = $id_category;
+		$my_user = $selectedOption;
+				
+		$id_data = tes_insert_data_user ($ammount_sql,$date_sql,$description ,$id_product, $my_cat , $my_user);
+	
+		if ($id_data > 0){
+			 //======Insere regitro de pagamento=======
+			$id_payment = tes_insert_user_data_payment($id_data,$detail_id_method,$detail_number,$detail_bank,$detail_agency,$detail_account,$description);
+	       
+						
+			if ($id_payment > 0){
+            $new_payment = $id_payment;
+			//	echo "<h3 class='suc'>".__('Payment details')."  ".__('Successfully created')." ".$new_payment."</h3>";
+			} else {
+			//	echo "<h3 class='error'>".__('Payment details')."  ".__('Could not be created')."</h3>";
+			//
+			}
+			array_push($positive_users,$selectedOption);
+			$ha_positive = 1;	
+			//echo "<h3 class='suc'>".__('Successfully created')." "._('for')." ".dame_nombre_real($my_user)."</h3>";
+		}else{
+			echo "<h3 class='error'>".__('Could not be created')." "._('for')." ".dame_nombre_real($my_user)."</h3>";
+		}
+			
+			
+	 }else{
+		 array_push($remissive_users,$selectedOption);
+		 $ha_remissive = 1;
+		 //echo "<h3 class='error'>".__('Could not be created').__('Remissive User')."</h3>";
+	 }
+
+	 } //end foreach     $is_create = true;
+	 } //end if
+    }
+    //Irm�os Remidos
+    if ($ha_positive) {
+       echo "<h3 class='success'>";
+       echo 'Added Users';
+       echo ": ";
+       foreach($positive_users as $remido) {
+			echo dame_nombre_real($remido);
+			echo " , ";
+       }
+      echo "</h3>";
+
+    }
+    
+    //Irm�os Remidos
+    if ($ha_remissive) {
+       echo "<h3 class='error'>";
+       echo 'Remissive Users';
+       echo ": ";
+       foreach($remissive_users as $remido) {
+			echo dame_nombre_real($remido);
+			echo " , ";
+       }
+      echo "</h3>";
+
+    }
+
+
+}
+///////END INSERT DATA ///////////////
+
+
+
+
 include('templates/header.php'); ?>
 
 <body class="subpage">
@@ -44,7 +217,7 @@ include('templates/menubar.php');
 <div class="col-md-6 col-md-offset-3" id="form_container">
                     <h2>CATEGORY FORM</h2> 
                     <p> Please fill the information required below. Click Send </p>
-                    <form role="form" method="post" id="reused_form">
+                    <form role="form" method="post" id="reused_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >
                         
                         <div class="row">
                             <div class="col-sm-6 form-group">
@@ -84,7 +257,7 @@ include('templates/menubar.php');
                     </form>
                     <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Posted your message successfully!</h3> </div>
                     <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
-                </div>
+</div>
 
 
 
@@ -115,149 +288,7 @@ include('templates/menubar.php');
 </div>	
 </div>
 
-<div id="slider4_wrapper">
-<div class="container">
-<div class="row">
-<div class="span12">
-<div id="slider4">
-<div class="slider4-title">CATEGORIES MOST USED</div>
-<div class="slider4_wrapper2">
-<a class="prev4" href="#"></a>
-<a class="next4" href="#"></a>
-<div class="carousel-box row">
-	<div class="inner span12">			
-		<div class="carousel main">
-			<ul>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products07.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products08.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products09.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products10.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products07.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products08.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products09.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products10.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>																								
-			</ul>
-		</div>
-	</div>
-</div>	
-</div>
-</div>	
-</div>	
-</div>	
-</div>	
-</div>
+
 
 
 
