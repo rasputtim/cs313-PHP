@@ -110,7 +110,7 @@ if ($added = false) echo '</ul>';
 </div>
 <div class="span3">
 
-<h2>services List</h2>
+<h2>Transactions List</h2>
 
 	<ul class="ul1">
 <?php 
