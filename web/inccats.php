@@ -8,6 +8,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 require_once ("inc/connect.php");
 require_once ("inc/functions.php");
 
+$is_insert = date("create2",false);
 ///////     INSERT DAA INTO DATABASE /////////
 // Database Insert data
 // ==================
@@ -218,7 +219,7 @@ include('templates/menubar.php');
                     <h2>CATEGORY FORM</h2> 
                     <p> Please fill the information required below. Click Send </p>
                     <form role="form" method="post" id="reused_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >
-                        
+					<input type="hidden" class="form-control" id="is_insert" name="create2" value="true">
                         <div class="row">
                             <div class="col-sm-6 form-group">
 
