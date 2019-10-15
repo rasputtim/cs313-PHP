@@ -26,7 +26,7 @@ include('templates/menubar.php');
 <div class="container">
 <div class="row">
 <div class="span12">
-<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;products</div>	
+<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;list categories</div>	
 </div>	
 </div>	
 </div>	

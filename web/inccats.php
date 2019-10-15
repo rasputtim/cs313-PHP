@@ -6,7 +6,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //exit;
 }
 require_once ("inc/connect.php");
-
+require_once ("inc/functions.php");
 
 ///////     INSERT DAA INTO DATABASE /////////
 // Database Insert data
@@ -199,7 +199,7 @@ include('templates/menubar.php');
 <div class="container">
 <div class="row">
 <div class="span12">
-<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;products</div>	
+<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;add / edit category</div>	
 </div>	
 </div>	
 </div>	
