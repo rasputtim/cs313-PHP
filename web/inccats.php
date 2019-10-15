@@ -9,58 +9,6 @@ require_once ("inc/connect.php");
 //require_once ("inc/functions.php");
 
 
-/**
- * Cleans a string by encoding to UTF-8 and replacing the HTML
- * entities. UTF-8 is necessary for foreign chars like asian
- * and our databases are (or should be) UTF-8
- *
- * @param mixed String or array of strings to be cleaned.
- *
- * @return mixed The cleaned string or array.
- */
-function safe_input($value) {
-	//Stop!! Are you sure to modify this critical code? Because the older
-	//versions are serius headache in many places of Pandora.
-
-	if (is_numeric($value))
-		return $value;
-
-	if (is_array($value)) {
-		array_walk($value, "safe_input_array");
-		return $value;
-	}
-
-	//Clean the trash mix into string because of magic quotes.
-	//if (get_magic_quotes_gpc() == 1) {
-		$value = stripslashes($value);
-	//}
-
-	if (! mb_check_encoding ($value, 'UTF-8'))
-		$value = utf8_encode ($value);
-
-	$valueHtmlEncode =  htmlentities ($value, ENT_QUOTES, "UTF-8");
-
-	//Replace the character '\' for the equivalent html entitie
-	$valueHtmlEncode = str_replace('\\', "&#92;", $valueHtmlEncode);
-
-	// First attempt to avoid SQL Injection based on SQL comments
-	// Specific for MySQL.
-	$valueHtmlEncode = str_replace('/*', "&#47;&#42;", $valueHtmlEncode);
-	$valueHtmlEncode = str_replace('*/', "&#42;&#47;", $valueHtmlEncode);
-
-	//Replace ( for the html entitie
-	$valueHtmlEncode = str_replace('(', "&#40;", $valueHtmlEncode);
-
-	//Replace ( for the html entitie
-	$valueHtmlEncode = str_replace(')', "&#41;", $valueHtmlEncode);
-
-	//Replace some characteres for html entities
-	for ($i=0;$i<33;$i++) {
-		$valueHtmlEncode = str_ireplace(chr($i),ascii_to_html($i), $valueHtmlEncode);
-	}
-
-	return $valueHtmlEncode;
-}
 
 /**
  * Get a parameter from get request array.
@@ -72,7 +20,7 @@ function safe_input($value) {
  */
 function get_parameter_get ($name, $default = "") {
 	if ((isset ($_GET[$name])) && ($_GET[$name] != ""))
-		return ($_GET[$name]);
+		return $_GET[$name];
 
 	return $default;
 }
@@ -87,7 +35,7 @@ function get_parameter_get ($name, $default = "") {
  */
 function get_parameter_post ($name, $default = "") {
 	if ((isset ($_POST[$name])) && ($_POST[$name] != ""))
-		return ($_POST[$name]);
+		return $_POST[$name];
 
 	return $default;
 }
