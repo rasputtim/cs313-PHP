@@ -32,14 +32,14 @@ function safe_input($value) {
 		array_walk($value, "safe_input_array");
 		return $value;
 	}
-	
+
 
 	//Clean the trash mix into string because of magic quotes.
 	//if (get_magic_quotes_gpc() == 1) {
 		$value = stripslashes($value);
 	//}
 
-	//if (! mb_check_encoding ($value, 'UTF-8'))
+	if (! mb_check_encoding ($value, 'UTF-8'))
 		$value = utf8_encode ($value);
 
 	$valueHtmlEncode =  htmlentities ($value);
