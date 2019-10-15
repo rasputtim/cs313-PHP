@@ -114,7 +114,7 @@ if ($is_insert){ // Create group
                                 
                                 
                             </div>
-                            <div class="col-sm-6 form-group">
+                            <div class="col-sm-6">
 
 								<label for="operation"> Operation:</label>
 								<div class="col-sm-6 ">
