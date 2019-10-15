@@ -116,10 +116,9 @@ if ($is_insert){ // Create group
                             <div class="col-sm-6 form-group">
 
                                 <label for="operation"> Operation:</label>
-								<input type="text" class="form-control" id="operation" name="operation" required>
-									<label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
-									<label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
-									<label class="checkbox-inline"><input type="checkbox" value="">Option 3</label> 
+								<label class="radio-inline"><input type="radio" name="operation" checked>Income</label>
+								<label class="radio-inline"><input type="radio" name="operation">Outcome</label>
+								<label class="radio-inline"><input type="radio" name="operation">Informative</label> 
                             </div>
 						</div>
 						<div class="row">
