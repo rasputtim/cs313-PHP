@@ -58,9 +58,9 @@ function safe_input($value) {
 	$valueHtmlEncode = str_replace(')', "&#41;", $valueHtmlEncode);
 
 	//Replace some characteres for html entities
-	//for ($i=0;$i<33;$i++) {
-	//	$valueHtmlEncode = str_ireplace(chr($i),ascii_to_html($i), $valueHtmlEncode);
-	//}
+	for ($i=0;$i<33;$i++) {
+		$valueHtmlEncode = str_ireplace(chr($i),ascii_to_html($i), $valueHtmlEncode);
+	}
 
 	return $valueHtmlEncode;
 }
