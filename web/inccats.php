@@ -114,13 +114,13 @@ include('templates/menubar.php');
 <h1>add new category</h1>
 
 <?php
-if ($is_insert){ // Create group
+//if ($is_insert){ // Create group
 	//echo "<script type='javascript'>alert('Is Insert');</script>";
 	
-	echo "<h3 class='suc'>".__('Successfully deleted')."</h3>";
+	echo "<h3 class='suc'>".__('is insert')."</h3>";
 
 
-}
+//}
 ?>
 <div class="col-md-6 col-md-offset-3" id="form_container">
                     <h2>CATEGORY FORM</h2> 
