@@ -117,7 +117,7 @@ include('templates/menubar.php');
 //if ($is_insert){ // Create group
 	//echo "<script type='javascript'>alert('Is Insert');</script>";
 	
-	echo "<h3 class='suc'>".__('is insert')."</h3>";
+	//echo "<h3 class='suc'>".__('is insert')."</h3>";
 
 
 //}
