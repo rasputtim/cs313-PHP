@@ -114,15 +114,19 @@ if ($is_insert){ // Create group
                                 
                                 
                             </div>
-                            <div class="col-sm-6 form-inline radio">
+                            
 
+								
+                           
+						</div>
+						<div class="row">
+								<div class="col-sm-6 form-inline radio">
 								<label for="operation"> Operation:</label>
 								<label class="radio-inline"><input type="radio" name="operation" checked>Income</label>
 								<label class="radio-inline"><input type="radio" name="operation">Outcome</label>
 								<label class="radio-inline"><input type="radio" name="operation">Informative</label> 
-								
-                            </div>
-						</div>
+								</div>
+						</div>	
 						<div class="row">
                             <div class="col-sm-12 form-group">
                                 <label for="descript"> Description:</label>
