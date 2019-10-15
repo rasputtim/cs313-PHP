@@ -133,7 +133,7 @@ if ($is_insert){ // Create group
 	$my_name = get_parameter("name");
 	$my_alias = get_parameter("alias");
 	$my_icon = get_parameter("icon");
-    $my_description = get_paramenter("descript");
+    $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
 
 }
 ///////END INSERT DATA ///////////////
