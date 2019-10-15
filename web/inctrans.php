@@ -42,45 +42,66 @@ include('templates/menubar.php');
 
 		<div class="search-form-wrapper clearfix">
 			<form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form clearfix" >
-				<input type="hidden" id="seach_what" name="t" value="transactions">
-				<input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
-				<a href="#" onClick="document.getElementById('search-form').submit()"></a>
+			<label for="category"> Select Period:</label>
+			<select class="custom-select">
+				<option selected>Select Period</option>
+				<option value="1">January</option>
+				<option value="2">February</option>
+				<option value="3">March</option>
+			</select>
 			</form>
 		</div>
 
 <div class="span9">
 	
-<h1>Transactions for the current period</h1>
+<!--
+
+CREATE TABLE ezfin_transactions (
+            idTransaction SERIAL NOT NULL,
+            idUser varchar(50) NOT NULL,
+            dueDate DATE,
+            description TEXT,
+            idCategory INTEGER NOT NULL,
+            amount REAL,
+            paymentDate DATE,
+            status INTEGER,
+            modificationDateTime timestamp without time zone DEFAULT CURRENT_TIMESTAMP(0),
+            PRIMARY KEY (idTransaction, idUser),
+            FOREIGN KEY (idCategory,idUser) REFERENCES ezfin_category (idCat,idUser),
+            FOREIGN KEY (idUser) REFERENCES ezfin_tusuario (id_usuario)
+            );
+-->
+<h1>Include Finance moves</h1>
 
 
 
 <div class="col-md-6 col-md-offset-3" id="form_container">
-                    <h2>CATEGORY FORM</h2> 
+                    <h2>TRANSACTION FORM</h2> 
                     <p> Please fill the information required below. Click Send </p>
                     <form role="form" method="post" id="reused_form">
                         
                         <div class="row">
                             <div class="col-sm-6 form-group">
 
-                                <label for="name"> Category Name:</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <label for="category"> Select Category:</label>
+                                <input type="text" class="form-control" id="name" name="category" required>
                             </div>
                             <div class="col-sm-6 form-group">
 
-                                <label for="alias"> Category Alias:</label>
-                                <input type="text" class="form-control" id="name" name="alias" required>
+                                <label for="due_date"> Due Date:</label>
+                                <input type="text" class="form-control" id="name" name="due_date" required>
                             </div>
 						</div>
 						<div class="row">
                             <div class="col-sm-6 form-group">
 
-                                <label for="icon"> Icon:</label>
-                                <input type="text" class="form-control" id="icon" name="icon" required>
+                                <label for="amount"> amount:</label>
+                                <input type="text" class="form-control" id="icon" name="amount" required>
                             </div>
                             <div class="col-sm-6 form-group">
 
-                                <label for="operation"> Operation:</label>
-                                <input type="text" class="form-control" id="operation" name="operation" required>
+                                <label for="paymentdate"> Payment Date:</label>
+                                <input type="text" class="form-control" id="operation" name="paymentdate" required>
                             </div>
 						</div>
 						<div class="row">
