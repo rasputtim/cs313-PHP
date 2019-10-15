@@ -41,8 +41,8 @@ function safe_input($value) {
 	//if (! mb_check_encoding ($value, 'UTF-8'))
 	//	$value = utf8_encode ($value);
 
-	//$valueHtmlEncode =  htmlentities ($value);
-	$valueHtmlEncode =  htmlspecialchars($value); //
+	$valueHtmlEncode =  htmlentities ($value);
+	//$valueHtmlEncode =  htmlspecialchars($value); //
 	//Replace the character '\' for the equivalent html entitie
 	$valueHtmlEncode = str_replace('\\', "&#92;", $valueHtmlEncode);
 
@@ -55,12 +55,12 @@ function safe_input($value) {
 	$valueHtmlEncode = str_replace('(', "&#40;", $valueHtmlEncode);
 
 	//Replace ( for the html entitie
-	$valueHtmlEncode = str_replace(')', "&#41;", $valueHtmlEncode);
+	//$valueHtmlEncode = str_replace(')', "&#41;", $valueHtmlEncode);
 
 	//Replace some characteres for html entities
-	for ($i=0;$i<33;$i++) {
-		$valueHtmlEncode = str_ireplace(chr($i),ascii_to_html($i), $valueHtmlEncode);
-	}
+	//for ($i=0;$i<33;$i++) {
+	//	$valueHtmlEncode = str_ireplace(chr($i),ascii_to_html($i), $valueHtmlEncode);
+	//}
 
 	return $valueHtmlEncode;
 }
