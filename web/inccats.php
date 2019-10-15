@@ -79,7 +79,7 @@ if ($is_insert){ // Create group
 	echo "<h3 >$my_name</h3>";
 	echo "<h3 >$my_alias</h3>";
 	echo "<h3 >$my_icon</h3>";
-	echo "<h3 >$my_oper</h3>";
+	echo "<h3 >OPER: $my_oper</h3>";
     echo "<h3 >$my_description</h3>";
 
 }
@@ -121,15 +121,15 @@ if ($is_insert){ // Create group
 						</div>
 						<div class="row">
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="opertion" id="inlineRadio1" value="0">
+							<input class="form-check-input" type="radio" name="operation" id="inlineRadio1" value="0">
 							<label class="form-check-label" for="inlineRadio1">INCOME</label>
 							</div>
 							<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="opertion" id="inlineRadio2" value="1">
+							<input class="form-check-input" type="radio" name="operation" id="inlineRadio2" value="1">
 							<label class="form-check-label" for="inlineRadio2">OUTCOME</label>
 							</div>
 							<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="opertion" id="inlineRadio3" value="2" >
+							<input class="form-check-input" type="radio" name="operation" id="inlineRadio3" value="2" >
 							<label class="form-check-label" for="inlineRadio3">INFORMATIVE</label>
 							</div>
 						</div>	
