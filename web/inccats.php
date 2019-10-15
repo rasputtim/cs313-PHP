@@ -35,7 +35,7 @@ function safe_input($value) {
 
 	//Clean the trash mix into string because of magic quotes.
 	//if (get_magic_quotes_gpc() == 1) {
-	//	$value = stripslashes($value);
+		$value = stripslashes($value);
 	//}
 
 	//if (! mb_check_encoding ($value, 'UTF-8'))
