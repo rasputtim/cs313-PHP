@@ -32,6 +32,7 @@ function safe_input($value) {
 		array_walk($value, "safe_input_array");
 		return $value;
 	}
+	
 
 	//Clean the trash mix into string because of magic quotes.
 	//if (get_magic_quotes_gpc() == 1) {
