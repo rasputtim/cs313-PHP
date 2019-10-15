@@ -61,17 +61,19 @@ function get_parameter ($name, $default = '') {
 }
 
 
-$is_insert = get_parameter("create2");
+//$is_insert = get_parameter("create2");
+$is_insert = false;
+$is_insert = $_POST["create2"];
 ///////     INSERT DAA INTO DATABASE /////////
 // Database Insert data
 // ==================
-//if ($is_insert){ // Create group
-	//echo "<script type='javascript'>alert('Is Insert');</script>";
+if ($is_insert){ // Create group
+	echo "<script type='javascript'>alert('Is Insert');</script>";
 	
 	
 
 
-//}
+}
 ///////END INSERT DATA ///////////////
 
 
