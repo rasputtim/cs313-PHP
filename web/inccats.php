@@ -57,7 +57,7 @@ CREATE TABLE ezfin_category(
             PRIMARY KEY ( idCat, idUser)
             );
 -->
-<body >
+
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3" id="form_container">
