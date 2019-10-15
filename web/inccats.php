@@ -50,6 +50,8 @@ function get_parameter_post ($name, $default = "") {
  * @return
  */
 function get_parameter ($name, $default = '') {
+
+	return "true";
 	// POST has precedence
 	if (isset($_POST[$name]))
 		return get_parameter_post ($name, $default);
@@ -61,9 +63,9 @@ function get_parameter ($name, $default = '') {
 }
 
 
-//$is_insert = get_parameter("create2","false");
-$is_insert = false;
-$is_insert = $_POST["create2"];
+$is_insert = get_parameter("create2","false");
+//$is_insert = false;
+//$is_insert = $_POST["create2"];
 ///////     INSERT DAA INTO DATABASE /////////
 // Database Insert data
 // ==================
