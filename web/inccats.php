@@ -76,8 +76,8 @@ if ($is_insert){ // Create group
 	$my_user = "admin";
 	$my_name = get_parameter("name");
 	$my_alias = get_parameter("alias");
-	$my_icon = get_parameter("icon");
-    $my_description = get_paramenter("description");
+	//$my_icon = get_parameter("icon");
+    //$my_description = get_paramenter("description");
 
 }
 ///////END INSERT DATA ///////////////
