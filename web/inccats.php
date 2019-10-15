@@ -44,7 +44,7 @@ include('templates/menubar.php');
 		</div>
 <div class="span9">
 	
-<h1>categories  overview</h1>
+<h1>add new category</h1>
 
 
 <div class="col-md-6 col-md-offset-3" id="form_container">
