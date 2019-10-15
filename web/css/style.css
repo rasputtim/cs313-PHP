@@ -107,7 +107,7 @@ transition: color 0.3s ease-out; -moz-transition: color 0.3s ease-out; -webkit-t
 .navbar_ .btn-navbar:hover{ background-position: bottom;}
 .navbar_ .btn-navbar .icon-bar{background-image: none; background: #a70000; width: 38px; height: 7px; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;}
 .btn-navbar .icon-bar + .icon-bar{margin-top: 4px;}
-.nav-collapse_.collapse{ position:relative; display:block; text-align: center;}
+.nav-collapse_.collapse{ height: 76px; padding: 0; margin: 0; position:relative; display:block; text-align: center;}
 .navbar_ .nav{ position: relative; float: none; margin: 0; padding: 0; display: block; left: auto;}
 .navbar_ .nav > li{position: relative; display: block; float: left; padding-left: 2px; white-space: nowrap; background: url(../images/marker0.png) left top no-repeat;}
 .navbar_ .nav > li:first-child{}
