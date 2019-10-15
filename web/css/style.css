@@ -99,6 +99,9 @@ footer{padding: 12px 0 10px; background: url(../images/footer.png) 0 0 repeat-x;
 
 
 /* ============================= main menu ====================== */
+.navbar_{height: 76px; position: relative;}
+.navbar_{position: absolute; left: 0; right: 0; height: 76px; background:url(../images/top1_inner_bg.jpg) 0 0 repeat-x; }
+
 .navbar_ { margin: 0; padding: 0; background: none; position: relative;z-index: 1; float: right;}
 .navbar_ .navbar-inner_ { padding: 0; margin: 0; border: none; min-height: inherit; background: none; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px; box-shadow: none;-moz-box-shadow: none; -webkit-box-shadow: none; filter:none; }
 .navbar_ .btn-navbar { background: url(../images/btn-navbar.png) left top repeat-x; border: none;box-shadow: none;-moz-box-shadow: none; -webkit-box-shadow: none; margin-top: 0px; margin-bottom: 0px;margin-left: 0; margin-right: 0; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;  padding: 23px 19px;
