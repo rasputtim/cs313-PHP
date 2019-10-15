@@ -14,6 +14,7 @@ $is_insert = get_parameter("create2",false);
 // ==================
 if ($is_insert){ // Create group
 	echo "<script type='javascript'>alert('Is Insert');";
+	
 	$timestamp = date('Y-m-d H:i:s');
 	$description = get_parameter ("description","");
 	$id_product = get_parameter ("product",0);
@@ -50,40 +51,7 @@ if ($is_insert){ // Create group
 
     if( !$set_todos) {
 
-	foreach ($_POST['id_user'] as $selectedOption) {
-
-   	 if(!is_remido($selectedOption, $id_category,$date_sql) && is_pagante($selectedOption)) {
-		 
-		$my_cat = $id_category;
-		$my_user = $selectedOption;
-				
-		$id_data = tes_insert_data_user ($ammount_sql,$date_sql,$description ,$id_product, $my_cat , $my_user);
 	
-		if ($id_data > 0){
-			 //======Insere regitro de pagamento=======
-			$id_payment = tes_insert_user_data_payment($id_data,$detail_id_method,$detail_number,$detail_bank,$detail_agency,$detail_account,$description);
-	       
-						
-			if ($id_payment > 0){
-				$new_payment = $id_payment;
-				echo "<h3 class='suc'>".__('Payment details')."  ".__('Successfully created')." ".$new_payment."</h3>";
-			} else {
-				echo "<h3 class='error'>".__('Payment details')."  ".__('Could not be created')."</h3>";
-			
-			}
-			echo "<h3 class='suc'>".__('Successfully created')." "._('for')." ".dame_nombre_real($my_user)."</h3>";
-		}else{
-			echo "<h3 class='error'>".__('Could not be created')." "._('for')." ".dame_nombre_real($my_user)."</h3>";
-		}
-			
-			
-	 }else{
-		 array_push($remissive_users,$selectedOption);
-		 $ha_remissive = 1;
-		 //echo "<h3 class='error'>".__('Could not be created').__('Remissive User')."</h3>";
-	 }
-    } //end foreach
-
 
     //check only the last record
 	/*
@@ -104,23 +72,23 @@ if ($is_insert){ // Create group
     $sql_teste = "SELECT id_usuario FROM tusuario  where id_company=1 ORDER BY nombre_real";
 			//echo $sql_teste;
 
-    $users_list =  get_db_all_rows_sql ($sql_teste);
+    $users_list = '';// get_db_all_rows_sql ($sql_teste);
     
     if ($users_list !== false) {
     
 	foreach ($users_list as $selected) {
 	$selectedOption = $selected[0];
      
-    if(!is_remido($selectedOption, $id_category,$date_sql) && is_pagante($selectedOption)) {
+    if(false /*!is_remido($selectedOption, $id_category,$date_sql) && is_pagante($selectedOption)*/) {
 		
 		$my_cat = $id_category;
 		$my_user = $selectedOption;
 				
-		$id_data = tes_insert_data_user ($ammount_sql,$date_sql,$description ,$id_product, $my_cat , $my_user);
+		//$id_data = tes_insert_data_user ($ammount_sql,$date_sql,$description ,$id_product, $my_cat , $my_user);
 	
 		if ($id_data > 0){
 			 //======Insere regitro de pagamento=======
-			$id_payment = tes_insert_user_data_payment($id_data,$detail_id_method,$detail_number,$detail_bank,$detail_agency,$detail_account,$description);
+			//$id_payment = tes_insert_user_data_payment($id_data,$detail_id_method,$detail_number,$detail_bank,$detail_agency,$detail_account,$description);
 	       
 						
 			if ($id_payment > 0){
@@ -153,7 +121,7 @@ if ($is_insert){ // Create group
        echo 'Added Users';
        echo ": ";
        foreach($positive_users as $remido) {
-			echo dame_nombre_real($remido);
+			//echo dame_nombre_real($remido);
 			echo " , ";
        }
       echo "</h3>";
@@ -166,7 +134,7 @@ if ($is_insert){ // Create group
        echo 'Remissive Users';
        echo ": ";
        foreach($remissive_users as $remido) {
-			echo dame_nombre_real($remido);
+			//echo dame_nombre_real($remido);
 			echo " , ";
        }
       echo "</h3>";
