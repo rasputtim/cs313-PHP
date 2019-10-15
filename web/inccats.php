@@ -114,7 +114,7 @@ if ($is_insert){ // Create group
                                 
                                 
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 checkbox">
 
 								<label for="operation"> Operation:</label>
 								<div class="col-sm-6 ">
