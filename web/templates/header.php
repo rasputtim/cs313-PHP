@@ -10,11 +10,12 @@
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+
 <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css" media="screen">    
 <link rel="stylesheet" href="css/camera.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/jquery.js"></script>  
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/superfish.js"></script>
