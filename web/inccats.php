@@ -13,7 +13,7 @@ $is_insert = get_parameter("create2",false);
 // Database Insert data
 // ==================
 if ($is_insert){ // Create group
-	echo "<script type='javascript'>alert('Is Insert');</script>";
+	//echo "<script type='javascript'>alert('Is Insert');</script>";
 	
 	
 
