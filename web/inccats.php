@@ -77,7 +77,7 @@ if ($is_insert){ // Create group
 	$my_name = get_parameter("name");
 	$my_alias = get_parameter("alias");
 	$my_icon = get_parameter("icon");
-    $my_description = get_paramenter("description");
+    $my_description = get_paramenter("descript");
 
 }
 ///////END INSERT DATA ///////////////
@@ -164,8 +164,8 @@ if ($is_insert){ // Create group
 						</div>
 						<div class="row">
                             <div class="col-sm-12 form-group">
-                                <label for="description"> Description:</label>
-                                <textarea class="form-control" type="textarea" name="description" id="description" maxlength="6000" rows="3"></textarea>
+                                <label for="descript"> Description:</label>
+                                <textarea class="form-control" type="textarea" name="descript" id="descript" maxlength="6000" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="row">
