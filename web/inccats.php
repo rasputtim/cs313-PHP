@@ -25,8 +25,8 @@ function safe_input($value) {
 	//Stop!! Are you sure to modify this critical code? Because the older
 	//versions are serius headache in many places.
 
-	if (is_numeric($value))
-		return $value;
+	//if (is_numeric($value))
+	//	return $value;
 
 	//if (is_array($value)) {
 	//	array_walk($value, "safe_input_array");
@@ -133,7 +133,7 @@ if ($is_insert){ // Create group
 	$my_name = get_parameter("name");
 	$my_alias = get_parameter("alias");
 	$my_icon = get_parameter("icon");
-    $my_description = get_paramenter("descript");
+    $my_description = htmlspecialchars($_POST['descript']); //get_paramenter("descript");
 
 }
 ///////END INSERT DATA ///////////////
