@@ -75,7 +75,7 @@ include('templates/menubar.php');
 <div class="slider2">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="slider2_inner clearfix">
 <div class="slider2_block1">
 <div id="slider3">
@@ -190,7 +190,7 @@ include('templates/menubar.php');
 <div class="banners2">
 <div class="container">
 <div class="row">
-<div class="span4 banner banner1">
+<div class="col-lg-4 banner banner1">
 <div class="banner_inner">
 	<a href="#">
 		<div class="txt1">Our Mission </div>
@@ -199,7 +199,7 @@ include('templates/menubar.php');
 	</a>
 </div>	
 </div>
-<div class="span4 banner banner2">
+<div class="col-lg-4 banner banner2">
 <div class="banner_inner">
 	<a href="#">
 		<div class="txt1">Our Vision</div>
@@ -208,7 +208,7 @@ include('templates/menubar.php');
 	</a>
 </div>	
 </div>
-<div class="span4 banner banner3">
+<div class="col-lg-4 banner banner3">
 <div class="banner_inner">
 	<a href="#">
 		<div class="txt1">mobile App</div>
@@ -226,7 +226,7 @@ include('templates/menubar.php');
 <div id="content">
 <div class="container">
 <div class="row">
-<div class="span4">
+<div class="col-lg-4">
 	
 	<h2>Welcome to <span>Mobile</span></h2>
 
@@ -243,7 +243,7 @@ include('templates/menubar.php');
 
 
 </div>
-<div class="span4">
+<div class="col-lg-4">
 	
 	<h2>Why choose us</h2>
 
@@ -258,7 +258,7 @@ include('templates/menubar.php');
 
 	
 </div>
-<div class="span4">
+<div class="col-lg-4">
 	
 <div class="box1">
 <div class="caroufredsel_slider">
@@ -303,7 +303,7 @@ include('templates/menubar.php');
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 
 	<?php include('templates/footer.php'); ?>

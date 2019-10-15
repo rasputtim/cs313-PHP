@@ -26,7 +26,7 @@ include('templates/menubar.php');
 <div class="breadcrumbs1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;search</div>	
 </div>	
 </div>	
@@ -36,7 +36,7 @@ include('templates/menubar.php');
 <div id="content">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 	
 <h1>Search Results</h1>	
 
@@ -54,7 +54,7 @@ include('templates/menubar.php');
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 
 <?php include('templates/footer.php'); ?>

@@ -29,7 +29,7 @@ include('templates/menubar.php');
 <div class="breadcrumbs1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;views</div>	
 </div>	
 </div>	
@@ -46,7 +46,7 @@ include('templates/menubar.php');
 				<a href="#" onClick="document.getElementById('search-form').submit()"></a>
 			</form>
 		</div>
-<div class="span9">
+<div class="col-lg-9">
 	
 <h1>Periods</h1>
 
@@ -89,7 +89,7 @@ if ($added = false) echo '</ul>';
 
 
 </div>
-<div class="span3">
+<div class="col-lg-3">
 
 <h2>services List</h2>
 
@@ -111,7 +111,7 @@ if ($added = false) echo '</ul>';
 </div>	
 </div>
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 
 
 <div class="line1"></div>
@@ -126,7 +126,7 @@ if ($added = false) echo '</ul>';
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 
 	<?php include('templates/footer.php'); ?>

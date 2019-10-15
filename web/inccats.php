@@ -54,7 +54,7 @@ include('templates/menubar.php');
 <div class="breadcrumbs1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;add / edit category</div>	
 </div>	
 </div>	
@@ -65,7 +65,7 @@ include('templates/menubar.php');
 <div class="container">
 <div class="row">
 		
-<div class="span9">
+<div class="col-lg-9">
 	
 <h1>add new category</h1>
 
@@ -147,7 +147,7 @@ if ($is_insert){ // Create group
 
 
 </div>
-<div class="span3">
+<div class="col-lg-3">
 
 <h2>category List</h2>
 
@@ -178,7 +178,7 @@ if ($is_insert){ // Create group
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 <?php include('templates/footer.php'); ?>
 </div>	

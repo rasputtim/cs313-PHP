@@ -29,7 +29,7 @@ include('templates/menubar.php');
 <div class="breadcrumbs1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;transactions</div>	
 </div>	
 </div>	
@@ -52,7 +52,7 @@ include('templates/menubar.php');
 			</form>
 		</div>
 
-<div class="span9">
+<div class="col-lg-9">
 	
 <!--
 
@@ -134,7 +134,7 @@ CREATE TABLE ezfin_transactions (
 
 
 </div>
-<div class="span3">
+<div class="col-lg-3">
 
 <h2>Transactions List</h2>
 
@@ -156,7 +156,7 @@ CREATE TABLE ezfin_transactions (
 </div>	
 </div>
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 
 <div class="line1"></div>
 
@@ -171,7 +171,7 @@ CREATE TABLE ezfin_transactions (
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 
 	<?php include('templates/footer.php'); ?>

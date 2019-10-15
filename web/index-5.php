@@ -25,7 +25,7 @@ include('templates/menubar.php');
 <div class="breadcrumbs1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;contacts</div>	
 </div>	
 </div>	
@@ -35,7 +35,7 @@ include('templates/menubar.php');
 <div id="content">
 <div class="container">
 <div class="row">
-<div class="span9">
+<div class="col-lg-9">
 	
 <h1>contact address</h1>
 
@@ -60,38 +60,38 @@ Telephone: +1 800 123 1234<br>
 <div id="fields">
 	<form id="ajax-contact-form" class="form-horizontal" action="javascript:alert('success!');">
 		<div class="row">
-			<div class="span4">
+			<div class="col-lg-4">
 				<div class="control-group">
 				    <label class="control-label" for="inputName">Your full name:</label>
 				    <div class="controls">				      
-				      <input class="span4" type="text" id="inputName" name="name" value="Your full name:" onBlur="if(this.value=='') this.value='Your full name:'" onFocus="if(this.value =='Your full name:' ) this.value=''">
+				      <input class="col-lg-4" type="text" id="inputName" name="name" value="Your full name:" onBlur="if(this.value=='') this.value='Your full name:'" onFocus="if(this.value =='Your full name:' ) this.value=''">
 				    </div>
 				</div>
 				<div class="control-group">
 				    <label class="control-label" for="inputEmail">Your email:</label>
 				    <div class="controls">				      
-				      <input class="span4" type="text" id="inputEmail" name="email" value="Your email:" onBlur="if(this.value=='') this.value='Your email:'" onFocus="if(this.value =='Your email:' ) this.value=''">
+				      <input class="col-lg-4" type="text" id="inputEmail" name="email" value="Your email:" onBlur="if(this.value=='') this.value='Your email:'" onFocus="if(this.value =='Your email:' ) this.value=''">
 				    </div>
 				</div>
 				<div class="control-group">
 				    <label class="control-label" for="inputPhone">Phone number:</label>
 				    <div class="controls">				      
-				      <input class="span4" type="text" id="inputPhone" name="phone" value="Phone number:" onBlur="if(this.value=='') this.value='Phone number:'" onFocus="if(this.value =='Phone number:' ) this.value=''">
+				      <input class="col-lg-4" type="text" id="inputPhone" name="phone" value="Phone number:" onBlur="if(this.value=='') this.value='Phone number:'" onFocus="if(this.value =='Phone number:' ) this.value=''">
 				    </div>
 				</div>
 			</div>
-			<div class="span5">
+			<div class="col-lg-5">
 				<div class="control-group">
 				    <label class="control-label" for="inputMessage">Message:</label>
 				    <div class="controls">				      				      
-				      <textarea class="span5" id="inputMessage" name="content" onBlur="if(this.value=='') this.value='Message:'" 
+				      <textarea class="col-lg-5" id="inputMessage" name="content" onBlur="if(this.value=='') this.value='Message:'" 
                         onFocus="if(this.value =='Message:' ) this.value=''">Message:</textarea>
 				    </div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="span4">
+			<div class="col-lg-4">
 				<div class="control-group capthca">
 				    <label class="control-label" for="inputCapthca">Capthca:</label>
 				    <div class="controls">				      
@@ -107,7 +107,7 @@ Telephone: +1 800 123 1234<br>
 
 
 </div>
-<div class="span3">
+<div class="col-lg-3">
 
 <h2>Why choose us</h2>
 
@@ -166,7 +166,7 @@ Telephone: +1 800 123 1234<br>
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 
 	<?php include('templates/footer.php'); ?>

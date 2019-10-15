@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="span3">
+	<div class="col-lg-3">
 
 		<div class="block_title">information</div>
 
@@ -11,7 +11,7 @@
 		</ul>
 
 	</div>
-	<div class="span3">
+	<div class="col-lg-3">
 
 		<div class="block_title">support</div>
 
@@ -22,7 +22,7 @@
 		</ul>
 
 	</div>
-	<div class="span3">
+	<div class="col-lg-3">
 
 		<div class="block_title">downloads</div>
 
@@ -33,7 +33,7 @@
 		</ul>
 
 	</div>
-	<div class="span3">
+	<div class="col-lg-3">
 
 		<div class="block_title">getting started</div>
 

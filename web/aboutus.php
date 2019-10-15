@@ -26,7 +26,7 @@ include('templates/menubar.php');
 <div class="breadcrumbs1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;about us</div>	
 </div>	
 </div>	
@@ -36,7 +36,7 @@ include('templates/menubar.php');
 <div id="content">
 <div class="container">
 <div class="row">
-<div class="span9">
+<div class="col-lg-9">
 
 
 <h2>Who we are</h2>
@@ -49,7 +49,7 @@ include('templates/menubar.php');
 <h2>Our team</h2>
 
 <div class="row">
-<div class="span3">
+<div class="col-lg-3">
 <div class="thumb2">
 	<div class="thumbnail clearfix">
 		<a href="#">
@@ -62,7 +62,7 @@ include('templates/menubar.php');
 	</div>
 </div>	
 </div>
-<div class="span3">
+<div class="col-lg-3">
 <div class="thumb2">
 	<div class="thumbnail clearfix">
 		<a href="#">
@@ -75,7 +75,7 @@ include('templates/menubar.php');
 	</div>
 </div>	
 </div>
-<div class="span3">
+<div class="col-lg-3">
 <div class="thumb2">
 	<div class="thumbnail clearfix">
 		<a href="#">
@@ -91,7 +91,7 @@ include('templates/menubar.php');
 </div>
 
 <div class="row">
-<div class="span3">
+<div class="col-lg-3">
 <div class="thumb2">
 	<div class="thumbnail clearfix">
 		<a href="#">
@@ -104,7 +104,7 @@ include('templates/menubar.php');
 	</div>
 </div>	
 </div>
-<div class="span3">
+<div class="col-lg-3">
 <div class="thumb2">
 	<div class="thumbnail clearfix">
 		<a href="#">
@@ -117,7 +117,7 @@ include('templates/menubar.php');
 	</div>
 </div>	
 </div>
-<div class="span3">
+<div class="col-lg-3">
 <div class="thumb2">
 	<div class="thumbnail clearfix">
 		<a href="#">
@@ -145,7 +145,7 @@ include('templates/menubar.php');
 
 
 </div>
-<div class="span3">
+<div class="col-lg-3">
 
 <h2>Why choose us</h2>
 
@@ -204,7 +204,7 @@ include('templates/menubar.php');
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 
 	<?php include('templates/footer.php'); ?>

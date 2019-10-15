@@ -25,7 +25,7 @@ include('templates/menubar.php');
 <div class="breadcrumbs1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;list categories</div>	
 </div>	
 </div>	
@@ -42,7 +42,7 @@ include('templates/menubar.php');
 				<a href="#" onClick="document.getElementById('search-form').submit()"></a>
 			</form>
 		</div>
-<div class="span9">
+<div class="col-lg-9">
 	
 <h1>categories  overview</h1>
 
@@ -60,7 +60,7 @@ foreach ($rows as $row)
 {
 	$added = false;
 	if ($count % 3 == 0 ) echo '<div class="row">';
-	echo '<div class="span3">';
+	echo '<div class="col-lg-3">';
 	echo '<div class="thumb3">';
 	echo '<div class="thumbnail clearfix">';		
 	echo '<figure class=""><img src="images/'. $row['icon'] . '.png " alt=""></figure>';
@@ -91,7 +91,7 @@ if ($added == false) echo '</div>';
 
 
 </div>
-<div class="span3">
+<div class="col-lg-3">
 
 <h2>category List</h2>
 
@@ -118,14 +118,14 @@ if ($added == false) echo '</div>';
 <div id="slider4_wrapper">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div id="slider4">
 <div class="slider4-title">CATEGORIES MOST USED</div>
 <div class="slider4_wrapper2">
 <a class="prev4" href="#"></a>
 <a class="next4" href="#"></a>
 <div class="carousel-box row">
-	<div class="inner span12">			
+	<div class="inner col-lg-12">			
 		<div class="carousel main">
 			<ul>
 				<li>
@@ -264,7 +264,7 @@ if ($added == false) echo '</div>';
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 <?php include('templates/footer.php'); ?>
 </div>	
