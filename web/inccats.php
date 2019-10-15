@@ -38,8 +38,8 @@ function safe_input($value) {
 	//	$value = stripslashes($value);
 	//}
 
-	if (! mb_check_encoding ($value, 'UTF-8'))
-		$value = utf8_encode ($value);
+	//if (! mb_check_encoding ($value, 'UTF-8'))
+	//	$value = utf8_encode ($value);
 
 	//$valueHtmlEncode =  htmlentities ($value);
 	$valueHtmlEncode =  htmlspecialchars($value); //
