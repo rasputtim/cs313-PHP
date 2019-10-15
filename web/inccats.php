@@ -8,17 +8,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 require_once ("inc/connect.php");
 require_once ("inc/functions.php");
 
-$is_insert = get_parameter("create2",false);
+//$is_insert = get_parameter("create2",false);
 ///////     INSERT DAA INTO DATABASE /////////
 // Database Insert data
 // ==================
-if ($is_insert){ // Create group
+//if ($is_insert){ // Create group
 	//echo "<script type='javascript'>alert('Is Insert');</script>";
 	
 	
 
 
-}
+//}
 ///////END INSERT DATA ///////////////
 
 
