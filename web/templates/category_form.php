@@ -100,15 +100,15 @@
 							</div>
 							<div class="row">
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="operation" id="inlineRadio1" value="0" checked="<?php $my_checked_income?>">
+								<input class="form-check-input" type="radio" name="operation" id="inlineRadio1" value="0" checked="<?php echo $my_checked_income;?>">
 								<label class="form-check-label" for="inlineRadio1">INCOME</label>
 								</div>
 								<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="operation" id="inlineRadio2" value="1" checked="<?php $my_checked_outcome?>">
+								<input class="form-check-input" type="radio" name="operation" id="inlineRadio2" value="1" checked="<?php echo $my_checked_outcome;?>">
 								<label class="form-check-label" for="inlineRadio2">OUTCOME</label>
 								</div>
 								<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="operation" id="inlineRadio3" value="2" checked="<?php $my_checked_informative?>">
+								<input class="form-check-input" type="radio" name="operation" id="inlineRadio3" value="2" checked="<?php echo $my_checked_informative;?>">
 								<label class="form-check-label" for="inlineRadio3">INFORMATIVE</label>
 								</div>
 							</div>	
