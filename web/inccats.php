@@ -188,17 +188,19 @@ if (($is_create OR $is_update)) {
 		echo "<H3> OPER: $my_oper </H3>";
 		switch($my_oper){
 			case 0:
-			$my_checked_income = "checked";
+				$my_checked_income = "checked";
 			break;
 			case 1:
-			$my_checked_outcome = "checked";
+				$my_checked_outcome = "checked";
 			break;
 			case 2:
-			$my_checked_informative = "checked";
+				$my_checked_informative = "checked";
 			break;
 
 		}
-		
+		echo "<H3> OPER: $my_checked_income </H3>";
+		echo "<H3> OPER:$my_checked_outcome </H3>";
+		echo "<H3> OPER: $my_checked_informative </H3>";
 	}
 
 
