@@ -199,12 +199,7 @@ if (($is_create OR $is_update)) {
 		$my_checked_not_paid = "";
 		
 		
-		 = strtoupper (get_parameter("duedate"));
-		 = htmlspecialchars($_POST['descript']) ;
-		 = get_parameter("idcat");
-		 = get_parameter("amount");
-		 = strtoupper (get_parameter("duedate"));
-		 $_POST['status'];//get_parameter("operation");
+		
 
 		switch($my_status){
 			case 0:
