@@ -24,7 +24,7 @@
 								<div class="col-sm-6 form-group">
 
 									<label for="alias"> Category Alias:</label>
-									<input type="text" class="form-control" id="alias" name="alias" <?php echo $my_alias; ?> required>
+									<input type="text" class="form-control" id="alias" name="alias" value="<?php echo $my_alias; ?>" required>
 								</div>
 							</div>
 							<div class="row">
