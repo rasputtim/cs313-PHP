@@ -41,6 +41,8 @@ include('templates/menubar.php');
 			include('templates/search.php'); 
 		?>
 </div>
+
+<div class="row">
 <div class="col-lg-9">
 	
 <h1>categories  overview</h1>
