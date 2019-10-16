@@ -181,9 +181,9 @@ if (($is_create OR $is_update)) {
 	include ("templates/category_form.php");
     //ends the category form container
 
-
-	echo '</div>';
 }
+	echo '</div>';
+
 	echo '<div class="col-lg-3">';
 
 	echo '<h2>category List</h2>';
