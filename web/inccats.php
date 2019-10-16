@@ -39,10 +39,12 @@ if ($is_insert){ // Create group
 	if($stmt->execute()){
 		$newId = $db->lastInsertId('ezfin_category_idcat_seq');
 		echo '<script language="javascript">';
-echo 'alert("message successfully sent")';
-echo '</script>';
+		echo '$("#success_message").show();';
+		echo '</script>';
 	}else {  //failed
-
+		echo '<script language="javascript">';
+		echo '$("#error_message").show();';
+		echo '</script>';
 	}
 }
 ///////END INSERT DATA ///////////////
