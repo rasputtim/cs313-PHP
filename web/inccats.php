@@ -182,6 +182,21 @@ if (($is_create OR $is_update)) {
 		$my_icon = $row["icon"];
 		$my_oper = $row['operation'];
 		$my_description = $row['description'] ;
+		$my_checked_income = "";
+		$my_checked_outcome = "";
+		$my_checked_informative = "";
+		switch($my_oper){
+			case 0:
+			$my_checked_income = "checked";
+			break;
+			case 1:
+			$my_checked_outcome = "checked";
+			break;
+			case 2:
+			$my_checked_informative = "checked";
+			break;
+
+		}
 		
 	}
 
