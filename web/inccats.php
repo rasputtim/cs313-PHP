@@ -22,7 +22,7 @@ $is_insert = get_parameter("create2");
 $is_update_database = false;
 if (get_paramenter("update2") !=''){
 	$is_update_database = true;
-};
+}
 //$is_insert = false;
 //$is_insert = $_POST["create2"];
 ///////     INSERT DAA INTO DATABASE /////////
