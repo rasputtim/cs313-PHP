@@ -147,13 +147,13 @@ if($count > 0){
 				    $link_search= "";//$final_result[$i]['file_name'][0];	
 					switch ($table) {
 						case "category":
-							$link_search= 'inccats.php?update='.$row["idcat"];
+							$link_search= '../inccats.php?update='.$row["idcat"];
 							break;
 						case "balanceview":
-							$link_search= 'incviews.php?update='.$row["idbalview"];
+							$link_search= '../incviews.php?update='.$row["idbalview"];
 							break;
 						case "transactions":
-							$link_search= 'inctrans.php?update='.$row["idtransaction"];
+							$link_search= '../inctrans.php?update='.$row["idtransaction"];
 							break;
 					}	
 				?>
