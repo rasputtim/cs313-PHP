@@ -1,8 +1,6 @@
 <div class="container">';
 	<div class="col-md-6 col-md-offset-3 " id="form_container">
-						<h2>CATEGORY FORM</h2> 
-                        <p> Please fill the information required below. Click Send </p>
-                        
+						
 						 <?php  
                             if ($id == -1){   //CREATE NEW Record
                                 echo "<h1>Create a new Category</h1>";

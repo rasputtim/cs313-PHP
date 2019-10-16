@@ -19,6 +19,10 @@ if(get_parameter("update") != ''){
   $is_update=true;
 }
 $is_insert = get_parameter("create2");
+$is_update_database = false;
+if (get_paramenter("update2") !=''){
+	$is_update_database = true;
+};
 //$is_insert = false;
 //$is_insert = $_POST["create2"];
 ///////     INSERT DAA INTO DATABASE /////////
@@ -52,7 +56,7 @@ if ($is_insert){ // Create group
 
 // Database UPDATE
 // ==================
-if (isset($_GET["update2"])){ // if modified any parameter
+if ($is_update_database){ // if modified any parameter
 
 	
 
