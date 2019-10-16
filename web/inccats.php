@@ -20,6 +20,7 @@ $is_insert = get_parameter("create2");
 ///////     INSERT DAA INTO DATABASE /////////
 // Database Insert data
 // ==================
+$success=0;
 if ($is_insert){ // Create group
 
 	$my_user = "admin";
@@ -36,16 +37,12 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
-	$stmt->execute();
+	if($stmt->execute()){
 		$newId = $db->lastInsertId('ezfin_category_idcat_seq');
-		echo '<script language="javascript">';
-		echo 'showmydiv();';
-		echo '</script>';
-	//}else {  //failed
-	//	echo '<script language="javascript">';
-	//	echo '$("#error_message").css("display", "block");';
-	//	echo '</script>';
-	//}
+		$success = 1;
+	}else {  //failed
+		$success=2;
+	}
 }
 ///////END INSERT DATA ///////////////
 
@@ -210,9 +207,18 @@ if ($is_insert){ // Create group
                                 <button type="submit" class="btn btn-lg btn-default pull-left" >Send &rarr;</button>
                             </div>
                         </div>
-                    </form>
-                    <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Posted your message successfully!</h3> </div>
-                    <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
+					</form>
+					<?php switch ($success){
+						case 0:
+						break;
+						case 1:
+                    		echo '<div id="success_message" style="width:100%; height:100%;  "> <h3>Posted your message successfully!</h3> </div>';
+							break;
+						case 2:
+							echo'<div id="error_message" style="width:100%; height:100%; "> <h3>Error</h3> Sorry there was an error sending your form. </div>';
+							break;
+					}
+					 ?>
 </div>
 
 </div>
