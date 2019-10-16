@@ -10,7 +10,7 @@
                                 echo'<input type="hidden" class="form-control" id="is_insert" name="create2" value="true">';
                       
                                 
-                            else {
+                            }else {
                                 echo "<h1>Update existing Category</h1>";
                                 echo'<form role="form" method="post" id="reused_form" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).' " >';
                                 echo'<input type="hidden" class="form-control" id="is_update" name="update2" value="true">';
