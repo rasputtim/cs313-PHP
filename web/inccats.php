@@ -144,10 +144,37 @@ if ($is_insert) $is_create = true;
 
 if (($is_create OR $is_update)) {
 
+	if ($is_create){
+
+		// CREATE form
+		
+		$id = -1;
+		$my_user = "admin";
+		$my_name = "";
+		$my_alias = "";
+		$my_icon = "";
+		$my_oper = -1;
+		$my_description = "";
+		
+		
+		
+	} else {   //Update
+		$id = get_parameter ("update",-1);
+		$my_user = "admin";
+		$my_name = strtoupper (get_parameter("name"));
+		$my_alias = get_parameter("alias");
+		$my_icon = get_parameter("icon");
+		$my_oper = $_POST['operation'];//get_parameter("operation");
+    	$my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
+	}
+
+
+
+
 	echo'<div class="container">';
 	echo'<div class="row">';
 	echo'<div class="col-lg-12">';
-	echo'<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;add / edit category</div>	';
+	echo'<div class="breadcrumbs1_inner"><a href="index.php">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;add / edit category</div>	';
 	echo'</div>	';
 	echo'</div>	';
 	echo'</div>	';
@@ -162,27 +189,12 @@ if (($is_create OR $is_update)) {
 	echo'<h1>add new category</h1>';
 
 	
-	if ($is_insert){ // Create group
-		//echo "<script type='javascript'>alert('Is Insert');</script>";
-		
-		//echo "<h3 class='suc'>".__('is insert')."</h3>";
-		echo "<h3 >Is Insert</h3>";
-		echo "<h3 >$my_user</h3>";
-		echo "<h3 >$my_name</h3>";
-		echo "<h3 >$my_alias</h3>";
-		echo "<h3 >$my_icon</h3>";
-		echo "<h3 >OPER: $my_oper</h3>";
-		echo "<h3 >$my_description</h3>";
-		echo "<h3 >NEW ID: $newId</h3>";
-
-	}
-	
 	// creates a container for the category form
 	include ("templates/category_form.php");
     //ends the category form container
 
 }
-	echo '</div>';
+	echo '</div>'; //end the navigation bar
 
 	echo '<div class="col-lg-3">';
 

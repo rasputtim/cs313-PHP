@@ -1,10 +1,23 @@
 <div class="container">';
 	<div class="col-md-6 col-md-offset-3 " id="form_container">
 						<h2>CATEGORY FORM</h2> 
-						<p> Please fill the information required below. Click Send </p>
-						<form role="form" method="post" id="reused_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >
-						<input type="hidden" class="form-control" id="is_insert" name="create2" value="true">
-							<div class="row">
+                        <p> Please fill the information required below. Click Send </p>
+                        
+						 <?php  
+                            if ($id == -1){   //CREATE NEW Record
+                                echo "<h1>Create a new Category</h1>";
+                                echo'<form role="form" method="post" id="reused_form" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).' " >';
+                                echo'<input type="hidden" class="form-control" id="is_insert" name="create2" value="true">';
+                      
+                                
+                            else {
+                                echo "<h1>Update existing Category</h1>";
+                                echo'<form role="form" method="post" id="reused_form" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).' " >';
+                                echo'<input type="hidden" class="form-control" id="is_update" name="update2" value="true">';
+                                echo '<input class="form-control" type=hidden name=id value="'.$id.'">';
+                            }
+                        ?>
+                            <div class="row">
 								<div class="col-sm-6 form-group">
 
 									<label for="name"> Category Name:</label>
