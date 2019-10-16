@@ -23,7 +23,7 @@ $is_insert = get_parameter("create2");
 if ($is_insert){ // Create group
 
 	$my_user = "admin";
-	$my_name = get_parameter("name");
+	$my_name = strtoupper (get_parameter("name"));
 	$my_alias = get_parameter("alias");
 	$my_icon = get_parameter("icon");
 	$my_oper = $_POST['operation'];//get_parameter("operation");
@@ -36,8 +36,14 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
-	$stmt->execute();
-	$newId = $db->lastInsertId('ezfin_category_idcat_seq');
+	if($stmt->execute();{
+		$newId = $db->lastInsertId('ezfin_category_idcat_seq');
+		echo '<script language="javascript">';
+echo 'alert("message successfully sent")';
+echo '</script>';
+	}else {  //failed
+
+	}
 }
 ///////END INSERT DATA ///////////////
 
