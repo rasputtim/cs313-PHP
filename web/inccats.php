@@ -116,10 +116,58 @@ if ($is_insert){ // Create group
                             <div class="col-sm-6 form-group">
 								<label for="icon"> Icon:</label>
 								<select class="form-control" id="icon" name="icon" required >
-								<option selected>Open this select menu</option>
-								<option value="1">One</option>
-								<option value="2">Two</option>
-								<option value="3">Three</option>
+								<option value= "">Select one icon</option>
+								<option value="cat_all.png">cat_all.</option>
+								<option value="cat_all_bw.png">cat_all_bw.png</option>
+								<option value="cat_begin_cashflow.png">cat_begin_cashflow.png</option>
+								<option value="cat_bill.png">cat_bill.png</option>
+								<option value="cat_bill_red.png">cat_bill_red.png</option>
+								<option value="cat_bill_red_peq.png">cat_bill_red_peq.png</option>
+								<option value="cat_clothing.png">cat_clothing.png</option>
+								<option value="cat_education.png">cat_education.png</option>
+								<option value="cat_end_cashflow.png">cat_end_cashflow.png</option>
+								<option value="cat_entertainment.png">cat_entertainment.png</option>
+								<option value="cat_expense_left.png">cat_expense_left.png</option>
+								<option value="cat_extras_cash_register.png">cat_extras_cash_register.png</option>
+								<option value="cat_extras_coins_700.png">cat_extras_coins_700.png</option>
+								<option value="cat_extras_coins_7000_blue.png">cat_extras_coins_7000_blue.png</option>
+								<option value="cat_extras_coins_700_black.png">cat_extras_coins_700_black.png</option>
+								<option value="cat_extras_coins_700_red.png">cat_extras_coins_700_red.png</option>
+								<option value="cat_extras_currency_black_dollar.png">cat_extras_currency_black_dollar.png</option>
+								<option value="cat_extras_currency_dollar_green.png">cat_extras_currency_dollar_green.png</option>
+								<option value="cat_extras_currency_dollar_red.png">cat_extras_currency_dollar_red.png</option>
+								<option value="cat_extras_dollars_folder.png">cat_extras_dollars_folder.png</option>
+								<option value="cat_extras_money_wallet.png">cat_extras_money_wallet.png</option>
+								<option value="cat_food.png">cat_food.png</option>
+								<option value="cat_fuel.png">cat_fuel.png</option>
+								<option value="cat_gambling_inc.png">cat_gambling_inc.png</option>
+								<option value="cat_general_inc.png">cat_general_inc.png</option>
+								<option value="cat_general_out.png">cat_general_out.png</option>
+								<option value="cat_groceries.png">cat_groceries.png</option>
+								<option value="cat_housing.png">cat_housing.png</option>
+								<option value="cat_income.png">cat_income.png</option>
+								<option value="cat_income_green.png">cat_income_green.png</option>
+								<option value="cat_income_green_peq.png">cat_income_green_peq.png</option>
+								<option value="cat_informative.png">cat_informative.png</option>
+								<option value="cat_informative_bw.png">cat_informative_bw.png</option>
+								<option value="cat_informative_peq.png">cat_informative_peq.png</option>
+								<option value="cat_informative_round.png">cat_informative_round.png</option>
+								<option value="cat_insurance.png">cat_insurance.png</option>
+								<option value="cat_investments.png">cat_investments.png</option>
+								<option value="cat_medical.png">cat_medical.png</option>
+								<option value="cat_pets.png">cat_pets.png</option>
+								<option value="cat_rent_bill.png">cat_rent_bill.png</option>
+								<option value="cat_rent_inc.png">cat_rent_inc.png</option>
+								<option value="cat_retirement.png">cat_retirement.png</option>
+								<option value="cat_retirement_plan.png">cat_retirement_plan.png</option>
+								<option value="cat_salary.png">cat_salary.png</option>
+								<option value="cat_savings.png">cat_savings.png</option>
+								<option value="cat_taxes.png">cat_taxes.png</option>
+								<option value="cat_tax_refunds.png">cat_tax_refunds.png</option>
+								<option value="cat_transportation.png">cat_transportation.png</option>
+								<option value="cat_unknown.png">cat_unknown.png</option>
+								<option value="cat_utilities.png">cat_utilities.png</option>
+								<option value="cat_working.png">cat_working.png</option>
 								</select>
                                 
                                 
