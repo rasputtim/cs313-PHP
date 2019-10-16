@@ -39,10 +39,10 @@ if ($index5=="true"){
 				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="#">Administration</a>
 					<ul>
 						<li><a href="options.php">Options</a></li>
-						<li class="sub-menu sub-menu-2"><a href="inccats.php">Categories</a>
+						<li class="sub-menu sub-menu-2"><a href="listcats.php">Categories</a>
 							<ul>
 								<li><a href="inccats.php?create=1">Include</a></li>
-								<li><a href="inccats.php?update=10">Edit</a></li>
+								<li><a href="inccats.php?update=0">Edit</a></li>
 								<li><a href="listcats.php">Search</a></li>
 								
 							</ul>
@@ -50,7 +50,7 @@ if ($index5=="true"){
 						<li class="sub-menu sub-menu-2"><a href="listviews.php">Periods</a>
 							<ul>
 								<li><a href="incviews.php">Include</a></li>
-								<li><a href="editviews.php">Edit</a></li>
+								<li><a href="incviews.php?update=2">Edit</a></li>
 								<li><a href="listviews.php">Search</a></li>
 																
 							</ul>
@@ -58,7 +58,7 @@ if ($index5=="true"){
 						<li class="sub-menu sub-menu-2"><a href="listtrans.php">Transactions</a>
 							<ul>
 								<li><a href="inctrans.php">Include</a></li>
-								<li><a href="edittrans.php">Edit</a></li>
+								<li><a href="inctrans.php?update=2">Edit</a></li>
 								<li><a href="listtrans.php">Search</a></li>
 																
 							</ul>
