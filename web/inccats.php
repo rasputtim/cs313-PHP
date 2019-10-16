@@ -13,7 +13,7 @@ require_once ("inc/functions.php");
 
     
 
-$is_create = (bool) isset($_GET["create"]);
+$is_create = (bool) get_parameter("create");
 $is_update = (bool) isset($_GET["update"]);
 $is_insert = get_parameter("create2");
 //$is_insert = false;
@@ -141,7 +141,7 @@ if (isset($_GET["update2"])){
 
 <?php	
 if ($is_insert) $is_create = true;
-$is_create = true;
+
 if (($is_create OR $is_update)) {
 
 	echo'<div class="container">';
