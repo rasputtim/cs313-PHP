@@ -5,7 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //header("location:inc/noaccess.php");
     //exit;
 }
-require_once ("inc/connect.php");
+require_once ("inc/functions_db.php");
 include('templates/header.php'); 
 $money_format = '%(#10n';
 $date_format = "D, M d, Y ";
@@ -54,7 +54,7 @@ include('templates/menubar.php');
 
 <?php
 
-$stmt = $db->prepare('SELECT * FROM public.ezfin_balanceview');
+$stmt = get_db()->prepare('SELECT * FROM public.ezfin_balanceview');
 //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -95,7 +95,7 @@ if ($added = false) echo '</ul>';
 
 	<ul class="ul1">
 <?php 
-	foreach ($db->query('SELECT * FROM public.ezfin_balanceview') as $row)
+	foreach (get_db()->query('SELECT * FROM public.ezfin_balanceview') as $row)
 	{
 	echo '<li><a href="#">';
 	echo $row['title']." - ".$row['initialdate']." - ". $row['finaldate'];

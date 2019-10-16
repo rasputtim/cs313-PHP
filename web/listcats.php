@@ -50,7 +50,7 @@ include('templates/menubar.php');
 
 <?php
 $myOperation=1;
-$stmt = get_db()->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
+$stmt = Conection::get_db()->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
 $stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -97,7 +97,7 @@ if ($added == false) echo '</div>';
 
 	<ul class="ul1">
 	<?php 
-	foreach (get_db()->query('SELECT name FROM public.ezfin_category') as $row)
+	foreach (Conection::get_db()->query('SELECT name FROM public.ezfin_category') as $row)
 	{
 	echo '<li><a href="#">';
 	echo $row['name'];

@@ -45,20 +45,19 @@ function get_db() {
 function check_login () {
 	global $db;
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-		echo '<p>LOGGED IN SETTED</p>';
-		echo '<p>DB: '.$GLOBALS['db'].'</p>';
+		
 	
 		if (isset ($_SESSION["id_usuario"])) {
 			$id = $_SESSION["id_usuario"];
 			echo '<p>ID USUARIO  IN SETTED</p>';
 			$sql = 'SELECT id_usuario FROM public.ezfin_tusuario WHERE id_usuario=:op';
 			//$id_user = get_db_value ('id_usuario', 'public.ezfin.tusuario', 'id_usuario', $id);
-			echo '<p>SQL: '.$sql.'</p>';
-			echo '<p>SQL: '.$db.'</p>';
-			$stmt = $db->prepare($sql);
+			
+			
+			$stmt =get_db()->prepare($sql);
 
 			$stmt->bindValue(':op', $id, PDO::PARAM_STR);
-			echo '<p>SQL: '.$sql.'</p>';
+			
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			$count_Rows = count($rows);
