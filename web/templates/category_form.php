@@ -36,7 +36,7 @@
                                     <option value= "">Select one icon</option>
                                     <?php
                                     if($my_icon != '')
-                                    echo'<option value= " '.$my_icon.'" selected >'.$my_icon'.</option>';
+                                    echo'<option value= " '.$my_icon.'" selected >'.$my_icon.'</option>';
                                     ?>
                                     <option value="cat_all.png">cat_all.</option>
 									<option value="cat_all_bw.png">cat_all_bw.png</option>
