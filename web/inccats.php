@@ -14,7 +14,10 @@ require_once ("inc/functions.php");
     
 
 $is_create = (bool) get_parameter("create");
-$is_update = (bool) get_parameter("update");
+$is_update = false;
+if(get_parameter("update") != ''){
+  $is_update=true;
+}
 $is_insert = get_parameter("create2");
 //$is_insert = false;
 //$is_insert = $_POST["create2"];
@@ -160,12 +163,27 @@ if (($is_create OR $is_update)) {
 		
 	} else {   //Update
 		$id = get_parameter ("update",-1);
+         
+		$sql_update ="SELECT * FROM public.ezfin_category WHERE idcat = :id";
+
+		$stmt = $db->prepare($sql_update);
+		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+		$row = array();
+		if($stmt->execute()){
+			$row = $stmt->fetch();
+			
+		}else {  //failed
+			//
+		}
+
 		$my_user = "admin";
-		$my_name = strtoupper (get_parameter("name"));
-		$my_alias = get_parameter("alias");
-		$my_icon = get_parameter("icon");
-		$my_oper = $_POST['operation'];//get_parameter("operation");
-    	$my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
+		$my_name = $row["name"];
+		$my_alias = $row["alias"];
+		$my_icon = $row["icon"];
+		$my_oper = $row['operation'];
+		$my_description = $row['descript'] ;
+		
+		echo "<H3> THE ID: $id </H3>";
 	}
 
 
