@@ -186,9 +186,6 @@ if (($is_create OR $is_update)) {
 			
 	echo'<div class="col-lg-9">';
 		
-	echo'<h1>add new category</h1>';
-
-	
 	// creates a container for the category form
 	include ("templates/category_form.php");
     //ends the category form container

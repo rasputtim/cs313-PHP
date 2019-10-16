@@ -1,5 +1,4 @@
 <?php
-require_once ("connect.php");
 
 
 /**********************************************************
@@ -33,6 +32,8 @@ function get_db() {
 	}
 	return $db;
 }
+
+
 
 
 //require_once ("functions.pg.php");
