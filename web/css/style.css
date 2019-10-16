@@ -141,7 +141,7 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 /* ============================= search-form ====================== */
 .search-form-wrapper{padding-bottom: 20px;}
 .my-form { float: left; position:relative; z-index: 11; margin:11px 0px 0 0 ; padding: 0; }
-.my-form input { width: 320px; height: 20px; font-size: 14px; line-height: 20px; color:#fff; background: #1b2830; border: none; margin: 0; padding: 10px 50px 10px 10px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -moz-box-shadow: inset  0px 3px 20px 3px  #1b2830; -webkit-box-shadow: inset  0px 3px 20px 3px  #1b2830; box-shadow: inset  0px 3px 20px 3px  #1b2830; }
+.my-form input { width: 320px;  font-size: 14px; line-height: 20px; color:#fff; background: #1b2830; border: none; margin: 0; padding: 10px 50px 10px 10px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -moz-box-shadow: inset  0px 3px 20px 3px  #1b2830; -webkit-box-shadow: inset  0px 3px 20px 3px  #1b2830; box-shadow: inset  0px 3px 20px 3px  #1b2830; }
 .my-form input:focus {color: #fff; background: #c90000; border-color: #000;-moz-box-shadow: inset  none; -webkit-box-shadow: none; box-shadow: none;}
 .my-form a {text-decoration: none; margin: 0; display: inline-block; width: 42px; height: 28px; background: url(../images/search.png) left top no-repeat; position:absolute; right:0; top: 7px; }
 .my-form a:hover { background-position: right;}
@@ -150,20 +150,7 @@ border: 1px solid #bdbdbd;
 border-top-right-radius: 0.25rem;
 border-bottom-right-radius: 0.25rem;
 }
-.input-group.md-form.form-sm.form-2 input {
-border: 1px solid #bdbdbd;
-border-top-left-radius: 0.25rem;
-border-bottom-left-radius: 0.25rem;
-}
-.input-group.md-form.form-sm.form-2 input.red-border {
-border: 1px solid #ef9a9a;
-}
-.input-group.md-form.form-sm.form-2 input.lime-border {
-border: 1px solid #cddc39;
-}
-.input-group.md-form.form-sm.form-2 input.amber-border {
-border: 1px solid #ffca28;
-}
+
 /* ============================= toTop ====================== */
 #toTop { display:none; text-decoration:none; position:fixed; bottom:10px; right:10px; z-index: 1000; overflow:hidden; width:50px; height:50px; border:none; text-indent:100%; background:url(../images/totop.gif) no-repeat left top; }
 #toTopHover { background:url(../images/totop.gif) no-repeat left bottom; width:50px; height:50px; display:block; overflow:hidden; float:left; opacity: 0; -moz-opacity: 0; filter:alpha(opacity=0); }
