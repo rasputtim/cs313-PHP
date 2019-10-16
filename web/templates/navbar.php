@@ -41,7 +41,7 @@ if ($index5=="true"){
 						<li><a href="options.php">Options</a></li>
 						<li class="sub-menu sub-menu-2"><a href="listcats.php">Categories</a>
 							<ul>
-								<li><a href="inccats.php?create=true">Include</a></li>
+								<li><a href="inccats.php?create=1">Include</a></li>
 								<li><a href="inccats.php?update=10">Edit</a></li>
 								<li><a href="listcats.php">Search</a></li>
 								
