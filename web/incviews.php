@@ -32,24 +32,21 @@ $success=0;
 if ($is_insert){ // Create group
 
 	$my_user = "admin";
-	$my_duedate = strtoupper (get_parameter("duedate"));
-	$my_description = htmlspecialchars($_POST['descript']) ;
-	$my_idcat = get_parameter("idcat");
-	$my_amount = get_parameter("amount");
-	$my_paydate = strtoupper (get_parameter("paydate"));
-	$my_status = $_POST['status'];//get_parameter("operation");
-    
-	$stmt = $db->prepare('INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount, paymentdate, status) VALUES (:user,:duedate,:desc,:idcat, :amm,:paydate, :stat)');
+	$my_name = strtoupper (get_parameter("name"));
+	$my_alias = get_parameter("alias");
+	$my_icon = get_parameter("icon");
+	$my_oper = $_POST['operation'];//get_parameter("operation");
+    $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
 	
+	$stmt = $db->prepare('INSERT INTO public.ezfin_category (idUser,name,alias,icon,description,operation) VALUES (:user,:name,:alias,:icon,:desc,:oper)');
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
-	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
+	$stmt->bindValue(':name', $my_name, PDO::PARAM_STR);
+	$stmt->bindValue(':alias', $my_alias, PDO::PARAM_STR);
+	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
-	$stmt->bindValue(':idcat', $my_idcat, PDO::PARAM_INT);
-	$stmt->bindValue(':amm', $my_ammopunt, PDO::PARAM_STR);
-	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
-	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
+	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
 	if($stmt->execute()){
-		$newId = $db->lastInsertId('ezfin_transaction_idtransaction_seq');
+		$newId = $db->lastInsertId('ezfin_category_idcat_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;
@@ -65,16 +62,15 @@ if ($is_update_database){ // if modified any parameter
 
 	$id = get_parameter ("id","");
 	$my_user = "admin";
-	$my_duedate = strtoupper (get_parameter("duedate"));
-	$my_description = htmlspecialchars($_POST['descript']) ;
-	$my_idcat = get_parameter("idcat");
-	$my_amount = get_parameter("amount");
-	$my_paydate = strtoupper (get_parameter("paydate"));
-	$my_status = $_POST['status'];//get_parameter("operation");
+	$my_name = strtoupper (get_parameter("name"));
+	$my_alias = get_parameter("alias");
+	$my_icon = get_parameter("icon");
+	$my_oper = $_POST['operation'];//get_parameter("operation");
+    $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
 
 	
 	
-	$sql_update ="UPDATE public.ezfin_transaction
+	$sql_update ="UPDATE public.ezfin_category
 	SET iduser = :user,
 		name = :name ,
 		alias = :alias,
@@ -86,12 +82,12 @@ if ($is_update_database){ // if modified any parameter
 
 	$stmt = $db->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
-	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
+	$stmt->bindValue(':name', $my_name, PDO::PARAM_STR);
+	$stmt->bindValue(':alias', $my_alias, PDO::PARAM_STR);
+	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
-	$stmt->bindValue(':idcat', $my_idcat, PDO::PARAM_INT);
-	$stmt->bindValue(':amm', $my_ammopunt, PDO::PARAM_STR);
-	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
-	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
+	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
+	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
 	if($stmt->execute()){
 		$success = 1;
@@ -110,7 +106,7 @@ if (isset($_GET["delete_data"])){ // if delete
 
 	$id = get_parameter ("delete_data",0);
 	
-	$sql_update ="DELETE FROM public.ezfin_transactions WHERE idtransaction = :id";
+	$sql_update ="DELETE FROM public.ezfin_category WHERE idcat = :id";
 
 	$stmt = $db->prepare($sql_update);
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -162,19 +158,18 @@ if (($is_create OR $is_update)) {
 		
 		$id = -1;
 		$my_user = "admin";
-		$my_duedate = '';
-		$my_description = '' ;
-		$my_idcat = -1;
-		$my_amount = '0.00';
-		$my_paydate = '';
-		$my_status = -1;//get_parameter("operation");
+		$my_name = "";
+		$my_alias = "";
+		$my_icon = "";
+		$my_oper = -1;
+		$my_description = "";
 		
 		
 		
 	} else {   //Update
 		$id = get_parameter ("update",-1);
          
-		$sql_update ="SELECT * FROM public.ezfin_transactions WHERE idcat = :id";
+		$sql_update ="SELECT * FROM public.ezfin_category WHERE idcat = :id";
 
 		$stmt = $db->prepare($sql_update);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -187,33 +182,26 @@ if (($is_create OR $is_update)) {
 		}
 
 		$my_user = "admin";
-		$my_duedate = $row["duedate"];
+		$my_name = $row["name"];
+		$my_alias = $row["alias"];
+		$my_icon = $row["icon"];
+		$my_oper = $row['operation'];
 		$my_description = $row['description'] ;
-		$my_idcat = $row["idcat"];
-		$my_amount = $row["ampount"];
-		$my_paydate = $row['operation'];
-		$my_status = $row['status'];
+		$my_checked_income = "";
+		$my_checked_outcome = "";
+		$my_checked_informative = "";
 		
-		
-		$my_checked_payd = "";
-		$my_checked_not_paid = "";
-		
-		
-		 = strtoupper (get_parameter("duedate"));
-		 = htmlspecialchars($_POST['descript']) ;
-		 = get_parameter("idcat");
-		 = get_parameter("amount");
-		 = strtoupper (get_parameter("duedate"));
-		 $_POST['status'];//get_parameter("operation");
-
-		switch($my_status){
+		switch($my_oper){
 			case 0:
-				$my_checked_paid = "checked";
+				$my_checked_income = "checked";
 			break;
 			case 1:
-				$my_checked_not_paid = "checked";
+				$my_checked_outcome = "checked";
 			break;
-			
+			case 2:
+				$my_checked_informative = "checked";
+			break;
+
 		}
 		
 	}
@@ -236,23 +224,23 @@ if (($is_create OR $is_update)) {
 			
 	echo'<div class="col-lg-9">';
 		
-	// creates a container for the transaction form
+	// creates a container for the category form
 	include ("templates/category_form.php");
-    //ends the transaction form container
+    //ends the category form container
 
 }
 	echo '</div>'; //end the navigation bar
 
 	echo '<div class="col-lg-3">';
 
-	echo '<h2>Transactions List</h2>';
+	echo '<h2>category List</h2>';
 
 	echo '<ul class="ul1">';
 		
-		foreach ($db->query('SELECT * FROM public.ezfin_transactions') as $row)
+		foreach ($db->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
 		{
-		echo '<li><a href="inctrans.php?update='.$row['idtransaction'].'">';
-		echo $row['duedate'];
+		echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
+		echo $row['name'];
 		echo '</a></li>';
 		}
 	
@@ -299,9 +287,43 @@ function showmydiv() {
 <script>
 
 	$(document).ready(function() {	
-		//	
-		
-		
+		//	carouFredSel
+		$('#slider4 .carousel.main ul').carouFredSel({
+			auto: {
+				timeoutDuration: 8000					
+			},
+			responsive: true,
+			prev: '.prev4',
+			next: '.next4',
+			width: '100%',
+			scroll: {
+				items: 1,
+				duration: 1000,
+				easing: "easeOutExpo"
+			},			
+			items: {
+				width: '350',
+				height: 'variable',	//	optionally resize item-height			  
+				visible: {
+					min: 1,
+					max: 4
+				}
+			},
+			mousewheel: false,
+			swipe: {
+				onMouse: true,
+				onTouch: true
+				}
+		});
+		$(window).bind("resize",updateSizes_vat).bind("load",updateSizes_vat);
+		function updateSizes_vat(){		
+			$('#slider4 .carousel.main ul').trigger("updateSizes");
+		}
+		updateSizes_vat();
+	
+	
+	
+	
 	
 	}); //
 	$(window).load(function() {
