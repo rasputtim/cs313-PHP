@@ -29,9 +29,10 @@ if ($is_insert){ // Create group
 	$my_oper = $_POST['operation'];//get_parameter("operation");
     $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
 	
-	$stmt = $db->prepare('INSERT INTO public.ezfin_category (idUser,name,icon,description,operation) VALUES (:user,:name,:icon,:desc,:oper)');
+	$stmt = $db->prepare('INSERT INTO public.ezfin_category (idUser,name,alias,icon,description,operation) VALUES (:user,:name,:alias,:icon,:desc,:oper)');
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':name', $my_name, PDO::PARAM_STR);
+	$stmt->bindValue(':alias', $my_alias, PDO::PARAM_STR);
 	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);

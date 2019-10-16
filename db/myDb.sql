@@ -7,7 +7,7 @@ CREATE TABLE ezfin_category(
             idCat  SERIAL NOT NULL,
             idUser varchar(50) NOT NULL,
             name varchar(50) NOT NULL,
-            catAlias TEXT,
+            alias TEXT,
             icon TEXT,
             description TEXT,
             operation INTEGER,
