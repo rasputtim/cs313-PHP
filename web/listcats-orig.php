@@ -5,7 +5,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //header("location:inc/noaccess.php");
     //exit;
 }
-require_once ("inc/connect.php");
+require_once ("inc/connection.php");
+require_once ("inc/functions_db.php");
 include('templates/header.php'); ?>
 
 <body class="subpage">
@@ -25,8 +26,8 @@ include('templates/menubar.php');
 <div class="breadcrumbs1">
 <div class="container">
 <div class="row">
-<div class="span12">
-<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;products</div>	
+<div class="col-lg-12">
+<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;list categories</div>	
 </div>	
 </div>	
 </div>	
@@ -35,14 +36,12 @@ include('templates/menubar.php');
 <div id="content">
 <div class="container">
 <div class="row">
-		<div class="search-form-wrapper clearfix">
-			<form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form clearfix" >
-				<input type="hidden" id="seach_what" name="t" value="category">
-				<input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
-				<a href="#" onClick="document.getElementById('search-form').submit()"></a>
-			</form>
-		</div>
-<div class="span9">
+		<?php
+		$search_type = "category";
+			include('templates/search.php'); 
+		?>
+</div>
+<div class="col-lg-9">
 	
 <h1>categories  overview</h1>
 
@@ -50,7 +49,7 @@ include('templates/menubar.php');
 
 <?php
 $myOperation=1;
-$stmt = $db->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
+$stmt = get_db()->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
 $stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -60,7 +59,7 @@ foreach ($rows as $row)
 {
 	$added = false;
 	if ($count % 3 == 0 ) echo '<div class="row">';
-	echo '<div class="span3">';
+	echo '<div class="col-lg-3">';
 	echo '<div class="thumb3">';
 	echo '<div class="thumbnail clearfix">';		
 	echo '<figure class=""><img src="images/'. $row['icon'] . '.png " alt=""></figure>';
@@ -91,15 +90,15 @@ if ($added == false) echo '</div>';
 
 
 </div>
-<div class="span3">
+<div class="col-lg-3">
 
 <h2>category List</h2>
 
 	<ul class="ul1">
 	<?php 
-	foreach ($db->query('SELECT name FROM public.ezfin_category') as $row)
+	foreach ($db->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
 	{
-	echo '<li><a href="#">';
+	echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
 	echo $row['name'];
 	echo '</a></li>';
 	}
@@ -118,14 +117,14 @@ if ($added == false) echo '</div>';
 <div id="slider4_wrapper">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div id="slider4">
 <div class="slider4-title">CATEGORIES MOST USED</div>
 <div class="slider4_wrapper2">
 <a class="prev4" href="#"></a>
 <a class="next4" href="#"></a>
 <div class="carousel-box row">
-	<div class="inner span12">			
+	<div class="inner col-lg-12">			
 		<div class="carousel main">
 			<ul>
 				<li>
@@ -264,7 +263,7 @@ if ($added == false) echo '</div>';
 <div class="bot1">
 <div class="container">
 <div class="row">
-<div class="span12">
+<div class="col-lg-12">
 <div class="bot1_inner">
 <?php include('templates/footer.php'); ?>
 </div>	
