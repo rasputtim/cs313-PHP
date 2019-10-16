@@ -43,15 +43,15 @@ include('templates/menubar.php');
 				<a href="#" onClick="document.getElementById('search-form').submit()"></a>
 			</form>
 		</div> 
-		<!--<div class="input-group md-form form-sm form-2 pl-0">
+		<div class="input-group md-form form-sm form-2 pl-0">
 		<form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="" >
 				<input type="hidden" id="seach_what" name="t" value="category">
-		<input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-		<div class="input-group-append">
-			<span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
-				aria-hidden="true"></i></span>
-</form>
-		</div>-->
+				<input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+				<div class="input-group-append">
+					<span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+						aria-hidden="true"></i></span>
+		</form>
+		</div>
 </div>
 <div class="col-lg-9">
 	
