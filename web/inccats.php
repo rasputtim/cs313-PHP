@@ -208,14 +208,16 @@ if ($is_insert){ // Create group
                             </div>
                         </div>
 					</form>
+					<?php echo '<div id="" style="width:100%; height:100%;  "> <h3>Posted your message successfully!</h3> </div>'; ?>
+							
 					<?php switch ($success){
 						case 0:
 						break;
 						case 1:
-                    		echo '<div id="success_message" style="width:100%; height:100%;  "> <h3>Posted your message successfully!</h3> </div>';
+                    		echo '<div id="" style="width:100%; height:100%;  "> <h3>Posted your message successfully!</h3> </div>';
 							break;
 						case 2:
-							echo'<div id="error_message" style="width:100%; height:100%; "> <h3>Error</h3> Sorry there was an error sending your form. </div>';
+							echo'<div id="" style="width:100%; height:100%; "> <h3>Error</h3> Sorry there was an error sending your form. </div>';
 							break;
 					}
 					 ?>
