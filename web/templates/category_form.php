@@ -115,7 +115,7 @@
 							<div class="row">
 								<div class="col-sm-12 form-group">
 									<label for="descript"> Description:</label>
-									<textarea class="form-control" type="textarea" name="descript" id="descript" maxlength="6000" rows="3" value="<?php echo $my_description; ?>"></textarea>
+									<textarea class="form-control" type="textarea" name="descript" id="descript" maxlength="6000" rows="3" ><?php echo $my_description; ?></textarea>
 								</div>
 							</div>
 							<div class="row">
