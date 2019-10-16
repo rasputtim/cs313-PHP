@@ -37,8 +37,9 @@ include('templates/menubar.php');
 <div class="container">
 <div class="row">
 		<?php
-include('templates/search.php'); 
-?>
+		$search_type = "category";
+			include('templates/search.php'); 
+		?>
 </div>
 <div class="col-lg-9">
 	
