@@ -14,7 +14,7 @@ require_once ("inc/functions.php");
     
 
 $is_create = (bool) get_parameter("create");
-$is_update = (bool) isset($_GET["update"]);
+$is_update = (bool) get_parameter("update");
 $is_insert = get_parameter("create2");
 //$is_insert = false;
 //$is_insert = $_POST["create2"];
@@ -183,6 +183,7 @@ if (($is_create OR $is_update)) {
 
 
 	echo '</div>';
+}
 	echo '<div class="col-lg-3">';
 
 	echo '<h2>category List</h2>';
@@ -209,7 +210,7 @@ if (($is_create OR $is_update)) {
 
 
 
-} ?>
+ ?>
 
 <div class="bot1">
 <div class="container">
