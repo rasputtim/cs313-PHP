@@ -20,7 +20,7 @@ if(get_parameter("update") != ''){
 }
 $is_insert = get_parameter("create2");
 $is_update_database = false;
-if (get_paramenter("update2") !=''){
+if (get_parameter("update2") !=''){
 	$is_update_database = true;
 }
 //$is_insert = false;
