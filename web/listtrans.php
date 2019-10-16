@@ -5,7 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //header("location:inc/noaccess.php");
     //exit;
 }
-require_once ("inc/connect.php");
+require_once ("inc/functions_db.php");
 include('templates/header.php'); 
 $money_format = '%(#10n';
 $date_format = "D, M d, Y ";
@@ -56,7 +56,7 @@ include('templates/menubar.php');
 
 <?php
 
-$stmt = $db->prepare('SELECT * FROM public.ezfin_transactions');
+$stmt = get_db()->prepare('SELECT * FROM public.ezfin_transactions');
 //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -66,7 +66,7 @@ foreach ($rows as $row)
 {
 	//get category
 	$oper_image ="cat_income_green_peq.png";
-	$stmt = $db->prepare('SELECT operation FROM public.ezfin_category WHERE idcat =  :op');
+	$stmt = get_db()->prepare('SELECT operation FROM public.ezfin_category WHERE idcat =  :op');
 	$stmt->bindValue(':op', $row['idcategory'], PDO::PARAM_INT);
 	$stmt->execute();
 	$operation = $stmt->fetchColumn();
@@ -114,7 +114,7 @@ if ($added = false) echo '</ul>';
 
 	<ul class="ul1">
 <?php 
-	foreach ($db->query('SELECT * FROM public.ezfin_transactions') as $row)
+	foreach (get_db()->query('SELECT * FROM public.ezfin_transactions') as $row)
 	{
 	echo '<li><a href="#">';
 	echo $row['idcategory']." - ".$row['duedate']." - ". money_format($money_format, $row['amount']);

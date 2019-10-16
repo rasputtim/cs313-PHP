@@ -5,7 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //header("location:inc/noaccess.php");
     //exit;
 }
-require_once ("inc/connect.php");
+require_once ("inc/functions_db.php");
 include('templates/header.php'); ?>
 
 <body class="subpage">
@@ -50,7 +50,7 @@ include('templates/menubar.php');
 
 <?php
 $myOperation=1;
-$stmt = $db->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
+$stmt = get_db()->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
 $stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -97,7 +97,7 @@ if ($added == false) echo '</div>';
 
 	<ul class="ul1">
 	<?php 
-	foreach ($db->query('SELECT name FROM public.ezfin_category') as $row)
+	foreach (get_db()->query('SELECT name FROM public.ezfin_category') as $row)
 	{
 	echo '<li><a href="#">';
 	echo $row['name'];
