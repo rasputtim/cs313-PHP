@@ -36,7 +36,7 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
-	if($stmt->execute();{
+	if($stmt->execute()){
 		$newId = $db->lastInsertId('ezfin_category_idcat_seq');
 		echo '<script language="javascript">';
 echo 'alert("message successfully sent")';
