@@ -73,7 +73,7 @@ foreach ($rows as $row)
 				echo '<p>';
 				echo '<strong>Operation:'.$myOperation.'</strong>';
 				echo '</p>';
-				echo '<a href="inccat.php?update='.$row['idcat'].'" class="button2">edit </a>';
+				echo '<a href="inccats.php?update='.$row['idcat'].'" class="button2">edit </a>';
 				echo '</div>';		
 				echo '</div>';
 				echo '</div>';
