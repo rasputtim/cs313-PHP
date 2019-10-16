@@ -96,9 +96,9 @@ if ($added == false) echo '</div>';
 
 	<ul class="ul1">
 	<?php 
-	foreach (get_db()->query('SELECT name FROM public.ezfin_category') as $row)
+	foreach ($db->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
 	{
-	echo '<li><a href="#">';
+	echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
 	echo $row['name'];
 	echo '</a></li>';
 	}

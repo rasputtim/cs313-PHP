@@ -237,7 +237,7 @@ if (($is_create OR $is_update)) {
 
 	echo '<ul class="ul1">';
 		
-		foreach ($db->query('SELECT name,idcat FROM public.ezfin_category') as $row)
+		foreach ($db->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
 		{
 		echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
 		echo $row['name'];
