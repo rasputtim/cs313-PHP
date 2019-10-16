@@ -208,7 +208,6 @@ if ($is_insert){ // Create group
                             </div>
                         </div>
 					</form>
-					<?php echo '<div id="" style="width:100%; height:100%;  "> <h3>Posted your message successfully!</h3> </div>'; ?>
 							
 					<?php switch ($success){
 						case 0:
