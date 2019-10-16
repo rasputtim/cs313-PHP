@@ -36,7 +36,7 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
 	$stmt->execute();
-	$newId = $stmt->lastInsertId('ezfin_category_idcat_seq');
+	$newId = $db->lastInsertId('ezfin_category_idcat_seq');
 }
 ///////END INSERT DATA ///////////////
 
