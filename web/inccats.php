@@ -46,7 +46,84 @@ if ($is_insert){ // Create group
 }
 ///////END INSERT DATA ///////////////
 
+// Database UPDATE
+// ==================
+if (isset($_GET["update2"])){ // if modified any parameter
 
+	
+
+	$id = get_parameter ("id","");
+	$my_user = "admin";
+	$my_name = strtoupper (get_parameter("name"));
+	$my_alias = get_parameter("alias");
+	$my_icon = get_parameter("icon");
+	$my_oper = $_POST['operation'];//get_parameter("operation");
+    $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
+
+	//payment detail data
+    $result = tes_update_data_user ($id,$ammount_sql,$date_sql,$description ,$id_product, $id_category, $id_user);
+	
+	/*
+	
+	$sql_update ="UPDATE ttes_user_data
+	SET amount1 = '$ammount_sql', description = '$description', date = '$date_sql', timestamp = '$timestamp', id_user = '$id_user',
+	id_category = $id_category, id_product = $id_product
+	WHERE id = $id";
+	//echo $sql_update;
+	$result=mysql_query($sql_update);
+	*/
+	if (! $result) {
+		echo "<h3 class='error'>".__('Could not be updated')."</h3>";
+	}else {
+		
+		echo "<h3 class='suc'>".__('Successfully updated')."</h3>";
+		
+		//insert_event ("TES ITEM UPDATED", $id, 0, $title);
+		//audit_db ($config["id_user"], $config["REMOTE_ADDR"], "TES", "Updated treasury item $id - $description");
+		//uptade payment detail
+		//se tiver altera
+		$id_payment = tes_update_user_data_payment($id_payment_detail,$id,$detail_id_method,$detail_number,$detail_bank,$detail_agency,$detail_account,$description);
+	       //$id_payment =0;
+		
+		if ($id_payment){
+				echo "<h3 class='suc'>".__('Payment details')."  ".__('Successfully updated').": ".$id_payment_detail."</h3>";
+		} else {
+				echo "<h3 class='error'>".__('Payment details')."  ".__('Could not be updated')."</h3>";
+				
+		}
+		
+		
+		
+		
+	}
+		
+
+}
+
+
+// Database DELETE
+// ==================
+if (isset($_GET["delete_data"])){ // if delete
+
+
+	$id = get_parameter ("delete_data",0);
+	$kb_title = get_db_sql ("SELECT description FROM ttes_user_data WHERE id = $id ");
+
+	$sql_delete= "DELETE FROM ttes_user_data WHERE id = $id";
+	$result=mysql_query($sql_delete);
+
+	// verifica se ja existe registro na tabela de metodo de pagamento para esse registro ttesdata
+	$id_payment_detail = get_payment_detail_id(0,$id);
+	//$result_msg .= "<p> delete payment detail: $detail_id";
+	delete_payment_detail($id_payment_detail);
+	//insert_event ("TES ITEM DELETED", $id, 0, "Deleted TES $kb_title");
+	audit_db ($config["id_user"], $config["REMOTE_ADDR"], "TES", "Deleted Treasury item $id - $kb_title");
+	echo "<h3 class='suc'>".__('Successfully deleted')."</h3>";
+}
+
+if (isset($_GET["update2"])){
+	$_GET["update"]= $id;
+}
 
 
 include('templates/header.php'); ?>
