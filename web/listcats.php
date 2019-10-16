@@ -52,54 +52,42 @@ include('templates/menubar.php');
 
 
 <?php
-
-$stmt = get_db()->prepare('SELECT * FROM public.ezfin_transactions');
-//$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
+$myOperation=1;
+$stmt = get_db()->prepare('SELECT * FROM public.ezfin_category WHERE operation=:op');
+$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $count =0;
 $added = false;
 foreach ($rows as $row)
 {
-	//get category
-	$oper_image ="cat_income_green_peq.png";
-	$stmt = get_db()->prepare('SELECT operation FROM public.ezfin_category WHERE idcat =  :op');
-	$stmt->bindValue(':op', $row['idcategory'], PDO::PARAM_INT);
-	$stmt->execute();
-	$operation = $stmt->fetchColumn();
-	switch($operation){
-	   case 0:
-	   $oper_image ="cat_income_green_peq.png";
-	   break;
-	   case 1:
-	   $oper_image ="cat_bill_red_peq.png";
-	   break;
-	   case 2:
-	   $oper_image = "cat_informative_peq.png";
-	   break;
-	}
 	$added = false;
-	if ($count  == 0 ) echo '<ul class="thumbnails thumbnails1">';
-	echo '<li>';
-		echo '<div class="thumbnail clearfix">';
-		    // todo: add category icon here
-			echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
-			echo '<div class="caption">';											
-				echo '<h3>'.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
-				echo '</h3>';
-				echo '<p>';
-						echo $row['description']. '<a href=" edittransacton.php?idtrans='.$row['idtransaction'].'"><strong>  edit</strong></a>';
+	if ($count % 3 == 0 ) echo '<div class="row">';
+	echo '<div class="col-lg-3">';
+	echo '<div class="thumb3">';
+	echo '<div class="thumbnail clearfix">';		
+	echo '<figure class=""><img src="images/'. $row['icon'] . '.png " alt=""></figure>';
+	echo '<div class="caption">';
+	echo '<h3>' . $row['name'] . '</h3>';
+	echo '<p>';
+				echo $row['description'];
 				echo '</p>';
-			echo '</div>';			
-		echo '</div>';
-	echo '</li>';
-	if ($count  == 1 ) {
-		echo '</ul>';
-		$count = 0;
-		$added = true;
-	}else $count ++;
+				echo '<p>';
+				echo '<strong>Operation:'.$myOperation.'</strong>';
+				echo '</p>';
+				echo '<a href="editcat.php?cat='.$row['idcat'].'" class="button2">edit </a>';
+				echo '</div>';		
+				echo '</div>';
+				echo '</div>';
+				echo '</div>';
+				if ($count == 2 ) {
+					echo '</div>';
+					$count = 0;
+					$added = true;
+				}else $count++;
+			
 }
-if ($added = false) echo '</ul>';
+if ($added == false) echo '</ul>';
 ?>
 				
 
