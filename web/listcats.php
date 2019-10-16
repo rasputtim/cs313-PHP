@@ -40,14 +40,14 @@ include('templates/menubar.php');
 <div class="container">
 <div class="row">
 		<?php
-		$search_type = "transactions";
+		$search_type = "category";
 			include('templates/search.php'); 
 		?>
 		
 
 <div class="col-lg-9">
 	
-<h1>Transactions for the current period</h1>
+<h1>Categories</h1>
 
 
 
@@ -107,15 +107,15 @@ if ($added = false) echo '</ul>';
 </div>
 <div class="col-lg-3">
 
-<h2>Transactions List</h2>
+<h2>Category List</h2>
 
 	<ul class="ul1">
 <?php 
-	foreach (get_db()->query('SELECT * FROM public.ezfin_transactions') as $row)
+	foreach (get_db()->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
 	{
-	echo '<li><a href="#">';
-	echo $row['idcategory']." - ".$row['duedate']." - ". money_format($money_format, $row['amount']);
-	echo '</a></li>';
+		echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
+		echo $row['name'];
+		echo '</a></li>';
 	}
 ?>
 	    	            		      	      			      
