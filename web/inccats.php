@@ -181,7 +181,7 @@ if (($is_create OR $is_update)) {
 		$my_alias = $row["alias"];
 		$my_icon = $row["icon"];
 		$my_oper = $row['operation'];
-		$my_description = $row['descript'] ;
+		$my_description = $row['description'] ;
 		
 	}
 
