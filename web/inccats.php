@@ -28,7 +28,15 @@ if ($is_insert){ // Create group
 	$my_icon = get_parameter("icon");
 	$my_oper = $_POST['operation'];//get_parameter("operation");
     $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
-
+	
+	$stmt = $db->prepare('INSERT INTO public.ezfin_category (idUser,name,icon,description,operation) VALUES (:user,:name,:icon,:desc:,oper)');
+	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
+	$stmt->bindValue(':name', $my_name, PDO::PARAM_STR);
+	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
+	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
+	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
+	$stmt->execute();
+	$newId = $pdo->lastInsertId('ezfin_category_idcat_seq');
 }
 ///////END INSERT DATA ///////////////
 
@@ -80,7 +88,8 @@ if ($is_insert){ // Create group
 	echo "<h3 >$my_alias</h3>";
 	echo "<h3 >$my_icon</h3>";
 	echo "<h3 >OPER: $my_oper</h3>";
-    echo "<h3 >$my_description</h3>";
+	echo "<h3 >$my_description</h3>";
+	echo "<h3 >NEW ID: $newId</h3>";
 
 }
 ?>
