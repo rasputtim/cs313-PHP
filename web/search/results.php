@@ -143,7 +143,22 @@ if($count > 0){
 				$match_count++;
 	?>
 			<li>
-				<h6 class="search_title"><a target="_top" href="<?php echo $final_result[$i]['file_name'][0]; ?>" class="search_link"> <?php echo $table; ?> </a></h6>
+				<?php	
+				    $link_search= "";//$final_result[$i]['file_name'][0];	
+					switch ($table) {
+						case "category":
+							$link_search= 'inccats.php?update='.$row["idcat"];
+							break;
+						case "balanceview":
+							$link_search= 'incviews.php?update='.$row["idbalview"];
+							break;
+						case "transactions":
+							$link_search= 'inctrans.php?update='.$row["idtransaction"];
+							break;
+					}	
+				?>
+				<h6 class="search_title"><a target="_top" href="<?php echo $link_search; ?>" class="search_link"> 
+				<?php echo $table; ?> </a></h6>
 				...<?php echo $final_result[$i]['search_result'][0]; ?>...
 				<span class="match">Terms matched: <?php echo count($final_result[$i]['search_result']); ?> - URL: <?php echo $final_result[$i]['file_name'][0]; ?></span>
 			</li>
