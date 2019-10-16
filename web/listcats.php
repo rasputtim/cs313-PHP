@@ -87,16 +87,13 @@ if ($added == false) echo '</div>';
 ?>	
 
 </div>
-
-
-</div>
 <div class="col-lg-3">
 
 <h2>category List</h2>
 
 	<ul class="ul1">
 	<?php 
-	foreach ($db->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
+	foreach (get_db()->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
 	{
 	echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
 	echo $row['name'];
