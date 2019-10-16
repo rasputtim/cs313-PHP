@@ -36,14 +36,14 @@ include('templates/menubar.php');
 <div id="content">
 <div class="container">
 <div class="row">
-		<!--<div class="search-form-wrapper clearfix">
-			<form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form clearfix" >
+		<div class="search-form-wrapper clearfix">
+			<form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="" >
 				<input type="hidden" id="seach_what" name="t" value="category">
 				<input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
 				<a href="#" onClick="document.getElementById('search-form').submit()"></a>
 			</form>
-		</div> -->
-		<div class="input-group md-form form-sm form-2 pl-0">
+		</div> 
+		<!--<div class="input-group md-form form-sm form-2 pl-0">
 		<form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="" >
 				<input type="hidden" id="seach_what" name="t" value="category">
 		<input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
@@ -51,7 +51,7 @@ include('templates/menubar.php');
 			<span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
 				aria-hidden="true"></i></span>
 </form>
-		</div>
+		</div>-->
 </div>
 <div class="col-lg-9">
 	
