@@ -118,7 +118,7 @@ if (isset($_GET["delete_data"])){ // if delete
 	}
 }
 
-if (isset($_GET["update2"])){
+if ($is_update_database){
 	$_GET["update"]= $id;
 }
 
@@ -148,6 +148,7 @@ if (isset($_GET["update2"])){
 
 <?php	
 if ($is_insert) $is_create = true;
+if ($is_update_database) $is_update = true;
 
 if (($is_create OR $is_update)) {
 
