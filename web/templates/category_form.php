@@ -1,7 +1,17 @@
 <div class="container">';
 	<div class="col-md-6 col-md-offset-3 " id="form_container">
-						
-						 <?php  
+                        <?php 
+                            switch ($success){
+							case 0:
+							break;
+							case 1:
+								echo '<div id="" style="width:100%; height:100%;  "> <h3>SUCESS!</h3> </div>';
+								break;
+							case 2:
+								echo'<div id="" style="width:100%; height:100%; "> <h3>Error</h3>ERROR </div>';
+								break;
+						    }
+						 
                             if ($id == -1){   //CREATE NEW Record
                                 echo "<h1>Create a new Category</h1>";
                                 echo'<form role="form" method="post" id="reused_form" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).' " >';
@@ -123,17 +133,7 @@
 							</div>
 						</form>
 								
-						<?php switch ($success){
-							case 0:
-							break;
-							case 1:
-								echo '<div id="" style="width:100%; height:100%;  "> <h3>Posted your message successfully!</h3> </div>';
-								break;
-							case 2:
-								echo'<div id="" style="width:100%; height:100%; "> <h3>Error</h3> Sorry there was an error sending your form. </div>';
-								break;
-						}
-						?>
+						
 	</div>
 
 	</div>
