@@ -21,20 +21,24 @@
 								<div class="col-sm-6 form-group">
 
 									<label for="name"> Category Name:</label>
-									<input type="text" class="form-control" id="name" name="name" value="<?php echo $my_name; ?>"required>
+									<input type="text" class="form-control" id="name" name="name" value="<?php echo $my_name; ?>" required>
 								</div>
 								<div class="col-sm-6 form-group">
 
 									<label for="alias"> Category Alias:</label>
-									<input type="text" class="form-control" id="alias" name="alias" required>
+									<input type="text" class="form-control" id="alias" name="alias" <?php echo $my_alias; ?> required>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-6 form-group">
 									<label for="icon"> Icon:</label>
 									<select class="form-control" id="icon" name="icon" required >
-									<option value= "">Select one icon</option>
-									<option value="cat_all.png">cat_all.</option>
+                                    <option value= "">Select one icon</option>
+                                    <?php
+                                    if($my_icon != '')
+                                    echo'<option value= " '.$my_icon.'" selected >'.$my_icon'.</option>';
+                                    ?>
+                                    <option value="cat_all.png">cat_all.</option>
 									<option value="cat_all_bw.png">cat_all_bw.png</option>
 									<option value="cat_begin_cashflow.png">cat_begin_cashflow.png</option>
 									<option value="cat_bill.png">cat_bill.png</option>
@@ -111,7 +115,7 @@
 							<div class="row">
 								<div class="col-sm-12 form-group">
 									<label for="descript"> Description:</label>
-									<textarea class="form-control" type="textarea" name="descript" id="descript" maxlength="6000" rows="3"></textarea>
+									<textarea class="form-control" type="textarea" name="descript" id="descript" maxlength="6000" rows="3" value="<?php echo $my_description; ?>"></textarea>
 								</div>
 							</div>
 							<div class="row">

@@ -183,7 +183,6 @@ if (($is_create OR $is_update)) {
 		$my_oper = $row['operation'];
 		$my_description = $row['descript'] ;
 		
-		echo "<H3> THE ID: $id </H3>";
 	}
 
 
