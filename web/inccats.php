@@ -36,16 +36,16 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
-	if($stmt->execute()){
+	$stmt->execute();
 		$newId = $db->lastInsertId('ezfin_category_idcat_seq');
 		echo '<script language="javascript">';
-		echo '$("#success_message").css("display", "block");';
+		echo 'showmydiv();';
 		echo '</script>';
-	}else {  //failed
-		echo '<script language="javascript">';
-		echo '$("#error_message").css("display", "block");';
-		echo '</script>';
-	}
+	//}else {  //failed
+	//	echo '<script language="javascript">';
+	//	echo '$("#error_message").css("display", "block");';
+	//	echo '</script>';
+	//}
 }
 ///////END INSERT DATA ///////////////
 
@@ -269,6 +269,12 @@ if ($is_insert){ // Create group
 </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script>
+function showmydiv() {
+ document.getElementById('success_message').style.display = 'block';
+}
+</script>
+<script>
+
 	$(document).ready(function() {	
 		//	carouFredSel
 		$('#slider4 .carousel.main ul').carouFredSel({
