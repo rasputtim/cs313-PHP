@@ -32,21 +32,24 @@ $success=0;
 if ($is_insert){ // Create group
 
 	$my_user = "admin";
-	$my_name = strtoupper (get_parameter("name"));
-	$my_alias = get_parameter("alias");
-	$my_icon = get_parameter("icon");
-	$my_oper = $_POST['operation'];//get_parameter("operation");
-    $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
+	$my_inidate = strtoupper (get_parameter("inidate"));
+	$my_enddate = get_parameter("enddate");
+	$my_keydate = get_parameter("keydate");
+	$my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
+	$my_title = get_parameter("title");
+	$my_iscur = $_POST['iscur'];//get_parameter("operation");
+    
+	$stmt = $db->prepare('INSERT INTO public.ezfin_balanceview (iduser, initialdate, finaldate, keydate, description, title, iscurrent) VALUES (:user,:inidate,:enddate,:keydate,:desc,:title,:iscur)');
 	
-	$stmt = $db->prepare('INSERT INTO public.ezfin_category (idUser,name,alias,icon,description,operation) VALUES (:user,:name,:alias,:icon,:desc,:oper)');
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
-	$stmt->bindValue(':name', $my_name, PDO::PARAM_STR);
-	$stmt->bindValue(':alias', $my_alias, PDO::PARAM_STR);
-	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
+	$stmt->bindValue(':inidate', $my_inidate, PDO::PARAM_STR);
+	$stmt->bindValue(':enddate', $my_enddate, PDO::PARAM_STR);
+	$stmt->bindValue(':keydate', $my_keydate, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
-	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
+	$stmt->bindValue(':title', $my_title, PDO::PARAM_STR);
+	$stmt->bindValue(':iscur', $my_iscur, PDO::PARAM_INT);
 	if($stmt->execute()){
-		$newId = $db->lastInsertId('ezfin_category_idcat_seq');
+		$newId = $db->lastInsertId('ezfin_balanceview_idbalview_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;
@@ -62,32 +65,34 @@ if ($is_update_database){ // if modified any parameter
 
 	$id = get_parameter ("id","");
 	$my_user = "admin";
-	$my_name = strtoupper (get_parameter("name"));
-	$my_alias = get_parameter("alias");
-	$my_icon = get_parameter("icon");
-	$my_oper = $_POST['operation'];//get_parameter("operation");
-    $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
-
+	$my_inidate = strtoupper (get_parameter("inidate"));
+	$my_enddate = get_parameter("enddate");
+	$my_keydate = get_parameter("keydate");
+	$my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
+	$my_title = get_parameter("title");
+	$my_iscur = $_POST['iscur'];//get_parameter("operation");
+    
 	
 	
-	$sql_update ="UPDATE public.ezfin_category
+	$sql_update ="UPDATE public.ezfin_balanceview
 	SET iduser = :user,
-		name = :name ,
-		alias = :alias,
-		icon = :icon,
+		inidate = :inidate ,
+		enddate = :enddate,
+		keydate = :keydate,
 		description = :desc,
-		operation = :oper
+		title = :title,
+		iscurrent = :iscur
 	WHERE
-	   idcat = :id";
+	   idbalview = :id";
 
 	$stmt = $db->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
-	$stmt->bindValue(':name', $my_name, PDO::PARAM_STR);
-	$stmt->bindValue(':alias', $my_alias, PDO::PARAM_STR);
-	$stmt->bindValue(':icon', $my_icon, PDO::PARAM_STR);
+	$stmt->bindValue(':inidate', $my_inidate, PDO::PARAM_STR);
+	$stmt->bindValue(':enddate', $my_enddate, PDO::PARAM_STR);
+	$stmt->bindValue(':keydate', $my_keydate, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
-	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
-	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+	$stmt->bindValue(':title', $my_title, PDO::PARAM_STR);
+	$stmt->bindValue(':iscur', $my_iscur, PDO::PARAM_INT);
 
 	if($stmt->execute()){
 		$success = 1;
@@ -106,7 +111,7 @@ if (isset($_GET["delete_data"])){ // if delete
 
 	$id = get_parameter ("delete_data",0);
 	
-	$sql_update ="DELETE FROM public.ezfin_category WHERE idcat = :id";
+	$sql_update ="DELETE FROM public.ezfin_balanceview WHERE idbalview = :id";
 
 	$stmt = $db->prepare($sql_update);
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -158,18 +163,20 @@ if (($is_create OR $is_update)) {
 		
 		$id = -1;
 		$my_user = "admin";
-		$my_name = "";
-		$my_alias = "";
-		$my_icon = "";
-		$my_oper = -1;
-		$my_description = "";
+		$my_inidate = "";
+		$my_enddate = "";
+		$my_keydate = "";
+		$my_description = "";//get_paramenter("descript");
+		$my_title = "";
+		$my_iscur = -1;//get_parameter("operation");
+		
 		
 		
 		
 	} else {   //Update
 		$id = get_parameter ("update",-1);
          
-		$sql_update ="SELECT * FROM public.ezfin_category WHERE idcat = :id";
+		$sql_update ="SELECT * FROM public.ezfin_balanceview WHERE idbalview = :id";
 
 		$stmt = $db->prepare($sql_update);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -182,15 +189,14 @@ if (($is_create OR $is_update)) {
 		}
 
 		$my_user = "admin";
-		$my_name = $row["name"];
-		$my_alias = $row["alias"];
-		$my_icon = $row["icon"];
-		$my_oper = $row['operation'];
-		$my_description = $row['description'] ;
-		$my_checked_income = "";
-		$my_checked_outcome = "";
-		$my_checked_informative = "";
-		
+		$my_inidate =  $row["inidate"];
+		$my_enddate =  $row["enddate"];
+		$my_keydate =  $row["keydate"];
+		$my_description = $row['descript'];
+		$my_title =  $row["title"];
+		$my_iscur =  $row["iscurrent"];
+
+				
 		switch($my_oper){
 			case 0:
 				$my_checked_income = "checked";
@@ -237,9 +243,9 @@ if (($is_create OR $is_update)) {
 
 	echo '<ul class="ul1">';
 		
-		foreach ($db->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
+		foreach ($db->query('SELECT name,idbalview,operation FROM public.ezfin_balanceview') as $row)
 		{
-		echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
+		echo '<li><a href="inccats.php?update='.$row['idbalview'].'">';
 		echo $row['name'];
 		echo '</a></li>';
 		}
