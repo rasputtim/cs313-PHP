@@ -207,7 +207,7 @@ if (($is_create OR $is_update)) {
 			
 
 		}
-		
+		echo "<H3> IS CUR CHECK: $my_iscur_check </H3>";
 	}
 
 
