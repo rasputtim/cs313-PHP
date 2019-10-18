@@ -33,10 +33,10 @@
 									<input type="text" class="form-control" id="title" name="title" value="<?php echo $my_title; ?>" required>
 								</div>
 								<div class="col-sm-6 form-group">
-								<div class="input-group date" >
+								
 									<label for="keydate"> Kay Date:</label>
 									<input type="text" class="form-control "  id="keydate" name="keydate" value="<?php echo $my_keydate; ?>" required>
-								</div>
+								
 								</div>
 							</div>
 							<div class="row">
