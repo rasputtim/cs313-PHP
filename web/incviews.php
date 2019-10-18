@@ -243,11 +243,11 @@ if (($is_create OR $is_update)) {
 
 	echo '<ul class="ul1">';
 		
-		foreach ($db->query('SELECT name,idbalview,operation FROM public.ezfin_balanceview') as $row)
+		foreach ($db->query('SELECT * FROM public.ezfin_balanceview') as $row)
 		{
-		echo '<li><a href="inccats.php?update='.$row['idbalview'].'">';
-		echo $row['name'];
-		echo '</a></li>';
+			echo '<li><a href="incviews.php?update='.$row['idbalview'].'">';
+			echo $row['title'];
+			echo '</a></li>';
 		}
 	
 															
@@ -294,43 +294,7 @@ function showmydiv() {
 
 	$(document).ready(function() {	
 		//	carouFredSel
-		$('#slider4 .carousel.main ul').carouFredSel({
-			auto: {
-				timeoutDuration: 8000					
-			},
-			responsive: true,
-			prev: '.prev4',
-			next: '.next4',
-			width: '100%',
-			scroll: {
-				items: 1,
-				duration: 1000,
-				easing: "easeOutExpo"
-			},			
-			items: {
-				width: '350',
-				height: 'variable',	//	optionally resize item-height			  
-				visible: {
-					min: 1,
-					max: 4
-				}
-			},
-			mousewheel: false,
-			swipe: {
-				onMouse: true,
-				onTouch: true
-				}
-		});
-		$(window).bind("resize",updateSizes_vat).bind("load",updateSizes_vat);
-		function updateSizes_vat(){		
-			$('#slider4 .carousel.main ul').trigger("updateSizes");
-		}
-		updateSizes_vat();
-	
-	
-	
-	
-	
+		
 	}); //
 	$(window).load(function() {
 		//
