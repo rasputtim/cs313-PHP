@@ -93,7 +93,7 @@ if ($is_update_database){ // if modified any parameter
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':title', $my_title, PDO::PARAM_STR);
 	$stmt->bindValue(':iscur', $my_iscur, PDO::PARAM_INT);
-
+	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 	if($stmt->execute()){
 		$success = 1;
 	}else {  //failed
