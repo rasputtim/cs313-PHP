@@ -156,7 +156,7 @@ if ($is_insert) $is_create = true;
 if ($is_update_database) $is_update = true;
 
 if (($is_create OR $is_update)) {
-
+	$my_iscur_check = "";
 	if ($is_create){
 
 		// CREATE form
@@ -196,17 +196,15 @@ if (($is_create OR $is_update)) {
 		$my_title =  $row["title"];
 		$my_iscur =  $row["iscurrent"];
 
-				
-		switch($my_oper){
+		
+		switch($my_iscur){
 			case 0:
-				$my_checked_income = "checked";
+				$my_iscur_check = "";
 			break;
 			case 1:
-				$my_checked_outcome = "checked";
+				$my_iscur_check = "checked";
 			break;
-			case 2:
-				$my_checked_informative = "checked";
-			break;
+			
 
 		}
 		
@@ -231,7 +229,7 @@ if (($is_create OR $is_update)) {
 	echo'<div class="col-lg-9">';
 		
 	// creates a container for the category form
-	include ("templates/category_form.php");
+	include ("templates/balview_form.php");
     //ends the category form container
 
 }
