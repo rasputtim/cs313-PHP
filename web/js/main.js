@@ -13,13 +13,11 @@
         buttonText : '<i class="zmdi zmdi-calendar-alt"></i>',
     });
 	$( "#inidate" ).datepicker({
-        dateFormat: "yy-mm-dd",
-        showOn: "both"
+        dateFormat: "yy-mm-dd"
     });
 
     $( "#enddate" ).datepicker({
-        dateFormat: "yy-mm-dd",
-        showOn: "both"
+        dateFormat: "yy-mm-dd"
     });
 	
 	$( "#keydate" ).datepicker({
