@@ -74,15 +74,16 @@ if ($is_update_database){ // if modified any parameter
 
 	
 	
-	$sql_update ="UPDATE public.ezfin_transaction
+	$sql_update ="UPDATE public.ezfin_transactions
 	SET iduser = :user,
-		name = :name ,
-		alias = :alias,
-		icon = :icon,
+		duedate = :duedate ,
 		description = :desc,
-		operation = :oper
+		idcat = :idcat,
+		amount = :amm,
+		paydate = :paydate,
+		status = :stat
 	WHERE
-	   idcat = :id";
+	   idtransaction = :id";
 
 	$stmt = $db->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
@@ -174,7 +175,7 @@ if (($is_create OR $is_update)) {
 	} else {   //Update
 		$id = get_parameter ("update",-1);
          
-		$sql_update ="SELECT * FROM public.ezfin_transactions WHERE idcat = :id";
+		$sql_update ="SELECT * FROM public.ezfin_transactions WHERE idtransaction = :id";
 
 		$stmt = $db->prepare($sql_update);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
