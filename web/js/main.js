@@ -21,6 +21,10 @@
         dateFormat: "yy-mm-dd",
         showOn: "both"
     });
+	
+	$( "#keydate" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
 
 })(jQuery);
 function Tang(){
