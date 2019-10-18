@@ -34,7 +34,7 @@
 								<div class="col-sm-6 form-group">
 								<div class="input-group date" data-provide="datepicker">
 									<label for="keydate"> Kay Date:</label>
-									<input type="text" class="form-control" id="keydate" name="keydate" value="<?php echo $my_keydate; ?>" required>
+									<input type="text" class="form-control datepicker" id="keydate" name="keydate" value="<?php echo $my_keydate; ?>" required>
 								</div>
 								</div>
 							</div>
