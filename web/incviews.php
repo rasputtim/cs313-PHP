@@ -284,9 +284,7 @@ if (($is_create OR $is_update)) {
 </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script>
-function showmydiv() {
- document.getElementById('success_message').style.display = 'block';
-}
+	$('.datepicker').datepicker();
 </script>
 <script>
 
