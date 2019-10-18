@@ -2,13 +2,13 @@
     // USE STRICT
     "use strict";
     $( "#date_from" ).datepicker({
-        dateFormat: "dd-mm-yy",
+        dateFormat: "yyyy-mm-dd",
         showOn: "both",
         buttonText : '<i class="zmdi zmdi-calendar-alt"></i>',
     });
 
     $( "#date_to" ).datepicker({
-        dateFormat: "dd-mm-yy",
+        dateFormat: "yyyy-mm-dd",
         showOn: "both",
         buttonText : '<i class="zmdi zmdi-calendar-alt"></i>',
     });
