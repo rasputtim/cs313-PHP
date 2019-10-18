@@ -76,8 +76,8 @@ if ($is_update_database){ // if modified any parameter
 	
 	$sql_update ="UPDATE public.ezfin_balanceview
 	SET iduser = :user,
-		inidate = :inidate ,
-		enddate = :enddate,
+		initialdate = :inidate ,
+		finaldate = :enddate,
 		keydate = :keydate,
 		description = :desc,
 		title = :title,
