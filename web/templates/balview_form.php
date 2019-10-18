@@ -28,12 +28,12 @@
 							<div class="row">
 								<div class="col-sm-6 form-group">
 
-									<label for="title"> Initial Date:</label>
+									<label for="title"> Title:</label>
 									<input type="text" class="form-control" id="title" name="title" value="<?php echo $my_title; ?>" required>
 								</div>
 								<div class="col-sm-6 form-group">
 
-									<label for="keydate"> End Date:</label>
+									<label for="keydate"> Kay Date:</label>
 									<input type="text" class="form-control" id="keydate" name="keydate" value="<?php echo $my_keydate; ?>" required>
 								</div>
 							</div>

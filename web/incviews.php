@@ -189,10 +189,10 @@ if (($is_create OR $is_update)) {
 		}
 
 		$my_user = "admin";
-		$my_inidate =  $row["inidate"];
-		$my_enddate =  $row["enddate"];
+		$my_inidate =  $row["initialdate"];
+		$my_enddate =  $row["finaldate"];
 		$my_keydate =  $row["keydate"];
-		$my_description = $row['descript'];
+		$my_description = $row['description'];
 		$my_title =  $row["title"];
 		$my_iscur =  $row["iscurrent"];
 
