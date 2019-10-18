@@ -52,7 +52,7 @@
 							<div class="row">
 							
 							<div class="form-check">
-								<input type="checkbox" class="form-check-input" id="iscurrent"   name="iscur" value="1" $my_iscur_check>
+								<input type="checkbox" class="form-check-input" id="iscurrent"   name="iscur" value="1" <?php echo $my_iscur_check. ?> >
 								<label class="form-check-label" for="iscurrent">Is Current</label>
 							</div>
 								
