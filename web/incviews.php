@@ -286,12 +286,7 @@ if (($is_create OR $is_update)) {
 <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/main.js"></script>
-<script>
-	$('.datepicker').datepicker({
-    format: 'yyyy-mm-dd',
-    startDate: '-3d'
-});
-</script>
+
 <script>
 
 	$(document).ready(function() {	
