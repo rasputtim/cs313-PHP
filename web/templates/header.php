@@ -28,6 +28,8 @@
 <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 <script type="text/javascript" src="js/cform.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script src="js/main.js"></script>
 	
 <!--[if lt IE 8]>
