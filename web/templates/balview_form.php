@@ -50,12 +50,12 @@
 								<input type="text" id="date_to" class="date_to" placeholder="Pick a date" />
 								<!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
 							</div>
-								<div class="col-sm-6 form-group">
+								<div class="col-sm-6 form-group form-date-from">
 
 									<label for="inidate"> Initial Date:</label>
 									<input type="text" class="form-control date_from" id="inidate" name="inidate" value="<?php echo $my_inidate; ?>" required>
 								</div>
-								<div class="col-sm-6 form-group">
+								<div class="col-sm-6 form-group form-date-to">
 
 									<label for="enddate"> End Date:</label>
 									<input type="text" class="form-control date_to" id="enddate" name="enddate" value="<?php echo $my_enddate; ?>" required>
