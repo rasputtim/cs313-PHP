@@ -49,7 +49,7 @@ if ($index5=="true"){
 						</li>
 						<li class="sub-menu sub-menu-2"><a href="listviews.php">Periods</a>
 							<ul>
-								<li><a href="incviews.php">Include</a></li>
+								<li><a href="incviews.php?create=1">Include</a></li>
 								<li><a href="incviews.php?update=2">Edit</a></li>
 								<li><a href="listviews.php">Search</a></li>
 																
@@ -57,7 +57,7 @@ if ($index5=="true"){
 						</li>
 						<li class="sub-menu sub-menu-2"><a href="listtrans.php">Transactions</a>
 							<ul>
-								<li><a href="inctrans.php">Include</a></li>
+								<li><a href="inctrans.php?create=1">Include</a></li>
 								<li><a href="inctrans.php?update=2">Edit</a></li>
 								<li><a href="listtrans.php">Search</a></li>
 																
