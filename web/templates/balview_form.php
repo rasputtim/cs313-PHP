@@ -26,6 +26,16 @@
                             }
                         ?>
 							<div class="row">
+							<div class="form-date-from form-icon">
+                        <label for="date_from">From</label>
+                        <input type="text" id="date_from" class="date_from" placeholder="Pick a date" />
+                        <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+                    </div>
+                    <div class="form-date-to form-icon">
+                        <label for="date_to">To</label>
+                        <input type="text" id="date_to" class="date_to" placeholder="Pick a date" />
+                        <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+                    </div>
 								<div class="col-sm-6 form-group">
 
 									<label for="title"> Title:</label>
