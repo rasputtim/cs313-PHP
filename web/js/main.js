@@ -12,6 +12,15 @@
         showOn: "both",
         buttonText : '<i class="zmdi zmdi-calendar-alt"></i>',
     });
+	$( "#inidate" ).datepicker({
+        dateFormat: "yy-mm-dd",
+        showOn: "both"
+    });
+
+    $( "#enddate" ).datepicker({
+        dateFormat: "yy-mm-dd",
+        showOn: "both"
+    });
 
 })(jQuery);
 function Tang(){
