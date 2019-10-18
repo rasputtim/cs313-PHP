@@ -196,7 +196,7 @@ if (($is_create OR $is_update)) {
 		$my_title =  $row["title"];
 		$my_iscur =  $row["iscurrent"];
 
-		
+		echo "<H3> IS CUR: $my_iscur </H3>";
 		switch($my_iscur){
 			case 0:
 				$my_iscur_check = "";
