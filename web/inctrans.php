@@ -90,7 +90,7 @@ if ($is_update_database){ // if modified any parameter
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':idcat', $my_idcat, PDO::PARAM_INT);
-	$stmt->bindValue(':amm', $my_ammopunt, PDO::PARAM_STR);
+	$stmt->bindValue(':amm', $my_amount, PDO::PARAM_STR);
 	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -233,7 +233,7 @@ if (($is_create OR $is_update)) {
 	echo'<div class="col-lg-9">';
 		
 	// creates a container for the transaction form
-	include ("templates/category_form.php");
+	include ("templates/transaction_form.php");
     //ends the transaction form container
 
 }
