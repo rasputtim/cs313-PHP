@@ -27,6 +27,10 @@
     $( "#duedate" ).datepicker({
         dateFormat: "yy-mm-dd"
     });
+	
+	 $( "#paydate" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
 
 })(jQuery);
 function Tang(){

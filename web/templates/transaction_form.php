@@ -59,24 +59,22 @@
 									
 								</div>
 								
+								<div class="col-sm-6 form-group">
 
+								<label for="paydate"> Transaction Payment/Receive Date:</label>
+								<input type="text" class="form-control" id="paydate" name="paydate" value="<?php echo $my_paydate; ?>" required>
+								</div>
 									
 							
 							</div>
 							
-							    <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="operation" id="inlineRadio1" value="0" <?php echo $my_checked_income;?>>
-                                    <label class="form-check-label" for="inlineRadio1">INCOME</label>
-                                </div>
-								<div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="operation" id="inlineRadio2" value="1" <?php echo $my_checked_outcome;?>>
-                                    <label class="form-check-label" for="inlineRadio2">OUTCOME</label>
+							<div class="row">
+										<p> </p>
+								<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="iscurrent"   name="iscur" value="1" <?php echo $my_status_check; ?> >
+								<label class="form-check-label" for="iscurrent">Payd / Received</label>
 								</div>
-								<div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="operation" id="inlineRadio3" value="2" <?php echo $my_checked_informative;?>>
-                                    <label class="form-check-label" for="inlineRadio3">INFORMATIVE</label>
-								</div>
-							
+							</div>
 							<div class="row">
 								<div class="col-sm-12 form-group">
 									<label for="descript"> Description:</label>

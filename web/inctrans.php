@@ -156,7 +156,7 @@ if ($is_insert) $is_create = true;
 if ($is_update_database) $is_update = true;
 
 if (($is_create OR $is_update)) {
-
+	$my_status_check = "";
 	if ($is_create){
 
 		// CREATE form
@@ -196,18 +196,13 @@ if (($is_create OR $is_update)) {
 		$my_status = $row['status'];
 		
 		
-		$my_checked_payd = "";
-		$my_checked_not_paid = "";
-		
-		
-		
 
 		switch($my_status){
 			case 0:
-				$my_checked_paid = "checked";
+				$my_status_check = "";
 			break;
 			case 1:
-				$my_checked_not_paid = "checked";
+				$my_status_check = "checked";
 			break;
 			
 		}
