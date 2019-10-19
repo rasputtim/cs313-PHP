@@ -24,6 +24,10 @@
         dateFormat: "yy-mm-dd"
     });
 
+    $( "#duedate" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+
 })(jQuery);
 function Tang(){
     var x = document.getElementById("quantity").value;//lay gia tri cu trong text
