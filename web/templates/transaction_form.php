@@ -72,8 +72,8 @@
 							<div class="row">
 										<p> </p>
 								<div class="form-check">
-								<input type="checkbox" class="form-check-input" id="iscurrent"   name="iscur" value="1" <?php echo $my_status_check; ?> >
-								<label class="form-check-label" for="iscurrent">Payd / Received</label>
+								<input type="checkbox" class="form-check-input" id="status"   name="status" value="1" <?php echo $my_status_check; ?> >
+								<label class="form-check-label" for="status">Payd / Received</label>
 								</div>
 								<p> </p>
 							</div>
