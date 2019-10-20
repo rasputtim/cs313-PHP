@@ -191,7 +191,7 @@ if (($is_create OR $is_update)) {
 		$my_duedate = $row["duedate"];
 		$my_description = $row['description'] ;
 		$my_idcat = $row["idcat"];
-		$my_amount = $row["ampount"];
+		$my_amount = $row["amount"];
 		$my_paydate = $row['operation'];
 		$my_status = $row['status'];
 		$my_catname = $row['catname'];
