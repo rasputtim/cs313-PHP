@@ -192,7 +192,7 @@ if (($is_create OR $is_update)) {
 		$my_user = "admin";
 		$my_duedate = $row["duedate"];
 		$my_description = $row['description'] ;
-		$my_idcat = $row["idcat"];
+		$my_idcat = $row["idcategory"];
 		$my_amount = $row["amount"];
 		$my_amount_formated = money_format($money_format, $row['amount']);
 		$my_paydate = $row['paymentdate'];

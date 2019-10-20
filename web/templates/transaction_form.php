@@ -51,7 +51,7 @@
 									<?php 
 									foreach ($db->query('SELECT * FROM public.ezfin_category') as $row)
 									{
-									echo '<option value="'.$row["catid"].'">'.$row["name"].'</option>';
+									echo '<option value="'.$row["idcat"].'">'.$row["name"].'</option>';
 									}
 									?>
                                     
