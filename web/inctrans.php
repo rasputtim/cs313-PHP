@@ -82,7 +82,7 @@ if ($is_update_database){ // if modified any parameter
 		
 		amount = :amm,
 		paymentdate = :paydate,
-		status = :stat
+		
 	WHERE
 	   idtransaction = :id";
     //echo $sql_update;
