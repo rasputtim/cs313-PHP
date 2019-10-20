@@ -175,7 +175,7 @@ if (($is_create OR $is_update)) {
 	} else {   //Update
 		$id = get_parameter ("update",-1);
          
-		$sql_update ="SELECT * FROM public.ezfin_transactions WHERE idtransaction = :id";
+		$sql_update ="SELECT a.*, b.name as catname, b.idcat as catid FROM public.ezfin_transactions as a JOIN public.ezfin_category as b on a.idcategory = b.idcat WHERE a.idtransaction =  :id";
 
 		$stmt = $db->prepare($sql_update);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -194,7 +194,7 @@ if (($is_create OR $is_update)) {
 		$my_amount = $row["ampount"];
 		$my_paydate = $row['operation'];
 		$my_status = $row['status'];
-		
+		$my_catname = $row['catname'];
 		
 
 		switch($my_status){
