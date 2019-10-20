@@ -79,7 +79,7 @@ if ($is_update_database){ // if modified any parameter
 	SET iduser = :user,
 		duedate = :duedate,
 		description = :desc,
-		idcategory - :idcat,
+		idcategory = :idcat,
 		amount = :amm,
 		paymentdate = :paydate,
 		status = :stat
