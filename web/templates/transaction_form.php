@@ -34,7 +34,7 @@
 								<div class="col-sm-6 form-group">
 
 									<label for="amount"> Transaction Amount:</label>
-									<input type="text" class="form-control" id="amount" name="amount" value="<?php echo $my_amount; ?>" required>
+									<input type="text" class="form-control" id="amount" name="amount" value="<?php echo $my_amount_formated; ?>" required>
 								</div>
 							</div>
 							<div class="row">
@@ -75,6 +75,7 @@
 								<input type="checkbox" class="form-check-input" id="iscurrent"   name="iscur" value="1" <?php echo $my_status_check; ?> >
 								<label class="form-check-label" for="iscurrent">Payd / Received</label>
 								</div>
+								<p> </p>
 							</div>
 							<div class="row">
 								<div class="col-sm-12 form-group">

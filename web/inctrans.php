@@ -7,7 +7,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 require_once ("inc/connect.php");
 require_once ("inc/functions.php");
-
+$money_format = '%(#10n';
+$date_format = "D, M d, Y ";
 
 
 
@@ -167,6 +168,7 @@ if (($is_create OR $is_update)) {
 		$my_description = '' ;
 		$my_idcat = -1;
 		$my_amount = '0.00';
+		$my_amount_formated = '0.00';
 		$my_paydate = '';
 		$my_status = -1;//get_parameter("operation");
 		
@@ -192,6 +194,7 @@ if (($is_create OR $is_update)) {
 		$my_description = $row['description'] ;
 		$my_idcat = $row["idcat"];
 		$my_amount = $row["amount"];
+		$my_amount_formated = money_format($money_format, $row['amount']);
 		$my_paydate = $row['paymentdate'];
 		$my_status = $row['status'];
 		$my_catname = $row['catname'];
