@@ -42,7 +42,7 @@
 									<label for="idcat"> category:</label>
 									<select class="form-control" id="category" name="idcat" required >
 									<option value= "">Select one category</option>
-									<option value= "<?php echo $my_idcat;>?>"><?php echo $my_catname;?></option>;
+									<option value= "<?php echo $my_idcat;?>" selected ><?php echo $my_catname;?></option>;
                                     <?php
                                     if($my_category != '')
                                     echo'<option value= " '.$my_idcat.'" selected >'.$my_category.'</option>';
