@@ -77,7 +77,7 @@ if ($is_update_database){ // if modified any parameter
 	
 	$sql_update ="UPDATE public.ezfin_transactions
 	SET iduser = :user,
-		duedate = :duedate ,
+		duedate = :duedate,
 		description = :desc,
 		idcategory = :idcat,
 		amount = :amm,
@@ -85,7 +85,7 @@ if ($is_update_database){ // if modified any parameter
 		status = :stat
 	WHERE
 	   idtransaction = :id";
-
+    echo $sql_update;
 	$stmt = $db->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
@@ -95,7 +95,7 @@ if ($is_update_database){ // if modified any parameter
 	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-	if($stmt->execute()){
+	if(true /*$stmt->execute()*/){
 		$success = 1;
 	}else {  //failed
 		$success=2;
