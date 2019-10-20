@@ -80,7 +80,7 @@ if ($is_update_database){ // if modified any parameter
 		duedate = :duedate,
 		description = :desc,
 		
-		amount = :amm,
+		
 		paymentdate = :paydate,
 		
 	WHERE
