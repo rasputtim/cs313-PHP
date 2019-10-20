@@ -80,17 +80,17 @@ if ($is_update_database){ // if modified any parameter
 		duedate = :duedate,
 		description = :desc,
 		
-		
+		amount = :amm,
 		paymentdate = :paydate,
-		
+		status = :stat
 	WHERE
 	   idtransaction = :id";
-    //echo $sql_update;
+    echo $sql_update;
 	$stmt = $db->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
-	$stmt->bindValue(':idcat', $my_idcat, PDO::PARAM_INT);
+	//$stmt->bindValue(':idcat', $my_idcat, PDO::PARAM_INT);
 	$stmt->bindValue(':amm', $my_amount, PDO::PARAM_STR);
 	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
