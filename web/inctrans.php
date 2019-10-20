@@ -85,7 +85,7 @@ if ($is_update_database){ // if modified any parameter
 		status = :stat
 	WHERE
 	   idtransaction = :id";
-    echo $sql_update;
+    //echo $sql_update;
 	$stmt = $db->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
