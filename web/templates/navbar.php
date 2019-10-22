@@ -57,7 +57,13 @@ if ($index5=="true"){
 						</li>
 						<li class="sub-menu sub-menu-2"><a href="listtrans.php">Transactions</a>
 							<ul>
-								<li><a href="inctrans.php?create=1">Include</a></li>
+								<li class="sub-menu sub-menu-2"><a href="inctrans.php?create=1">Include</a>
+									<ul>
+										<li><a href="inctrans.php?create=1&type=out">Outcome</a></li>
+										<li><a href="inctrans.php?create=1&type=inc">Income</a></li>
+									</ul>
+							    </li>
+
 								<li><a href="inctrans.php?update=2">Edit</a></li>
 								<li><a href="listtrans.php">Search</a></li>
 																
