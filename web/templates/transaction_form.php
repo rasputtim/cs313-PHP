@@ -49,7 +49,7 @@
 									?>
 									
 									<?php 
-									foreach ($db->query('SELECT * FROM public.ezfin_category') as $row)
+									foreach (get_db()->query('SELECT * FROM public.ezfin_category') as $row)
 									{
 									echo '<option value="'.$row["idcat"].'">'.$row["name"].'</option>';
 									}
