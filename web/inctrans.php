@@ -5,7 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //header("location:inc/noaccess.php");
     //exit;
 }
-require_once ("inc/connect.php");
+require_once ("inc/functions_db.php");
 require_once ("inc/functions.php");
 $money_format = '%(#10n';
 $date_format = "D, M d, Y ";
@@ -40,7 +40,7 @@ if ($is_insert){ // Create group
 	$my_paydate = strtoupper (get_parameter("paydate"));
 	$my_status = $_POST['status'];//get_parameter("operation");
     
-	$stmt = $db->prepare('INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount, paymentdate, status) VALUES (:user,:duedate,:desc,:idcat, :amm,:paydate, :stat)');
+	$stmt = get_db()->prepare('INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount, paymentdate, status) VALUES (:user,:duedate,:desc,:idcat, :amm,:paydate, :stat)');
 	
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
@@ -50,7 +50,7 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
 	if($stmt->execute()){
-		$newId = $db->lastInsertId('ezfin_transaction_idtransaction_seq');
+		$newId = get_db()->lastInsertId('ezfin_transaction_idtransaction_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;
@@ -86,7 +86,7 @@ if ($is_update_database){ // if modified any parameter
 	WHERE
 	   idtransaction = :id";
     //echo $sql_update;
-	$stmt = $db->prepare($sql_update);
+	$stmt = get_db()->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
@@ -114,7 +114,7 @@ if (isset($_GET["delete_data"])){ // if delete
 	
 	$sql_update ="DELETE FROM public.ezfin_transactions WHERE idtransaction = :id";
 
-	$stmt = $db->prepare($sql_update);
+	$stmt = get_db()->prepare($sql_update);
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 	
 	if($stmt->execute()){
@@ -179,7 +179,7 @@ if (($is_create OR $is_update)) {
          
 		$sql_update ="SELECT a.*, b.name as catname, b.idcat as catid FROM public.ezfin_transactions as a JOIN public.ezfin_category as b on a.idcategory = b.idcat WHERE a.idtransaction =  :id";
 
-		$stmt = $db->prepare($sql_update);
+		$stmt = get_db()->prepare($sql_update);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 		$row = array();
 		if($stmt->execute()){
