@@ -61,7 +61,21 @@
 									?>
 									
 									<?php 
-									foreach (get_db()->query('SELECT * FROM public.ezfin_category') as $row)
+									$sql_cat = "";
+									switch ($inc_type){
+										case "all":
+											$sql_cat = 'SELECT * FROM public.ezfin_category';
+											break;
+										case "inc":
+											$sql_cat = 'SELECT * FROM public.ezfin_category WHERE operation = 0';
+											break;
+										case "out":
+											$sql_cat = 'SELECT * FROM public.ezfin_category WHERE operation = 1';
+											break;
+
+									}
+
+									foreach (get_db()->query($sql_cat) as $row)
 									{
 									echo '<option value="'.$row["idcat"].'">'.$row["name"].'</option>';
 									}
