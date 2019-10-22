@@ -12,8 +12,20 @@
 								break;
 						    }
 						 
-                            if ($id == -1){   //CREATE NEW Record
-                                echo "<h1>Create a new Transaction</h1>";
+							if ($id == -1){   //CREATE NEW Record
+								switch ($inc_type){
+									case "all":
+										echo "<h1>Create a new Transaction</h1>";
+										break;
+									case "inc":
+										echo "<h1>Create a new Income</h1>";
+										break;
+									case "out":
+										echo "<h1>Create a new Outcome</h1>";
+										break;
+
+								}
+                                
                                 echo'<form role="form" method="post" id="reused_form" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).' " >';
                                 echo'<input type="hidden" class="form-control" id="is_insert" name="create2" value="true">';
                       

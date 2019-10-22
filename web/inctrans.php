@@ -15,6 +15,8 @@ $date_format = "D, M d, Y ";
     
 
 $is_create = (bool) get_parameter("create");
+$inc_type =  get_parameter("type","all");
+
 $is_update = false;
 if(get_parameter("update") != ''){
   $is_update=true;
