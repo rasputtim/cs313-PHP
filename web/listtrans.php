@@ -107,19 +107,13 @@ if ($added = false) echo '</ul>';
 </div>
 <div class="col-lg-3">
 
-<h2>Transactions List</h2>
 
-	<ul class="ul1">
 <?php 
-	foreach (get_db()->query('SELECT * FROM public.ezfin_transactions') as $row)
-	{
-	echo '<li><a href="#">';
-	echo $row['idcategory']." - ".$row['duedate']." - ". money_format($money_format, $row['amount']);
-	echo '</a></li>';
-	}
+	include( 'templates/translist.php');
+
 ?>
 	    	            		      	      			      
-	</ul>	
+		
 
 	
 
