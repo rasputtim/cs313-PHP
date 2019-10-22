@@ -64,7 +64,12 @@ if ($index5=="true"){
 									</ul>
 							    </li>
 
-								<li><a href="inctrans.php?update=2">Edit</a></li>
+								<li>
+									<form action="inctrans.php">
+									<input class="form-control input-sm" id="transid" type="text" name="update">
+									<a href="inctrans.php?update=2">Edit</a>
+									</form>
+								</li>
 								<li><a href="listtrans.php">Search</a></li>
 																
 							</ul>
