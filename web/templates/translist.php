@@ -1,4 +1,4 @@
-	echo '<h2>Transactions List</h2>';
+<?php	echo '<h2>Transactions List</h2>';
 
 	echo '<ul class="ul1">';
 		
@@ -13,4 +13,4 @@
 															
 		echo '</ul>	';
 
-		
+?>
