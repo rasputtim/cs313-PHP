@@ -2,7 +2,7 @@
 
 	echo '<ul class="ul1">';
 		
-		foreach ($db->query('SELECT * FROM public.ezfin_transactions') as $row)
+		foreach (get_db()->query('SELECT * FROM public.ezfin_transactions') as $row)
 		{
 		echo '<li>';
 		echo '<a href="inctrans.php?update='.$row['idtransaction'].'">';
