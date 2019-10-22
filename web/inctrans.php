@@ -239,6 +239,7 @@ if (($is_create OR $is_update)) {
 
 	echo '<div class="col-lg-3">';
 
+	
 	include( 'templates/translist.php');
 
 		
