@@ -217,14 +217,7 @@ if (($is_create OR $is_update)) {
 
 
 
-	echo'<div class="container">';
-	echo'<div class="row">';
-	echo'<div class="col-lg-12">';
-	echo'<div class="breadcrumbs1_inner"><a href="index.php">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;add / edit category</div>	';
-	echo'</div>	';
-	echo'</div>	';
-	echo'</div>	';
-	echo'</div>';
+	include('templates/guiabar.php');
 
 	echo'<div id="content">';
 	echo'<div class="container">';
@@ -237,6 +230,7 @@ if (($is_create OR $is_update)) {
     //ends the transaction form container
 
 }else { //delete
+	include('templates/guiabar.php');
 	echo '<div class="container">';
 	echo '<div class="col-md-6 col-md-offset-3 " id="form_container">';
                         
