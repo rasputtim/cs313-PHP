@@ -306,6 +306,9 @@ if (($is_create OR $is_update)) {
 </div>
 
 <script src="js/mydatepick.js"></script>
+<link rel="stylesheet" type="text/css" href="css/image-picker.css">
+<script src="js/image-picker.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 
     jQuery("select.image-picker").imagepicker({
