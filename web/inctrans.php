@@ -239,7 +239,7 @@ if (($is_create OR $is_update)) {
 }else { //delete
 	echo '<div class="container">';
 	echo '<div class="col-md-6 col-md-offset-3 " id="form_container">';
-                        <?php 
+                        
                             switch ($success){
 							case 0:
 							break;
