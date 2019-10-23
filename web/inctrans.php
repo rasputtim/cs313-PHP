@@ -48,7 +48,7 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':idcat', $my_idcat, PDO::PARAM_INT);
-	$stmt->bindValue(':amm', $my_ammopunt, PDO::PARAM_STR);
+	$stmt->bindValue(':amm', $my_amount, PDO::PARAM_STR);
 	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
 	if($stmt->execute()){
