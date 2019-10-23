@@ -114,7 +114,7 @@
 									<button type="submit" class="btn btn-lg btn-default pull-left" >Send &rarr;</button>
 								
 								<?php
-								echo "<a id= 'mylink' href='inctrans.php?delete_data=".$id."'><img border='0' src='images/cross.png'></a>";
+								echo "<a class='button2' id= 'mylink' href='inctrans.php?delete_data=".$id."'>DELETE</a>";
 								?>
 								</div>
 							</div>
