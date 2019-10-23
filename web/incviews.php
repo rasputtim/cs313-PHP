@@ -248,7 +248,7 @@ if (($is_create OR $is_update)) {
 
 	echo '<div class="col-lg-3">';
 
-	echo '<h2>category List</h2>';
+	echo '<h2>Available Periods</h2>';
 
 	echo '<ul class="ul1">';
 		
