@@ -5,7 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //header("location:inc/noaccess.php");
     //exit;
 }
-require_once ("inc/connect.php");
+require_once ("inc/functions_db.php");
 require_once ("inc/functions.php");
 $guiabar_ident = "add / edit Period";
 
@@ -38,8 +38,8 @@ if ($is_insert){ // Create group
 	$my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
 	$my_title = get_parameter("title");
 	$my_iscur = $_POST['iscur'];//get_parameter("operation");
-    
-	$stmt = $db->prepare('INSERT INTO public.ezfin_balanceview (iduser, initialdate, finaldate, keydate, description, title, iscurrent) VALUES (:user,:inidate,:enddate,:keydate,:desc,:title,:iscur)');
+    $mydb = ;
+	$stmt = $mydb->prepare('INSERT INTO public.ezfin_balanceview (iduser, initialdate, finaldate, keydate, description, title, iscurrent) VALUES (:user,:inidate,:enddate,:keydate,:desc,:title,:iscur)');
 	
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':inidate', $my_inidate, PDO::PARAM_STR);
@@ -49,7 +49,7 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':title', $my_title, PDO::PARAM_STR);
 	$stmt->bindValue(':iscur', $my_iscur, PDO::PARAM_INT);
 	if($stmt->execute()){
-		$newId = $db->lastInsertId('ezfin_balanceview_idbalview_seq');
+		$newId = $mydb->lastInsertId('ezfin_balanceview_idbalview_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;
@@ -85,7 +85,7 @@ if ($is_update_database){ // if modified any parameter
 	WHERE
 	   idbalview = :id";
 
-	$stmt = $db->prepare($sql_update);
+	$stmt = get_db()->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':inidate', $my_inidate, PDO::PARAM_STR);
 	$stmt->bindValue(':enddate', $my_enddate, PDO::PARAM_STR);
@@ -113,7 +113,7 @@ if (isset($_GET["delete_data"])){ // if delete
 	
 	$sql_update ="DELETE FROM public.ezfin_balanceview WHERE idbalview = :id";
 
-	$stmt = $db->prepare($sql_update);
+	$stmt = get_db()->prepare($sql_update);
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 	
 	if($stmt->execute()){
@@ -178,7 +178,7 @@ if (($is_create OR $is_update)) {
          
 		$sql_update ="SELECT * FROM public.ezfin_balanceview WHERE idbalview = :id";
 
-		$stmt = $db->prepare($sql_update);
+		$stmt = get_db()->prepare($sql_update);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 		$row = array();
 		if($stmt->execute()){
@@ -252,7 +252,7 @@ if (($is_create OR $is_update)) {
 
 	echo '<ul class="ul1">';
 		
-		foreach ($db->query('SELECT * FROM public.ezfin_balanceview') as $row)
+		foreach (get_db()->query('SELECT * FROM public.ezfin_balanceview') as $row)
 		{
 			echo '<li><a href="incviews.php?update='.$row['idbalview'].'">';
 			echo $row['title'];
