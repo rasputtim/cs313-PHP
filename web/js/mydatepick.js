@@ -33,6 +33,12 @@
     });
 
 })(jQuery);
+
+function confirmation() {
+message = __('Are you sure?');
+      return confirm(message);
+}
+
 function Tang(){
     var x = document.getElementById("quantity").value;//lay gia tri cu trong text
     if(parseInt(x) >= 0){
