@@ -52,7 +52,7 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
 	if($stmt->execute()){
-		$newId = get_db()->lastInsertId('ezfin_transaction_idtransaction_seq');
+		$newId = get_db()->lastInsertId('ezfin_transactions_idtransaction_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;
