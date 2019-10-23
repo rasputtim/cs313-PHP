@@ -25,16 +25,16 @@ ul.thumbnails.image_picker_selector {
     ul.thumbnails.image_picker_selector li .thumbnail {
       padding: 6px;
       border: 1px solid #DDD;
-	  width: 100px;
-	  height: 100px;
+	  width: 70px;
+	  height: 70px;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none; }
 	  
       /* line 42, source/sass/image-picker.scss */
       ul.thumbnails.image_picker_selector li .thumbnail img {
-		width: 100px;
-		height: 100px;
+		width: 70px;
+		height: 70px;
         -webkit-user-drag: none; }
     /* line 48, source/sass/image-picker.scss */
     ul.thumbnails.image_picker_selector li .thumbnail.selected {
