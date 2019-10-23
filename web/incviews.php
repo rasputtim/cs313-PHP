@@ -38,7 +38,7 @@ if ($is_insert){ // Create group
 	$my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
 	$my_title = get_parameter("title");
 	$my_iscur = $_POST['iscur'];//get_parameter("operation");
-    $mydb = ;
+    $mydb = get_db();
 	$stmt = $mydb->prepare('INSERT INTO public.ezfin_balanceview (iduser, initialdate, finaldate, keydate, description, title, iscurrent) VALUES (:user,:inidate,:enddate,:keydate,:desc,:title,:iscur)');
 	
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
