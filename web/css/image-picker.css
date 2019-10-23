@@ -30,8 +30,11 @@ ul.thumbnails.image_picker_selector {
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none; }
+	  
       /* line 42, source/sass/image-picker.scss */
       ul.thumbnails.image_picker_selector li .thumbnail img {
+		width: 100px;
+		height: 100px;
         -webkit-user-drag: none; }
     /* line 48, source/sass/image-picker.scss */
     ul.thumbnails.image_picker_selector li .thumbnail.selected {
