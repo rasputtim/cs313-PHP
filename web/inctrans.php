@@ -281,7 +281,10 @@ function showmydiv() {
 }
 </script>
 <script>
-
+function confirmation() {
+message = __('Are you sure?');
+      return confirm(message);
+    }
 	$(document).ready(function() {	
 		//	
 		
