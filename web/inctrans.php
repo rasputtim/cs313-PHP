@@ -236,6 +236,23 @@ if (($is_create OR $is_update)) {
 	include ("templates/transaction_form.php");
     //ends the transaction form container
 
+}else { //delete
+	echo '<div class="container">';
+	echo '<div class="col-md-6 col-md-offset-3 " id="form_container">';
+                        <?php 
+                            switch ($success){
+							case 0:
+							break;
+							case 1:
+								echo '<div id="" style="width:100%; height:100%;  "> <h3>SUCESS!</h3> </div>';
+								break;
+							case 2:
+								echo'<div id="" style="width:100%; height:100%; "> <h3>Error</h3>ERROR </div>';
+								break;
+							}
+							
+							echo '</div>';	
+							echo '</div>';	
 }
 	echo '</div>'; //end the navigation bar
 
