@@ -9,7 +9,7 @@ require_once ("inc/functions_db.php");
 require_once ("inc/functions.php");
 $money_format = '%(#10n';
 $date_format = "D, M d, Y ";
-
+$guiabar_ident = "add / edit transactions";
 
 
     
