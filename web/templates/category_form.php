@@ -128,8 +128,12 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 form-group">
-									<button type="submit" class="btn btn-lg btn-default pull-left" >Send &rarr;</button>
+									<button type="submit" class="button2" >Send &rarr;</button>
+									<?php
+										echo "<a class='button2' id= 'mylink' href='inccats.php?delete_data=".$id."'>DELETE</a>";
+									?>
 								</div>
+								
 							</div>
 						</form>
 								
