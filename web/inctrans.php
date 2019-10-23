@@ -41,8 +41,9 @@ if ($is_insert){ // Create group
 	$my_amount = get_parameter("amount");
 	$my_paydate = strtoupper (get_parameter("paydate"));
 	$my_status = $_POST['status'];//get_parameter("operation");
-    
-	$stmt = get_db()->prepare('INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount, paymentdate, status) VALUES (:user,:duedate,:desc,:idcat, :amm,:paydate, :stat)');
+	
+	$mydb = get_db();
+	$stmt = $mydb->prepare('INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount, paymentdate, status) VALUES (:user,:duedate,:desc,:idcat, :amm,:paydate, :stat)');
 	
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
@@ -52,7 +53,7 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
 	if($stmt->execute()){
-		$newId = get_db()->lastInsertId('ezfin_transactions_idtransaction_seq');
+		$newId = $mydb->lastInsertId('ezfin_transactions_idtransaction_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;

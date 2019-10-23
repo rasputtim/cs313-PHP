@@ -5,7 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //header("location:inc/noaccess.php");
     //exit;
 }
-require_once ("inc/connect.php");
+require_once ("inc/functions_db.php");
 require_once ("inc/functions.php");
 $guiabar_ident = "add / edit category";
 
@@ -38,7 +38,8 @@ if ($is_insert){ // Create group
 	$my_oper = $_POST['operation'];//get_parameter("operation");
     $my_description = htmlspecialchars($_POST['descript']) ;//get_paramenter("descript");
 	
-	$stmt = $db->prepare('INSERT INTO public.ezfin_category (idUser,name,alias,icon,description,operation) VALUES (:user,:name,:alias,:icon,:desc,:oper)');
+	$mydb = get_db();
+	$stmt = $mydb->prepare('INSERT INTO public.ezfin_category (idUser,name,alias,icon,description,operation) VALUES (:user,:name,:alias,:icon,:desc,:oper)');
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':name', $my_name, PDO::PARAM_STR);
 	$stmt->bindValue(':alias', $my_alias, PDO::PARAM_STR);
@@ -46,7 +47,7 @@ if ($is_insert){ // Create group
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':oper', $my_oper, PDO::PARAM_INT);
 	if($stmt->execute()){
-		$newId = $db->lastInsertId('ezfin_category_idcat_seq');
+		$newId = $mydb->lastInsertId('ezfin_category_idcat_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;
@@ -80,7 +81,7 @@ if ($is_update_database){ // if modified any parameter
 	WHERE
 	   idcat = :id";
 
-	$stmt = $db->prepare($sql_update);
+	$stmt = get_db()->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':name', $my_name, PDO::PARAM_STR);
 	$stmt->bindValue(':alias', $my_alias, PDO::PARAM_STR);
@@ -108,7 +109,7 @@ if (isset($_GET["delete_data"])){ // if delete
 	
 	$sql_update ="DELETE FROM public.ezfin_category WHERE idcat = :id";
 
-	$stmt = $db->prepare($sql_update);
+	$stmt = get_db()->prepare($sql_update);
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 	
 	if($stmt->execute()){
@@ -171,7 +172,7 @@ if (($is_create OR $is_update)) {
          
 		$sql_update ="SELECT * FROM public.ezfin_category WHERE idcat = :id";
 
-		$stmt = $db->prepare($sql_update);
+		$stmt = get_db()->prepare($sql_update);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 		$row = array();
 		if($stmt->execute()){
@@ -252,7 +253,7 @@ if (($is_create OR $is_update)) {
 
 	echo '<ul class="ul1">';
 		
-		foreach ($db->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
+		foreach (get_db()->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
 		{
 		echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
 		echo $row['name'];

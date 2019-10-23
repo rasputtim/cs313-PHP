@@ -114,6 +114,7 @@
 									<button type="submit" class='button2' >Send &rarr;</button>
 								
 								<?php
+								if (!$is_create)
 								echo "<a class='button2' id= 'mylink' href='inctrans.php?delete_data=".$id."'>DELETE</a>";
 								?>
 								</div>
