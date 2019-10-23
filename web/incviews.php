@@ -7,7 +7,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 require_once ("inc/connect.php");
 require_once ("inc/functions.php");
-
+$guiabar_ident = "add / edit Period";
 
 
 
@@ -213,14 +213,7 @@ if (($is_create OR $is_update)) {
 
 
 
-	echo'<div class="container">';
-	echo'<div class="row">';
-	echo'<div class="col-lg-12">';
-	echo'<div class="breadcrumbs1_inner"><a href="index.php">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;add / edit category</div>	';
-	echo'</div>	';
-	echo'</div>	';
-	echo'</div>	';
-	echo'</div>';
+	include('templates/guiabar.php');
 
 	echo'<div id="content">';
 	echo'<div class="container">';
@@ -232,6 +225,24 @@ if (($is_create OR $is_update)) {
 	include ("templates/balview_form.php");
     //ends the category form container
 
+}else { //delete
+	include('templates/guiabar.php');
+	echo '<div class="container">';
+	echo '<div class="col-md-6 col-md-offset-3 " id="form_container">';
+                        
+                            switch ($success){
+							case 0:
+							break;
+							case 1:
+								echo '<div id="" style="width:100%; height:100%;  "> <h3>SUCESS!</h3> </div>';
+								break;
+							case 2:
+								echo'<div id="" style="width:100%; height:100%; "> <h3>Error</h3>ERROR </div>';
+								break;
+							}
+							
+							echo '</div>';	
+							echo '</div>';	
 }
 	echo '</div>'; //end the navigation bar
 
