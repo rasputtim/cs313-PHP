@@ -113,6 +113,9 @@
 								<div class="col-sm-12 form-group">
 									<button type="submit" class="btn btn-lg btn-default pull-left" >Send &rarr;</button>
 								</div>
+								<?php
+								echo "<a href='inctrans.php?delete_data=".$id."'   onclick='return confirmation()'><img border='0' src='images/cross.png'></a>";
+								?>
 							</div>
 						</form>
 								
