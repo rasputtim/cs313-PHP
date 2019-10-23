@@ -302,7 +302,7 @@ if (($is_create OR $is_update)) {
 		// Note that this also prevents event bubbling,
 		// which is probably what we want here, but won't 
 		// always be the case.
-		message = __('Are you sure?');
+		message = 'Are you sure?';
         return confirm(message);
 		}
 	}); //

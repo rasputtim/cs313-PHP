@@ -35,7 +35,7 @@
 })(jQuery);
 
 function confirmation() {
-message = __('Are you sure?');
+message = 'Are you sure?';
       return confirm(message);
 }
 
