@@ -25,6 +25,8 @@ ul.thumbnails.image_picker_selector {
     ul.thumbnails.image_picker_selector li .thumbnail {
       padding: 6px;
       border: 1px solid #DDD;
+	  width: 100px;
+	  height: 100px;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none; }
