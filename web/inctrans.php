@@ -253,6 +253,12 @@ if (($is_create OR $is_update)) {
  <div class="picker">
 	<select class="image-picker show-html">
 	<optgroup label="Cats">
+		<option data-img-src="images/cat_taxes.png" value="cat_taxes.png">cat_taxes.png</option>
+		<option data-img-src="images/cat_tax_refunds.png" value="cat_tax_refunds.png">cat_tax_refunds.png</option>
+		<option data-img-src="images/cat_transportation.png" value="cat_transportation.png">cat_transportation.png</option>
+		<option data-img-src="images/cat_unknown.png" value="cat_unknown.png">cat_unknown.png</option>
+		<option data-img-src="images/cat_utilities.png" value="cat_utilities.png">cat_utilities.png</option>
+		<option data-img-src="images/cat_working.png" value="cat_working.png">cat_working.png</option>
 		<option data-img-src="http://placekitten.com/220/200" value="1">Cute Kitten 1</option>
 		<option data-img-src="http://placekitten.com/180/200" value="2">Cute Kitten 2</option>
 		<option data-img-src="http://placekitten.com/130/200" value="3">Cute Kitten 3</option>
