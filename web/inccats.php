@@ -217,7 +217,9 @@ if (($is_create OR $is_update)) {
 	echo'<div class="row">';
 			
 	echo'<div class="col-lg-9">';
-		
+	echo'<div class="picker">';
+	
+	echo'</div>';
 	// creates a container for the category form
 	include ("templates/category_form.php");
     //ends the category form container
@@ -295,11 +297,33 @@ if (($is_create OR $is_update)) {
 	
 </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
-<script>
-function showmydiv() {
- document.getElementById('success_message').style.display = 'block';
-}
-</script>
+<link rel="stylesheet" type="text/css" href="css/image-picker.css">
+<script src="js/image-picker.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    jQuery("select.image-picker").imagepicker({
+      hide_select:  false,
+    });
+
+    jQuery("select.image-picker.show-labels").imagepicker({
+      hide_select:  false,
+      show_label:   true,
+    });
+
+    jQuery("select.image-picker.limit_callback").imagepicker({
+      limit_reached:  function(){alert('We are full!')},
+      hide_select:    false
+    });
+
+    var container = jQuery("select.image-picker.masonry").next("ul.thumbnails");
+    container.imagesLoaded(function(){
+      container.masonry({
+        itemSelector:   "li",
+      });
+    });
+
+  </script>
 <script>
 
 	$(document).ready(function() {	
