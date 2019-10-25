@@ -153,7 +153,7 @@ if ($is_update_database){
 	?>
 	</div>
 
-	<div class="breadcrumbs1">
+	
 
 <?php	
 if ($is_insert) $is_create = true;
@@ -251,7 +251,7 @@ if (($is_create OR $is_update)) {
 }
  
 
-	echo '</div>'; //end the navigation bar
+	
 
 	echo '<div class="col-lg-3">';
 
