@@ -1,4 +1,4 @@
-<?php	echo '<h2>Transactions List</h2>';
+<?php	echo '<h2>List of options</h2>';
 
 	echo '<ul class="ul1">';
 		

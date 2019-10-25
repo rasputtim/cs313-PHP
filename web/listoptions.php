@@ -26,10 +26,16 @@ include('templates/menubar.php');
 
 </div>
 
-<?php
-$guiabar_ident = "list options";
-include('templates/guiabar.php');
-?>
+<div class="breadcrumbs1">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;transactions</div>	
+</div>	
+</div>	
+</div>	
+</div>
+
 <div id="content">
 <div class="container">
 <div class="row">
