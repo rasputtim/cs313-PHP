@@ -149,7 +149,7 @@ if ($is_update_database){
 	?>
 	</div>
 
-	<div class="breadcrumbs1">
+	
 
 <?php	
 if ($is_insert) $is_create = true;
