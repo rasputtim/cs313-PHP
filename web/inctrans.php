@@ -251,7 +251,7 @@ if (($is_create OR $is_update)) {
 }
  
 
-	
+	echo '</div>'; //end the navigation bar
 
 	echo '<div class="col-lg-3">';
 
