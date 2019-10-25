@@ -33,11 +33,7 @@ include('templates/guiabar.php');
 <div id="content">
 <div class="container">
 <div class="row">
-		<?php
-		$search_type = "transactions";
-			include('templates/search.php'); 
-		?>
-		
+			
 
 <div class="col-lg-9">
 	
