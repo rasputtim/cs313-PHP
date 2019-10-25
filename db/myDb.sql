@@ -49,8 +49,22 @@ CREATE TABLE ezfin_balanceView (
             PRIMARY KEY (idBalView, idUser),
             FOREIGN KEY (idUser) REFERENCES ezfin_tusuario (id_usuario)
             );
+			
+CREATE TABLE ezfin_config (
+            idoption  SERIAL NOT NULL,
+            idUser varchar(50) NOT NULL,
+            key TEXT,
+            value TEXT,
+            description TEXT,
+            PRIMARY KEY (idconfig, idUser)
+            );
             
 
+INSERT INTO public.ezfin_config(idoption, iduser, key, value, description)
+	VALUES (1, 'admin', 'date_format', 'D, M d, Y', 'the date format');	
+
+INSERT INTO public.ezfin_config(idoption, iduser, key, value, description)
+	VALUES (2, 'admin', 'money_format', '%(#10n', 'the money format');	
 
 
 			
