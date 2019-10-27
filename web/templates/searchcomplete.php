@@ -98,7 +98,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	echo "<td>";
     echo "<label>" . 'Categories' . "</label>";
     
-	echo print_select_from_sql ('SELECT id, name FROM ttes_user_category', 'category',
+	echo print_select_from_sql ('SELECT id, name FROM public.ezfin_category', 'category',
 						$category, '', "Any", '', true, false, false, '');
 	echo "<td>";
 	echo "<label>" . 'User' . "</label>";
@@ -138,7 +138,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
     // sem pagination
 	if ($user_id != 0) {
-	$sql1 = "SELECT * FROM ttes_user_data $condition $sql_filter ORDER BY  date, id_category   ";
+	$sql1 = "SELECT * FROM public.ezfin_transactions $condition $sql_filter ORDER BY  date, idcategory   ";
     }else { //com paginanation
 
 	//$count = get_db_sql("SELECT COUNT(id) FROM ttes_user_data $condition $sql_filter");
