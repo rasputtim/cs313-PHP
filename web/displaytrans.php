@@ -177,7 +177,7 @@ function run() {
 	}); //
 	$(window).load(function() {
 		//
-		run;
+		run();
 	}); //
 	</script>	
 </body>
