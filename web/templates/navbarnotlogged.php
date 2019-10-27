@@ -6,7 +6,6 @@
       <li><a href="index.php">Home</a></li>
       <li class="<?php echo $index1_active; ?> "><a href="aboutus.php">About Us</a></li>
 				
-				<li class="<?php echo $index4_active; ?>" ><a href="listviews.php">Views</a></li>
 				<li class="<?php echo $index5_active; ?>" ><a href="index-5.php">Contacts</a></li>	
 				<li class="<?php echo $index5_active; ?>" >
 					<form class="" action="login.php" method="post">
