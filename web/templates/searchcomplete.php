@@ -5,8 +5,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location:inc/noaccess.php");
     exit;
 }
-require_once ("../inc/functions_db.php");
-require_once ("../inc/functions_html.php");
+require_once ("inc/functions_db.php");
+require_once ("inc/functions_html.php");
 $first_day = (new DateTime('first day of last month'))->format('Y-m-d');
 $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
