@@ -23,6 +23,65 @@ return empty($eregi) ? true : false;
 }
 
 /**
+ * Convert hexadecimal html entity value to char
+ *
+ * @param string String of html hexadecimal value
+ *
+ * @return string String with char
+ */
+function html_to_ascii($hex) {
+
+	$dec = hexdec($hex);
+
+	return chr($dec);
+}
+
+/**
+ * Convert the $value encode in html entity to clear char string. This function
+ * should be called always to "clean" HTML encoded data; to render to a text
+ * plain ascii file, to render to console, or to put in any kind of data field
+ * who doesn't make the HTML render by itself.
+ *
+ * @param mixed String or array of strings to be cleaned.
+ * @param boolean $utf8 Flag, set the output encoding in utf8, by default true.
+ *
+ * @return unknown_type
+ */
+function safe_output($value, $utf8 = true)
+{
+	if (is_numeric($value))
+		return $value;
+
+	if (is_array($value)) {
+		array_walk($value, "safe_output");
+		return $value;
+	}
+
+	$value = utf8_encode ($value);
+
+	if ($utf8) {
+		$valueHtmlEncode =  html_entity_decode ($value, ENT_QUOTES, "UTF-8");
+	}
+	else {
+		$valueHtmlEncode =  html_entity_decode ($value, ENT_QUOTES);
+	}
+
+	//Replace the html entitie of ( for the char
+	$valueHtmlEncode = str_replace("&#40;", '(', $valueHtmlEncode);
+
+	//Replace the html entitie of ) for the char
+	$valueHtmlEncode = str_replace("&#41;", ')', $valueHtmlEncode);
+
+	//Revert html entities to chars
+	for ($i=0;$i<33;$i++) {
+		$valueHtmlEncode = str_ireplace("&#x".dechex($i).";",html_to_ascii(dechex($i)), $valueHtmlEncode);
+	}
+
+	return $valueHtmlEncode;
+}
+
+
+/**
  * Cleans a string by encoding to UTF-8 and replacing the HTML
  * entities. UTF-8 is necessary for foreign chars like asian
  * and our databases are (or should be) UTF-8

@@ -37,7 +37,7 @@ include('templates/menubar.php');
 <div class="row">
 		<?php
 		$search_type = "transactions";
-			include('templates/search.php'); 
+			include('templates/searchcomplete.php'); 
 		?>
 		
 
