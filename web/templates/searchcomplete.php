@@ -151,9 +151,8 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
 	echo "<td >";
 
-    echo "<input type=submit class='sub search' value='".'Search'."'>";
-    echo'<a href="#" onClick="document.getElementById("search-form").submit()"></a>';
-    echo'<a href="#" onClick="run()"></a>';
+    echo'<a href="#" onClick="document.getElementById("search-form").submit()">Test</a>';
+    echo'<a href="#" onClick="run()">TestRun</a>';
 	// Delete new lines from the string
 
 	echo "</td></tr></table></form>";
