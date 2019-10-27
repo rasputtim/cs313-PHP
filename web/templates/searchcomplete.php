@@ -14,7 +14,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	// =======================
 
 	echo "<h1>".'Transactions'." &raquo; ".'Data management'."</a></h1>";
-
+    echo "<p></p>";
 	// Search parameter
 	$free_text = get_parameter ("free_text", "");
 	$category = get_parameter ("category", 0);
