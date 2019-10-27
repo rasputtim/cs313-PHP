@@ -101,7 +101,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
     echo '<div class="search-form-wrapper clearfix">';
 
-	echo '<form method="post" action="?sec=tes&sec2=operation/tes/extract_user">';
+	echo '<form id="search-form" action="ajax/transactionsjson.php" accept-charset="utf-8" class="my-form clearfix" method="post" >';
 	echo '<table width="100%" class="search-table">';
 	echo "<tr>";
 
