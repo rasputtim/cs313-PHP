@@ -89,7 +89,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	}
 
 
-
+    echo '<div class="search-form-wrapper clearfix">';
 
 	echo '<form method="post" action="?sec=tes&sec2=operation/tes/extract_user">';
 	echo '<table width="100%" class="search-table">';
@@ -146,5 +146,5 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
 	//$sql1 = "SELECT * FROM ttes_user_data $condition $sql_filter ORDER BY  date, id_category  LIMIT $offset, ". $config["block_size"];
     }
-
+echo '</div>'
 ?>
