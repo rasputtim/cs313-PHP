@@ -9,6 +9,7 @@ require_once ("inc/functions_db.php");
 include('templates/header.php'); 
 $money_format = '%(#10n';
 $date_format = "D, M d, Y ";
+$guiabar_ident = "add / edit category";
 ?>
 
 <body class="subpage">
@@ -22,37 +23,33 @@ $index3="true";
 $index4="false";
 $index5="false";
 include('templates/menubar.php'); 
+
 ?>
 
 </div>
 
-<div class="breadcrumbs1">
-<div class="container">
-<div class="row">
-<div class="col-lg-12">
-<div class="breadcrumbs1_inner"><a href="index.html">home page</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;views</div>	
-</div>	
-</div>	
-</div>	
-</div>
+<?php
+
+?>
 
 <div id="content">
 <div class="container">
 <div class="row">
 		<?php
-		$search_type = "balanceview";
+		$search_type = "transactions";
 			include('templates/search.php'); 
 		?>
 		
+
 <div class="col-lg-9">
 	
-<h1>Periods</h1>
+<h1>Transactions for the current period</h1>
 
 
 
 <?php
 
-$stmt = get_db()->prepare('SELECT * FROM public.ezfin_balanceview');
+$stmt = get_db()->prepare('SELECT * FROM public.ezfin_transactions');
 //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -60,17 +57,34 @@ $count =0;
 $added = false;
 foreach ($rows as $row)
 {
+	//get category
+	$oper_image ="cat_income_green_peq.png";
+	$stmt = get_db()->prepare('SELECT operation FROM public.ezfin_category WHERE idcat =  :op');
+	$stmt->bindValue(':op', $row['idcategory'], PDO::PARAM_INT);
+	$stmt->execute();
+	$operation = $stmt->fetchColumn();
+	switch($operation){
+	   case 0:
+	   $oper_image ="cat_income_green_peq.png";
+	   break;
+	   case 1:
+	   $oper_image ="cat_bill_red_peq.png";
+	   break;
+	   case 2:
+	   $oper_image = "cat_informative_peq.png";
+	   break;
+	}
 	$added = false;
 	if ($count  == 0 ) echo '<ul class="thumbnails thumbnails1">';
 	echo '<li>';
 		echo '<div class="thumbnail clearfix">';
 		    // todo: add category icon here
-			//echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
+			echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
 			echo '<div class="caption">';											
-				echo '<h3>'.date_format(date_create($row['initialdate']),$date_format)." - ". date_format(date_create($row['finaldate']),$date_format);
+				echo '<h3>'.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
 				echo '</h3>';
 				echo '<p>';
-						echo $row['title']. '<a href=" edittransacton.php?idtrans='.$row['idbalview'].'"><strong>  edit</strong></a>';
+						echo "  ".$row['description']. '<a href=" inctrans.php?update='.$row['idtransaction'].'"><strong>  edit</strong></a>';
 				echo '</p>';
 			echo '</div>';			
 		echo '</div>';
@@ -86,22 +100,17 @@ if ($added = false) echo '</ul>';
 				
 
 
+
 </div>
 <div class="col-lg-3">
 
-<h2>services List</h2>
 
-	<ul class="ul1">
 <?php 
-	foreach (get_db()->query('SELECT * FROM public.ezfin_balanceview') as $row)
-	{
-	echo '<li><a href="#">';
-	echo $row['title']." - ".$row['initialdate']." - ". $row['finaldate'];
-	echo '</a></li>';
-	}
+	include( 'templates/translist.php');
+
 ?>
 	    	            		      	      			      
-	</ul>	
+		
 
 	
 
@@ -111,8 +120,8 @@ if ($added = false) echo '</ul>';
 <div class="row">
 <div class="col-lg-12">
 
-
 <div class="line1"></div>
+
 
 
 </div>	

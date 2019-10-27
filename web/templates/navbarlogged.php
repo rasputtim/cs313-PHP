@@ -45,7 +45,7 @@
 						</li>						
 					</ul>						
 				</li>
-				<li class="<?php echo $index3_active; ?>" ><a href="listtrans.php">Transactions</a></li>
+				<li class="<?php echo $index3_active; ?>" ><a href="displaytrans.php">Transactions</a></li>
 				<li class="<?php echo $index5_active; ?>" >
 					<form class="" action="login.php" method="post">
 						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
