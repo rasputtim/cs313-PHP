@@ -99,13 +99,13 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     echo "<label>" . 'Categories' . "</label>";
     
 	echo print_select_from_sql ('SELECT id, name FROM ttes_user_category', 'category',
-						$category, '', __("Any"), '', true, false, false, '');
+						$category, '', "Any", '', true, false, false, '');
 	echo "<td>";
 	echo "<label>" . 'User' . "</label>";
 
 	if($tesoureiro || $veneravel) {
 	echo print_select_from_sql ('SELECT id_usuario, nombre_real FROM tusuario where id_company=1 order by nombre_real', 'user_id',
-						$user_id, '', __("Any"), '', true, false, false, '');
+						$user_id, '', "Any", '', true, false, false, '');
     }else {
     $nombre_real = ""; //dame_nombre_real($config["id_user"]);
 	echo $nombre_real;
@@ -113,20 +113,20 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
 	echo "<tr>";
 	echo "<td>";
-	echo "<label>" . __('Search') . "</label>";
+	echo "<label>" . 'Search' . "</label>";
 	echo "<input type=text name='free_text' size=25 value='$free_text'>";
 
 	echo "</td><tr><td>";
-    echo print_label (__("Begin date"), '', true);
+    echo print_label ("Begin date", '', true);
     print_input_text ('start_date', $start_date, '', 10, 20);
 	echo "</td><td>";
-    echo print_label (__("End date"), '', true);
+    echo print_label ("End date", '', true);
     print_input_text ('end_date', $end_date, '', 10, 20);
 
 
 	echo "<td >";
 
-	echo "<input type=submit class='sub search' value='".__('Search')."'>";
+	echo "<input type=submit class='sub search' value='".'Search'."'>";
 	// Delete new lines from the string
 
 	echo "</td></tr></table></form>";
