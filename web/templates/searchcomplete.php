@@ -98,13 +98,13 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	echo "<td>";
     echo "<label>" . 'Categories' . "</label>";
     
-	echo print_select_from_sql ('SELECT id, name FROM public.ezfin_category', 'category',
+	echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
 						$category, '', "Any", '', true, false, false, '');
 	echo "<td>";
 	echo "<label>" . 'User' . "</label>";
 
 	if($tesoureiro || $veneravel) {
-	echo print_select_from_sql ('SELECT id_usuario, nombre_real FROM tusuario where id_company=1 order by nombre_real', 'user_id',
+	echo print_select_from_sql ('SELECT id_usuario, real_name FROM public.ezfin_tusuario order by real_name', 'user_id',
 						$user_id, '', "Any", '', true, false, false, '');
     }else {
     $nombre_real = ""; //dame_nombre_real($config["id_user"]);
