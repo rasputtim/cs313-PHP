@@ -29,9 +29,9 @@ if ($index5=="true"){
 }
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    include('navbarlogged.php');
+    include('navbarnotlogged.php');
 } else{ //loged in
-	include('navbarnotlogged.php');
+	include('navbarlogged.php');
 }
 
 ?>
