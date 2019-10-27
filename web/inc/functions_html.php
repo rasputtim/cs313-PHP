@@ -1,6 +1,67 @@
 <?php 
 require_once('functions.php');
 require_once('functions_db.php');
+
+
+/**
+ * Render an input text element. Extended version, use print_input_text() to simplify.
+ *
+ * @param string Input name.
+ * @param string Input value.
+ * @param string Alternative HTML string.
+ * @param int Size of the input.
+ * @param int Maximum length allowed.
+ * @param bool Disable the button (optional, button enabled by default).
+ * @param string Alternative HTML string.
+ * @param bool Whether to return an output string or echo now (optional, echo by default).
+ */
+function print_input_text_extended ($name, $value, $id, $alt, $size, $maxlength, $disabled, $script, $attributes, $return = false, $password = false, $label = false) {
+	$type = $password ? 'password' : 'text';
+
+	$output = '';
+
+	if ($label) {
+		$output .= print_label ($label, $id, '', true);
+	}
+
+	if (empty ($name)) {
+		$name = 'unnamed';
+	}
+
+	if (empty ($alt)) {
+		$alt = 'textfield';
+	}
+
+	if (! empty ($maxlength)) {
+		$maxlength = ' maxlength="'.$maxlength.'" ';
+	}
+
+	if (! empty ($script)) {
+		$script = ' onClick="'.$script.'" ';
+	}
+
+	$output .= '<input name="'.$name.'" type="'.$type.'" value="'.$value.'" size="'.$size.'" '.$maxlength.' alt="'.$alt.'" '.$script;
+	$output .= ' id="'.$id.'"';
+
+	if ($disabled)
+		$output .= ' disabled';
+
+	if (is_array($attributes)) {
+		foreach ($attributes as $name => $value) {
+			$output .= ' ' . $name . '="' . $value . '"';
+		}
+	}
+	else {
+		if ($attributes != '')
+			$output .= ' '.  $attributes;
+	}
+	$output .= ' />';
+
+	if ($return)
+		return $output;
+	echo $output;
+}
+
 /**
  * Render a label for a input elemennt.
  *
