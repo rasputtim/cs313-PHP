@@ -24,8 +24,8 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     $start_date_sql = $start_date;
     $end_date_sql = $end_date;
     $user_id = get_parameter ('user_id',"");
-    $status = get_paramenter('status',-1);
-    $amount = get_paramenter("amount", 0.00);
+    $status = get_parameter('status',-1);
+    $amount = get_parameter("amount", 0.00);
 	//Search filter processing
 
 	$sql_filter = "";
