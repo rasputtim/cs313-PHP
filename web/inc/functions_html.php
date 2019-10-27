@@ -2,6 +2,23 @@
 require_once('functions.php');
 require_once('functions_db.php');
 
+/**
+ * Render an input text element.
+ *
+ * @param string Input name.
+ * @param string Input value.
+ * @param string Alternative HTML string (optional).
+ * @param int Size of the input (optional).
+ * @param int Maximum length allowed (optional).
+ * @param bool Whether to return an output string or echo now (optional, echo by default).
+ */
+function print_input_text ($name, $value, $alt = '', $size = 50, $maxlength = 0, $return = false, $label = false, $disabled = false) {
+	$output = print_input_text_extended ($name, $value, 'text-'.$name, $alt, $size, $maxlength, $disabled, '', '', true, false, $label);
+
+	if ($return)
+		return $output;
+	echo $output;
+}
 
 /**
  * Render an input text element. Extended version, use print_input_text() to simplify.
