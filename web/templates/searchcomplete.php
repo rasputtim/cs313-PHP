@@ -152,9 +152,10 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	echo "<td >";
 
     echo'<a href="#" onClick="document.getElementById("search-form").submit()">Test</a>';
+    echo "<p>";
     echo'<a href="#" onClick="run()">TestRun</a>';
 	// Delete new lines from the string
-
+    echo "</p>";
 	echo "</td></tr></table></form>";
 
 
