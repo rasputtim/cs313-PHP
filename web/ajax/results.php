@@ -144,7 +144,7 @@ $amount = 0.00;
 
    
    
-   $stmt = get_db()->prepare('SELECT * FROM public.ezfin_transactions  WHERE 1=1');
+   $stmt = get_db()->prepare($sql1);
    //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
    $stmt->execute();
    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
