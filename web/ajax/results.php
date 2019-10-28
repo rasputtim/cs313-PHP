@@ -1,5 +1,8 @@
 <?php
 require_once ("../inc/functions_db.php");
+$money_format = '%(#10n';
+$date_format = "D, M d, Y ";
+
 $free_text = '';
 $start_date = '';
 $end_date = '';

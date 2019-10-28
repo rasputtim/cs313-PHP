@@ -7,9 +7,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 require_once ("inc/functions_db.php");
 include('templates/header.php'); 
-$money_format = '%(#10n';
-$date_format = "D, M d, Y ";
-$guiabar_ident = "add / edit category";
+
+$guiabar_ident = "display transactions";
 ?>
 
 <body class="subpage">
@@ -59,7 +58,7 @@ include('templates/menubar.php');
 	
 
 	
-</div>	
+	
 </div>
 <div class="row">
 <div class="col-lg-12">

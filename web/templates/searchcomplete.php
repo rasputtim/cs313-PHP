@@ -48,7 +48,10 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     echo "<td>";
     echo print_label ('Status', '', true);
     ?>
-    
+    <div class="form-check form-check-inline">
+    <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='-1' checked>
+    <label class="form-check-label" for="materialInline1">Undefined</label>
+    </div>
 
 	<div class="form-check form-check-inline">
     <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='1'>
