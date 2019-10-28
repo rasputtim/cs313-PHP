@@ -102,24 +102,24 @@ $amount = 0.00;
 	}
 
 	if ($start_date != "" AND $end_date == "") {
-		$sql_filter .= " AND date >= '$start_date_sql' ";
+		$sql_filter .= " AND duedate >= '$start_date_sql' ";
         $date_filter = true;
         $start_date_where = $start_date_sql;
-        $where_saldo_inicial .= " AND date < '$start_date_sql' ";
+        $where_saldo_inicial .= " AND duedate < '$start_date_sql' ";
         }
 
 	if ($end_date != "" AND $start_date == "") {
-		$sql_filter .= " AND date <= '$end_date_sql' ";
+		$sql_filter .= " AND duedate <= '$end_date_sql' ";
 		$date_filter = true;
 		$end_date_where = $end_date_sql;
 		}
 
 	if ($end_date != "" AND $start_date != "") {
-		$sql_filter .= " AND date BETWEEN  '$start_date_sql' AND '$end_date_sql'";
+		$sql_filter .= " AND duedate BETWEEN  '$start_date_sql' AND '$end_date_sql'";
 		$date_filter = true;
 		$end_date_where = $end_date_sql;
 		$start_date_where = $start_date_sql;
-		$where_saldo_inicial .= " AND date < '$start_date_sql' ";
+		$where_saldo_inicial .= " AND duedate < '$start_date_sql' ";
 
 	}
     if($ammount != 0.00){
@@ -131,9 +131,9 @@ $amount = 0.00;
         $sql_filter .= " AND status = $status ";
     }
 
-    $offset = "";
+    $offset = "100";
 
-    $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  date, idcategory  LIMIT $offset";
+    $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  duedate, idcategory  LIMIT $offset";
     echo "SQL : " . $sql1;
 
    echo '<h1>Transactions for the current period</h1>';
