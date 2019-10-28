@@ -130,13 +130,13 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     echo print_label ('Status', '', true);
     ?>
 	<div class="form-check form-check-inline">
-    <input type="radio" class="form-check-input" id="materialInline1" name="status" value='0'>
+    <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='0'>
     <label class="form-check-label" for="materialInline1">Paid / Received</label>
     </div>
 
     <!-- Material inline 2 -->
     <div class="form-check form-check-inline">
-    <input type="radio" class="form-check-input" id="materialInline2" name="status" value='1'>
+    <input type="radio" class="form-check-input statusclass" id="materialInline2" name="status" value='1'>
     <label class="form-check-label" for="materialInline2"> Unpaid / Unreceived</label>
     </div>
 <?php
