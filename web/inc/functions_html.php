@@ -12,8 +12,8 @@ require_once('functions_db.php');
  * @param int Maximum length allowed (optional).
  * @param bool Whether to return an output string or echo now (optional, echo by default).
  */
-function print_input_text ($name, $value, $alt = '', $size = 50, $maxlength = 0, $return = false, $label = false, $disabled = false) {
-	$output = print_input_text_extended ($name, $value, 'text-'.$name, $alt, $size, $maxlength, $disabled, '', '', true, false, $label);
+function print_input_text ($name, $value, $alt = '', $size = 50, $maxlength = 0,  $onblur='', $onfocus='', $return = false, $label = false, $disabled = false) {
+	$output = print_input_text_extended ($name, $value, 'text-'.$name, $alt, $size, $maxlength, $disabled, '', $onblur, $onfocus, '', true, false, $label);
 
 	if ($return)
 		return $output;
@@ -32,7 +32,7 @@ function print_input_text ($name, $value, $alt = '', $size = 50, $maxlength = 0,
  * @param string Alternative HTML string.
  * @param bool Whether to return an output string or echo now (optional, echo by default).
  */
-function print_input_text_extended ($name, $value, $id, $alt, $size, $maxlength, $disabled, $script, $attributes, $return = false, $password = false, $label = false) {
+function print_input_text_extended ($name, $value, $id, $alt, $size, $maxlength, $disabled, $script,  $onblur, $onfocus, $attributes, $return = false, $password = false, $label = false) {
 	$type = $password ? 'password' : 'text';
 
 	$output = '';
@@ -56,8 +56,14 @@ function print_input_text_extended ($name, $value, $id, $alt, $size, $maxlength,
 	if (! empty ($script)) {
 		$script = ' onClick="'.$script.'" ';
 	}
+	if (! empty ($onblur)) {
+		$onblur = ' onBlur="'.$onblur.'" ';
+	}
+	if (! empty ($onfocus)) {
+		$onfocus = ' onFocus="'.$onfocus.'" ';
+	}
 
-	$output .= '<input name="'.$name.'" type="'.$type.'" value="'.$value.'" size="'.$size.'" '.$maxlength.' alt="'.$alt.'" '.$script;
+	$output .= '<input name="'.$name.'" type="'.$type.'" value="'.$value.'" size="'.$size.'" '.$maxlength.' alt="'.$alt.'" '.$script.$onblur.$onfocus;
 	$output .= ' id="'.$id.'"';
 
 	if ($disabled)

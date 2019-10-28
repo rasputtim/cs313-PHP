@@ -124,7 +124,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	echo "<tr>";
 	echo "<td>";
 	echo print_label ('Search', '', true);
-	print_input_text('free_text',$free_text,10,10);
+	print_input_text('free_text',$free_text,10,10,"if(this.value=='') this.value='Search'","if(this.value =='Search' ) this.value=''");
     
     echo "</td>";
     echo "<td>";
