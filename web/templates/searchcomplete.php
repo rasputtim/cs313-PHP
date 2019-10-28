@@ -120,21 +120,31 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     $nombre_real = ""; //dame_nombre_real($config["id_user"]);
 	echo $nombre_real;
     }
-    if ($free_tex=="") $free_tex = 'Search';
+    if ($free_text=="") $free_text = 'Search';
 	echo "<tr>";
 	echo "<td>";
 	print_input_text('free_text',$free_text,'',10,10,"if(this.value=='') this.value='Search'","if(this.value =='Search' ) this.value=''");
     
     echo "</td>";
     echo "<td>";
-	echo print_label ('Amount', '', true);
-	print_input_text ('amount', $amount, '', 10, 20);
+	if ($amount=="") $amount = 'Amount';
+	print_input_text ('amount', $amount, '', 10, 20,"if(this.value=='') this.value='Amount'","if(this.value =='Amount' ) this.value=''");
 
     echo "</td>";
     echo "<td>";
-	echo print_label ('Status', '', true);
-	print_input_text ('status', $status, '', 10, 20);
+    echo print_label ('Status', '', true);
+    ?>
+	<div class="form-check form-check-inline">
+    <input type="radio" class="form-check-input" id="materialInline1" name="status" value='0'>
+    <label class="form-check-label" for="materialInline1">Paid / Received</label>
+    </div>
 
+    <!-- Material inline 2 -->
+    <div class="form-check form-check-inline">
+    <input type="radio" class="form-check-input" id="materialInline2" name="status" value='1'>
+    <label class="form-check-label" for="materialInline2"> Unpaid / Unreceived</label>
+    </div>
+<?php
     echo "</td>";
     echo "</tr>";
     echo "<tr>";
@@ -156,8 +166,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	echo "</td></tr></table></form>";
 ?>
 
-    <p>Enter your name and click on the button:</p>
-    <input type = "input" id = "name" size = "40" /><br />
+    
       
     
       
