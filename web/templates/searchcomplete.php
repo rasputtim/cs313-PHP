@@ -106,10 +106,8 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	echo "<tr>";
 
 	echo "<td>";
-    echo "<label>" . 'Categoriy' . "</label>";
-    
-	echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
-						$category, '', "Category", '', true, false, false, '');
+    echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
+						$category, '', "Category", '', true, true, false, '');
 	echo "<td>";
 	echo "<label>" . 'User' . "</label>";
 
