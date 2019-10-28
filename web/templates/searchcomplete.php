@@ -109,9 +109,8 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
 						$category, '', "Category", '', true, true, false, '');
 	echo "<td>";
-	echo "<label>" . 'User' . "</label>";
-
-	print_input_text('free_text',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
+	
+	print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
     
 	//echo print_select_from_sql ('SELECT id_usuario, real_name FROM public.ezfin_tusuario order by real_name', 'user_id',
 	//					$user_id, '', "User", '', true, false, false, '');

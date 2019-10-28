@@ -153,7 +153,19 @@ if ($added = false) echo '</ul>';
 	$(document).ready(function() {	
 		$("#driver").click(function(event){
                var name = $("#text-free_text").val();
-               $("#stage").load('ajax/results.php', {"name":name} );
+			   var user = $("#text-user").val();
+			   var category = $("#category").val();
+			   var begin_date = $("#text-begin_date").val();
+			   var end_date = $("#text-begin_date").val();
+			   var status = $("#status").val();
+               $("#stage").load('ajax/results.php', {
+				   "name":name,
+				   "user":user,
+				   "category":category,
+				   "begin_date":begin_date,
+				   "end_date":end_date,
+				   "status":status
+				   } );
             });
 	}); //
 	$(window).load(function() {
