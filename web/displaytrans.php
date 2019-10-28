@@ -157,7 +157,7 @@ if ($added = false) echo '</ul>';
 			   var category = $("#category").val();
 			   var start_date = $("#text-start_date").val();
 			   var end_date = $("#text-end_date").val();
-			   var status = $(".status:checked").val();
+			   var status = $("[name=status]:checked").val();
 			   var amount = $("#text-amount").val();
                $("#stage").load('ajax/results.php', {
 				   "name":name,
