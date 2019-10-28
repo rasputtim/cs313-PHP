@@ -88,7 +88,10 @@ $amount = 0.00;
                 $added = true;
                }
             }else {
-                foreach($category as $rec_code){
+                $filter = 'AND (idcategory = '.$category[0];
+                $added = true;
+                $category2 = array_slice($category,1);
+                foreach($category2 as $rec_code){
                     
                 $filter .= " OR idcategory=".$rec_code;
                 }
