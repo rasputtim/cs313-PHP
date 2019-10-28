@@ -152,7 +152,7 @@ if ($added = false) echo '</ul>';
 <script>
 	$(document).ready(function() {	
 		$("#driver").click(function(event){
-               var name = $("#name").val();
+               var name = $("#text-free_text").val();
                $("#stage").load('ajax/results.php', {"name":name} );
             });
 	}); //
