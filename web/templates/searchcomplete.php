@@ -101,7 +101,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
     echo '<div class="search-form-wrapper clearfix">';
 
-	echo '<form id="search-form" action="ajax/transactionsjson.php" accept-charset="utf-8" class="my-form clearfix" method="post" >';
+	echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form clearfix" method="post" >';
 	echo '<table width="100%" class="search-table">';
 	echo "<tr>";
 
@@ -123,22 +123,21 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     
 	echo "<tr>";
 	echo "<td>";
-	echo "<label>" . 'Search' . "</label>";
-	echo "<input type=text name='free_text' size=25 value='$free_text'>";
+	echo print_label ('Search', '', true);
+	print_input_text('free_text',$free_text,10,10);
     
     echo "</td>";
-    echo "<tr>";
-	echo "<td>";
-	echo "<label>" . 'Amount' . "</label>";
+    echo "<td>";
+	echo print_label ('Amount', '', true);
 	print_input_text ('amount', $amount, '', 10, 20);
 
     echo "</td>";
-    echo "<tr>";
-	echo "<td>";
-	echo "<label>" . 'Status' . "</label>";
+    echo "<td>";
+	echo print_label ('Status', '', true);
 	print_input_text ('status', $status, '', 10, 20);
 
-	echo "</td>";
+    echo "</td>";
+    echo "</tr>";
     echo "<tr>";
 	echo "<td>";
 
@@ -151,7 +150,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
 	echo "<td >";
 
-    echo "<input type=submit class='sub search' value='".'Search'."'>";
+    echo "<input id = 'driver' type=submit class='sub search' value='".'Search'."'>";
     echo'<a href="#" onClick="document.getElementById("search-form").submit()">Test</a>';
     echo'<a href="#" onClick="run()">TestRun</a>';
 	// Delete new lines from the string
@@ -164,7 +163,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
       
     
       
-    <input type = "button" id = "driver" value = "Show Result" />
+
 <?php
 
 	$offset = get_parameter ("offset", 0);

@@ -46,7 +46,7 @@ include('templates/menubar.php');
 <h1>Transactions for the current period</h1>
 
 <div id = "stage" style = "background-color:cc0;">
-       STAGE
+       
 </div>
 
 <?php
@@ -146,30 +146,9 @@ if ($added = false) echo '</ul>';
 
 
 
-
-
-
-
-
 	
 </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
-<script language="javascript">
-
-// This just displays the first parameter passed to it
-// in an alert.
-function show(json) {
-    alert(json);
-}
-
-function run() {
-    $.getJSON(
-    "ajax/test.php", // The server URL 
-    { id: 567 }, // Data you want to pass to the server.
-    show // The function to call on completion.
-    );
-}
-</script>
 <script>
 	$(document).ready(function() {	
 		$("#driver").click(function(event){
@@ -179,7 +158,7 @@ function run() {
 	}); //
 	$(window).load(function() {
 		//
-		run();
+		
 	}); //
 	</script>	
 </body>
