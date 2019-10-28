@@ -3,7 +3,7 @@
       $name = $_REQUEST['name'];
       $start_date = $_REQUEST['start_date'];
       $end_date = $_REQUEST['end_date'];
-      $statuse = $_REQUEST['status'];
+      $status = $_REQUEST['status'];
       $user= $_REQUEST['user'];
       $category =  $_REQUEST['category'];
       $amount =  $_REQUEST['amount'];
