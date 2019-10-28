@@ -150,9 +150,8 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
 	echo "<td >";
 
-    echo "<input id = 'driver' type=submit class='sub search' value='".'Search'."'>";
-    echo'<a href="#" onClick="document.getElementById("search-form").submit()">Test</a>';
-    echo'<a href="#" onClick="run()">TestRun</a>';
+    echo "<input id = 'driver' type=button class='sub search' value='".'Search'."'>";
+    
 	// Delete new lines from the string
 
 	echo "</td></tr></table></form>";
