@@ -11,6 +11,7 @@ $amount = 0.00;
    if( $_REQUEST["free_text"] ){
       $free_text = $_REQUEST['free_text'];
       echo "Welcome ". $free_text;
+      if ($free_text == "Search") $free_text = '';
 
    }
    if( $_REQUEST['start_date'] ){
@@ -26,7 +27,7 @@ $amount = 0.00;
     if( $_REQUEST['status'] ){
         $status = $_REQUEST['status'];
         echo "status: " . $status;
-    
+        if ($status == -1) $status = "";
     }
     if( $_REQUEST['user'] ){
         $user= $_REQUEST['user'];
@@ -43,6 +44,7 @@ $amount = 0.00;
     if( $_REQUEST['amount'] ){
         $amount =  $_REQUEST['amount'];
         echo "amount: " . $amount;
+        if ($amount == "Amount") $amount = '';
     }
 
     
