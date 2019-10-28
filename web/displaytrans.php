@@ -155,16 +155,18 @@ if ($added = false) echo '</ul>';
                var name = $("#text-free_text").val();
 			   var user = $("#text-user").val();
 			   var category = $("#category").val();
-			   var begin_date = $("#text-begin_date").val();
-			   var end_date = $("#text-begin_date").val();
+			   var start_date = $("#text-start_date").val();
+			   var end_date = $("#text-end_date").val();
 			   var status = $("#status").val();
+			   var amount = $("#text-amount").val();
                $("#stage").load('ajax/results.php', {
 				   "name":name,
 				   "user":user,
 				   "category":category,
-				   "begin_date":begin_date,
+				   "start_date":start_date,
 				   "end_date":end_date,
-				   "status":status
+				   "status":status,
+				   "amount":amount
 				   } );
             });
 	}); //
