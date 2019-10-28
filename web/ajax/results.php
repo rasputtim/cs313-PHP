@@ -1,4 +1,5 @@
 <?php
+require_once ("inc/functions_db.php");
    if( $_REQUEST["name"] ){
       $name = $_REQUEST['name'];
       $start_date = $_REQUEST['start_date'];
