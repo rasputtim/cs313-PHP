@@ -15,88 +15,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
 	echo "<h1>".'Transactions'." &raquo; ".'Data management'." &raquo; "."</h1>";
     echo "<p></p>";
-	// Search parameter
-	$free_text = get_parameter ("free_text", "");
-	$category = get_parameter ("category", 0);
-	$start_date = get_parameter ('start_date',$first_day);
-	$end_date = get_parameter ('end_date',$last_day);
-	// Search filters
-    $start_date_sql = $start_date;
-    $end_date_sql = $end_date;
-    $user_id = get_parameter ('user_id',"");
-    $status = get_parameter('status',-1);
-    $amount = get_parameter("amount", 0.00);
-	//Search filter processing
-
-	$sql_filter = "";
-    $date_filter = false;
-    $where_clause = "";
-    $where_saldo_inicial="";
-
-    $start_date_where="";
-    $end_date_where="";
-	if ($free_text != "") {
-		$sql_filter .= " AND (description LIKE '%$free_text%')";
-        $where_clause .= " AND (description LIKE '%$free_text%')";
-        $where_saldo_inicial .= " AND (description LIKE '%$free_text%')";
-	}
-	if ($user_id != 0) {
-	    $sql_filter .= " AND id_user = $user_id ";
-        $where_clause .= " AND id_user = $user_id ";
-        $where_saldo_inicial .= " AND id_user = $user_id ";
-    }
-	if ($category != 0){
-        
-
-		//todo: fiz sql for category
-
-		$filter = '';
-
-        if(is_array($category)) {
-            foreach($category as $rec_code){
-                
-            $filter .= " OR idcategory=".$rec_code;
-            }
-        }else{
-            $filter = 'AND (idcategory = '.$category;
-        }
-		$filter .= ")";
-
-		$sql_filter .= $filter;
-		$where_clause .= $filter;
-		$where_saldo_inicial .= $filter;
-
-	}
-
-	if ($start_date != "" AND $end_date == "") {
-		$sql_filter .= " AND date >= '$start_date_sql' ";
-        $date_filter = true;
-        $start_date_where = $start_date_sql;
-        $where_saldo_inicial .= " AND date < '$start_date_sql' ";
-        }
-
-	if ($end_date != "" AND $start_date == "") {
-		$sql_filter .= " AND date <= '$end_date_sql' ";
-		$date_filter = true;
-		$end_date_where = $end_date_sql;
-		}
-
-	if ($end_date != "" AND $start_date != "") {
-		$sql_filter .= " AND date BETWEEN  '$start_date_sql' AND '$end_date_sql'";
-		$date_filter = true;
-		$end_date_where = $end_date_sql;
-		$start_date_where = $start_date_sql;
-		$where_saldo_inicial .= " AND date < '$start_date_sql' ";
-
-	}
-    if($ammount != 0.00){
-        $sql_filter .= " AND amount = $amount ";
-		
-
-    }
-    if ($status != -1) {
-        $sql_filter .= " AND status = $status ";
-    }
+	
 
 
     echo '<div class="search-form-wrapper clearfix">';
@@ -144,7 +63,8 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     echo "</tr>";
     echo "<tr>";
 	echo "<td>";
-
+    $start_date = $first_day;
+    $end_date = $last_day;
     echo print_label ("Begin date", '', true);
     print_input_text ('start_date', $start_date, '', 10, 20);
 	echo "</td><td>";

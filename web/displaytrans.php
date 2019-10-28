@@ -94,7 +94,7 @@ include('templates/menubar.php');
 <script>
 	$(document).ready(function() {	
 		$("#driver").click(function(event){
-               var name = $("#text-free_text").val();
+               var free_text = $("#text-free_text").val();
 			   var user = $("#text-user").val();
 			   var category = $("#category").val();
 			   var start_date = $("#text-start_date").val();
@@ -102,7 +102,7 @@ include('templates/menubar.php');
 			   var status = $(".statusclass:checked").val();
 			   var amount = $("#text-amount").val();
                $("#stage").load('ajax/results.php', {
-				   "name":name,
+				   "free_text":free_text,
 				   "user":user,
 				   "category":category,
 				   "start_date":start_date,

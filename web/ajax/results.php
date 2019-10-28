@@ -1,25 +1,130 @@
 <?php
 require_once ("../inc/functions_db.php");
-   if( $_REQUEST["name"] ){
-      $name = $_REQUEST['name'];
-      $start_date = $_REQUEST['start_date'];
-      $end_date = $_REQUEST['end_date'];
-      $status = $_REQUEST['status'];
-      $user= $_REQUEST['user'];
-      $category =  $_REQUEST['category'];
-      $amount =  $_REQUEST['amount'];
-     foreach ($category as $row){
-        echo "category: " . $row;
-        echo " , ";
-     }
-      echo "Welcome ". $name;
-      echo "Begin date: " . $start_date;
-      echo "End date: " . $end_date;
-      echo "status: " . $status;
-      echo "amount: " . $amount;
-      echo "user: " . $user;
+$free_text = '';
+$start_date = '';
+$end_date = '';
+$status = -1;
+$user= '';
+$category = array();
+$amount = 0.00;
+
+   if( $_REQUEST["free_text"] ){
+      $free_text = $_REQUEST['free_text'];
+      echo "Welcome ". $free_text;
 
    }
+   if( $_REQUEST['start_date'] ){
+    $start_date = $_REQUEST['start_date'];
+    echo "Begin date: " . $start_date;
+    
+   }
+   if( $_REQUEST['end_date'] ){
+    $end_date = $_REQUEST['end_date'];
+    echo "End date: " . $end_date;
+    
+    }
+    if( $_REQUEST['status'] ){
+        $status = $_REQUEST['status'];
+        echo "status: " . $status;
+    
+    }
+    if( $_REQUEST['user'] ){
+        $user= $_REQUEST['user'];
+       
+    echo "user: " . $user;
+    }
+    if( $_REQUEST['category'] ){
+        $category =  $_REQUEST['category'];
+        foreach ($category as $row){
+            echo "category: " . $row;
+            echo " , ";
+         }
+    }
+    if( $_REQUEST['amount'] ){
+        $amount =  $_REQUEST['amount'];
+        echo "amount: " . $amount;
+    }
+
+    
+    
+	// Search filters
+    $start_date_sql = $start_date;
+    $end_date_sql = $end_date;
+    $user_id = $user;
+    
+	//Search filter processing
+
+	$sql_filter = "";
+    $date_filter = false;
+    $where_clause = "";
+    $where_saldo_inicial="";
+
+    $start_date_where="";
+    $end_date_where="";
+	if ($free_text != "") {
+		$sql_filter .= " AND (description LIKE '%$free_text%')";
+        $where_clause .= " AND (description LIKE '%$free_text%')";
+        $where_saldo_inicial .= " AND (description LIKE '%$free_text%')";
+	}
+	if ($user_id != 0) {
+	    $sql_filter .= " AND id_user = $user_id ";
+        $where_clause .= " AND id_user = $user_id ";
+        $where_saldo_inicial .= " AND id_user = $user_id ";
+    }
+	if ($category != 0){
+        
+
+		//todo: fiz sql for category
+
+		$filter = '';
+
+        if(is_array($category)) {
+            foreach($category as $rec_code){
+                
+            $filter .= " OR idcategory=".$rec_code;
+            }
+        }else{
+            $filter = 'AND (idcategory = '.$category;
+        }
+		$filter .= ")";
+
+		$sql_filter .= $filter;
+		$where_clause .= $filter;
+		$where_saldo_inicial .= $filter;
+
+	}
+
+	if ($start_date != "" AND $end_date == "") {
+		$sql_filter .= " AND date >= '$start_date_sql' ";
+        $date_filter = true;
+        $start_date_where = $start_date_sql;
+        $where_saldo_inicial .= " AND date < '$start_date_sql' ";
+        }
+
+	if ($end_date != "" AND $start_date == "") {
+		$sql_filter .= " AND date <= '$end_date_sql' ";
+		$date_filter = true;
+		$end_date_where = $end_date_sql;
+		}
+
+	if ($end_date != "" AND $start_date != "") {
+		$sql_filter .= " AND date BETWEEN  '$start_date_sql' AND '$end_date_sql'";
+		$date_filter = true;
+		$end_date_where = $end_date_sql;
+		$start_date_where = $start_date_sql;
+		$where_saldo_inicial .= " AND date < '$start_date_sql' ";
+
+	}
+    if($ammount != 0.00){
+        $sql_filter .= " AND amount = $amount ";
+		
+
+    }
+    if ($status != -1) {
+        $sql_filter .= " AND status = $status ";
+    }
+
+    echo "SQL FILTER: " . $sql_filter;
 
    echo '<h1>Transactions for the current period</h1>';
 
