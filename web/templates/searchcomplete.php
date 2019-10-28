@@ -101,7 +101,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
     echo '<div class="search-form-wrapper clearfix">';
 
-	echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form clearfix" method="post" >';
+	echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-comp clearfix" method="post" >';
 	echo '<table width="100%" class="search-table">';
 	echo "<tr>";
 
