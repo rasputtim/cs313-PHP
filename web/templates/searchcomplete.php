@@ -109,17 +109,15 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     echo "<label>" . 'Categoriy' . "</label>";
     
 	echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
-						$category, '', "Any", '', true, false, false, '');
+						$category, '', "Category", '', true, false, false, '');
 	echo "<td>";
 	echo "<label>" . 'User' . "</label>";
 
-	if($tesoureiro || $veneravel) {
-	echo print_select_from_sql ('SELECT id_usuario, real_name FROM public.ezfin_tusuario order by real_name', 'user_id',
-						$user_id, '', "Any", '', true, false, false, '');
-    }else {
-    $nombre_real = ""; //dame_nombre_real($config["id_user"]);
-	echo $nombre_real;
-    }
+	print_input_text('free_text',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
+    
+	//echo print_select_from_sql ('SELECT id_usuario, real_name FROM public.ezfin_tusuario order by real_name', 'user_id',
+	//					$user_id, '', "User", '', true, false, false, '');
+    
     if ($free_text=="") $free_text = 'Search';
 	echo "<tr>";
 	echo "<td>";
