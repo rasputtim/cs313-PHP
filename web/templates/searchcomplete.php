@@ -162,9 +162,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
     <p>Enter your name and click on the button:</p>
     <input type = "input" id = "name" size = "40" /><br />
       
-    <div id = "stage" style = "background-color:cc0;">
-       STAGE
-    </div>
+    
       
     <input type = "button" id = "driver" value = "Show Result" />
 <?php
