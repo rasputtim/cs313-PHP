@@ -78,7 +78,7 @@ $amount = 0.00;
 
 		$filter = '';
 
-        if(is_array($category)) {
+        if(!empty($category)) {
             foreach($category as $rec_code){
                 
             $filter .= " OR idcategory=".$rec_code;
@@ -124,14 +124,17 @@ $amount = 0.00;
         $sql_filter .= " AND status = $status ";
     }
 
-    echo "SQL FILTER: " . $sql_filter;
+    $offset = "";
+
+    $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  date, idcategory  LIMIT $offset";
+    echo "SQL : " . $sql1;
 
    echo '<h1>Transactions for the current period</h1>';
 
 
    
    
-   $stmt = get_db()->prepare('SELECT * FROM public.ezfin_transactions');
+   $stmt = get_db()->prepare($sql1);
    //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
    $stmt->execute();
    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

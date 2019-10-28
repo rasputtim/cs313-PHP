@@ -81,26 +81,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 	echo "</td></tr></table></form>";
 ?>
 
-    
       
     
       
 
-<?php
-
-	$offset = get_parameter ("offset", 0);
-
-	$condition = "" ;//get_filter_by_kb_product_accessibility();
-
-    // sem pagination
-	if ($user_id != 0) {
-	$sql1 = "SELECT * FROM public.ezfin_transactions $condition $sql_filter ORDER BY  date, idcategory   ";
-    }else { //com paginanation
-
-	//$count = get_db_sql("SELECT COUNT(id) FROM ttes_user_data $condition $sql_filter");
-	//pagination ($count, "index.php?sec=tes&sec2=operation/tes/extract_user&free_text=$free_text&user_id=$user_id&category=$category", $offset);
-
-	//$sql1 = "SELECT * FROM ttes_user_data $condition $sql_filter ORDER BY  date, id_category  LIMIT $offset, ". $config["block_size"];
-    }
-echo '</div>'
-?>
