@@ -58,7 +58,7 @@ include('templates/menubar.php');
 	
 
 	
-	
+</div>	
 </div>
 <div class="row">
 <div class="col-lg-12">
