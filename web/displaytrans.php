@@ -45,7 +45,9 @@ include('templates/menubar.php');
 	
 <h1>Transactions for the current period</h1>
 
-
+<div id = "stage" style = "background-color:cc0;">
+       STAGE
+</div>
 
 <?php
 
