@@ -151,13 +151,23 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
 	echo "<td >";
 
+    echo "<input type=submit class='sub search' value='".'Search'."'>";
     echo'<a href="#" onClick="document.getElementById("search-form").submit()">Test</a>';
-    echo "<p>";
     echo'<a href="#" onClick="run()">TestRun</a>';
 	// Delete new lines from the string
-    echo "</p>";
-	echo "</td></tr></table></form>";
 
+	echo "</td></tr></table></form>";
+?>
+
+    <p>Enter your name and click on the button:</p>
+    <input type = "input" id = "name" size = "40" /><br />
+      
+    <div id = "stage" style = "background-color:cc0;">
+       STAGE
+    </div>
+      
+    <input type = "button" id = "driver" value = "Show Result" />
+<?php
 
 	$offset = get_parameter ("offset", 0);
 

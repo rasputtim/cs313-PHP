@@ -170,10 +170,10 @@ function run() {
 </script>
 <script>
 	$(document).ready(function() {	
-		//
-	
-	
-	
+		$("#driver").click(function(event){
+               var name = $("#name").val();
+               $("#stage").load('ajax/results.php', {"name":name} );
+            });
 	}); //
 	$(window).load(function() {
 		//
