@@ -7,11 +7,14 @@
       $user= $_REQUEST['user'];
       $category =  $_REQUEST['category'];
       $amount =  $_REQUEST['amount'];
+     foreach ($category as $row){
+        echo "category: " . $row;
+        echo " , ";
+     }
       echo "Welcome ". $name;
       echo "Begin date: " . $start_date;
       echo "End date: " . $end_date;
       echo "status: " . $status;
-      echo "category: " . $category;
       echo "amount: " . $amount;
       echo "user: " . $user;
 
