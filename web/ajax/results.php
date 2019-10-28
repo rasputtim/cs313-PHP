@@ -27,7 +27,7 @@ $amount = 0.00;
     if( $_REQUEST['status'] ){
         $status = $_REQUEST['status'];
         echo "status: " . $status;
-        if ($status == -1) $status = "";
+        if ($status == -1) $status = -1;
     }
     if( $_REQUEST['user'] ){
         $user= $_REQUEST['user'];
@@ -44,7 +44,7 @@ $amount = 0.00;
     if( $_REQUEST['amount'] ){
         $amount =  $_REQUEST['amount'];
         echo "amount: " . $amount;
-        if ($amount == "Amount") $amount = '';
+        if ($amount == "Amount") $amount = 0.00;
     }
 
     
@@ -79,18 +79,21 @@ $amount = 0.00;
 		//todo: fiz sql for category
 
 		$filter = '';
-
+        $added = false;
         if(!empty($category)) {
-            $filter = 'AND (idcategory = '.$category;
+            
             if (count($category)==1){
-               
+               if (!$category[0]==""){
+                $filter = 'AND (idcategory = '.$category[0];
+                $added = true;
+               }
+            }else {
+                foreach($category as $rec_code){
+                    
+                $filter .= " OR idcategory=".$rec_code;
+                }
             }
-            foreach($category as $rec_code){
-                
-            $filter .= " OR idcategory=".$rec_code;
-            }
-        
-		$filter .= ")";
+		if ($added) $filter .= ")";
         }
 		$sql_filter .= $filter;
 		$where_clause .= $filter;
