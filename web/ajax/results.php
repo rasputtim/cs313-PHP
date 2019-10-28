@@ -79,15 +79,17 @@ $amount = 0.00;
 		$filter = '';
 
         if(!empty($category)) {
+            $filter = 'AND (idcategory = '.$category;
+            if (count($category)==1){
+               
+            }
             foreach($category as $rec_code){
                 
             $filter .= " OR idcategory=".$rec_code;
             }
-        }else{
-            $filter = 'AND (idcategory = '.$category;
-        }
+        
 		$filter .= ")";
-
+        }
 		$sql_filter .= $filter;
 		$where_clause .= $filter;
 		$where_saldo_inicial .= $filter;
