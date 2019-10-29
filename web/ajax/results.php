@@ -191,7 +191,7 @@ $amount = 0.00;
                    echo '<h3> DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
                    echo '</h3>STATUS: '.$status_name;
                    if ($status == 1){
-                       echo " ON: $row['paymentdate']";
+                       echo ' ON: '.$row['paymentdate'];
                    }
                    echo '<p>';
                            echo "  ".$row['description']. '<a href=" inctrans.php?update='.$row['idtransaction'].'"><strong>  edit</strong></a>';
