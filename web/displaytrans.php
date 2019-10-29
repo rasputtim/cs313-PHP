@@ -39,23 +39,8 @@ include('templates/menubar.php');
 			include('templates/searchcomplete.php'); 
 		?>
 </div>
-<div class="row" >
-		
-		
 
-	<div class="col-lg-9" >
-		
-	
-
-	</div>
-	<div class="col-lg-3"  >
-
-		
-	</div>	
-</div>
 <div class="row" id = "stage">
-		
-		
 
 	<div class="col-lg-9" >
 		
@@ -64,9 +49,7 @@ include('templates/menubar.php');
 	</div>
 	<div class="col-lg-3"  >
 
-		<?php
-			echo "TOTAL AMOUNT: $ XXXX.XX"
-		?>
+		
 	</div>	
 </div>
 <div class="row">
