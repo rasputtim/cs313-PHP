@@ -67,21 +67,24 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
             echo'<div class="col">';
             echo print_label ('Status', '', true);
                 ?>
-                <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='-1' checked>
-                <label class="form-check-label" for="materialInline1">Undefined</label>
+                <!-- Default inline 1-->
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="defaultInline1" name="status" value='-1' checked>
+                <label class="custom-control-label" for="defaultInline1">1</label>
                 </div>
 
-                <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='1'>
-                <label class="form-check-label" for="materialInline1">Paid / Received</label>
+                <!-- Default inline 2-->
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="defaultInline2" name="status"  value='1'>
+                <label class="custom-control-label" for="defaultInline2">2</label>
                 </div>
 
-                <!-- Material inline 2 -->
-                <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input statusclass" id="materialInline2" name="status" value='0'>
-                <label class="form-check-label" for="materialInline2"> Unpaid / Unreceived</label>
+                <!-- Default inline 3-->
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="defaultInline3" name="status" value='0' >
+                <label class="custom-control-label" for="defaultInline3">3</label>
                 </div>
+                
             <?php
             echo'</div>';
         echo'</div>';
