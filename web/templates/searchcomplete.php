@@ -90,46 +90,10 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
         echo'</div>';
     echo'</div>';
 
-
-	
-    
-    echo '<table width="100%" class="search-table">';
-	echo "<tr>";
-
-	echo "<td>";
-    
-	echo "<td>";
-	
-	//echo print_select_from_sql ('SELECT id_usuario, real_name FROM public.ezfin_tusuario order by real_name', 'user_id',
-	//					$user_id, '', "User", '', true, false, false, '');
-    
-    
-	echo "<tr>";
-    echo "<td>";
-   
-    echo "</td>";
-    echo "<td>";
-	
-    echo "</td>";
-    echo "<td>";
-    
-    echo "</td>";
-    echo "</tr>";
-    echo "<tr>";
-	echo "<td>";
-    
-	echo "</td><td>";
-    
-
-
-	echo "<td >";
-
     echo "<input id = 'driver' type=button class='sub search' value='".'Search'."'>";
     
-	// Delete new lines from the string
-
-    echo "</td></tr></table></form>";
-    echo '</div>';
+echo "</form>";
+echo '</div>';
 ?>
 
       
