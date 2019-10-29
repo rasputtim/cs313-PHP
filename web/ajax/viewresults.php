@@ -13,6 +13,7 @@ $amount = 0.00;
 $total = 0.0;
 //view data
 $key_date ='';
+$mykey_date = '';
 $title = '';
 $description = '';
 $iscurrent = false;
@@ -26,6 +27,7 @@ $iscurrent = false;
       $start_date = $row['initialdate'];
       $end_date = $row['finaldate'];
       $key_date = $row['keydate'];
+      $mykey_date =date_create($row['keydate']);
       $title = $row['tittle'];
       $description = $row['description'];
       $iscurrent = $row['iscurrent'];
@@ -136,6 +138,7 @@ echo '<div class="col-lg-9" >';
    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
    $count =0;
    $added = false;
+   $keybalance = 0.0;
    foreach ($rows as $row)
    {
        $cur_amount = $row['amount'];
@@ -193,6 +196,7 @@ echo '<div class="col-lg-9" >';
            $added = true;
        }else $count ++;
        $total += $cur_amount;
+       if (date_create($row['duedate'])<=$myKeyDate) $keybalance += $cur_amount;
    }
    if ($added = false) echo '</ul>';
    
