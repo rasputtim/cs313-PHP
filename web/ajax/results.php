@@ -26,8 +26,7 @@ $amount = 0.00;
     }
     if( $_REQUEST['status'] ){
         $status = $_REQUEST['status'];
-        echo "status: " . $status;
-        if ($status == -1) $status = -1;
+        if ($status == 2) $status = 0;
     }
     if( $_REQUEST['user'] ){
         $user= $_REQUEST['user'];
@@ -132,7 +131,7 @@ $amount = 0.00;
     }
     if ($status != -1) {
         $sql_filter .= " AND status = $status ";
-        echo "STATUS:  $status";
+        
     }
 
     $offset = "100";
