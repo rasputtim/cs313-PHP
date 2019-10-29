@@ -47,7 +47,9 @@ include('templates/menubar.php');
 	</div>
 	<div class="col-lg-3">
 
-		
+		<?php
+			echo "TOTAL AMOUNT: $ XXXX.XX"
+		?>
 	</div>	
 </div>
 <div class="row">

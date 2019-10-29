@@ -31,13 +31,13 @@ $amount = 0.00;
     if( $_REQUEST['user'] ){
         $user= $_REQUEST['user'];
        
-    echo "user: " . $user;
+    //echo "user: " . $user;
     }
     if( $_REQUEST['category'] ){
         $category =  $_REQUEST['category'];
         foreach ($category as $row){
-            echo "category: " . $row;
-            echo " , ";
+            //echo "category: " . $row;
+            //echo " , ";
          }
     }
     if( $_REQUEST['amount'] ){
@@ -137,7 +137,7 @@ $amount = 0.00;
     $offset = "100";
 
     $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  duedate, idcategory  LIMIT $offset";
-    echo "SQL : " . $sql1;
+    //echo "SQL : " . $sql1;
 
    echo '<h1>Transactions for the current Serch Criteria</h1>';
 
