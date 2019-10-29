@@ -25,14 +25,32 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
             echo'</div>';
     
             echo'<div class="col">';
-            echo'<div class="row">';
-            echo'<div class="col mini-box">1</div>';
-            echo'<div class="col mini-box">2</div>';
-            echo'</div>';
-            echo'<div class="row">';
-            echo'<div class="col mini-box">3</div>';
-            echo'<div class="col mini-box">4</div>';
-            echo'</div>';
+                echo'<div class="row">';
+                    echo'<div class="col mini-box">'; 
+                    $user = $_SESSION["id_usuario"];
+	                print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
+     
+                    echo'</div>';
+                    echo'<div class="col mini-box">'; 
+                    2 
+                    echo'</div>';
+                echo'</div>';
+                echo'<div class="row">';
+                    echo'<div class="col mini-box">'; 
+                    3 
+                    echo'</div>';
+                    echo'<div class="col mini-box">'; 
+                    4 
+                    echo'</div>';
+                echo'</div>';
+                echo'<div class="row">';
+                    echo'<div class="col mini-box">'; 
+                    5 
+                    echo'</div>';
+                    echo'<div class="col mini-box">'; 
+                    6 
+                    echo'</div>';
+                echo'</div>';
             echo'</div>';
   
         echo'</div>';
@@ -47,9 +65,7 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
 	echo "<td>";
     
 	echo "<td>";
-	$user = $_SESSION["id_usuario"];
-	print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
-    
+	
 	//echo print_select_from_sql ('SELECT id_usuario, real_name FROM public.ezfin_tusuario order by real_name', 'user_id',
 	//					$user_id, '', "User", '', true, false, false, '');
     
