@@ -90,9 +90,7 @@ include('templates/menubar.php');
 				   "end_date":end_date,
 				   "status":status,
 				   "amount":amount
-				   },function() {
-  alert( "Load was performed." );
-} );
+				   });
             });
 	}); //
 	$(window).load(function() {

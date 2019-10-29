@@ -10,7 +10,7 @@ $status = -1;
 $user= '';
 $category = array();
 $amount = 0.00;
-
+$total = 0.0;
    if( $_REQUEST["free_text"] ){
       $free_text = $_REQUEST['free_text'];
       if ($free_text == "Search-Text") $free_text = '';
@@ -204,6 +204,7 @@ echo '<div class="col-lg-9" >';
            $count = 0;
            $added = true;
        }else $count ++;
+       $total += $row['amount'];
    }
    if ($added = false) echo '</ul>';
    
@@ -212,9 +213,8 @@ echo '<div class="col-lg-9" >';
 
 echo '</div>';
 echo '<div class="col-lg-3"  >';
-
       
-           echo "TOTAL AMOUNT: $ XXXX.XX";
+           echo "TOTAL AMOUNT: $ ". money_format($money_format, $total);;
       
 echo '</div>';
 ?> 
