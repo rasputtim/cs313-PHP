@@ -132,6 +132,7 @@ $amount = 0.00;
     }
     if ($status != -1) {
         $sql_filter .= " AND status = $status ";
+        echo "STATUS:  $status";
     }
 
     $offset = "100";
@@ -139,7 +140,7 @@ $amount = 0.00;
     $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  duedate, idcategory  LIMIT $offset";
     echo "SQL : " . $sql1;
 
-   echo '<h1>Transactions for the current period</h1>';
+   echo '<h1>Transactions for the current Serch Criteria</h1>';
 
 
    
