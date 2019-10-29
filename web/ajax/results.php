@@ -107,7 +107,7 @@ $total = 0.0;
 
 	}
     if($amount_min != 0.00 && $amount_max != 0.00){
-        $sql_filter .= " AND (amount >= $amount_min OR amount <= $amount_max) ";
+        $sql_filter .= " AND (amount >= $amount_min AND amount <= $amount_max) ";
     }
     if($amount_min != 0.00 && $amount_max == 0.00){
         $sql_filter .= " AND amount >= $amount_min ";
