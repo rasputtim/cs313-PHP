@@ -81,7 +81,7 @@ echo'<div class="container">';
 
                 <!-- Default inline 3-->
                 <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input statusclass" id="defaultInline3" name="status" value='0' >
+                <input type="radio" class="custom-control-input statusclass" id="defaultInline3" name="status" value='2' >
                 <label class="custom-control-label" for="defaultInline3">Unpaid/Unreceived</label>
                 </div>
                 
