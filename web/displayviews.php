@@ -17,9 +17,9 @@ $guiabar_ident = "display transactions by Periods";
 <div class="top1">
 <?php 
 $index1="false";
-$index2="true";
+$index2="false";
 $index3="false";
-$index4="false";
+$index4="true";
 $index5="false";
 include('templates/menubar.php'); 
 
