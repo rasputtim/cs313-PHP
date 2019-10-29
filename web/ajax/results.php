@@ -226,7 +226,8 @@ echo '<div class="col-lg-9" >';
 echo '</div>';
 echo '<div class="col-lg-3"  >';
       
-           echo "<h1>TOTAL AMOUNT: $ ". money_format($money_format, $total);
+           echo "<h1>TOTAL AMOUNT: </H1>";
+           echo "<h1>$ ". money_format($money_format, $total);
            echo "</H1>";
       
 echo '</div>';
