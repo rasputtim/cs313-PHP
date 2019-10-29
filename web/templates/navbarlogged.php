@@ -17,7 +17,7 @@
 								
 							</ul>
 						</li>
-						<li class="sub-menu sub-menu-2"><a href="listviews.php">Periods</a>
+						<li class="sub-menu sub-menu-2"><a href="listviews.php">Balances</a>
 							<ul>
 								<li><a href="incviews.php?create=1">Include</a></li>
 								<li><a href="incviews.php?update=2">Edit</a></li>
@@ -47,7 +47,7 @@
 					</ul>						
 				</li>
 				<li class="<?php echo $index2_active; ?>" ><a href="displaytrans.php">Transactions</a></li>
-				<li class="<?php echo $index4_active; ?>" ><a href="displayviews.php">Views</a></li>
+				<li class="<?php echo $index4_active; ?>" ><a href="displayviews.php">Balances</a></li>
 				<li >
 					<form class="my-form-login" action="login.php" method="post">
 						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">

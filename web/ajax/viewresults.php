@@ -11,39 +11,15 @@ $user= '';
 $category = array();
 $amount = 0.00;
 $total = 0.0;
-   if( $_REQUEST["free_text"] ){
-      $free_text = $_REQUEST['free_text'];
-      if ($free_text == "Search-Text") $free_text = '';
-
+   if( $_REQUEST["driver"] ){
+      $free_text = $_REQUEST['driver'];
+      echo "PERIOD: $free_text" ;
+      $stmt = get_db()->prepare("select * from public.ezfin_balanceview where idbalview= :id");
+      $stmt->bindValue(':id', $free_text, PDO::PARAM_INT);
+      $stmt->execute();
+      $row = $stmt->fetch();
    }
-   if( $_REQUEST['start_date'] ){
-    $start_date = $_REQUEST['start_date'];
-       
-   }
-   if( $_REQUEST['end_date'] ){
-    $end_date = $_REQUEST['end_date'];
-        
-    }
-    if( $_REQUEST['status'] ){
-        $status = $_REQUEST['status'];
-        if ($status == 2) $status = 0;
-    }
-    if( $_REQUEST['user'] ){
-        $user= $_REQUEST['user'];
-       
-    //echo "user: " . $user;
-    }
-    if( $_REQUEST['category'] ){
-        $category =  $_REQUEST['category'];
-        foreach ($category as $row){
-            //echo "category: " . $row;
-            //echo " , ";
-         }
-    }
-    if( $_REQUEST['amount'] ){
-        $amount =  $_REQUEST['amount'];
-        if ($amount == "Amount") $amount = 0.00;
-    }
+   
 
     
     
