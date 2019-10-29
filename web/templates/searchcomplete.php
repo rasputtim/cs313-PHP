@@ -20,7 +20,8 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
         echo'</div>';
         echo'<div class="row">';
             echo'<div class="col big-box">';
-            
+            echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
+						$category, '', "Category", '', true, true, false, '');
             echo'</div>';
     
             echo'<div class="col">';
@@ -44,8 +45,7 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
 	echo "<tr>";
 
 	echo "<td>";
-    echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
-						$category, '', "Category", '', true, true, false, '');
+    
 	echo "<td>";
 	$user = $_SESSION["id_usuario"];
 	print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
