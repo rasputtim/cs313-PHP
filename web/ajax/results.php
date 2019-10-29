@@ -106,13 +106,13 @@ $total = 0.0;
 		$where_saldo_inicial .= $filter;
 
 	}
-    if($ammount_min > 0.00 && $ammount_max > 0.00){
+    if($amount_min != 0.00 && $amount_max != 0.00){
         $sql_filter .= " AND (amount >= $amount_min OR amount <= $amount_max) ";
     }
-    if($ammount_min > 0.00 && $ammount_max == 0.00){
+    if($amount_min != 0.00 && $amount_max == 0.00){
         $sql_filter .= " AND amount >= $amount_min ";
     }
-    if($ammount_min == 0.00 && $ammount_max > 0.00){
+    if($amount_min == 0.00 && $amount_max != 0.00){
         $sql_filter .= " AND amount <= $amount_max ";
     }
     
