@@ -17,7 +17,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
         echo'</div>';
         echo'<div class="row">';
             echo'<div class="col big-box">';
-            image
+            
             echo'</div>';
     
             echo'<div class="col">';
