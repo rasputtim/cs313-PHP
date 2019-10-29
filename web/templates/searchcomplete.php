@@ -9,10 +9,29 @@ require_once ("inc/functions_db.php");
 require_once ("inc/functions_html.php");
 $first_day = (new DateTime('first day of last month'))->format('Y-m-d');
 $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
+?>
+	
+    <div class="container">
+    <div class="row">
+      <div class="col big-box">
+        image
+      </div>
+  
+      <div class="col">
+        <div class="row">
+          <div class="col mini-box">1</div>
+          <div class="col mini-box">2</div>
+        </div>
+        <div class="row">
+          <div class="col mini-box">3</div>
+          <div class="col mini-box">4</div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
 
-	// Show list of items
-	// =======================
-
+<?php
 	echo "<h1>".'Transactions'." &raquo; ".'Data management'." &raquo; "."</h1>";
     echo "<p></p>";
 	
