@@ -147,7 +147,7 @@ $total = 0.0;
     $offset = "100";
 
     $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  duedate, idcategory  LIMIT $offset";
-    //echo "SQL : " . $sql1;
+    echo "SQL : " . $sql1;
 echo '<div class="col-lg-9" >';
    echo '<h1>Transactions for the current Serch Criteria</h1>';
 
