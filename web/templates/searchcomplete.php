@@ -93,7 +93,7 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
     echo "<input id = 'driver' type=button class='sub search' value='".'Search'."'>";
     
 echo "</form>";
-echo '</div>';
+
 ?>
 
       
