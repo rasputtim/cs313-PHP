@@ -76,6 +76,7 @@ include('templates/menubar.php');
 </div>
 </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="js/mydatepick.js"></script>
 <script>
 	$(document).ready(function() {	
 		$("#driver").click(function(event){

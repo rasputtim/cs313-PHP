@@ -31,6 +31,13 @@
 	 $( "#paydate" ).datepicker({
         dateFormat: "yy-mm-dd"
     });
+	$( "#text-start_date" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+	
+	 $( "#text-end_date" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
 
 })(jQuery);
 

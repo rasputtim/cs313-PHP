@@ -13,19 +13,16 @@ $amount = 0.00;
 
    if( $_REQUEST["free_text"] ){
       $free_text = $_REQUEST['free_text'];
-      echo "Welcome ". $free_text;
-      if ($free_text == "Search") $free_text = '';
+      if ($free_text == "Search-Text") $free_text = '';
 
    }
    if( $_REQUEST['start_date'] ){
     $start_date = $_REQUEST['start_date'];
-    echo "Begin date: " . $start_date;
-    
+       
    }
    if( $_REQUEST['end_date'] ){
     $end_date = $_REQUEST['end_date'];
-    echo "End date: " . $end_date;
-    
+        
     }
     if( $_REQUEST['status'] ){
         $status = $_REQUEST['status'];
