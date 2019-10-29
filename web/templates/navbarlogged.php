@@ -3,7 +3,7 @@
 		
 		<div class="nav-collapse nav-collapse_ collapse">
 			<ul class="nav sf-menu clearfix">
-			<li><a href="#">Logged In as <?php echo "$_SESSION['id_usuario']"; ?></a></li>
+			<li><a href="#">Logged In as <?php echo $_SESSION['id_usuario']; ?></a></li>
       <li><a href="index.php">Home</a></li>
       
 				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="#">Administration</a>
