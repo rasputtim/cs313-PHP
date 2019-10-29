@@ -18,9 +18,9 @@ $description = '';
 $iscurrent = false;
 
    if( $_REQUEST["driver"] ){
-      $free_text = $_REQUEST['driver'];
+      $period = $_REQUEST['driver'];
       $stmt = get_db()->prepare("select * from public.ezfin_balanceview where idbalview= :id");
-      $stmt->bindValue(':id', $free_text, PDO::PARAM_INT);
+      $stmt->bindValue(':id', $period, PDO::PARAM_INT);
       $stmt->execute();
       $row = $stmt->fetch();
       $start_date = $row['initialdate'];
