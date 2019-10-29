@@ -102,7 +102,8 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
     
 	// Delete new lines from the string
 
-	echo "</td></tr></table></form>";
+    echo "</td></tr></table></form>";
+    echo '</div>';
 ?>
 
       
