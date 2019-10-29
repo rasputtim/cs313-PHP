@@ -213,7 +213,9 @@ echo '<div class="col-lg-3"  >';
            echo "<hr>";
            echo "<h3>BALANCE AT KEY DATE</H3>";
            echo date_format(date_create($keydate),$date_format);
-           echo "$keybalance";
+           echo "<br>";
+           echo "<h1>$ ".money_format($money_format, $keybalance);
+           
 
 
       
