@@ -206,5 +206,5 @@ $amount = 0.00;
        }else $count ++;
    }
    if ($added = false) echo '</ul>';
-   
+   return 1000.00;
 ?> 
