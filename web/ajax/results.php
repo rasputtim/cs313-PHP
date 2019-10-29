@@ -33,6 +33,7 @@ $total = 0.0;
        
     //echo "user: " . $user;
     }
+    $user = "";
     if( $_REQUEST['category'] ){
         $category =  $_REQUEST['category'];
         foreach ($category as $row){
@@ -66,7 +67,7 @@ $total = 0.0;
         $where_clause .= " AND (description LIKE '%$free_text%')";
         $where_saldo_inicial .= " AND (description LIKE '%$free_text%')";
 	}
-	if ($user_id != 0) {
+	if ($user_id != "") {
 	    $sql_filter .= " AND id_user = $user_id ";
         $where_clause .= " AND id_user = $user_id ";
         $where_saldo_inicial .= " AND id_user = $user_id ";
