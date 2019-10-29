@@ -27,21 +27,25 @@ echo'<div class="container">';
             echo'<div class="col">';
                 echo'<div class="row">';
                     echo'<div class="col mini-box">'; 
+                    echo'<label for="amount">User:</label>';
+                    echo'</div>';
+                    echo'<div class="col mini-box">'; 
+                    echo'<label for="amount">Price range:</label>';
+                                  
+                    echo'</div>';
+                echo'</div>';
+                echo'<div class="row">';
+                    echo'<div class="col mini-box">'; 
                     $user = $_SESSION["id_usuario"];
 	                print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''",false,false,true);
      
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
-                    if ($amount=="") $amount = 'Amount';
+                    
                     print_input_text ('amount', $amount, '', 10, 20,"if(this.value=='') this.value='Amount'","if(this.value =='Amount' ) this.value=''");
-                    ?>
-                    <p>
-                    <label for="amount">Price range:</label>
-                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                    </p>
+                    
+                    echo'<div id="slider-range"></div>';
                    
-                    <div id="slider-range"></div>
-                    <?php
                     echo'</div>';
                 echo'</div>';
                 echo'<div class="row">';
