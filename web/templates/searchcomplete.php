@@ -28,7 +28,7 @@ echo'<div class="container">';
                 echo'<div class="row">';
                     echo'<div class="col mini-box">'; 
                     $user = $_SESSION["id_usuario"];
-	                print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
+	                print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''",false,false,true);
      
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
