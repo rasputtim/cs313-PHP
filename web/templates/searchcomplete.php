@@ -106,13 +106,11 @@ echo'<div class="container">';
         
         echo "<tr>";
         echo "<td>";
-        print_input_text('free_text',$free_text,'',10,10,"if(this.value=='') this.value='Search'","if(this.value =='Search' ) this.value=''");
         
         echo "</td>";
         echo "<td>";
         if ($amount=="") $amount = 'Amount';
-        print_input_text ('amount', $amount, '', 10, 20,"if(this.value=='') this.value='Amount'","if(this.value =='Amount' ) this.value=''");
-
+        
         echo "</td>";
         echo "<td>";
         echo print_label ('Status', '', true);
