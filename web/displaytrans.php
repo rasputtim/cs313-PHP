@@ -88,10 +88,13 @@ include('templates/menubar.php');
       values: [ 0, 0 ],
       slide: function( event, ui ) {
         $( "#text-amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-      }
+		$( "#amount_min" ).val(ui.values[ 0 ] );
+		$( "#amount_max" ).val(ui.values[ 1 ] );
+	  }
     });
     $( "#text-amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
       " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+	
   } );
   </script>
 <script>
