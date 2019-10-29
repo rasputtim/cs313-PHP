@@ -21,7 +21,7 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
         echo'<div class="row">';
             echo'<div class="col big-box">';
             echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
-						$category, '', "Category", '', true, true, false, '');
+						$category, '', "Category", '', true, 5, false, '');
             echo'</div>';
     
             echo'<div class="col">';
