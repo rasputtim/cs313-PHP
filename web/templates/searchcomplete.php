@@ -42,19 +42,19 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
                     $start_date = $first_day;
                     $end_date = $last_day;
                     echo print_label ("Begin date", '', true);
-                    print_input_text ('start_date', $start_date, '', 10, 20);
+                    
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
                     echo print_label ("End date", '', true);
-                    print_input_text ('end_date', $end_date, '', 10, 20);
+                   
                     echo'</div>';
                 echo'</div>';
                 echo'<div class="row">';
                     echo'<div class="col mini-box">'; 
-                     
+                    print_input_text ('start_date', $start_date, '', 10, 20);
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
-                     
+                    print_input_text ('end_date', $end_date, '', 10, 20);
                     echo'</div>';
                 echo'</div>';
             echo'</div>';
