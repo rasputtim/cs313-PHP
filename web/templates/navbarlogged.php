@@ -6,7 +6,7 @@
 			<li><a href="#">Logged In as <?php echo $_SESSION['id_usuario']; ?></a></li>
       <li><a href="index.php">Home</a></li>
       
-				<li class="<?php echo $index2_active; ?> sub-menu sub-menu-1"><a href="#">Administration</a>
+				<li class="<?php echo $index3_active; ?> sub-menu sub-menu-1"><a href="#">Administration</a>
 					<ul>
 						<li><a href="listoptions.php">Options</a></li>
 						<li class="sub-menu sub-menu-2"><a href="listcats.php">Categories</a>
@@ -46,9 +46,9 @@
 						</li>						
 					</ul>						
 				</li>
-				<li class="<?php echo $index3_active; ?>" ><a href="displaytrans.php">Transactions</a></li>
-				<li class="<?php echo $index4_active; ?>" ><a href="listviews.php">Views</a></li>
-				<li class="<?php echo $index5_active; ?>" >
+				<li class="<?php echo $index2_active; ?>" ><a href="displaytrans.php">Transactions</a></li>
+				<li class="<?php echo $index4_active; ?>" ><a href="displayviews.php">Views</a></li>
+				<li >
 					<form class="my-form-login" action="login.php" method="post">
 						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 						<span class="help-block"></span>
@@ -60,7 +60,7 @@
 							<span class="help-block"><?php echo $password_err; ?></span>
 						</div>
 				</li>
-				<li class="<?php echo $index5_active; ?>" >	
+				<li >	
 						<div class="form-group">
 							<input type="submit" class="btn btn-primary" value="Login">
 						</div>

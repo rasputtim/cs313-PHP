@@ -15,8 +15,8 @@ include('templates/header.php'); ?>
 <div class="top1">
 <?php 
 $index1="false";
-$index2="true";
-$index3="false";
+$index2="false";
+$index3="true";
 $index4="false";
 $index5="false";
 include('templates/menubar.php'); 

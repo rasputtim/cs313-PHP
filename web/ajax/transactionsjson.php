@@ -1,4 +1,10 @@
 <?php
+// Prevent caching.
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: Mon, 01 Jan 1996 00:00:00 GMT');
+
+// The JSON standard MIME header.
+header('Content-type: application/json');
 
 global $config;
 
@@ -49,7 +55,6 @@ if ($search_companies) {
 
 if ($get_company_id) {
 	require_once ('include/functions_db.php');
-	require_once('include/functions_crm.php');
 
 	$id_user = (string) get_parameter ('id_user', $config['id_user']);
 	$company_name = (string) get_parameter ('company_name');
