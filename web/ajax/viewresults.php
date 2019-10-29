@@ -125,7 +125,7 @@ $iscurrent = false;
     $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  duedate, idcategory  LIMIT $offset";
     echo "SQL : " . $sql1;
 echo '<div class="col-lg-9" >';
-   echo '<h1>Transactions for the current Serch Criteria</h1>';
+   echo '<h1>Transactions for the current Period</h1>';
 
 
    
@@ -138,6 +138,7 @@ echo '<div class="col-lg-9" >';
    $added = false;
    foreach ($rows as $row)
    {
+       $cur_amount = $row['amount'];
        //get category
        $oper_image ="cat_income_green_peq.png";
        $stmt = get_db()->prepare('SELECT operation FROM public.ezfin_category WHERE idcat =  :op');
@@ -150,6 +151,7 @@ echo '<div class="col-lg-9" >';
           break;
           case 1:
           $oper_image ="cat_bill_red_peq.png";
+          $cur_amount = $cur_amount * -1;
           break;
           case 2:
           $oper_image = "cat_informative_peq.png";
@@ -174,7 +176,7 @@ echo '<div class="col-lg-9" >';
                // todo: add category icon here
                echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
                echo '<div class="caption">';											
-                   echo '<h3> DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
+                   echo '<h3> DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $cur_amount);
                    echo '</h3>STATUS: '.$status_name;
                    if ($status == 1){
                        echo ' ON: '.$row['paymentdate'];
@@ -190,7 +192,7 @@ echo '<div class="col-lg-9" >';
            $count = 0;
            $added = true;
        }else $count ++;
-       $total += $row['amount'];
+       $total += $cur_amount;
    }
    if ($added = false) echo '</ul>';
    
