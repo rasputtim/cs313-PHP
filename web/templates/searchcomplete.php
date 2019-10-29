@@ -34,7 +34,14 @@ echo'<div class="container">';
                     echo'<div class="col mini-box">'; 
                     if ($amount=="") $amount = 'Amount';
                     print_input_text ('amount', $amount, '', 10, 20,"if(this.value=='') this.value='Amount'","if(this.value =='Amount' ) this.value=''");
-                
+                    ?>
+                    <p>
+                    <label for="amount">Price range:</label>
+                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    </p>
+                   
+                    <div id="slider-range"></div>
+                    <?php
                     echo'</div>';
                 echo'</div>';
                 echo'<div class="row">';
