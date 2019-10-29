@@ -44,11 +44,11 @@ $total = 0.0;
     }
     if( $_REQUEST['amount_min'] ){
         $amount_min =  $_REQUEST['amount_min'];
-        echo "AMOUNT MIN: $amount_min";
+        //echo "AMOUNT MIN: $amount_min";
     }
     if( $_REQUEST['amount_max'] ){
         $amount_max =  $_REQUEST['amount_max'];
-        echo "AMOUNT MAX: $amount_max";
+        //echo "AMOUNT MAX: $amount_max";
     }
     
     
@@ -106,13 +106,13 @@ $total = 0.0;
 		$where_saldo_inicial .= $filter;
 
 	}
-    if($ammount_min != 0.00 && $ammount_max != 0.00){
+    if($ammount_min > 0.00 && $ammount_max > 0.00){
         $sql_filter .= " AND (amount >= $amount_min OR amount <= $amount_max) ";
     }
-    if($ammount_min != 0.00 && $ammount_max == 0.00){
+    if($ammount_min > 0.00 && $ammount_max == 0.00){
         $sql_filter .= " AND amount >= $amount_min ";
     }
-    if($ammount_min == 0.00 && $ammount_max != 0.00){
+    if($ammount_min == 0.00 && $ammount_max > 0.00){
         $sql_filter .= " AND amount <= $amount_max ";
     }
     
