@@ -197,7 +197,7 @@ echo '<div class="col-lg-9" >';
            $added = true;
        }else $count ++;
        $total += $cur_amount;
-       if (new DateTime($row['duedate'])->format("Y-m-d")<= $myKeyDate->format("Y-m-d")) $keybalance += $cur_amount;
+       if (new DateTime($row['duedate'])<= $mykey_date) $keybalance += $cur_amount;
    }
    if ($added = false) echo '</ul>';
    
