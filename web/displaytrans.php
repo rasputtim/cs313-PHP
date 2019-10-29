@@ -34,10 +34,13 @@ include('templates/menubar.php');
 <div id="content">
 <div class="container">
 <div class="row">
-		<?php
+<?php
 		$search_type = "transactions";
 			include('templates/searchcomplete.php'); 
 		?>
+</div>
+<div class="row">
+		
 		
 
 	<div class="col-lg-9" id = "stage">
@@ -45,7 +48,7 @@ include('templates/menubar.php');
 
 
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3" id = "result" >
 
 		<?php
 			echo "TOTAL AMOUNT: $ XXXX.XX"
@@ -97,8 +100,8 @@ include('templates/menubar.php');
 				   "end_date":end_date,
 				   "status":status,
 				   "amount":amount
-				   },function(data) {
-  alert( data );
+				   },function() {
+  alert( "Load was performed." );
 } );
             });
 	}); //
