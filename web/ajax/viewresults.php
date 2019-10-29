@@ -27,11 +27,11 @@ $iscurrent = false;
       $start_date = $row['initialdate'];
       $end_date = $row['finaldate'];
       $key_date = $row['keydate'];
-      $mykey_date =date_create($row['keydate']);
+      $mykey_date = new DateTime($row['keydate']);
       $title = $row['tittle'];
       $description = $row['description'];
       $iscurrent = $row['iscurrent'];
-      echo "DATE: $mykey_date";
+      
    }
    
 
@@ -197,7 +197,7 @@ echo '<div class="col-lg-9" >';
            $added = true;
        }else $count ++;
        $total += $cur_amount;
-       if (date_create($row['duedate'])<=$myKeyDate) $keybalance += $cur_amount;
+       if (new DateTime($row['duedate'])->format("Y-m-d")<= $myKeyDate->format("Y-m-d")) $keybalance += $cur_amount;
    }
    if ($added = false) echo '</ul>';
    
