@@ -11,13 +11,24 @@ $user= '';
 $category = array();
 $amount = 0.00;
 $total = 0.0;
+//view data
+$key_date ='';
+$title = '';
+$description = '';
+$iscurrent = false;
+
    if( $_REQUEST["driver"] ){
       $free_text = $_REQUEST['driver'];
-      echo "PERIOD: $free_text" ;
       $stmt = get_db()->prepare("select * from public.ezfin_balanceview where idbalview= :id");
       $stmt->bindValue(':id', $free_text, PDO::PARAM_INT);
       $stmt->execute();
       $row = $stmt->fetch();
+      $start_date = $row['initialdate'];
+      $end_date = $row['finaldate'];
+      $key_date = $row['keydate'];
+      $title = $row['tittle'];
+      $description = $row['description'];
+      $iscurrent = $row['iscurrent'];
    }
    
 
@@ -112,7 +123,7 @@ $total = 0.0;
     $offset = "100";
 
     $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  duedate, idcategory  LIMIT $offset";
-    //echo "SQL : " . $sql1;
+    echo "SQL : " . $sql1;
 echo '<div class="col-lg-9" >';
    echo '<h1>Transactions for the current Serch Criteria</h1>';
 
