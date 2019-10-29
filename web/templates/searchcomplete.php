@@ -21,6 +21,87 @@ echo "<h1>".'Transactions'." &raquo; ".'Data management'." &raquo; "."</h1>";
 echo '<div class="search-form-wrapper clearfix">';
 
 echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-comp clearfix" method="post" >';
+        
+echo'<div class="container">';
+        echo'<div class="row">';
+            echo "<h1>".'Transactions'." &raquo; ".'Data management'." &raquo; "."</h1>";
+        echo'</div>';
+        echo'<div class="row">';
+            echo'<div class="col big-box">';
+            echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
+						$category, '', "Category", '', true, 5, false, '');
+            echo'</div>';
+    
+            echo'<div class="col">';
+                echo'<div class="row">';
+                    echo'<div class="col mini-box">'; 
+                    $user = $_SESSION["id_usuario"];
+	                print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
+     
+                    echo'</div>';
+                    echo'<div class="col mini-box">'; 
+                    if ($amount=="") $amount = 'Amount';
+                    print_input_text ('amount', $amount, '', 10, 20,"if(this.value=='') this.value='Amount'","if(this.value =='Amount' ) this.value=''");
+                
+                    echo'</div>';
+                echo'</div>';
+                echo'<div class="row">';
+                    echo'<div class="col mini-box">'; 
+                       echo print_label ("Begin date", '', true);
+                    echo'</div>';
+                    echo'<div class="col mini-box">'; 
+                       echo print_label ("End date", '', true);
+                    echo'</div>';
+                echo'</div>';
+                echo'<div class="row">';
+                    echo'<div class="col mini-box">'; 
+                        $start_date = $first_day;
+                        print_input_text ('start_date', $start_date, '', 10, 20);
+                    echo'</div>';
+                    echo'<div class="col mini-box">'; 
+                        $end_date = $last_day;
+                        print_input_text ('end_date', $end_date, '', 10, 20);
+                    echo'</div>';
+                echo'</div>';
+            echo'</div>';
+  
+        echo'</div>';
+        echo'<div class="row">';
+            echo'<div class="col">';
+                if ($free_text=="") $free_text = 'Search';
+                print_input_text('free_text',$free_text,'',10,10,"if(this.value=='') this.value='Search'","if(this.value =='Search' ) this.value=''");
+                
+            echo'</div>';
+            echo'<div class="col">';
+            echo print_label ('Status', '', true);
+                ?>
+                <!-- Default inline 1-->
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="defaultInline1" name="status" value='-1' checked>
+                <label class="custom-control-label" for="defaultInline1">Undefined</label>
+                </div>
+
+                <!-- Default inline 2-->
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="defaultInline2" name="status"  value='1'>
+                <label class="custom-control-label" for="defaultInline2">Paid/Received</label>
+                </div>
+
+                <!-- Default inline 3-->
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="defaultInline3" name="status" value='0' >
+                <label class="custom-control-label" for="defaultInline3">Unpaid/Unreceived</label>
+                </div>
+                
+            <?php
+            echo'</div>';
+        echo'</div>';
+    echo'</div>';
+
+
+
+
+
         echo '<table width="100%" class="search-table">';
         
         echo "<tr>";
