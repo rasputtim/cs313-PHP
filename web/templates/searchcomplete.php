@@ -30,7 +30,7 @@ echo'<div class="container">';
                     echo'<label for="amount">User:</label>';
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
-                    echo'<label for="amount">Price range:</label>';
+                    echo'<label for="amount">Amount range:</label>';
                                   
                     echo'</div>';
                 echo'</div>';

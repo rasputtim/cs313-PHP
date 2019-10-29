@@ -9,7 +9,8 @@ $end_date = '';
 $status = -1;
 $user= '';
 $category = array();
-$amount = 0.00;
+$amount_min = 0.00;
+$amount_max = 0.00;
 $total = 0.0;
    if( $_REQUEST["free_text"] ){
       $free_text = $_REQUEST['free_text'];
@@ -41,11 +42,14 @@ $total = 0.0;
             //echo " , ";
          }
     }
-    if( $_REQUEST['amount'] ){
-        $amount =  $_REQUEST['amount'];
-        if ($amount == "Amount") $amount = 0.00;
+    if( $_REQUEST['amount_min'] ){
+        $amount_min =  $_REQUEST['amount_min'];
+        
     }
-
+    if( $_REQUEST['amount_max'] ){
+        $amount_max =  $_REQUEST['amount_max'];
+        
+    }
     
     
 	// Search filters
@@ -102,6 +106,16 @@ $total = 0.0;
 		$where_saldo_inicial .= $filter;
 
 	}
+    if($ammount_min != 0.00 && $ammount_max != 0.00){
+        $sql_filter .= " AND (amount >= $amount_min OR amount <= $amount_max) ";
+    }
+    if($ammount_min != 0.00 && $ammount_max == 0.00){
+        $sql_filter .= " AND amount >= $amount_min ";
+    }
+    if($ammount_min == 0.00 && $ammount_max != 0.00){
+        $sql_filter .= " AND amount <= $amount_max ";
+    }
+    
 
 	if ($start_date != "" AND $end_date == "") {
 		$sql_filter .= " AND duedate >= '$start_date_sql' ";
@@ -124,11 +138,7 @@ $total = 0.0;
 		$where_saldo_inicial .= " AND duedate < '$start_date_sql' ";
 
 	}
-    if($ammount != 0.00){
-        $sql_filter .= " AND amount = $amount ";
-		
-
-    }
+    
     if ($status != -1) {
         $sql_filter .= " AND status = $status ";
         
