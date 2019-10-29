@@ -39,21 +39,11 @@ include('templates/menubar.php');
 			include('templates/searchcomplete.php'); 
 		?>
 </div>
-<div class="row">
+<div class="row" id = "stage">
 		
 		
 
-	<div class="col-lg-9" id = "stage">
-		
-
-
-	</div>
-	<div class="col-lg-3" id = "result" >
-
-		<?php
-			echo "TOTAL AMOUNT: $ XXXX.XX"
-		?>
-	</div>	
+	
 </div>
 <div class="row">
 <div class="col-lg-12">

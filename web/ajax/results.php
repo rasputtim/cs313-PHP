@@ -138,7 +138,7 @@ $amount = 0.00;
 
     $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  duedate, idcategory  LIMIT $offset";
     //echo "SQL : " . $sql1;
-
+echo '<div class="col-lg-9" >';
    echo '<h1>Transactions for the current Serch Criteria</h1>';
 
 
@@ -206,5 +206,15 @@ $amount = 0.00;
        }else $count ++;
    }
    if ($added = false) echo '</ul>';
-   return 1000.00;
+   
+		
+
+
+echo '</div>';
+echo '<div class="col-lg-3"  >';
+
+      
+           echo "TOTAL AMOUNT: $ XXXX.XX";
+      
+echo '</div>';
 ?> 
