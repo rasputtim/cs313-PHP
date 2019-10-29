@@ -101,15 +101,9 @@ echo'<div class="container">';
 
         
         ?>
-        <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='-1' checked>
-        <label class="form-check-label" for="materialInline1">Undefined</label>
-        </div>
+        
 
-        <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='1'>
-        <label class="form-check-label" for="materialInline1">Paid / Received</label>
-        </div>
+        
 
         <!-- Material inline 2 -->
         <div class="form-check form-check-inline">
