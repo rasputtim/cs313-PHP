@@ -45,16 +45,12 @@ include('templates/menubar.php');
 
 	<div class="col-lg-9" >
 		
-	<?php
-			echo "TOTAL AMOUNT: $ XXXX.XX"
-		?>
+	
 
 	</div>
 	<div class="col-lg-3"  >
 
-		<?php
-			echo "TOTAL AMOUNT: $ XXXX.XX"
-		?>
+		
 	</div>	
 </div>
 <div class="row" id = "stage">
