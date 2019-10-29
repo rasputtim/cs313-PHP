@@ -60,7 +60,7 @@
 				</li>
 				<li class="<?php echo $index5_active; ?>" >	
 						<div class="form-group">
-							<input type="submit" class="my-form-login btn btn-primary" value="Login">
+							<input type="submit" class="btn btn-primary" value="Login">
 						</div>
 						<p><a href="register.php">Sign up now</a>.</p>
 					</form>
