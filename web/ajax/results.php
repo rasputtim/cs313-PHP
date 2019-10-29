@@ -44,11 +44,11 @@ $total = 0.0;
     }
     if( $_REQUEST['amount_min'] ){
         $amount_min =  $_REQUEST['amount_min'];
-        
+        echo "AMOUNT MIN: $amount_min";
     }
     if( $_REQUEST['amount_max'] ){
         $amount_max =  $_REQUEST['amount_max'];
-        
+        echo "AMOUNT MAX: $amount_max";
     }
     
     
