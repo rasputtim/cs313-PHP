@@ -42,7 +42,6 @@ $total = 0.0;
     }
     if( $_REQUEST['amount'] ){
         $amount =  $_REQUEST['amount'];
-        echo "amount: " . $amount;
         if ($amount == "Amount") $amount = 0.00;
     }
 
