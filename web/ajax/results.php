@@ -171,13 +171,28 @@ $amount = 0.00;
        }
        $added = false;
        if ($count  == 0 ) echo '<ul class="thumbnails thumbnails1">';
+       $status_name = "Undefined";
+       switch ($row['status']){
+           case -1:
+           $status_name = "Undefined";
+           break;
+           case 0:
+           $status_name = "Unpaid/Unreceived";
+           break;
+           case 1:
+           $status_name = "Paid/Received";
+           break;
+       }
        echo '<li>';
            echo '<div class="thumbnail clearfix">';
                // todo: add category icon here
                echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
                echo '<div class="caption">';											
-                   echo '<h3>'.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
-                   echo '</h3>';
+                   echo '<h3> DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
+                   echo '</h3>STATUS: '.$status_name;
+                   if ($status == 1){
+                       echo " ON: $row['paymentdate']";
+                   }
                    echo '<p>';
                            echo "  ".$row['description']. '<a href=" inctrans.php?update='.$row['idtransaction'].'"><strong>  edit</strong></a>';
                    echo '</p>';
