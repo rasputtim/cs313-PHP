@@ -106,7 +106,8 @@ include('templates/menubar.php');
 			   var start_date = $("#text-start_date").val();
 			   var end_date = $("#text-end_date").val();
 			   var status = $(".statusclass:checked").val();
-			   var amount = $("#text-amount").val();
+			   var amount_max = $("#amount_max").val();
+			   var amount_min = $("#amount_min").val();
                $("#stage").load('ajax/results.php', {
 				   "free_text":free_text,
 				   "user":user,
@@ -114,7 +115,8 @@ include('templates/menubar.php');
 				   "start_date":start_date,
 				   "end_date":end_date,
 				   "status":status,
-				   "amount":amount
+				   "amount_max":amount_max,
+				   "amount_min":amount_min
 				   });
             });
 	}); //
