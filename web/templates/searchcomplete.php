@@ -70,19 +70,19 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
                 <!-- Default inline 1-->
                 <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" id="defaultInline1" name="status" value='-1' checked>
-                <label class="custom-control-label" for="defaultInline1">1</label>
+                <label class="custom-control-label" for="defaultInline1">Undefined</label>
                 </div>
 
                 <!-- Default inline 2-->
                 <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" id="defaultInline2" name="status"  value='1'>
-                <label class="custom-control-label" for="defaultInline2">2</label>
+                <label class="custom-control-label" for="defaultInline2">Paid/Received</label>
                 </div>
 
                 <!-- Default inline 3-->
                 <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" id="defaultInline3" name="status" value='0' >
-                <label class="custom-control-label" for="defaultInline3">3</label>
+                <label class="custom-control-label" for="defaultInline3">Unpaid/Unreceived</label>
                 </div>
                 
             <?php
