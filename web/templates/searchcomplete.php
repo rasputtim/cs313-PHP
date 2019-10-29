@@ -16,10 +16,8 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
             echo "<h1>".'Transactions'." &raquo; ".'Data management'." &raquo; "."</h1>";
         echo'</div>';
         echo'<div class="row">';
-        echo '<div class="search-form-wrapper clearfix">';
-	    echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-comp clearfix" method="post" >';
             echo'<div class="col big-box">';
-            
+            image
             echo'</div>';
     
             echo'<div class="col">';
@@ -32,14 +30,16 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
             echo'<div class="col mini-box">4</div>';
             echo'</div>';
             echo'</div>';
-            echo "</form>"; 
+  
         echo'</div>';
     echo'</div>';
 
 
 	
     
-    
+    echo '<div class="search-form-wrapper clearfix">';
+
+	echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-comp clearfix" method="post" >';
 	echo '<table width="100%" class="search-table">';
 	echo "<tr>";
 
