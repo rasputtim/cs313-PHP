@@ -31,6 +31,7 @@ $iscurrent = false;
       $title = $row['tittle'];
       $description = $row['description'];
       $iscurrent = $row['iscurrent'];
+      echo "DATE: $mykey_date";
    }
    
 
