@@ -99,20 +99,6 @@ echo'<div class="container">';
     echo'</div>';
 
 
-
-
-
-        echo '<table width="100%" class="search-table">';
-        
-        echo "<tr>";
-        echo "<td>";
-        
-        echo "</td>";
-        echo "<td>";
-       
-        
-        echo "</td>";
-        echo "<td>";
         
         ?>
         <div class="form-check form-check-inline">
@@ -131,20 +117,7 @@ echo'<div class="container">';
         <label class="form-check-label" for="materialInline2"> Unpaid / Unreceived</label>
         </div>
     <?php
-        echo "</td>";
-        echo "</tr>";
-        echo "<tr>";
-        echo "<td>";
-       
         
-        
-        echo "</td><td>";
-        
-
-
-        echo "<td >";
-
-        echo "</td></tr></table>";
 echo "<input id = 'driver' type=button class='sub search' value='".'Search'."'>";
 echo "</form>";
 echo '</div>';
