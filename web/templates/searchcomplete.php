@@ -22,19 +22,7 @@ echo '<div class="search-form-wrapper clearfix">';
 
 echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-comp clearfix" method="post" >';
         echo '<table width="100%" class="search-table">';
-        echo "<tr>";
-
-        echo "<td>";
-        echo print_select_from_sql ('SELECT idcat, name FROM public.ezfin_category', 'category',
-                            $category, '', "Category", '', true, true, false, '');
-        echo "<td>";
-        $user = $_SESSION["id_usuario"];
-        print_input_text('user',$user,'',10,10,"if(this.value=='') this.value='User'","if(this.value =='User' ) this.value=''");
         
-        //echo print_select_from_sql ('SELECT id_usuario, real_name FROM public.ezfin_tusuario order by real_name', 'user_id',
-        //					$user_id, '', "User", '', true, false, false, '');
-        
-        if ($free_text=="") $free_text = 'Search';
         echo "<tr>";
         echo "<td>";
         print_input_text('free_text',$free_text,'',10,10,"if(this.value=='') this.value='Search'","if(this.value =='Search' ) this.value=''");
@@ -78,10 +66,6 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
 
 
         echo "<td >";
-
-        
-        
-        // Delete new lines from the string
 
         echo "</td></tr></table>";
 echo "<input id = 'driver' type=button class='sub search' value='".'Search'."'>";
