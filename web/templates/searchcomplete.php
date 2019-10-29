@@ -79,11 +79,12 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
 
         echo "<td >";
 
-        echo "<input id = 'driver' type=button class='sub search' value='".'Search'."'>";
+        
         
         // Delete new lines from the string
 
         echo "</td></tr></table>";
+echo "<input id = 'driver' type=button class='sub search' value='".'Search'."'>";
 echo "</form>";
 echo '</div>';
 ?>
