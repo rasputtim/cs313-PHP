@@ -50,7 +50,8 @@
 				<li class="<?php echo $index5_active; ?>" >
 					<form class="my-form-login" action="login.php" method="post">
 						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-							<input type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
+						<span class="help-block"></span>
+						<input type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
 							<span class="help-block"><?php echo $username_err; ?></span>
 						</div>    
 						<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
