@@ -123,7 +123,7 @@ $iscurrent = false;
     $offset = "100";
 
     $sql1 = "SELECT * FROM public.ezfin_transactions  WHERE 1=1 $sql_filter ORDER BY  duedate, idcategory  LIMIT $offset";
-    echo "SQL : " . $sql1;
+    //echo "SQL : " . $sql1;
 echo '<div class="col-lg-9" >';
    echo '<h1>Transactions for the current Period</h1>';
 
@@ -202,8 +202,15 @@ echo '<div class="col-lg-9" >';
 echo '</div>';
 echo '<div class="col-lg-3"  >';
       
-           echo "<h1>TOTAL AMOUNT: $ ". money_format($money_format, $total);
+           echo "<h1>BALANCE TOTAL</h1>";
+           echo "<h1>$ ".money_format($money_format, $total);
            echo "</H1>";
+           echo "<hr>";
+           echo "<h3>BALANCE AT KEY DATE</H3>";
+           echo date_format(date_create($keydate),$date_format);
+           echo "$keybalance";
+
+
       
 echo '</div>';
 ?> 
