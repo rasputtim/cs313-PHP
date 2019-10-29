@@ -10,7 +10,10 @@ require_once ("inc/functions_html.php");
 $first_day = (new DateTime('first day of last month'))->format('Y-m-d');
 $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
-	
+echo '<div class="search-form-wrapper clearfix">';
+
+echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-comp clearfix" method="post" >';
+
     echo'<div class="container">';
         echo'<div class="row">';
             echo "<h1>".'Transactions'." &raquo; ".'Data management'." &raquo; "."</h1>";
@@ -37,10 +40,7 @@ $last_day = (new DateTime('last day of this month'))->format('Y-m-d');
 
 	
     
-    echo '<div class="search-form-wrapper clearfix">';
-
-	echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-comp clearfix" method="post" >';
-	echo '<table width="100%" class="search-table">';
+    echo '<table width="100%" class="search-table">';
 	echo "<tr>";
 
 	echo "<td>";
