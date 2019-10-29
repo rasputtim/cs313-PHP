@@ -114,18 +114,32 @@ echo'<div class="container">';
         echo "</td>";
         echo "<td>";
         
-        
+        ?>
+        <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='-1' checked>
+        <label class="form-check-label" for="materialInline1">Undefined</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='1'>
+        <label class="form-check-label" for="materialInline1">Paid / Received</label>
+        </div>
+
+        <!-- Material inline 2 -->
+        <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input statusclass" id="materialInline2" name="status" value='0'>
+        <label class="form-check-label" for="materialInline2"> Unpaid / Unreceived</label>
+        </div>
+    <?php
         echo "</td>";
         echo "</tr>";
         echo "<tr>";
         echo "<td>";
        
         
-        echo print_label ("Begin date", '', true);
-        print_input_text ('start_date', $start_date, '', 10, 20);
+        
         echo "</td><td>";
-        echo print_label ("End date", '', true);
-        print_input_text ('end_date', $end_date, '', 10, 20);
+        
 
 
         echo "<td >";
