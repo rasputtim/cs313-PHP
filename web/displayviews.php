@@ -81,7 +81,7 @@ include('templates/menubar.php');
 <script src="js/mydatepick.js"></script>
 <script>
 	$(document).ready(function() {	
-		$("#driver").click(function(event){
+		$("#driver").change(function(event){
                var driver = $("#driver").val();
 			   
                $("#stage").load('ajax/viewresults.php', {
