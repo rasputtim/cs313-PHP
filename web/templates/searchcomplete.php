@@ -39,26 +39,51 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
                 echo'</div>';
                 echo'<div class="row">';
                     echo'<div class="col mini-box">'; 
-                    $start_date = $first_day;
-                    $end_date = $last_day;
-                    echo print_label ("Begin date", '', true);
-                    
+                       echo print_label ("Begin date", '', true);
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
-                    echo print_label ("End date", '', true);
-                   
+                       echo print_label ("End date", '', true);
                     echo'</div>';
                 echo'</div>';
                 echo'<div class="row">';
                     echo'<div class="col mini-box">'; 
-                    print_input_text ('start_date', $start_date, '', 10, 20);
+                        $start_date = $first_day;
+                        print_input_text ('start_date', $start_date, '', 10, 20);
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
-                    print_input_text ('end_date', $end_date, '', 10, 20);
+                        $end_date = $last_day;
+                        print_input_text ('end_date', $end_date, '', 10, 20);
                     echo'</div>';
                 echo'</div>';
             echo'</div>';
   
+        echo'</div>';
+        echo'<div class="row">';
+            echo'<div class="col">';
+                if ($free_text=="") $free_text = 'Search';
+                print_input_text('free_text',$free_text,'',10,10,"if(this.value=='') this.value='Search'","if(this.value =='Search' ) this.value=''");
+                
+            echo'</div>';
+            echo'<div class="col">';
+            echo print_label ('Status', '', true);
+                ?>
+                <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='-1' checked>
+                <label class="form-check-label" for="materialInline1">Undefined</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='1'>
+                <label class="form-check-label" for="materialInline1">Paid / Received</label>
+                </div>
+
+                <!-- Material inline 2 -->
+                <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input statusclass" id="materialInline2" name="status" value='0'>
+                <label class="form-check-label" for="materialInline2"> Unpaid / Unreceived</label>
+                </div>
+            <?php
+            echo'</div>';
         echo'</div>';
     echo'</div>';
 
@@ -75,34 +100,16 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
 	//echo print_select_from_sql ('SELECT id_usuario, real_name FROM public.ezfin_tusuario order by real_name', 'user_id',
 	//					$user_id, '', "User", '', true, false, false, '');
     
-    if ($free_text=="") $free_text = 'Search';
-	echo "<tr>";
-	echo "<td>";
-	print_input_text('free_text',$free_text,'',10,10,"if(this.value=='') this.value='Search'","if(this.value =='Search' ) this.value=''");
     
+	echo "<tr>";
+    echo "<td>";
+   
     echo "</td>";
     echo "<td>";
 	
     echo "</td>";
     echo "<td>";
-    echo print_label ('Status', '', true);
-    ?>
-    <div class="form-check form-check-inline">
-    <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='-1' checked>
-    <label class="form-check-label" for="materialInline1">Undefined</label>
-    </div>
-
-	<div class="form-check form-check-inline">
-    <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='1'>
-    <label class="form-check-label" for="materialInline1">Paid / Received</label>
-    </div>
-
-    <!-- Material inline 2 -->
-    <div class="form-check form-check-inline">
-    <input type="radio" class="form-check-input statusclass" id="materialInline2" name="status" value='0'>
-    <label class="form-check-label" for="materialInline2"> Unpaid / Unreceived</label>
-    </div>
-<?php
+    
     echo "</td>";
     echo "</tr>";
     echo "<tr>";
