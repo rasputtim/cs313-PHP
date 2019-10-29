@@ -32,23 +32,23 @@ echo '<form id="search-form" action="#" accept-charset="utf-8" class="my-form-co
      
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
-                    2 
+                     
                     echo'</div>';
                 echo'</div>';
                 echo'<div class="row">';
                     echo'<div class="col mini-box">'; 
-                    3 
+                     
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
-                    4 
+                     
                     echo'</div>';
                 echo'</div>';
                 echo'<div class="row">';
                     echo'<div class="col mini-box">'; 
-                    5 
+                     
                     echo'</div>';
                     echo'<div class="col mini-box">'; 
-                    6 
+                     
                     echo'</div>';
                 echo'</div>';
             echo'</div>';
