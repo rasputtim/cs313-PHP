@@ -43,8 +43,8 @@ echo'<div class="container">';
                     echo'<div class="col mini-box">'; 
                     
                     print_input_text ('amount', $amount, '', 10, 20,"if(this.value=='') this.value='Amount'","if(this.value =='Amount' ) this.value=''");
-                    echo'<input type="text" id="amount_min" name="amount_min" value="">';
-                    echo'<input type="text" id="amount_max" name="amount_max" value="">';
+                    echo'<input type="hidden" id="amount_min" name="amount_min" value="">';
+                    echo'<input type="hidden" id="amount_max" name="amount_max" value="">';
                     echo'<div id="slider-range"></div>';
                    
                     echo'</div>';
