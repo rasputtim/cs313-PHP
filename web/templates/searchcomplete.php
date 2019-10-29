@@ -109,11 +109,11 @@ echo'<div class="container">';
         
         echo "</td>";
         echo "<td>";
-        if ($amount=="") $amount = 'Amount';
+       
         
         echo "</td>";
         echo "<td>";
-        echo print_label ('Status', '', true);
+        
         ?>
         <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input statusclass" id="materialInline1" name="status" value='-1' checked>
@@ -135,8 +135,8 @@ echo'<div class="container">';
         echo "</tr>";
         echo "<tr>";
         echo "<td>";
-        $start_date = $first_day;
-        $end_date = $last_day;
+       
+        
         echo print_label ("Begin date", '', true);
         print_input_text ('start_date', $start_date, '', 10, 20);
         echo "</td><td>";
