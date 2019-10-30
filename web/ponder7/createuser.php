@@ -12,7 +12,7 @@ $success = -1;
 	$stmt->bindValue(':pass', $my_pass, PDO::PARAM_STR);
 	
 	if($stmt->execute()){
-		$newId = $mydb->lastInsertId('login_id_seq');
+		$newId = $mydb->lastInsertId('ponder7.login_id_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;
