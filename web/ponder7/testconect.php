@@ -3,7 +3,7 @@
 require_once ("../inc/functions_db.php");
 
 $my_user = "SALVATORE";
-$my_pass = "123456"
+$my_pass = "123456";
 $success = -1;
 
 $mydb = get_db();
