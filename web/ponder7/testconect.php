@@ -6,13 +6,13 @@ $my_user = "SALVATORE";
 $my_pass = "123456";
 $success = -1;
 
-$mydb = get_db();
+    $mydb = get_db();
 	$stmt = $mydb->prepare('INSERT INTO ponder7.login (username,password) VALUES (:user,:pass)');
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':pass', $my_pass, PDO::PARAM_STR);
 	
 	if($stmt->execute()){
-		$newId = $mydb->lastInsertId('ezfin_category_idcat_seq');
+		$newId = $mydb->lastInsertId('login_id_seq');
 		$success = 1;
 	}else {  //failed
 		$success=2;
