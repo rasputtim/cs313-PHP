@@ -2,8 +2,8 @@
 
 require_once ("../inc/functions_db.php");
 
-$my_user = "SALVATORE";
-$my_pass = "123456";
+$my_user = $_GET['username'];
+$my_pass = $_GET['password'];
 $success = -1;
 
     $mydb = get_db();
