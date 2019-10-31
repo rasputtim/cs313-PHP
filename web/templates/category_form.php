@@ -38,7 +38,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-sm-6 form-group">
+								<div class="form-group">
 									<label for="icon"> Icon:</label>
 									<select class="form-control image-picker show-html" id="icon" name="icon" required >
                                     <option value= "">Select one icon</option>
