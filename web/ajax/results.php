@@ -179,6 +179,7 @@ echo '<div class="col-lg-9" >';
           break;
           case 2:
           $oper_image = "cat_informative_peq.png";
+          
           break;
        }
        $added = false;
@@ -216,7 +217,7 @@ echo '<div class="col-lg-9" >';
            $count = 0;
            $added = true;
        }else $count ++;
-       $total += $cur_amount;
+       if($operation !=2) $total += $cur_amount;
    }
    if ($added = false) echo '</ul>';
    
