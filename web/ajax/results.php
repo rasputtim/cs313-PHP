@@ -201,7 +201,7 @@ echo '<div class="col-lg-9" >';
                // todo: add category icon here
                echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
                echo '<div class="caption">';											
-                   echo '<h3> DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $cur_amount);
+                   echo '<h3> DUE ON:  '.date_format(date_create($row['duedate']),$date_format)."  -  $ ". money_format($money_format, $cur_amount);
                    echo '</h3>STATUS: '.$status_name;
                    if ($status == 1){
                        echo ' ON: '.$row['paymentdate'];
