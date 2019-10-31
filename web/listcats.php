@@ -91,20 +91,8 @@ if ($added == false) echo '</div>';
 </div>
 <div class="col-lg-3">
 
-<h2>category List</h2>
-
-	<ul class="ul1">
-	<?php 
-	foreach (get_db()->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
-	{
-	echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
-	echo $row['name'];
-	echo '</a></li>';
-	}
+<?php include('templates/categorylist.php');
 ?>
-	  	            		      	      			      
-	</ul>	
-
 	
 
 	
