@@ -65,35 +65,35 @@ require_once('inc/functions_db.php');
                                     
 									</optgroup>
 									<optgroup label="Outcomes">
-									<option data-img-src="images/cat_gambling_inc.png" value="cat_gambling_inc.png">cat_gambling_inc.png</option>
-									<option data-img-src="images/cat_general_inc.png" value="cat_general_inc.png">cat_general_inc.png</option>
-									<option data-img-src="images/cat_general_out.png" value="cat_general_out.png">cat_general_out.png</option>
-									<option data-img-src="images/cat_groceries.png" value="cat_groceries.png">cat_groceries.png</option>
-									<option data-img-src="images/cat_housing.png" value="cat_housing.png">cat_housing.png</option>
-									<option data-img-src="images/cat_income.png" value="cat_income.png">cat_income.png</option>
-									<option data-img-src="images/cat_income_green.png" value="cat_income_green.png">cat_income_green.png</option>
-									<option data-img-src="images/cat_income_green_peq.png" value="cat_income_green_peq.png">cat_income_green_peq.png</option>
-									<option data-img-src="images/cat_informative.png" value="cat_informative.png">cat_informative.png</option>
-									<option data-img-src="images/cat_informative_bw.png" value="cat_informative_bw.png">cat_informative_bw.png</option>
-									<option data-img-src="images/cat_informative_peq.png" value="cat_informative_peq.png">cat_informative_peq.png</option>
-									<option data-img-src="images/cat_informative_round.png" value="cat_informative_round.png">cat_informative_round.png</option>
-									<option data-img-src="images/cat_insurance.png" value="cat_insurance.png">cat_insurance.png</option>
-									<option data-img-src="images/cat_investments.png" value="cat_investments.png">cat_investments.png</option>
-									<option data-img-src="images/cat_medical.png" value="cat_medical.png">cat_medical.png</option>
-									<option data-img-src="images/cat_pets.png" value="cat_pets.png">cat_pets.png</option>
-									<option data-img-src="images/cat_rent_bill.png" value="cat_rent_bill.png">cat_rent_bill.png</option>
-									<option data-img-src="images/cat_rent_inc.png" value="cat_rent_inc.png">cat_rent_inc.png</option>
-									<option data-img-src="images/cat_retirement.png" value="cat_retirement.png">cat_retirement.png</option>
-									<option data-img-src="images/cat_retirement_plan.png" value="cat_retirement_plan.png">cat_retirement_plan.png</option>
-									<option data-img-src="images/cat_salary.png" value="cat_salary.png">cat_salary.png</option>
-									<option data-img-src="images/cat_savings.png" value="cat_savings.png">cat_savings.png</option>
-									<option data-img-src="images/cat_taxes.png" value="cat_taxes.png">cat_taxes.png</option>
-									<option data-img-src="images/cat_tax_refunds.png" value="cat_tax_refunds.png">cat_tax_refunds.png</option>
-									<option data-img-src="images/cat_transportation.png" value="cat_transportation.png">cat_transportation.png</option>
-									<option data-img-src="images/cat_unknown.png" value="cat_unknown.png">cat_unknown.png</option>
-									<option data-img-src="images/cat_utilities.png" value="cat_utilities.png">cat_utilities.png</option>
-									<option data-img-src="images/cat_working.png" value="cat_working.png">cat_working.png</option>
+									<?php
+									$stmt = get_db()->prepare('SELECT icon FROM public.ezfin_category WHERE operation=1');
+
+									$stmt->execute();
+									$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+									
+									foreach ($rows as $row)
+									{
+										$image_list = $row['icon'];
+										echo "<option data-img-src='images/$image_list' value='$image_list'>$image_list</option>";
+									}
+									?>
 									</optgroup>
+									<optgroup label="Informatives">
+									<?php
+									$stmt = get_db()->prepare('SELECT icon FROM public.ezfin_category WHERE operation=2');
+
+									$stmt->execute();
+									$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+									
+									foreach ($rows as $row)
+									{
+										$image_list = $row['icon'];
+										echo "<option data-img-src='images/$image_list' value='$image_list'>$image_list</option>";
+									}
+									?>
+									</optgroup>
+
+
 									</select>
 									
 									
