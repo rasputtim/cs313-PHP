@@ -7,15 +7,18 @@ $sql = 'SELECT       idcategory,
         GROUP BY idcategory
         ORDER BY value_occurrence DESC
         LIMIT    8';
-
-$stmt = get_db()->prepare($sql);
+$mydb = get_db();
+$stmt = $mydb->prepare($sql);
 //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<ul>';
 foreach ($rows as $row){
-    
+    $stmt2 = $mydb->prepare('SELECT * FROM public.ezfin_category WHERE id = :id');
+    $stmt2->bindValue(':id', $row['idcategory'], PDO::PARAM_INT);
+    $stmt2->execute();
+    $cats = $stmt2->fetch();
 										echo'<li>';
                                             echo'<div class="thumb-carousel2 banner1">';
                                                 echo'<div class="thumbnail clearfix">';
