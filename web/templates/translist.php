@@ -6,7 +6,7 @@
 		{
 		echo '<li>';
 		echo '<a href="inctrans.php?update='.$row['idtransaction'].'">';
-		echo $row['duedate']." - ". money_format($money_format, $row['amount']);
+		echo 'Due on: '.$row['duedate']." - $ ". money_format($money_format, $row['amount']);
 		echo '</a></li>';
 		}
 	

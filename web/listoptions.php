@@ -57,7 +57,6 @@ foreach ($rows as $row)
 	echo '<li>';
 		echo '<div class="thumbnail clearfix">';
 		    // todo: add category icon here
-			echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
 			echo '<div class="caption">';											
 				echo '<h3>'.$row['key']." -  VALUE:". $row['value'];
 				echo '</h3>';
