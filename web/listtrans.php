@@ -85,11 +85,11 @@ foreach ($rows as $row)
 		    // todo: add category icon here
 			echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
 			echo '<div class="caption">';											
-				echo '<h3>'.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
-				echo '</h3>';
-				echo '<p>';
-						echo "  ".$row['description']. '<a href=" inctrans.php?update='.$row['idtransaction'].'"><strong>  edit</strong></a>';
-				echo '</p>';
+				echo "<h3>".$row['description'].'</H3>';
+				echo '<h2>DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
+				echo '</h2>';
+				echo '<br>';
+				echo '<a href="inctrans.php?update='.$row['idtransaction'].'" class="button2">edit </a>';
 			echo '</div>';			
 		echo '</div>';
 	echo '</li>';
