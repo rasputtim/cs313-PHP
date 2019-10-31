@@ -60,6 +60,7 @@ $added = false;
 
 foreach ($rows as $row)
 {
+
 	switch ($row['operation']){
 		case -1:
 		break;
@@ -73,6 +74,7 @@ foreach ($rows as $row)
 		$myOperation = "INFORMATIVE";
 		break;
 	}
+	
 	$added = false;
 	if ($count % 3 == 0 ) echo '<div class="row">';
 	echo '<div class="col-lg-3">';
