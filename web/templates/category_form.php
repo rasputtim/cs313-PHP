@@ -58,7 +58,7 @@ require_once('inc/functions_db.php');
 									
 									foreach ($rows as $row)
 									{
-										$image_list = $row['icon'];
+										$image_list = trim ($row['icon']);
 										echo "<option data-img-src='images/$image_list' value='$image_list'>$image_list</option>";
 									}
 									?>
@@ -73,7 +73,7 @@ require_once('inc/functions_db.php');
 									
 									foreach ($rows as $row)
 									{
-										$image_list = $row['icon'];
+										$image_list = trim ($row['icon']);
 										echo "<option data-img-src='images/$image_list' value='$image_list'>$image_list</option>";
 									}
 									?>
@@ -87,7 +87,7 @@ require_once('inc/functions_db.php');
 									
 									foreach ($rows as $row)
 									{
-										$image_list = $row['icon'];
+										$image_list = trim ($row['icon']);
 										echo "<option data-img-src='images/$image_list' value='$image_list'>$image_list</option>";
 									}
 									?>
