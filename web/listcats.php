@@ -50,7 +50,7 @@ include('templates/menubar.php');
 
 
 <?php
-$myOperation=1;
+$myOperation=-1;
 $stmt = get_db()->prepare('SELECT * FROM public.ezfin_category');
 //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
@@ -61,6 +61,7 @@ foreach ($rows as $row)
 {
 	switch ($row['operation']){
 		case -1:
+		$myOperation = "UNKNOWN";
 		break;
 		case 0:
 		$myOperation = "CREDIT";
