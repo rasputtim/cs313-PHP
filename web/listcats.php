@@ -105,144 +105,23 @@ if ($added == false) echo '</div>';
 <div class="container">
 <div class="row">
 <div class="col-lg-12">
-<div id="slider4">
-<div class="slider4-title">CATEGORIES MOST USED</div>
-<div class="slider4_wrapper2">
-<a class="prev4" href="#"></a>
-<a class="next4" href="#"></a>
-<div class="carousel-box row">
-	<div class="inner col-lg-12">			
-		<div class="carousel main">
-			<ul>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products07.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
+	<div id="slider4">
+		<div class="slider4-title">CATEGORIES MOST USED</div>
+			<div class="slider4_wrapper2">
+				<a class="prev4" href="#"></a>
+					<a class="next4" href="#"></a>
+						<div class="carousel-box row">
+							<div class="inner col-lg-12">			
+								<div class="carousel main">
+									<?php include('templates/catmostused.php'); ?>
+								</div>
+							</div>
+						</div>	
 					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products08.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products09.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products10.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products07.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products08.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products09.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="thumb-carousel2 banner1">
-						<div class="thumbnail clearfix">
-							<a href="#">
-								<figure>
-									<img src="images/products10.jpg" alt="">
-								</figure>
-								<div class="caption">
-									<div class="txt1">Lorem ipsum dolor</div>
-									<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>								
-								</div>								
-							</a>								
-						</div>
-					</div>
-				</li>																								
-			</ul>
-		</div>
-	</div>
-</div>	
-</div>
-</div>	
-</div>	
-</div>	
-</div>	
+				</div>	
+			</div>	
+		</div>	
+	</div>	
 </div>
 
 
