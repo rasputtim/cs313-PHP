@@ -15,10 +15,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<ul>';
 foreach ($rows as $row){
-    $stmt = get_db()->prepare('SELECT * FROM public.ezfin_category WHERE id = :id');
-    $stmt->bindValue(':id', $row['idcategory'], PDO::PARAM_INT);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
 										echo'<li>';
                                             echo'<div class="thumb-carousel2 banner1">';
                                                 echo'<div class="thumbnail clearfix">';
