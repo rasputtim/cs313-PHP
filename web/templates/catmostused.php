@@ -27,8 +27,8 @@ foreach ($rows as $row){
                                                             echo'<img src="images/'.trim($cats['icon']).'" alt="">';
                                                         echo'</figure>';
 														echo'<div class="caption">';
-                                                        echo'<div class="txt1">Lorem ipsum dolor</div>';
-                                                        echo'<div class="txt2">dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>';								
+                                                        echo'<div class="txt1">'.$cats['alias'].'</div>';
+                                                        echo'<div class="txt2">'.$cats['description'].'</div>';								
 														echo'</div>';								
                                                         echo'</a>';								
                                                 echo'</div>';
