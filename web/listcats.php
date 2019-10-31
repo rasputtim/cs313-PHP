@@ -50,7 +50,7 @@ include('templates/menubar.php');
 
 
 <?php
-$myOperation=-1;
+$myOperation="UNKNOWN";
 $stmt = get_db()->prepare('SELECT * FROM public.ezfin_category');
 //$stmt->bindValue(':op', $myOperation, PDO::PARAM_INT);
 $stmt->execute();
