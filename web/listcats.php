@@ -64,7 +64,7 @@ foreach ($rows as $row)
 	echo '<div class="col-lg-3">';
 	echo '<div class="thumb3">';
 	echo '<div class="thumbnail clearfix">';		
-	echo '<figure class=""><img src="images/'. $row['icon'] . '.png " alt=""></figure>';
+	echo '<figure class=""><img src="images/'. $row['icon'] . '" alt=""></figure>';
 	echo '<div class="caption">';
 	echo '<h3>' . $row['name'] . '</h3>';
 	echo '<p>';
