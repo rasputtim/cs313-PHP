@@ -57,21 +57,22 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $count =0;
 $added = false;
-switch ($row['operation']){
-	case -1:
-	break;
-	case 0:
-	$myOperation = "CREDIT";
-	break;
-	case 1:
-	$myOperation = "DEBIT";
-	break;
-	case 2:
-	$myOperation = "INFORMATIVE";
-	break;
-}
+
 foreach ($rows as $row)
 {
+	switch ($row['operation']){
+		case -1:
+		break;
+		case 0:
+		$myOperation = "CREDIT";
+		break;
+		case 1:
+		$myOperation = "DEBIT";
+		break;
+		case 2:
+		$myOperation = "INFORMATIVE";
+		break;
+	}
 	$added = false;
 	if ($count % 3 == 0 ) echo '<div class="row">';
 	echo '<div class="col-lg-3">';
