@@ -89,7 +89,7 @@
 								<div class="col-sm-6 form-group">
 
 								<label for="paydate"> Payment/Receive Date:</label>
-								<input type="text" class="form-control" id="paydate" name="paydate" value="<?php echo $my_paydate; ?>" required>
+								<input type="text" class="form-control" id="paydate" name="paydate" value="<?php echo $my_paydate; ?>" >
 								</div>
 									
 							
