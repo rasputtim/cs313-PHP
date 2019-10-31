@@ -59,6 +59,7 @@ $count =0;
 $added = false;
 foreach ($rows as $row)
 {
+	
 	switch ($row['operation']){
 		case -1:
 		$myOperation = "UNKNOWN";
