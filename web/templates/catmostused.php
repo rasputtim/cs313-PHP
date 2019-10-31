@@ -24,11 +24,11 @@ foreach ($rows as $row){
                                                 echo'<div class="thumbnail clearfix">';
                                                     echo'<a href="#">';
                                                         echo'<figure>';
-                                                            echo'<img src="images/'trim($category['icon'])'" alt="">';
+                                                            echo'<img src="images/'.trim($category['icon']).'" alt="">';
                                                         echo'</figure>';
 														echo'<div class="caption">';
-                                                        echo'<div class="txt1">'$category['alias']'</div>';
-                                                        echo'<div class="txt2">'$category['description']'</div>';								
+                                                        echo'<div class="txt1">'.$category['alias'].'</div>';
+                                                        echo'<div class="txt2">'.$category['description'].'</div>';								
 														echo'</div>';								
                                                         echo'</a>';								
                                                 echo'</div>';
