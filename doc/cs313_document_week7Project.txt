@@ -1,16 +1,55 @@
 1. Project Title / One sentence description:
 
+Title: EzFin - Finance Control
 
 2. The Heroku URL for your web application:
 
+https://cryptic-beyond-10470.herokuapp.com//index.php
 
 3. The GitHub URL for your source code repository:
 
+https://github.com/rasputtim/cs313-ezfin.git
 
 4. A link to the SQL file that contains the commands used to create your tables (e.g. a link to the myDb.sql file at GitHub, or something similar).
 
 
 5. Please provide a brief description of what your project does and how to use the application. Make sure to include any required information like a username and password.
 
+	The application provides control over the finances of the user.
+	The user can add the financial transactions to the database and group the by categories of incomes, outcomes and informative data. 
+	The user can control how are the finances through views of balances.
+
+	HOW TO USE
+
+	username: admin
+	password: 123456
+
+	if the user do not log in he can only see institutional pages like contact home and who we are.
+	After logging in the user can see the menu options: ADMINISTRATION, TRANSACTIONS, BALANCES
+
+	ADMINISTRATION => allows the user to add/create, list, search and edit categories, views/balances, transactions and options.
+	TRANSACTIONS => allows the user to control the financial transactions. this page gives a balance of the total of all transactions listed.
+	BALANCES => allows the user to see the balances as they were added in the database. For instance. if the user wants to balance for the period from may 01 to may 15 to be stored, he can add this period 
+	in the database and whenever he wants he can check the balance for that period in this page.
+
+	SEARCHES
+	The search is case sensitive. so "salary" is different from "Salary" and "salary".
+
+	ADMINISTRATION PAGES
+
+	CATEGORIES INCLUDE => Allows the user include new categories
+	CATEGORIES SEARCH/EDIT => Allows the user to search categories and edit them.  THIS PAGE SHOWS A LIST OF THE MOST USED CATEGORIES
+
+	TRANSACTIONS INCLUDE OUTCOMES => allows the user to add outomes/debits to the database.
+	TRANSACTIONS INCLUDE INCOMES => allows the user to add incomes/credits to the database.
+	TRANSACTIONS INCLUDE => allows the user to add any transactions to the database.
+	TRANSACTIONS SEARCH/EDIT => allows the user to sear the database and edit transactions
+
+	BALANCES INCLUDE => allows the user to add periods the store balance views of transactions.
+	BALANCES SEARCH/EDIT => allows the user to searchand edit sotred balance views.
+	
+
 
 6. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+Everything is working
