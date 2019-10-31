@@ -43,7 +43,7 @@ if ($is_insert){ // Create group
 	$my_status = $_POST['status'];//get_parameter("operation");
 	$my_sql = "";
 	if (empty($my_paydate)){
-		$my_sql = 'INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount,  status) VALUES (:user,:duedate,:desc,:idcat, :amm, :stat)'
+		$my_sql = 'INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount,  status) VALUES (:user,:duedate,:desc,:idcat, :amm, :stat)';
 	}else{
 		$my_sql = 'INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount, paymentdate, status) VALUES (:user,:duedate,:desc,:idcat, :amm,:paydate, :stat)';
 	}
