@@ -251,19 +251,7 @@ if (($is_create OR $is_update)) {
 
 	echo '<div class="col-lg-3">';
 
-	echo '<h2>category List</h2>';
-
-	echo '<ul class="ul1">';
-		
-		foreach (get_db()->query('SELECT name,idcat,operation FROM public.ezfin_category') as $row)
-		{
-		echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
-		echo $row['name'];
-		echo '</a></li>';
-		}
-	
-															
-		echo '</ul>	';
+	include('templates/categorylist.php')
 
 		
 
