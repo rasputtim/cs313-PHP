@@ -15,7 +15,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<ul>';
 foreach ($rows as $row){
-    $stmt2 = $mydb->prepare('SELECT * FROM public.ezfin_category WHERE id = :id');
+    $stmt2 = $mydb->prepare('SELECT * FROM public.ezfin_category WHERE idcat = :id');
     $stmt2->bindValue(':id', $row['idcategory'], PDO::PARAM_INT);
     $stmt2->execute();
     $cats = $stmt2->fetch();
@@ -24,7 +24,7 @@ foreach ($rows as $row){
                                                 echo'<div class="thumbnail clearfix">';
                                                     echo'<a href="#">';
                                                         echo'<figure>';
-                                                            echo'<img src="images/products07.jpg" alt="">';
+                                                            echo'<img src="images/'.trim($cats['icon']).'" alt="">';
                                                         echo'</figure>';
 														echo'<div class="caption">';
                                                         echo'<div class="txt1">Lorem ipsum dolor</div>';
