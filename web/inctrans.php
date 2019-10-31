@@ -85,6 +85,18 @@ if ($is_update_database){ // if modified any parameter
 	$my_paydate = strtoupper (get_parameter("paydate"));
 	$my_status = $_POST['status'];//get_parameter("operation");
 
+	if (empty($my_paydate)){
+		$sql_update ="UPDATE public.ezfin_transactions
+		SET iduser = :user,
+			duedate = :duedate,
+			description = :desc,
+			idcategory = :idcat,
+			amount = :amm,
+			status = :stat
+		WHERE
+		   idtransaction = :id";
+	
+	}else{
 	
 	
 	$sql_update ="UPDATE public.ezfin_transactions
@@ -97,14 +109,19 @@ if ($is_update_database){ // if modified any parameter
 		status = :stat
 	WHERE
 	   idtransaction = :id";
-    //echo $sql_update;
+	
+	}
+	//echo $sql_update;
 	$stmt = get_db()->prepare($sql_update);
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':idcat', $my_idcat, PDO::PARAM_INT);
 	$stmt->bindValue(':amm', $my_amount, PDO::PARAM_STR);
-	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
+	if (!empty($my_paydate)){
+		$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
+	}
+	
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 	if($stmt->execute()){
