@@ -41,16 +41,25 @@ if ($is_insert){ // Create group
 	$my_amount = get_parameter("amount");
 	$my_paydate = strtoupper (get_parameter("paydate"));
 	$my_status = $_POST['status'];//get_parameter("operation");
-	
+	$my_sql = "";
+	if (empty($my_paydate)){
+		$my_sql = 'INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount,  status) VALUES (:user,:duedate,:desc,:idcat, :amm, :stat)'
+	}else{
+		$my_sql = 'INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount, paymentdate, status) VALUES (:user,:duedate,:desc,:idcat, :amm,:paydate, :stat)';
+	}
+
 	$mydb = get_db();
-	$stmt = $mydb->prepare('INSERT INTO public.ezfin_transactions ( iduser, duedate, description, idcategory, amount, paymentdate, status) VALUES (:user,:duedate,:desc,:idcat, :amm,:paydate, :stat)');
+	$stmt = $mydb->prepare($my_sql);
 	
 	$stmt->bindValue(':user', $my_user, PDO::PARAM_STR);
 	$stmt->bindValue(':duedate', $my_duedate, PDO::PARAM_STR);
 	$stmt->bindValue(':desc', $my_description, PDO::PARAM_STR);
 	$stmt->bindValue(':idcat', $my_idcat, PDO::PARAM_INT);
 	$stmt->bindValue(':amm', $my_amount, PDO::PARAM_STR);
-	$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
+	if (!empty($my_paydate)){
+		$stmt->bindValue(':paydate', $my_paydate, PDO::PARAM_STR);
+	}
+	
 	$stmt->bindValue(':stat', $my_status, PDO::PARAM_INT);
 	if($stmt->execute()){
 		$newId = $mydb->lastInsertId('ezfin_transactions_idtransaction_seq');

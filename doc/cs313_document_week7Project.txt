@@ -12,6 +12,7 @@ https://github.com/rasputtim/cs313-ezfin.git
 
 4. A link to the SQL file that contains the commands used to create your tables (e.g. a link to the myDb.sql file at GitHub, or something similar).
 
+https://github.com/rasputtim/cs313-ezfin/blob/master/db/myDb.sql
 
 5. Please provide a brief description of what your project does and how to use the application. Make sure to include any required information like a username and password.
 
@@ -52,4 +53,5 @@ https://github.com/rasputtim/cs313-ezfin.git
 
 6. Briefly describe any pieces of the assignment that are not yet working correctly.
 
-Everything is working
+Everything is working.
+There are lots of things I could improve but there is no time.
