@@ -12,7 +12,6 @@
 						<li class="sub-menu sub-menu-2"><a href="listcats.php">Categories</a>
 							<ul>
 								<li><a href="inccats.php?create=1">Include</a></li>
-								<li><a href="inccats.php?update=0">Edit</a></li>
 								<li><a href="listcats.php">Search</a></li>
 								
 							</ul>
@@ -20,7 +19,6 @@
 						<li class="sub-menu sub-menu-2"><a href="listviews.php">Balances</a>
 							<ul>
 								<li><a href="incviews.php?create=1">Include</a></li>
-								<li><a href="incviews.php?update=2">Edit</a></li>
 								<li><a href="listviews.php">Search</a></li>
 																
 							</ul>
@@ -34,12 +32,7 @@
 									</ul>
 							    </li>
 
-								<li>
-									
-									
-									<a href="inctrans.php?update=2">Edit</a>
-
-								</li>
+								
 								<li><a href="listtrans.php">Search</a></li>
 																
 							</ul>
