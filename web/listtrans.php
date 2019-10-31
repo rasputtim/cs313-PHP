@@ -86,8 +86,9 @@ foreach ($rows as $row)
 			echo '<figure class="oper_icon"><img src="images/'.$oper_image.'" alt=""></figure>';
 			echo '<div class="caption">';											
 				echo "<h3>".$row['description'].'</H3>';
-				echo '<h2>DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
-				echo '</h2>';
+				echo '<BR>DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
+				echo '<SPAN><SPAN><a href="inctrans.php?update='.$row['idtransaction'].'" class="button2">edit </a>';
+				echo '</BR>';
 			echo '</div>';			
 		echo '</div>';
 	echo '</li>';
