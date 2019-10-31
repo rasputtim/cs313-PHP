@@ -1,3 +1,6 @@
+<?php
+require_once('inc/functions_db.php');
+?>
 <div class="container">
 	<div class="col-md-6 col-md-offset-3 " id="form_container">
                         <?php 
@@ -47,29 +50,19 @@
                                     echo'<option data-img-src="images/'.$my_icon.'" value= " '.$my_icon.'" selected >'.$my_icon.'</option>';
 									?>
 									<optgroup label="Incomes">
-                                    <option data-img-src="images/cat_all.png" value="cat_all.png">cat_all.</option>
-									<option data-img-src="images/cat_all_bw.png" value="cat_all_bw.png">cat_all_bw.png</option>
-									<option data-img-src="images/cat_begin_cashflow.png" value="cat_begin_cashflow.png">cat_begin_cashflow.png</option>
-									<option data-img-src="images/cat_bill.png" value="cat_bill.png">cat_bill.png</option>
-									<option data-img-src="images/cat_bill_red.png" value="cat_bill_red.png">cat_bill_red.png</option>
-									<option data-img-src="images/cat_bill_red_peq.png" value="cat_bill_red_peq.png">cat_bill_red_peq.png</option>
-									<option data-img-src="images/cat_clothing.png" value="cat_clothing.png">cat_clothing.png</option>
-									<option data-img-src="images/cat_education.png" value="cat_education.png">cat_education.png</option>
-									<option data-img-src="images/cat_end_cashflow.png" value="cat_end_cashflow.png">cat_end_cashflow.png</option>
-									<option data-img-src="images/cat_entertainment.png" value="cat_entertainment.png">cat_entertainment.png</option>
-									<option data-img-src="images/cat_expense_left.png" value="cat_expense_left.png">cat_expense_left.png</option>
-									<option data-img-src="images/cat_extras_cash_register.png" value="cat_extras_cash_register.png">cat_extras_cash_register.png</option>
-									<option data-img-src="images/cat_extras_coins_700.png" value="cat_extras_coins_700.png">cat_extras_coins_700.png</option>
-									<option data-img-src="images/cat_extras_coins_7000_blue.png" value="cat_extras_coins_7000_blue.png">cat_extras_coins_7000_blue.png</option>
-									<option data-img-src="images/cat_extras_coins_700_black.png" value="cat_extras_coins_700_black.png">cat_extras_coins_700_black.png</option>
-									<option data-img-src="images/cat_extras_coins_700_red.png" value="cat_extras_coins_700_red.png">cat_extras_coins_700_red.png</option>
-									<option data-img-src="images/cat_extras_currency_black_dollar.png" value="cat_extras_currency_black_dollar.png">cat_extras_currency_black_dollar.png</option>
-									<option data-img-src="images/cat_extras_currency_dollar_green.png" value="cat_extras_currency_dollar_green.png">cat_extras_currency_dollar_green.png</option>
-									<option data-img-src="images/cat_extras_currency_dollar_red.png" value="cat_extras_currency_dollar_red.png">cat_extras_currency_dollar_red.png</option>
-									<option data-img-src="images/cat_extras_dollars_folder.png" value="cat_extras_dollars_folder.png">cat_extras_dollars_folder.png</option>
-									<option data-img-src="images/cat_extras_money_wallet.png" value="cat_extras_money_wallet.png">cat_extras_money_wallet.png</option>
-									<option data-img-src="images/cat_food.png" value="cat_food.png">cat_food.png</option>
-									<option data-img-src="images/cat_fuel.png" value="cat_fuel.png">cat_fuel.png</option>
+									<?php
+									$stmt = get_db()->prepare('SELECT icon FROM public.ezfin_category WHERE operation=0');
+
+									$stmt->execute();
+									$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+									
+									foreach ($rows as $row)
+									{
+										$image_list = $row['icon'];
+										echo "<option data-img-src='images/$image_list' value='$image_list'>$image_list</option>";
+									}
+									?>
+                                    
 									</optgroup>
 									<optgroup label="Outcomes">
 									<option data-img-src="images/cat_gambling_inc.png" value="cat_gambling_inc.png">cat_gambling_inc.png</option>

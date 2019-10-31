@@ -12,14 +12,14 @@
 						<li class="sub-menu sub-menu-2"><a href="listcats.php">Categories</a>
 							<ul>
 								<li><a href="inccats.php?create=1">Include</a></li>
-								<li><a href="listcats.php">Search</a></li>
+								<li><a href="listcats.php">Search/Edit</a></li>
 								
 							</ul>
 						</li>
 						<li class="sub-menu sub-menu-2"><a href="listviews.php">Balances</a>
 							<ul>
 								<li><a href="incviews.php?create=1">Include</a></li>
-								<li><a href="listviews.php">Search</a></li>
+								<li><a href="listviews.php">Search/Edit</a></li>
 																
 							</ul>
 						</li>
@@ -33,7 +33,7 @@
 							    </li>
 
 								
-								<li><a href="listtrans.php">Search</a></li>
+								<li><a href="listtrans.php">Search/Edit</a></li>
 																
 							</ul>
 						</li>						

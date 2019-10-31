@@ -16,7 +16,7 @@ echo '<ul class="ul1">';
             break;
         }
     echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
-    echo $row['alias']. " IS A $myoper OPERATION";
+    echo $row['alias']. " is a $myoper Operation";
     echo '</a></li>';
     }
 
