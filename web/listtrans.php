@@ -87,9 +87,10 @@ foreach ($rows as $row)
 			echo '<div class="caption">';											
 				echo "<h3>".$row['description'].'</H3>';
 				echo '<h2>DUE ON: '.date_format(date_create($row['duedate']),$date_format)." - $ ". money_format($money_format, $row['amount']);
-				echo '</h2>';
-				echo '<br>';
+				
+				
 				echo '<a href="inctrans.php?update='.$row['idtransaction'].'" class="button2">edit </a>';
+				echo '</h2>';
 			echo '</div>';			
 		echo '</div>';
 	echo '</li>';
