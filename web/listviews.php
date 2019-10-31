@@ -67,13 +67,12 @@ foreach ($rows as $row)
 		    // todo: add category icon here
 			//echo '<figure class=""><img src="images/services01.jpg" alt=""></figure>';
 			echo '<div class="caption">';	
-				echo '<h3> START DATE                          -                 END DATE</H3>'	;								
-				echo '<h3>'.date_format(date_create($row['initialdate']),$date_format)." - ". date_format(date_create($row['finaldate']),$date_format);
-				echo '</h3>';
-				echo '<p>';
-						echo $row['title'];
-						echo '<a href="incviews.php?update='.$row['idbalview'].'" class="button2">edit </a>';
-						echo '</p>';
+				echo '<h3>'.$row['title'].'</H3>';
+				echo '<h2> START DATE                          -                 END DATE</H2>'	;								
+				echo '<h2>'.date_format(date_create($row['initialdate']),$date_format)." - ". date_format(date_create($row['finaldate']),$date_format);
+				echo '</h2>';
+				echo '<br> <a href="incviews.php?update='.$row['idbalview'].'" class="button2">edit </a>';
+				
 			echo '</div>';			
 		echo '</div>';
 	echo '</li>';
