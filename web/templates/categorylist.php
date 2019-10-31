@@ -14,6 +14,9 @@ echo '<ul class="ul1">';
             case 1:
             $myoper = "DEBIT";
             break;
+            case 2:
+            $myoper = "INFORMATIVE";
+            break;
         }
     echo '<li><a href="inccats.php?update='.$row['idcat'].'">';
     echo $row['alias']. " is a $myoper Operation";
