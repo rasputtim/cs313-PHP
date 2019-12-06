@@ -3,6 +3,7 @@
 
 session_start();
  
+$_SESSION['url'] = $_SERVER['REQUEST_URI']; 
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -74,7 +75,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["id_usuario"] = $username;                            
-                            
+                            if(isset($_SESSION['url'])) 
+                                        $url = $_SESSION['url']; // holds url for last page visited.
+                            else 
                             // Redirect user to welcome page
                             header("location: index.php");
                         } else{
