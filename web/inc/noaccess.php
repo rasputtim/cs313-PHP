@@ -1,7 +1,7 @@
 <?php
 	$redirurl = "index.php";
-	//if ( isset($_GET['redir_url']) {
-	//	$redirurl = $_GET['redir_url'];
+	if ( isset($_GET['redir_url']) {
+		$redirurl = $_GET['redir_url'];
 	//	if ( $redirurl == "https://cryptic-beyond-10470.herokuapp.com/")
 	//		$redirurl = "index.php";
 	//}else
