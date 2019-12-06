@@ -1,6 +1,7 @@
 <?php
-	//$redirurl = $_SERVER['HTTP_REFERER'];
-	//if ($_REQUEST['redirurl'] == "https://cryptic-beyond-10470.herokuapp.com/")
+	$send_url = "../index.php?redirurl=index.php";
+	$redirurl = $_GET['redir_url'];
+	if ( $redirurl == "https://cryptic-beyond-10470.herokuapp.com/")
 	$redirurl = "index.php";
 	echo "<center>";
 	echo '<div style="margin-top: 100px; width: 450px;">';
@@ -9,7 +10,7 @@
 	echo "<img src='../images/noaccess.gif'>";
 	echo "<p>".'Access to this page is restricted to authorized users only, please contact system administrator if you need assistance. <br><br>Please know that all attempts to access this page are recorded in security logs of Integria System Database'. "</p>";
 	echo "</p>";
-	echo '<p> <a href="../index.php?redirurl=index.php">Login</a></p>';
+	echo "<p> <a href=$send_url >Login</a></p>";
 	echo "</div>";
 	echo "</center>";
 	exit;
