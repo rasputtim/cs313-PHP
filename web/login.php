@@ -78,10 +78,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             
                             $url = "index.php";
 
-                            //if(isset($_REQUEST['redirurl'])) 
-                             //   $url = $_REQUEST['redirurl']; // holds url for last page visited.
-                            //else 
-                              //  $url = "index.php";
+                            if(isset($_REQUEST['redirurl'])) 
+                                if ($_REQUEST['redirurl'] != "https://cryptic-beyond-10470.herokuapp.com/")
+                                    $url = $_REQUEST['redirurl']; // holds url for last page visited.
+                            else 
+                                $url = "index.php";
 
                             // Redirect user to welcome page
                             header("location: $url");
