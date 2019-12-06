@@ -77,11 +77,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id_usuario"] = $username;    
                             
                             $url = "index.php";
-                            
-                            if(isset($_REQUEST['redirurl'])) 
-                                $url = $_REQUEST['redirurl']; // holds url for last page visited.
-                            else 
-                                $url = "index.php";
+
+                            //if(isset($_REQUEST['redirurl'])) 
+                             //   $url = $_REQUEST['redirurl']; // holds url for last page visited.
+                            //else 
+                              //  $url = "index.php";
 
                             // Redirect user to welcome page
                             header("location: $url");
