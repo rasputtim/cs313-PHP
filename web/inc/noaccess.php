@@ -1,8 +1,14 @@
 <?php
-	$send_url = "../index.php?redirurl=index.php";
-	$redirurl = $_GET['redir_url'];
-	if ( $redirurl == "https://cryptic-beyond-10470.herokuapp.com/")
 	$redirurl = "index.php";
+	if ( isset($_GET['redir_url']) {
+		$redirurl = $_GET['redir_url'];
+		if ( $redirurl == "https://cryptic-beyond-10470.herokuapp.com/")
+			$redirurl = "index.php";
+	}else
+		$redirurl = "index.php";
+	
+
+	$send_url = "../index.php?redirurl=$redirurl";
 	echo "<center>";
 	echo '<div style="margin-top: 100px; width: 450px;">';
 	echo '<h2>'.'You don\'t have access to this page'.'</h2>';
