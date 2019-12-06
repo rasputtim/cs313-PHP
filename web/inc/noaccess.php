@@ -1,7 +1,7 @@
 <?php
-	$redirurl = $_SERVER['HTTP_REFERER'];
-	if ($_REQUEST['redirurl'] == "https://cryptic-beyond-10470.herokuapp.com/")
-	$redirurl = "https://cryptic-beyond-10470.herokuapp.com/index.php";
+	//$redirurl = $_SERVER['HTTP_REFERER'];
+	//if ($_REQUEST['redirurl'] == "https://cryptic-beyond-10470.herokuapp.com/")
+	$redirurl = "index.php";
 	echo "<center>";
 	echo '<div style="margin-top: 100px; width: 450px;">';
 	echo '<h2>'.'You don\'t have access to this page'.'</h2>';
