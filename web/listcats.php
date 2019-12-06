@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-$redir_url = $_SERVER['HTTP_REFERER'];
+$redir_url =$_SERVER['REQUEST_URI'];
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location:inc/noaccess.php?redir_url=$redir_url");
