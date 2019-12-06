@@ -3,7 +3,7 @@
 
 session_start();
  
-$_SESSION['url'] = $_SERVER['REQUEST_URI']; 
+
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -74,12 +74,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["id_usuario"] = $username;                            
-                            if(isset($_SESSION['url'])) 
-                                        $url = $_SESSION['url']; // holds url for last page visited.
+                            $_SESSION["id_usuario"] = $username;    
+                            
+                            $url = "index.php";
+                            
+                            if(isset($_REQUEST['redirurl'])) 
+                                $url = $_REQUEST['redirurl']; // holds url for last page visited.
                             else 
+                                $url = "index.php";
+
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            header("location: $url");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
