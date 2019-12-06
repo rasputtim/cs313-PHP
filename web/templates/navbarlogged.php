@@ -45,6 +45,7 @@
 					<form class="my-form-login" action="login.php" method="post">
 						<div id="username" class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 						<span class="help-block"></span>
+						<input type="text" name="redirurl" value="<? echo $_SERVER['HTTP_REFERER']; ?>" />
 						<input type="text" name="username" class="form-control form-control-sm" value="<?php echo $username; ?>" placeholder = "username = admin">
 							<span class="help-block"><?php echo $username_err; ?></span>
 						</div>    
