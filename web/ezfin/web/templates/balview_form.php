@@ -1,0 +1,83 @@
+<div class="container">
+	<div class="col-md-6 col-md-offset-3 " id="form_container">
+                        <?php 
+                            switch ($success){
+							case 0:
+							break;
+							case 1:
+								echo '<div id="" style="width:100%; height:100%;  "> <h3>SUCESS!</h3> </div>';
+								break;
+							case 2:
+								echo'<div id="" style="width:100%; height:100%; "> <h3>Error</h3>ERROR </div>';
+								break;
+						    }
+						 
+                            if ($id == -1){   //CREATE NEW Record
+                                echo "<h1>Create a Period</h1>";
+                                echo'<form role="form" method="post" id="reused_form" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).' " >';
+                                echo'<input type="hidden" class="form-control" id="is_insert" name="create2" value="true">';
+                      
+                                
+                            }else {
+                                echo "<h1>Update existing Period</h1>";
+                                echo'<form role="form" method="post" id="reused_form" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).' " >';
+                                echo'<input type="hidden" class="form-control" id="is_update" name="update2" value="true">';
+                                echo '<input class="form-control" type=hidden name=id value="'.$id.'">';
+                            }
+                        ?>
+							<div class="row">
+								
+								<div class="col-sm-6 form-group">
+
+									<label for="title"> Title:</label>
+									<input type="text" class="form-control" id="title" name="title" value="<?php echo $my_title; ?>" required>
+								</div>
+								<div class="col-sm-6 form-group">
+								
+									<label for="keydate"> Kay Date:</label>
+									<input type="text" class="form-control "  id="keydate" name="keydate" value="<?php echo $my_keydate; ?>" required>
+								
+								</div>
+							</div>
+							<div class="row">
+								
+								<div class="col-sm-6 form-group">
+
+									<label for="inidate"> Initial Date:</label>
+									<input type="text" class="form-control" id="inidate" name="inidate" value="<?php echo $my_inidate; ?>" required>
+								</div>
+								<div class="col-sm-6 form-group">
+
+									<label for="enddate"> End Date:</label>
+									<input type="text" class="form-control" id="enddate" name="enddate" value="<?php echo $my_enddate; ?>" required>
+								</div>
+							</div>
+							<div class="row">
+							
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="iscurrent"   name="iscur" value="1" <?php echo $my_iscur_check; ?> >
+								<label class="form-check-label" for="iscurrent">Is Current</label>
+							</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-sm-12 form-group">
+									<label for="descript"> Description:</label>
+									<textarea class="form-control" type="textarea" name="descript" id="descript" maxlength="6000" rows="3" ><?php echo $my_description; ?></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 form-group">
+									<button type="submit" class="button2" >Send &rarr;</button>
+									<?php
+										if (!$is_create)
+										echo "<a class='button2' id= 'mylink' href='incviews.php?delete_data=".$id."'>DELETE</a>";
+									?>
+								</div>
+							</div>
+						</form>
+								
+						
+	</div>
+
+	</div>
