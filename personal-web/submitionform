@@ -1,0 +1,53 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+https://sleepy-fortress-71203.herokuapp.com/index.php
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rasputtim/cs313-personalweb.git
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+The project is a one page project.
+The menu (navbar) is working and guide the visitor to the several parts of the web page.
+Project option link to the description for the project 01 
+Assignments option lionk to the assignments for the cs313 class
+Class option links to information about the class, its goals and other information
+
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+All requirements are working properly
+
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+the coolest thing was to remember Javascript, Json, Jquery and other things I have learned in Web Engineering I.
+
+6. What is the difference between an HTTP Get and Post? When should each be used?
+
+POST - supply additional data from the client (browser) to the server in the message body
+GET - include all required data in the URL
+
+Comparation
+GET
+   Can be bookmarked. remain in browser history.The parameter data is limited to the max size of the url. Data type limited to ascII characters. Less secure. Can be cached
+POST 
+   Cannot be bookmarked. no parameter limitation. No limitation of data types, Byinary data is allowed. Mose secure, should be used to send passwords and other sensitive information. cannot be cached.
+
+One shall understand the differences and use them according the necessity.
+
+
+7. Please select the category you feel best describes your assignment: 5
+1 - Some attempt was made
+2 - Developing, but significantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category
+
+I showed my creativity by using json as a database to describe the assignments part of the page. What was beyond the required.
